@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: administer/rename-nodes.html 
+keywords: rename, node, renaming, asa r2 
+summary: 'Potrebbe essere necessario rinominare un nodo per allinearlo alle convenzioni di denominazione dell"organizzazione o per altri motivi amministrativi.' 
+---
+= Ridenominazione di un nodo in un sistema storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puoi utilizzare Gestione sistema di ONTAP per rinominare un nodo sul sistema ASA R2. Potrebbe essere necessario rinominare un nodo per allinearlo alle convenzioni di denominazione dell'organizzazione o per altri motivi amministrativi.
+
+.Fasi
+. In System Manager, selezionare *Cluster > Panoramica*.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"] accanto al nodo che si desidera rinominare, quindi selezionare *Rinomina*.
+. Immettere il nuovo nome per il nodo, quindi selezionare *Rinomina*.
+
+
+.Risultato
+Il nuovo nome viene applicato al nodo.

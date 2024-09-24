@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: administer/reboot-take-over-give-back-nodes.html 
+keywords: reboot, take over, give back, nodes, asa r2, asa r2, asa a1k, asa 70, asa 90 
+summary: Potrebbe essere necessario riavviare un nodo per la manutenzione, la risoluzione dei problemi, gli aggiornamenti software o altri motivi amministrativi. 
+---
+= Riavviare un nodo su un sistema storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Potrebbe essere necessario riavviare un nodo per la manutenzione, la risoluzione dei problemi, gli aggiornamenti software o altri motivi amministrativi. Al riavvio di un nodo, il partner ha esegue automaticamente un takeover. Il nodo partner esegue quindi un giveback automatico dopo che il nodo riavviato torna online.
+
+.Fasi
+. In System Manager, selezionare *Cluster > Panoramica*.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"] accanto al nodo che si desidera riavviare, quindi selezionare *Reboot* (Riavvia).
+. Immettere il motivo per cui si sta riavviando il nodo, quindi selezionare *Reboot* (Riavvia).
++
+Il motivo del riavvio viene registrato nel registro di controllo del sistema.
+
+
+
+.Quali sono le prossime novità?
+Durante il riavvio del nodo, il partner ha esegue un takeover in modo da evitare interruzioni del servizio dati. Una volta completato il reboot, il partner ha esegue un giveback.

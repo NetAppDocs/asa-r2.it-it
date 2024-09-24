@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: data-protection/policies-schedules.html 
+keywords: data protection, polices, schedules, protect data, snapshot policies, snapshot schedules, replication policies 
+summary: Utilizza policy e pianificazioni di data Protection per proteggere i dati in base a una pianificazione automatizzata. 
+---
+= Gestire le policy e le pianificazioni di protezione dei dati ONTAP sui sistemi di storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Utilizza policy di Snapshot per proteggere i dati nei gruppi di coerenza in base a una pianificazione automatizzata. Utilizza le pianificazioni di criteri all'interno delle policy di snapshot per determinare la frequenza con cui vengono create le snapshot.
+
+
+
+== Creare una nuova pianificazione dei criteri di protezione
+
+Una pianificazione dei criteri di protezione definisce la frequenza con cui viene eseguita una policy di snapshot. È possibile creare pianificazioni da eseguire a intervalli regolari in base a un numero di giorni, ore o minuti. Ad esempio, è possibile creare un programma da eseguire ogni ora o solo una volta al giorno. È inoltre possibile creare pianificazioni da eseguire a orari specifici in giorni specifici della settimana o del mese. Ad esempio, è possibile creare una pianificazione da eseguire alle 12:15am:00 il 20th di ogni mese.
+
+La definizione di varie pianificazioni dei criteri di protezione consente di aumentare o diminuire la frequenza di snapshot per diverse applicazioni. Ciò consente di fornire un livello maggiore di protezione e un rischio minore di perdita di dati per i workload critici rispetto a quanto potrebbe essere necessario per i workload meno critici.
+
+.Fasi
+. Selezionare *protezione > Criteri*, quindi selezionare *Pianificazione*.
+. Selezionare image:icon_add_blue_bg.png["un rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"].
+. Immettere un nome per la pianificazione, quindi selezionare i parametri della pianificazione.
+. Selezionare *Salva*.
+
+
+.Quali sono le prossime novità?
+Una volta creata una nuova pianificazione dei criteri, è possibile utilizzare la pianificazione appena creata all'interno delle policy per definire quando vengono creati gli snapshot.
+
+
+
+== Creare un criterio di snapshot
+
+Una policy di snapshot definisce la frequenza di esecuzione delle snapshot, il numero massimo di snapshot consentite e la durata di conservazione.
+
+.Fasi
+. In Gestione sistema, selezionare *protezione > Criteri*, quindi selezionare *Criteri istantanea*.
+. Selezionare image:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"].
+. Immettere un nome per il criterio snapshot.
+. Selezionare *Cluster* per applicare il criterio all'intero cluster. Selezionare *Storage VM* per applicare il criterio a una singola VM di storage.
+. Selezionare *Aggiungi pianificazione*, quindi immettere la pianificazione del criterio snapshot.
+. Selezionare *Aggiungi criterio*.
+
+
+.Quali sono le prossime novità?
+Una volta creato un criterio snapshot, è possibile applicarlo a un gruppo di coerenza. Gli snapshot verranno acquisiti dal gruppo di coerenza in base ai parametri impostati nella policy di snapshot.
+
+
+
+== Applicare un criterio snapshot a un gruppo di coerenza
+
+Applicare un criterio snapshot a un gruppo di coerenza per creare, conservare ed etichettare automaticamente gli snapshot del gruppo di coerenza.
+
+.Fasi
+. In Gestione sistema, selezionare *protezione > Criteri*, quindi selezionare *Criteri istantanea*.
+. Passare il mouse sul nome della policy di snapshot che si desidera applicare.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Applica*.
+. Selezionare i gruppi di coerenza a cui si desidera applicare il criterio snapshot, quindi selezionare *Applica*.
+
+
+.Quali sono le prossime novità?
+Ora che i tuoi dati sono protetti con snapshot, dovresti link:snapshot-replication.html#step-3-create-a-replication-relationship["impostare una relazione di replica"]copiare i tuoi gruppi di coerenza in una posizione geograficamente remota per il backup e il disaster recovery.
+
+
+
+== Modificare, eliminare o disattivare un criterio snapshot
+
+Modificare un criterio snapshot per modificare il nome del criterio, il numero massimo di snapshot o l'etichetta SnapMirror. Eliminare un criterio per rimuoverlo e i relativi dati di backup dal cluster. Disattivare un criterio per interrompere temporaneamente la creazione o il trasferimento degli snapshot specificati dal criterio.
+
+.Fasi
+. In Gestione sistema, selezionare *protezione > Criteri*, quindi selezionare *Criteri istantanea*.
+. Passare il mouse sul nome del criterio snapshot che si desidera modificare.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Modifica*, *Elimina* o *Disabilita*.
+
+
+.Risultato
+Il criterio dello snapshot è stato modificato, eliminato o disabilitato.
+
+
+
+== Modificare un criterio di replica
+
+Modificare un criterio di replica per modificare la descrizione del criterio, la pianificazione del trasferimento e le regole. È inoltre possibile modificare il criterio per attivare o disattivare la compressione di rete.
+
+.Fasi
+. In Gestione sistema, selezionare *protezione > Criteri*.
+. Selezionare *Criteri di replica*.
+. Passare il mouse sul criterio di replica che si desidera modificare, quindi selezionare image:icon_kabob.gif["tre punti blu verticali"].
+. Selezionare *Modifica*.
+. Aggiornare il criterio, quindi selezionare *Salva*.
+
+
+.Risultato
+Il criterio di replica è stato modificato.

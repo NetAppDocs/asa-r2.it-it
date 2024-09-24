@@ -1,0 +1,110 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-client-vm-access.html 
+keywords: asa r2, client access, host access, virtual machines, storage virtual machines, create, ipspaces, subnets, lifs, network interface 
+summary: Crea una LIF per accedere ai dati nelle unità storage di ASA R2. Utilizza le subnet per semplificare la creazione della LIF e gli IPSpace per fornire amministrazione e routing sicuri. 
+searchtitle: 'Gestisci l"accesso dei client allo storage utilizzando Gestione sistema di ONTAP | ASA R2' 
+---
+= Gestire l'accesso dei client alle macchine virtuali storage sui sistemi storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le unità storage di un sistema ASA R2 sono contenute in Storage Virtual Machine (VM). Le macchine virtuali storage vengono utilizzate per fornire dati ai client SAN. Utilizza il Gestore di sistema di ONTAP per creare una LIF (interfaccia di rete) che permette ai client SAN di connettersi a una VM storage e di accedere ai dati nelle unità storage. Facoltativamente, è possibile utilizzare le subnet per semplificare la creazione di LIF e gli IPSpace per fornire alle macchine virtuali storage storage risorse storage, amministrazione e routing sicuri.
+
+
+
+== Creare IPspaces
+
+Un IPSpace è uno spazio di indirizzi IP distinto in cui risiedono le macchine virtuali di storage. Quando si creano IPSpace, è possibile abilitare le VM di storage a disporre di storage, amministrazione e routing propri e sicuri. È inoltre possibile consentire ai client di domini di rete separati amministrativamente di utilizzare indirizzi IP sovrapposti dello stesso intervallo di subnet di indirizzi IP.
+
+È necessario creare un IPSpace prima di poter creare una subnet.
+
+.Fasi
+. Selezionare *rete > Panoramica*.
+. In *IPSpace*, selezionare image:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"].
+. Immettere un nome per IPSpace o accettare il nome predefinito.
++
+Un nome IPSpace non può essere "tutto" perché "tutto" è un nome riservato al sistema.
+
+. Selezionare *Salva*.
+
+
+.Quali sono le prossime novità?
+Una volta creato un IPSpace, è possibile utilizzarlo per creare una subnet.
+
+
+
+== Creare sottoreti
+
+Una subnet consente di allocare blocchi specifici di indirizzi IPv4 o IPv6 da utilizzare quando si crea una LIF (interfaccia di rete) . Una subnet semplifica la creazione della LIF consentendo di specificare il nome della subnet invece di un indirizzo IP e una maschera di rete specifici per ogni LIF.
+
+.Prima di iniziare
+* Per eseguire questa attività, è necessario essere un amministratore del cluster.
+* link:../administer/manage-cluster-networking.html#add-a-broadcast-domain["dominio di broadcast"]E IPSpace in cui si intende aggiungere la subnet devono già esistere.
+
+
+.Fasi
+. Selezionare *rete > Panoramica*.
+. Selezionare *sottoreti*, quindi selezionare image:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"].
+. Inserire il nome della subnet.
++
+Tutti i nomi di subnet devono essere univoci all'interno di un IPSpace.
+
+. Immettere l'indirizzo IP della subnet e la subnet mask.
+. Specificare l'intervallo di indirizzi IP per la subnet.
++
+Quando si specifica l'intervallo di indirizzi IP per la subnet, non sovrapporre gli indirizzi IP alle altre subnet. I problemi di rete possono verificarsi quando gli indirizzi IP della subnet si sovrappongono e sottoreti o host diversi tentano di utilizzare lo stesso indirizzo IP.
+
+. Selezionare il dominio di broadcast per la subnet.
+. Selezionare *Aggiungi*.
+
+
+.Quali sono le prossime novità?
+È stata creata una subnet che può essere utilizzata per semplificare la creazione della LIF.
+
+
+
+== Creazione di una LIF (interfaccia di rete)
+
+Una LIF (interfaccia di rete) è un indirizzo IP associato a una porta fisica o logica. Creare LIF sulle porte che servono per accedere ai dati. Le macchine virtuali storage servono dati ai client attraverso una o più LIF. In caso di guasto di un componente, una LIF può essere sottoposta a failover o migrata su una porta fisica differente, così che la comunicazione di rete non venga interrotta.
+
+Al momento della creazione di una LIF dati IP, questa può servire sia il traffico iSCSI che NVMe/TCP per impostazione predefinita. Occorre creare LIF dati separate per il traffico FC e NVMe/FC.
+
+.Prima di iniziare
+* Per eseguire questa attività, è necessario essere un amministratore del cluster.
+* La porta di rete fisica o logica sottostante deve essere stata configurata sullo `up` stato amministrativo.
+* Se si intende utilizzare un nome di subnet per assegnare l'indirizzo IP e il valore della maschera di rete per un LIF, la subnet deve già esistere.
+* Una LIF che gestisce il traffico intracluster tra i nodi non deve trovarsi sulla stessa subnet di una LIF che gestisce il traffico di gestione o di una LIF che gestisce il traffico di dati.
+
+
+.Fasi
+. Selezionare *rete > Panoramica*.
+. Selezionare *interfacce di rete*, quindi image:icon_add_blue_bg.png["rettangolo blu con un segno più seguito dalla parola aggiungi in lettere bianche"].
+. Seleziona il tipo di interfaccia e il protocollo, quindi seleziona la VM storage.
+. Immettere un nome per la LIF o accettare il nome predefinito.
+. Selezionare il nodo principale dell'interfaccia di rete, quindi inserire l'indirizzo IP e la subnet mask.
+. Selezionare *Salva*.
+
+
+.Risultato
+È stata creata una LIF per l'accesso ai dati.
+
+
+
+== Modifica di una LIF (interfacce di rete)
+
+Le LIF possono essere disattivate o rinominate in base alle esigenze. Puoi anche modificare l'indirizzo IP della LIF e la subnet mask.
+
+.Fasi
+. Selezionare *rete > Panoramica*, quindi selezionare *interfacce di rete*.
+. Passare il mouse sull'interfaccia di rete che si desidera modificare, quindi selezionare image:icon_kabob.gif["tre punti blu verticali"].
+. Selezionare *Modifica*.
+. È possibile disattivare l'interfaccia di rete, rinominare l'interfaccia di rete, modificare l'indirizzo IP o modificare la subnet mask.
+. Selezionare *Salva*.
+
+
+.Risultato
+La LIF è stata modificata.

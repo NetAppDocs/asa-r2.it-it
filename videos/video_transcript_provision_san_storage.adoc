@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: videos/video_transcript_provision_san_storage.html 
+keywords: frontmatter, front matter 
+summary: Guarda brevi video che dimostrano come utilizzare Gestione sistema di ONTAP per eseguire in modo rapido e semplice attività comuni sui tuoi sistemi storage ASA R2. 
+---
+= Configurare lo storage SAN sul sistema ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per il video viene fornita la seguente trascrizione `Provision SAN storage on your ASA r2 storage system` .
+
+link:videos-common-tasks.html#video_transcript_return_provision_san_storage["Torna alla pagina"]
+
+Puoi utilizzare ONTAP System Manager per eseguire in modo rapido e semplice il provisioning delle unità di storage per gli host sul sistema storage ASA R2.
+
+In questo esempio, creeremo sei nuove unità di storage per un host VMware.
+
+Dal menu Gestione di sistema, selezionare *archiviazione*, quindi selezionare *Aggiungi*.
+
+Immettere un nome per le unità di archiviazione, il numero di unità e la capacità per ciascuna unità, quindi selezionare il sistema operativo host.
+
+Se si creano più unità, per impostazione predefinita, ogni unità viene creata con la stessa capacità.
+
+Selezionare *altre opzioni* per immettere le informazioni sull'host. Per questo esempio, selezioneremo il protocollo SCSI e aggiungeremo un nuovo host iSCSI.
+
+Immettere il nome host, quindi aggiungere gli iniziatori host e una descrizione.
+
+Selezionare *pianifica istantanee* per proteggere le unità di archiviazione con istantanee regolari.
+
+Selezionare protezione remota per *replicare le unità in una posizione remota*.
+
+Selezionare una VM di archiviazione e un criterio di replica; selezionare *Aggiungi*.
+
+Le unità di archiviazione devono trovarsi in un gruppo di coerenza per la replica. Immettere il nome di un gruppo di coerenza e selezionare *Crea*.
+
+Hai eseguito in modo rapido e semplice il provisioning di 6 unità storage per host VMware con protezione dei dati locale e remota.

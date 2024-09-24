@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: monitor/monitor-storage.html 
+keywords: monitor, storage, cluster, utilization, usage 
+summary: 'Monitora l"utilizzo dello storage per assicurarti di disporre della capacità storage necessaria per gestire i carichi di lavoro attuali e futuri.' 
+searchtitle: 'Monitorare l"utilizzo dello spazio utilizzando Gestione di sistema di ONTAP | ASA R2' 
+---
+= Monitorare l'utilizzo di cluster e unità storage sui sistemi storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+USA Gestione sistema di ONTAP per monitorare il tuo utilizzo dello storage e assicurarti di disporre della capacità di storage necessaria per gestire i carichi di lavoro attuali e futuri.
+
+
+
+== Monitoraggio dell'utilizzo dei cluster
+
+Monitorare regolarmente la quantità di storage consumata dal cluster per garantire che, se necessario, sia pronta ad espandere la capacità del cluster prima di esaurire lo spazio.
+
+.Fasi
+. In System Manager, selezionare *Dashboard*.
+. In *capacità*, visualizzare la quantità di spazio fisico utilizzato e la quantità di spazio disponibile nel cluster.
++
+Il rapporto di riduzione dei dati rappresenta la quantità di spazio risparmiato grazie all'efficienza dello storage.
+
+
+
+.Quali sono le prossime novità?
+Se lo spazio del cluster sta per esaurirsi o se non ha la capacità necessaria per soddisfare una domanda futura, è necessario pianificare l'link:../administer/increase-storage-capacity.html["aggiungere nuove unità"]utilizzo del sistema ASA R2 per aumentare la capacità di storage.
+
+
+
+== Monitorare l'utilizzo dell'unità di archiviazione
+
+Monitorare la quantità di storage consumata da un'unità di storage in modo da poter aumentare in maniera proattiva le dimensioni dell'unità di storage in base alle proprie esigenze di business.
+
+.Fasi
+. In System Manager, selezionare *Storage*.
+. Selezionare l'unità di archiviazione che si desidera monitorare, quindi selezionare *Panoramica*.
+. In *archiviazione*, visualizzare quanto segue:
++
+** Dimensioni dell'unità di archiviazione
+** Quantità di spazio utilizzato
+** Rapporto di riduzione dei dati
++
+Il rapporto di riduzione dei dati rappresenta la quantità di spazio risparmiato grazie all'efficienza dello storage
+
+** Istantanea utilizzata
++
+Lo snapshot utilizzato rappresenta la quantità di storage utilizzata dagli snapshot.
+
+
+
+
+
+.Quali sono le prossime novità?
+Se la capacità dell'unità di archiviazione è prossima, è necessario link:../manage-data/modify-storage-units.html["modificare l'unità di conservazione"]aumentarne le dimensioni.

@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: get-started/learn-about.html 
+keywords: asa r2, asa a1k, asa 70, asa 90 
+summary: 'I sistemi ASA R2 (ASA A1K, ASA A70 e ASA A90) offrono una soluzione hardware e software unificata che crea un"esperienza semplificata per i clienti solo SAN.' 
+searchtitle: Scopri di più sui sistemi storage ASA A1K, ASA A70 e ASA A90 
+---
+= Informazioni sui sistemi di storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I nuovi sistemi NetApp ASA R2 (ASA A1K, ASA A70 e ASA A90) forniscono una soluzione hardware e software unificata che crea un'esperienza semplificata specifica per le esigenze dei clienti solo SAN.
+
+I sistemi ASA R2 supportano tutti i protocolli SAN (iSCSI, FC, NVMe/FC, NVMe/TCP) su una singola implementazione ha-Pair. I protocolli SCSI (iSCSI ed FC) utilizzano un'architettura Active-Active simmetrica per il multipathing, in modo che tutti i percorsi tra gli host e lo storage siano attivi/ottimizzati. I protocolli NVMe supportano percorsi diretti tra gli host e lo storage.
+
+In un sistema ASA R2, il software ONTAP e System Manager sono ottimizzati per fornire il supporto per le funzionalità SAN essenziali, rimuovendo al contempo funzioni e funzioni non supportate in ambienti SAN.
+
+I sistemi ASA R2 introducono l'utilizzo di unità di storage con gruppi di coerenza:
+
+* Una _unità di storage_ rende disponibile lo spazio di storage per gli host SAN per le operazioni sui dati. Un'unità di storage si riferisce a un LUN per gli host SCSI o a un namespace NVMe per gli host NVMe.
+* _Un gruppo di coerenza_ è un insieme di unità di archiviazione gestite come una singola unità.
+
+
+I sistemi ASA R2 utilizzano le unità di storage e i gruppi di coerenza per semplificare la gestione dello storage e la protezione dei dati. Ad esempio, si supponga di disporre di un database composto da 10 unità di archiviazione in un gruppo di coerenza ed è necessario eseguire il backup dell'intero database. Invece di eseguire il backup di ciascuna unità di archiviazione singolarmente, è possibile proteggere l'intero database eseguendo il backup del gruppo di coerenza.
+
+Per contribuire a proteggere i tuoi dati da attacchi dannosi come furto o ransomware, i sistemi ASA R2 supportano un gestore delle chiavi integrato, crittografia a doppio livello, snapshot a prova di manomissione, autenticazione a più fattori e verifica con amministratori multipli.
+
+I sistemi ASA R2 non supportano la combinazione di cluster con gli attuali sistemi ASA, AFF o FAS.
+
+.Per ulteriori informazioni
+* Per ulteriori informazioni sul supporto e sulle limitazioni dei sistemi ASA R2, consultare link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
+* Ulteriori informazioni su link:../learn-more/hardware-comparison.html["I nuovi sistemi ASA R2 rispetto ai sistemi ASA"].
+* Ulteriori informazioni su link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"].
+

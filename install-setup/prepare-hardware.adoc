@@ -1,0 +1,128 @@
+---
+sidebar: sidebar 
+permalink: install-setup/prepare-hardware.html 
+keywords: prepare, hardware installation, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a70, asa a90, asa c80 
+summary: 'Preparare l"installazione del sistema di storage ASA R2 nell"ambiente ONTAP e registrare l"hardware per accedere ai vantaggi del supporto.' 
+---
+= Preparazione per l'installazione di un sistema di storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Preparare l'installazione del sistema di storage ASA R2 preparando il sito, disimballando le confezioni e confrontando il contenuto delle confezioni con il documento di trasporto e registrando il sistema per accedere ai vantaggi del supporto.
+
+
+
+== Fase 1: Preparare il sito
+
+Per installare il sistema di storage ASA R2, verificare che il sito e il cabinet o il rack che si intende utilizzare soddisfino le specifiche per la configurazione.
+
+.Fasi
+. Utilizzare https://hwu.netapp.com["NetApp Hardware Universe"^] per confermare che il sito soddisfi i requisiti ambientali ed elettrici del sistema di storage ASA R2.
+. Assicurarsi di disporre di uno spazio rack adeguato:
++
+** 4U in una configurazione ha per il sistema storage
+** 2U TB per ogni shelf storage NS224
+
+
+. Installare gli switch di rete necessari.
++
+Per le istruzioni di installazione e per informazioni sulla compatibilità, consultare la https://docs.netapp.com/us-en/ontap-systems-switches/index.html["Documentazione dello switch"^] link:https://hwu.netapp.com["NetApp Hardware Universe"^] .
+
+
+
+
+
+== Fase 2: Disimballare le scatole
+
+Dopo aver verificato che il sito e il cabinet o il rack che si intende utilizzare per il sistema di archiviazione ASA R2 soddisfino le specifiche richieste, disimballare tutte le confezioni e confrontare il contenuto con gli articoli presenti sul documento di trasporto.
+
+.Fasi
+. Aprire con attenzione tutte le scatole e disporre il contenuto in modo organizzato.
+. Confrontare il contenuto della confezione con l'elenco riportato sul documento di trasporto.
++
+
+NOTE: È possibile ottenere la distinta di imballaggio eseguendo la scansione del codice QR sul lato del cartone di spedizione.
+
++
+I seguenti elementi sono alcuni dei contenuti che potrebbero essere visualizzati nelle caselle.
+
++
+Assicurarsi che tutto ciò che è contenuto nelle confezioni corrisponda all'elenco riportato sul documento di trasporto. In caso di discrepanze, annotarle per ulteriori azioni.
+
++
+[cols="12,9,4"]
+|===
+
+
+| *Hardware* | *Cavi* |  
+
+
+ a| 
+** Pannello
+** Dispositivo di gestione dei cavi
+** Sistema storage
+** Kit guide con istruzioni (opzionale)
+** Shelf di storage
+
+ a| 
+** Cavi Ethernet di gestione (cavi RJ-45)
+** Cavi di rete
+** Cavi di alimentazione
+** Cavi di stoccaggio (se è stato ordinato ulteriore spazio di archiviazione)
+** Cavo della porta seriale USB-C.
+
+|  
+|===
+
+
+
+
+== Fase 3: Registrare il sistema di archiviazione
+
+Dopo aver verificato che il sito soddisfa i requisiti delle specifiche del sistema di storage ASA R2 e aver verificato di disporre di tutte le parti ordinate, è necessario registrare il sistema.
+
+.Fasi
+. Individua il numero di serie del tuo sistema storage.
++
+Il numero è riportato sul documento di trasporto, nell'e-mail di conferma o sul modulo Gestione sistema del controller dopo averlo disimballato.
+
++
+image::../media/drw_ssn_label.svg[Esempio del numero di serie del sistema che mostra la posizione del numero]
+
+. Andare a http://mysupport.netapp.com/["Sito di supporto NetApp"^].
+. Stabilire se è necessario registrare il sistema storage:
++
+[cols="1a,2a"]
+|===
+| Se sei un... | Attenersi alla procedura descritta di seguito... 
+
+
+ a| 
+Cliente NetApp esistente
+ a| 
+.. Accedi con il tuo nome utente e la password.
+.. Selezionare *sistemi* > *i miei sistemi*.
+.. Verificare che il nuovo numero di serie sia elencato.
+.. In caso contrario, seguire le istruzioni per i nuovi clienti NetApp.
+
+
+
+
+ a| 
+Nuovo cliente NetApp
+ a| 
+.. Fare clic su *Registrati ora* e creare un account.
+.. Selezionare *sistemi* > *Registra sistemi*.
+.. Inserisci il numero di serie del sistema storage e i dettagli richiesti.
+
+
+Una volta approvata la registrazione, è possibile scaricare il software richiesto. Il processo di approvazione potrebbe richiedere fino a 24 ore.
+
+|===
+
+
+.Quali sono le prossime novità?
+Dopo aver preparato l'installazione dell'hardware ASA R2, si link:deploy-hardware.html["Installazione dell'hardware per il sistema di storage ASA R2"].

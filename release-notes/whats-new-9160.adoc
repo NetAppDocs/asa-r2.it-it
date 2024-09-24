@@ -1,0 +1,77 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9160.html 
+keywords:  
+summary:  
+---
+= Novità di ONTAP 9.16,0 per i sistemi ASA R2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Scopri le nuove funzionalità disponibili in ONTAP 9.16,10 per i sistemi ASA R2.
+
+
+
+== Piattaforme
+
+[cols="2,4"]
+|===
+| Aggiornare | Descrizione 
+
+
+| Nuove piattaforme  a| 
+Sono disponibili i seguenti nuovi sistemi NetApp ASA R2. Queste piattaforme forniscono una soluzione hardware e software unificata che crea un'esperienza semplificata specifica delle esigenze dei clienti SAN.
+
+* ASA A1K
+* ASA A70
+* ASA A90
+
+
+|===
+
+
+== System Manager
+
+[cols="2,4"]
+|===
+| Aggiornare | Descrizione 
+
+
+| link:../get-started/learn-about.html["Supporto ottimizzato per i clienti solo SAN"] | System Manager è ottimizzato per offrire supporto per la funzionalità SAN essenziale eliminando al tempo stesso la visibilità di funzionalità e funzioni non supportate negli ambienti SAN. 
+|===
+
+
+== Gestione dello storage
+
+[cols="2,4"]
+|===
+| Aggiornare | Descrizione 
+
+
+| link:../manage-data/provision-san-storage.html["Semplificazione della gestione dello storage"]  a| 
+I sistemi ASA R2 introducono l'utilizzo di unità di storage con gruppi di coerenza per una gestione semplificata dello storage.
+
+* Una _unità di storage_ rende disponibile lo spazio di storage per gli host SAN per le operazioni sui dati. Un'unità di storage si riferisce a un LUN per gli host SCSI o a un namespace NVMe per gli host NVMe.
+* _Un gruppo di coerenza_ è un insieme di unità di archiviazione gestite come una singola unità.
+
+
+|===
+
+
+== Sicurezza dei dati
+
+[cols="2,4"]
+|===
+| Aggiornare | Descrizione 
+
+
+| link:../secure-data/encrypt-data-at-rest.html["Gestore delle chiavi integrato e crittografia dual-layer"]  a| 
+I sistemi ASA R2 supportano un gestore delle chiavi integrato e crittografia dual-layer (hardware e software).
+
+|===

@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: data-protection/restore-data.html 
+keywords: restore data, asa r2, data restoration 
+summary: 'Se i dati di un gruppo di coerenza vengono danneggiati o persi, è possibile ripristinare l"intero gruppo di coerenza da uno snapshot remoto.' 
+---
+= Ripristina i dati sui sistemi storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I dati di un gruppo di coerenza o di un'unità di archiviazione protetta da snapshot possono essere ripristinati in caso di perdita o danneggiamento.
+
+
+
+== Ripristinare un gruppo di coerenza
+
+Il ripristino di un gruppo di coerenza sostituisce i dati di tutte le unità di archiviazione del gruppo di coerenza con i dati di uno snapshot. Le modifiche apportate alle unità di archiviazione dopo la creazione dello snapshot non vengono ripristinate.
+
+È possibile ripristinare un gruppo di coerenza da uno snapshot locale o remoto.
+
+[role="tabbed-block"]
+====
+.Ripristino da uno snapshot locale
+--
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Fare doppio clic sul gruppo di coerenza contenente i dati da ripristinare.
++
+Viene visualizzata la pagina dei dettagli del gruppo di coerenza.
+
+. Selezionare *istantanee*.
+. Selezionare l'istantanea che si desidera ripristinare, quindi selezionare image:icon_kabob.gif["tre punti blu verticali"].
+. Selezionare *Ripristina gruppo di coerenza da questa istantanea*, quindi selezionare *Ripristina*.
+
+
+--
+.Ripristino da un'istantanea remota
+--
+.Fasi
+. In System Manager, selezionare *protezione > Replica*.
+. Selezionare *Destinazioni locali*.
+. Selezionare la *origine* che si desidera ripristinare, quindi selezionare image:icon_kabob.gif["tre punti blu verticali"].
+. Selezionare *Restore* (Ripristina).
+. Seleziona il cluster, la VM di storage e il gruppo di coerenza in cui desideri ripristinare i dati.
+. Selezionare lo snapshot da cui si desidera eseguire il ripristino.
+. Quando richiesto, immettere "Ripristina", quindi selezionare *Ripristina*.
+
+
+--
+====
+.Risultato
+Il gruppo di coerenza viene ripristinato al punto temporale dello snapshot utilizzato per il ripristino.
+
+
+
+== Ripristinare un'unità di archiviazione
+
+Il ripristino di un'unità di archiviazione sostituisce tutti i dati presenti nell'unità di archiviazione con i dati di uno snapshot. Le modifiche apportate all'unità di archiviazione dopo la creazione dell'istantanea non vengono ripristinate.
+
+.Fasi
+. In System Manager, selezionare *Storage*.
+. Fare doppio clic sull'unità di archiviazione contenente i dati da ripristinare.
++
+Viene visualizzata la pagina dei dettagli dell'unità di archiviazione.
+
+. Selezionare *istantanee*.
+. Selezionare lo snapshot che si desidera ripristinare.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Ripristina*.
+. Selezionare *Usa questa istantanea per ripristinare l'unità di archiviazione*, quindi selezionare *Ripristina*.
+
+
+.Risultato
+L'unità di archiviazione viene ripristinata al momento dell'istantanea utilizzata per il ripristino.

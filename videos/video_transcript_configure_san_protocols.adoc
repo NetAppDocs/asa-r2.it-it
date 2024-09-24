@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: videos/video_transcript_configure_san_protocols.html 
+keywords: frontmatter, front matter 
+summary: Guarda brevi video che dimostrano come utilizzare Gestione sistema di ONTAP per eseguire in modo rapido e semplice attività comuni sui tuoi sistemi storage ASA R2. 
+---
+= Configurare i protocolli SAN sul sistema ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per il video viene fornita la seguente trascrizione `Configure SAN protocols on your ASA r2 storage system` .
+
+link:videos-common-tasks.html#video_transcript_return_configure_san_protocols["Torna alla pagina"]
+
+Grazie a ONTAP System Manager, i protocolli SAN possono essere configurati in maniera rapida e semplice. In questo esempio, configureremo gli indirizzi IP per le interfacce di rete iSCSI.
+
+Dal dashboard di System Manager, selezionare *Configura protocolli*.
+
+In *IP*, selezionare *Configura interfacce IP*, quindi selezionare *Aggiungi subnet*.
+
+Immettere un nome per la subnet, quindi immettere gli indirizzi IP della subnet.
+
+Immettere la subnet mask e, se si desidera, immettere un gateway, quindi selezionare *Aggiungi*.
+
+Selezionare la subnet appena creata, quindi selezionare *Salva*.
+
+L'indirizzo IP per le interfacce di rete iSCSI è stato configurato in modo semplice e veloce.

@@ -1,0 +1,160 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
+summary: Utilizzare gruppi di coerenza per eseguire diverse azioni contemporaneamente su più unità di storage invece di eseguire singole azioni su ciascuna unità. 
+---
+= Gestione dei gruppi di coerenza ONTAP sui sistemi di storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un gruppo di coerenza è un insieme di unità di archiviazione gestite come una singola unità. Utilizza gruppi di coerenza per una gestione semplificata dello storage. Ad esempio, si supponga di disporre di un database composto da 10 unità di archiviazione in un gruppo di coerenza ed è necessario eseguire il backup dell'intero database. Invece di eseguire il backup di ciascuna unità di storage, è possibile eseguire il backup dell'intero database semplicemente aggiungendo la protezione dei dati snapshot al gruppo di coerenza. Il backup delle unità di storage come gruppo di coerenza anziché singolarmente fornisce anche un backup coerente di tutte le unità, mentre il backup delle singole unità può potenzialmente creare incoerenze.
+
+
+
+== Aggiungi la data Protection delle snapshot a un gruppo di coerenza
+
+Quando si aggiunge la protezione dei dati di snapshot a un gruppo di coerenza, le snapshot locali del gruppo di coerenza vengono acquisite a intervalli regolari in base a una pianificazione predefinita.
+
+È possibile utilizzare snapshot link:restore-data.html["ripristinare i dati"]persi o danneggiati.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza che si desidera proteggere.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Modifica*.
+. In *protezione locale*, selezionare *Pianifica istantanee*.
+. Selezionare un criterio di snapshot.
++
+Accettare il criterio snapshot predefinito, selezionare un criterio esistente o creare un nuovo criterio.
+
++
+[cols="2,6a"]
+|===
+| Opzione | Fasi 
+
+
+| Selezionare un criterio snapshot esistente  a| 
+Selezionare image:icon_dropdown_arrow.gif["freccia blu rivolta verso il basso"] accanto al criterio predefinito, quindi selezionare il criterio esistente che si desidera utilizzare.
+
+
+
+| Creare una nuova policy per le istantanee  a| 
+.. Selezionare image:icon_add.gif["segno più blu seguito dalla parola add"], quindi immettere il nome del nuovo criterio.
+.. Selezionare l'ambito del criterio.
+.. In *piani di lavoro* selezionare image:icon_add.gif["segno più blu seguito dalla parola add"].
+.. Selezionare il nome visualizzato in *Nome pianificazione*;
++
+quindi selezionare image:icon_dropdown_arrow.gif["freccia blu rivolta verso il basso"].
+
+.. Selezionare la pianificazione dei criteri.
+.. In *numero massimo di snapshot*, immettere il numero massimo di snapshot che si desidera conservare del gruppo di coerenza.
+.. Facoltativamente, in *SnapMirror label* (etichetta *) immettere un'etichetta SnapMirror.
+.. Selezionare *Salva*.
+
+
+|===
+. Selezionare *Modifica*.
+
+
+.Cosa succederà
+Ora che i tuoi dati sono protetti con le snapshot, dovresti link:../secure-data/encrypt-data-at-rest.html["configurare la replica snapshot"]copiare i tuoi gruppi di coerenza in una posizione geograficamente remota per il backup e il disaster recovery.
+
+
+
+== Rimozione della data Protection delle snapshot da un gruppo di coerenza
+
+Quando si rimuove la protezione dei dati snapshot da un gruppo di coerenza, gli snapshot vengono disattivati per tutte le unità di archiviazione nel gruppo di coerenza.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza che si desidera interrompere la protezione.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Modifica*.
+. In *protezione locale*, deselezionare Pianifica snapshot.
+. Selezionare *Modifica*.
+
+
+.Risultato
+Gli snapshot non verranno acquisiti per nessuna delle unità di archiviazione nel gruppo di coerenza.
+
+
+
+== Aggiungere unità di archiviazione a un gruppo di coerenza
+
+Espandere la quantità di storage gestita da un gruppo di coerenza aggiungendo unità di archiviazione al gruppo di coerenza.
+
+È possibile aggiungere unità di archiviazione esistenti al gruppo di coerenza oppure creare nuove unità di archiviazione da aggiungere al gruppo di coerenza.
+
+[role="tabbed-block"]
+====
+.Aggiungere unità di archiviazione esistenti
+--
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza che si desidera espandere.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Espandi*.
+. Selezionare *utilizzando le unità di archiviazione esistenti*.
+. Selezionare le unità di archiviazione da aggiungere al gruppo di coerenza, quindi selezionare *Espandi*.
+
+
+--
+.Aggiungere nuove unità di archiviazione
+--
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza che si desidera espandere.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Espandi*.
+. Selezionare *utilizzo di nuove unità di archiviazione*.
+. Immettere il numero di unità che si desidera creare e la capacità per unità.
++
+Se si creano più unità, ciascuna viene creata con la stessa capacità e lo stesso sistema operativo host. Per assegnare una capacità diversa a ciascuna unità, selezionare *Aggiungi una capacità diversa* per assegnare una capacità diversa a ciascuna unità.
+
+. Selezionare *Espandi*.
+
+
+.Cosa succederà
+Dopo aver creato una nuova unità di archiviazione, è necessario link:../manage-data/provision-san-storage.html#add-host-initiators["aggiungere iniziatori host"] e link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["mappare l'unità di archiviazione appena creata a un host"]. L'aggiunta di host initiator rende gli host idonei ad accedere alle unità di storage ed eseguire operazioni sui dati. La mappatura di un'unità di archiviazione a un host consente all'unità di archiviazione di iniziare a fornire i dati all'host a cui viene mappato.
+
+--
+====
+.Quali sono le prossime novità?
+Gli snapshot esistenti del gruppo di coerenza non includeranno le nuove unità di archiviazione aggiunte. È necessario che link:create-snapshots.html#step-2-create-a-snapshot["creare uno snapshot immediato"]il gruppo di coerenza protegga le nuove unità di archiviazione aggiunte fino a quando non viene creato automaticamente lo snapshot pianificato successivo.
+
+
+
+== Rimuovere un'unità di archiviazione da un gruppo di coerenza
+
+È necessario rimuovere un'unità di archiviazione da un gruppo di coerenza se si desidera eliminare l'unità di archiviazione, se si desidera gestirla come parte di un gruppo di coerenza diverso o se non è più necessario proteggere i dati in essa contenuti. La rimozione di un'unità di archiviazione da un gruppo di coerenza interrompe la relazione tra l'unità di archiviazione e il gruppo di coerenza, ma non elimina l'unità di archiviazione.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Fare doppio clic sul gruppo di coerenza da cui si desidera rimuovere un'unità di archiviazione.
+. Nella sezione *Panoramica*, in *unità di archiviazione*, selezionare l'unità di archiviazione che si desidera rimuovere, quindi selezionare *Rimuovi dal gruppo di coerenza*.
+
+
+.Risultato
+L'unità di archiviazione non è più un membro del gruppo di coerenza.
+
+.Cosa succederà
+Se è necessario continuare la protezione dei dati per l'unità di archiviazione, aggiungere l'unità di archiviazione a un altro gruppo di coerenza.
+
+
+
+== Eliminare un gruppo di coerenza
+
+Se non è più necessario gestire i membri di un gruppo di coerenza come una singola unità, è possibile eliminare il gruppo di coerenza. Dopo l'eliminazione di un gruppo di coerenza, le unità di storage presenti in precedenza nel gruppo rimangono attive nel cluster.
+
+.Prima di iniziare
+Se il gruppo di coerenza che si desidera eliminare si trova in una relazione di replica, è necessario interrompere la relazione prima di eliminare il gruppo di coerenza. Dopo aver eliminato un gruppo di coerenza di replica, le unità di storage presenti nel gruppo di coerenza rimangono attive nel cluster e le relative copie replicate rimangono nel cluster remoto.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza che si desidera eliminare.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Elimina*.
+. Accettare l'avviso, quindi selezionare *Elimina*.
+
+
+.Quali sono le prossime novità?
+Dopo aver eliminato un gruppo di coerenza, le unità di archiviazione precedentemente presenti nel gruppo di coerenza non sono più protette dagli snapshot. Considerare l'aggiunta di queste unità di storage a un altro gruppo di coerenza per proteggerle dalla perdita di dati.

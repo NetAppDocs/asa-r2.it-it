@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: learn-more/rest-api-support.html 
+keywords: asa, asa r2, rest, rest api, asa r2 rest api 
+summary: 'L"API REST di ASA R2 si basa sull"API REST fornita con la personalità ONTAP unificata, con una serie di modifiche adattate alle caratteristiche e alle capacità uniche della personalità ASA R2.' 
+---
+= Supporto delle API REST per ASA R2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'API REST di ASA R2 si basa sull'API REST fornita con la personalità ONTAP unificata, con una serie di modifiche adattate alle caratteristiche e alle capacità uniche della personalità ASA R2.
+
+
+
+== Tipi di modifiche alle API
+
+Esistono diversi tipi di differenze tra l'API REST del sistema ASA R2 e l'API REST ONTAP unificata disponibile con i sistemi FAS, AFF e ASA. La comprensione dei tipi di modifiche consente di utilizzare al meglio la documentazione di riferimento API online.
+
+.I nuovi endpoint ASA R2 non sono supportati in Unified ONTAP
+Sono stati aggiunti diversi endpoint all'API REST di ASA R2 che non sono disponibili con Unified ONTAP.
+
+Ad esempio, un nuovo endpoint block-volume è stato aggiunto all'API REST per i sistemi ASA R2. L'endpoint del volume a blocchi offre l'accesso agli oggetti del namespace LUN e NVMe, consentendo una vista aggregata delle risorse. Questa opzione è disponibile solo tramite l'API REST.
+
+Come altro esempio, gli endpoint *storage-unit* offrono una vista aggregata di LUN e namespace NVMe. Ci sono diversi endpoint e sono tutti basati su o derivati da `/api/storage/storage-units`. È inoltre necessario rivedere `/api/storage/luns` e `/api/storage/namespaces`.
+
+.Restrizioni sui metodi HTTP utilizzati per alcuni endpoint
+Diversi endpoint disponibili con ASA R2 hanno restrizioni su quali metodi HTTP possono essere utilizzati rispetto a Unified ONTAP. Ad esempio, POST ed ELIMINAZIONE non sono consentiti quando si utilizza l'endpoint `/api/protocols/nvme/services` con i sistemi ASA R2.
+
+.Modifiche alle proprietà per un endpoint e un metodo HTTP
+Alcune combinazioni di endpoint e metodo del sistema ASA R2 non supportano tutte le proprietà definite disponibili nel linguaggio ONTAP unificato. Ad esempio, quando si utilizza la PATCH con l'endpoint `/api/storage/volumes/{uuid}`, diverse proprietà non sono supportate con ASA R2, tra cui:
+
+* `autosize.maximum`
+* `autosize.minimum`
+* `autosize.mode`
+
+
+.Modifiche all'elaborazione interna
+Sono state apportate diverse modifiche al modo in cui ASA R2 elabora determinate richieste di API REST. Ad esempio, una richiesta di ELIMINAZIONE con l'endpoint `/api/storage/luns/{uuid}` viene elaborata in modo asincrono.
+
+
+
+== Maggiore sicurezza con OAuth 2,0
+
+OAuth 2,0 è il quadro di autorizzazione standard del settore. Viene utilizzato per limitare e controllare l'accesso alle risorse protette in base ai token di accesso firmati. È possibile configurare OAuth 2,0 utilizzando Gestione sistema per proteggere le risorse di sistema di ASA R2.
+
+Dopo aver configurato OAuth 2,0 con System Manager, è possibile controllare l'accesso da parte dei client dell'API REST. È necessario innanzitutto ottenere un token di accesso da un server di autorizzazione. Il client REST passa quindi il token al cluster ASA R2 come token bearer utilizzando l'intestazione della richiesta di autorizzazione HTTP. Per ulteriori informazioni, vedere https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["Autenticazione e autorizzazione utilizzando OAuth 2,0"^] .
+
+
+
+== Accedere alla documentazione di riferimento dell'API di ASA R2 tramite l'interfaccia utente Swagger
+
+È possibile accedere alla documentazione di riferimento delle API REST tramite l'interfaccia utente Swagger nel sistema ASA R2.
+
+.A proposito di questa attività
+Per informazioni dettagliate sull'API REST, accedere alla pagina della documentazione di riferimento di ASA R2. Come parte di questo, è possibile cercare la stringa *specifiche della piattaforma* per trovare dettagli sul supporto del sistema ASA R2 per le chiamate e le proprietà API.
+
+.Prima di iniziare
+È necessario disporre di quanto segue:
+
+* Indirizzo IP o nome host della LIF di gestione cluster del sistema ASA R2
+* Nome utente e password di un account con autorizzazione ad accedere all'API REST
+
+
+.Fasi
+. Digitare l'URL nel browser e premere *Invio*: +
+`https://<ip_address>/docs/api`
+. Accedere utilizzando l'account amministratore.
++
+Viene visualizzata la pagina di documentazione dell'API di ASA R2 con le chiamate API organizzate nelle principali categorie di risorse.
+
+. Per visualizzare un esempio di chiamata API applicabile solo ai sistemi ASA R2, scorrere fino alla categoria *SAN* e fare clic su *GET /storage/storage-units*.
+

@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: administer/increase-storage-capacity.html 
+keywords: increase, capacity, node, shelf, drive, expand, storage, asa r2, asa r2, asa a1k, asa 70, asa 90 
+summary: Aggiungi dischi a un nodo o shelf per aumentare la capacità delle unità storage di ASA R2. 
+---
+= Aumentare la capacità dello storage sui sistemi storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Aggiungi dischi a un nodo o a uno shelf per aumentare la capacità dello storage del tuo sistema ASA R2.
+
+
+
+== Utilizzare NetApp Hardware Universe per preparare l'installazione di una nuova unità
+
+Prima di installare una nuova unità su un nodo o su uno shelf, utilizzare la NetApp Hardware Universe per verificare che l'unità da aggiungere sia supportata dalla propria piattaforma ASA R2 e per identificare lo slot corretto per la nuova unità. Gli slot corretti per l'aggiunta di dischi variano a seconda del modello di piattaforma e della versione di ONTAP. In alcuni casi, è necessario aggiungere unità a slot specifici in sequenza.
+
+.Fasi
+. Consultare la link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
+. In *prodotti*, selezionare le configurazioni hardware.
+. Seleziona la piattaforma ASA R2.
+. Selezionare la versione di ONTAP, quindi selezionare *Mostra risultati*.
+. Sotto l'immagine, selezionare *fare clic qui per visualizzare le viste alternative*, quindi scegliere la vista corrispondente alla configurazione.
+. Utilizzare la vista della configurazione per verificare che la nuova unità sia supportata e lo slot corretto per l'installazione.
+
+
+.Risultato
+È stato confermato che la nuova unità è supportata e si conosce lo slot appropriato per l'installazione.
+
+
+
+== Installare una nuova unità sul ASA R2
+
+Il numero minimo di dischi da aggiungere in una singola procedura è sei. L'aggiunta di un singolo disco potrebbe ridurre le prestazioni.
+
+.A proposito di questa attività
+Ripetere i passi di questa procedura per ciascuna unità.
+
+.Fasi
+. Mettere a terra l'utente.
+. Rimuovere delicatamente il pannello frontale dalla parte anteriore della piattaforma.
+. Inserire la nuova unità nello slot corretto.
++
+.. Con la maniglia della camma in posizione aperta, inserire il nuovo disco con entrambe le mani.
+.. Premere fino all'arresto del disco.
+.. Chiudere la maniglia della camma in modo che l'unità sia completamente inserita nel piano intermedio e la maniglia scatti in posizione.
++
+Chiudere lentamente la maniglia della camma in modo che sia allineata correttamente con la superficie dell'unità.
+
+
+
+. Verificare che il LED di attività del disco (verde) sia acceso.
++
+** SE il LED è fisso, l'unità è alimentata.
+** Se il LED lampeggia, l'unità è alimentata e l'i/o è in corso. Il LED lampeggia anche se il firmware dell'unità è in fase di aggiornamento.
++
+Il firmware del disco viene aggiornato automaticamente (senza interruzioni) sui nuovi dischi che non dispongono delle versioni firmware correnti.
+
+
+
+. Se il nodo è configurato per l'assegnazione automatica delle unità, è possibile attendere che ONTAP assegni automaticamente le nuove unità a un nodo. Se il nodo non è configurato per l'assegnazione automatica delle unità o se lo si preferisce, è possibile assegnare le unità manualmente.
++
+I nuovi dischi non vengono riconosciuti fino a quando non vengono assegnati a un nodo.
+
+
+
+.Cosa succederà?
+Dopo aver riconosciuto le nuove unità, verificare che siano state aggiunte e che la relativa proprietà sia specificata correttamente.

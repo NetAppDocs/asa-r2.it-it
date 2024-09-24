@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: administer/update-firmware.html 
+keywords: update, firmware, system files, automatic updates, automated updates, asa r2, disable, 
+summary: ONTAP aggiorna automaticamente il firmware sui sistemi ASA R2. È possibile utilizzare System Manager per disattivare gli aggiornamenti automatici e visualizzare gli aggiornamenti prima che vengano installati. 
+---
+= Aggiornamento del firmware sui sistemi di storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per impostazione predefinita, ONTAP scarica e aggiorna automaticamente i file del firmware e di sistema sul sistema ASA R2. Se si desidera la flessibilità di visualizzare gli aggiornamenti consigliati prima di scaricarli e installarli, è possibile utilizzare Gestione di sistema di ONTAP per disattivare gli aggiornamenti automatici o modificare i parametri di aggiornamento per visualizzare le notifiche degli aggiornamenti disponibili prima di eseguire qualsiasi azione.
+
+
+
+== Abilitare gli aggiornamenti automatici
+
+Per impostazione predefinita, gli aggiornamenti consigliati per il firmware dello storage, il firmware SP/BMC e i file di sistema vengono scaricati e installati automaticamente nel sistema ASA R2. Se gli aggiornamenti automatici sono stati disattivati, è possibile attivarli per ripristinare il comportamento predefinito.
+
+.Fasi
+. In System Manager, selezionare *Cluster > Settings*.
+. Accanto a *aggiornamento automatico* selezionare image:icon_kabob.gif["tre punti blu verticali"], quindi selezionare *Abilita*.
+. Leggere e accettare l'EULA.
+. Accettare le impostazioni predefinite per aggiornare automaticamente il firmware e i file di sistema. In alternativa, selezionare per visualizzare le notifiche o per chiudere automaticamente gli aggiornamenti consigliati.
+. Selezionare per confermare che le modifiche apportate agli aggiornamenti verranno applicate a tutti gli aggiornamenti correnti e futuri.
+. Selezionare *Salva*.
+
+
+.Risultato
+Gli aggiornamenti consigliati vengono scaricati e installati automaticamente nel sistema ASA R2 in base alle selezioni degli aggiornamenti.
+
+
+
+== Disattivare gli aggiornamenti automatici
+
+Disattivare gli aggiornamenti automatici se si desidera visualizzare gli aggiornamenti consigliati prima di installarli. Se si disattivano gli aggiornamenti automatici, è necessario eseguire manualmente gli aggiornamenti del firmware e dei file di sistema.
+
+.Fasi
+. In System Manager, selezionare *Cluster > Settings*.
+. Accanto a *aggiornamento automatico* selezionare image:icon_kabob.gif["tre punti blu verticali"], quindi selezionare *Disabilita*.
+
+
+.Risultato
+Gli aggiornamenti automatici sono disattivati. Controllare regolarmente la presenza di aggiornamenti consigliati e decidere se si desidera eseguire un'installazione manuale.
+
+
+
+== Visualizzare gli aggiornamenti automatici
+
+Visualizza un elenco di aggiornamenti del firmware e dei file di sistema scaricati nel cluster e pianificati per l'installazione automatica. Consente inoltre di visualizzare gli aggiornamenti precedentemente installati automaticamente.
+
+.Fasi
+. In System Manager, selezionare *Cluster > Settings*.
+. Accanto a *aggiornamento automatico* selezionare image:icon_kabob.gif["tre punti blu verticali"], quindi selezionare *Visualizza tutti gli aggiornamenti automatici*.
+
+
+
+
+== Modificare gli aggiornamenti automatici
+
+È possibile scegliere di scaricare e installare automaticamente gli aggiornamenti consigliati per il firmware dello storage, il firmware SP/BMC e i file di sistema nel cluster, oppure scegliere di chiudere automaticamente gli aggiornamenti consigliati. Se si desidera controllare manualmente l'installazione o l'eliminazione degli aggiornamenti, selezionare per ricevere una notifica quando è disponibile un aggiornamento consigliato; quindi, è possibile selezionare manualmente l'installazione o l'eliminazione.
+
+.Fasi
+. In System Manager, selezionare *Cluster > Settings*.
+. Accanto a *aggiornamento automatico* selezionare image:icon_kabob.gif["tre punti blu verticali"], quindi selezionare *Modifica aggiornamenti automatici*.
+. Aggiorna le selezioni per gli aggiornamenti automatici.
+. Selezionare *Salva*.
+
+
+.Risultato
+Gli aggiornamenti automatici vengono modificati in base alle selezioni effettuate.
+
+
+
+== Aggiornare il firmware manualmente
+
+Se si desidera la flessibilità di visualizzare gli aggiornamenti consigliati prima che vengano scaricati e installati, è possibile disattivare gli aggiornamenti automatici e aggiornare il firmware manualmente.
+
+.Fasi
+. Scaricare il file di aggiornamento del firmware su un server o un client locale.
+. In System Manager, selezionare *Cluster > Overview*, quindi selezionare *Update*.
+. Selezionare *aggiornamento firmware*; quindi selezionare image:icon_update_firmware.png["rettangolo blu contenente un segno più seguito dalle parole che aggiornano il firmware in lettere bianche"].
+
+
+.Risultato
+Il firmware è stato aggiornato.

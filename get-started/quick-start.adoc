@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: get-started/quick-start.html 
+keywords: asa r2, asa a1k, asa a70, asa a90, get started, getting started, quick start, install, set up 
+summary: 'Per iniziare con un sistema ASA R2 (ASA A1K, ASA A70, ASA A90), installare l"hardware, configurare il cluster, configurare l"accesso ai dati ed eseguire il provisioning dello storage.' 
+searchtitle: Installare e configurare i sistemi di storage ASA A1K, ASA A70 e ASA A90 
+---
+= Guida rapida per i sistemi di storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per iniziare a utilizzare il sistema ASA R2, è necessario installare i componenti hardware, configurare il cluster, impostare l'accesso ai dati dagli host al sistema di storage e eseguire il provisioning dello storage.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Installazione e configurazione dell'hardware
+[role="quick-margin-para"]
+link:../install-setup/install-setup-workflow.html["Installazione e configurazione"] Il tuo sistema ASA R2 e implementalo come coppia ha nel tuo ambiente ONTAP.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] Configurare il cluster
+[role="quick-margin-para"]
+Utilizzare System Manager per guidare l'utente attraverso un processo rapido e semplice a link:../install-setup/initialize-ontap-cluster.html["Configurazione del cluster ONTAP"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"] Impostare l'accesso ai dati
+[role="quick-margin-para"]
+link:../install-setup/set-up-data-access.html["Collegare il sistema ASA R2 ai client SAN"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"] Provisioning dello storage
+[role="quick-margin-para"]
+link:../manage-data/provision-san-storage.html["Eseguire il provisioning dello storage"] Per iniziare a fornire dati ai client SAN.
+
+.Quali sono le prossime novità?
+È ora possibile utilizzare System Manager per proteggere i dati di link:../data-protection/create-snapshots.html["creazione di istantanee"].

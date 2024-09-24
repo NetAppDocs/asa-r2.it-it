@@ -1,0 +1,34 @@
+---
+section: administer
+title: Amministrare e monitorare
+entries:
+- title: Gestire l'accesso dei client alle macchine virtuali storage
+  url: "/administer/manage-client-vm-access.html"
+- title: Gestire la rete cluster
+  url: "/administer/manage-cluster-networking.html"
+- title: Monitora l'utilizzo e aumenta la capacità
+  entries:
+  - title: Monitorare le performance dello storage
+    url: "/monitor/monitor-performance.html"
+  - title: Monitora l'utilizzo dello storage
+    url: "/monitor/monitor-storage.html"
+  - title: Aumentare la capacità di storage
+    url: "/administer/increase-storage-capacity.html"
+- title: Aggiornare il firmware
+  url: "/administer/update-firmware.html"
+- title: Visualizza informazioni
+  url: "/monitor/view-insights.html"
+- title: Visualizzare eventi e processi del cluster
+  url: "/monitor/view-events-jobs.html"
+- title: Gestire i nodi
+  entries:
+  - title: Riavviare, takeover e restituire i nodi
+    url: "/administer/reboot-take-over-give-back-nodes.html"
+  - title: Rinomina nodi
+    url: "/administer/rename-nodes.html"
+- title: Gestire gli account utente e i ruoli
+  url: "/administer/user-accounts-roles.html"
+- title: Gestire i certificati di sicurezza
+  url: "/administer/manage-certificates.html"
+- title: Verifica della connettività host
+  url: "/administer/verify-host-connectivity.html"

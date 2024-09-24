@@ -1,0 +1,103 @@
+---
+sidebar: sidebar 
+permalink: install-setup/initialize-ontap-cluster.html 
+keywords: asa r2, asa a1k, asa a70, asa a90, initialize cluster, set up cluster, ontap 
+summary: Scopri come configurare il cluster ONTAP su un sistema ASA R2 con System Manager. 
+searchtitle: Configura un cluster ONTAP con ONTAP System Manager | ASA R2 
+---
+= Configura un cluster ONTAP sul tuo sistema storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+System Manager di ONTAP ti guida attraverso un workflow rapido e semplice per la configurazione di un cluster ONTAP ASA R2.
+
+Durante la configurazione del cluster viene creata la macchina virtuale (VM) per lo storage dei dati predefinita. In alternativa, è possibile abilitare il DNS (Domain Name System) per risolvere i nomi host, impostare il cluster in modo che utilizzi il NTP (Network Time Protocol) per la sincronizzazione dell'ora e abilitare la crittografia dei dati inutilizzati.
+
+.Prima di iniziare
+Raccogliere le seguenti informazioni:
+
+* Indirizzo IP di gestione del cluster
++
+L'indirizzo IP di gestione del cluster è un indirizzo IPv4 univoco per l'interfaccia di gestione del cluster, utilizzata dall'amministratore del cluster per accedere alla VM di storage di amministrazione e gestire il cluster. È possibile ottenere questo indirizzo IP dall'amministratore responsabile dell'assegnazione degli indirizzi IP all'interno dell'organizzazione.
+
+* Subnet mask di rete
++
+Durante la configurazione del cluster, ONTAP consiglia una serie di interfacce di rete appropriate per la configurazione in uso. Se necessario, è possibile modificare il suggerimento.
+
+* Indirizzo IP del gateway di rete
+* Indirizzo IP del nodo partner
+* Nomi di dominio DNS
+* Indirizzi IP del server dei nomi DNS
+* Indirizzi IP del server NTP
+* Data subnet mask (Subnet mask dati)
+
+
+.Fasi
+. Rilevamento della rete cluster
++
+.. Collegare il computer portatile allo switch di gestione e accedere ai computer e ai dispositivi di rete.
+.. Aprire file Explorer.
+.. Selezionare *rete*, quindi fare clic con il pulsante destro del mouse e selezionare *Aggiorna*.
+.. Selezionare l'icona ONTAP, quindi accettare i certificati visualizzati sullo schermo.
++
+Viene visualizzato Gestione sistema.
+
+
+
+. In *Password*, creare una password complessa per l'account admin.
++
+La password deve essere composta da almeno otto caratteri e deve contenere almeno una lettera e un numero.
+
+. Immettere nuovamente la password per confermare, quindi selezionare *continua*.
+. In *indirizzi di rete*, immettere un nome del sistema di archiviazione o accettare il nome predefinito.
++
+Se si modifica il nome del sistema di archiviazione predefinito, il nuovo nome deve iniziare con una lettera e deve contenere meno di 44 caratteri. È possibile utilizzare un punto (.), un trattino (-) o un trattino basso (_) nel nome.
+
+. Immettere l'indirizzo IP della gestione del cluster, la subnet mask, l'indirizzo IP del gateway e l'indirizzo IP del nodo partner, quindi selezionare *continua*.
+. In *servizi di rete*, selezionare le opzioni desiderate per *utilizzare il DNS (Domain Name System) per risolvere i nomi host* e *utilizzare il NTP (Network Time Protocol) per mantenere sincronizzati gli orari*.
++
+Se si sceglie di utilizzare il DNS, immettere il dominio DNS e i server dei nomi. Se si sceglie di utilizzare NTP, immettere i server NTP, quindi selezionare *continua*.
+
+. In *Encryption*, immettere una passphrase per Onboard Key Manager (OKM).
++
+Per impostazione predefinita, è selezionata la crittografia dei dati inutilizzati mediante un gestore di chiavi integrato (OKM). Se si desidera utilizzare un gestore di chiavi esterno, aggiornare le selezioni.
+
++
+In alternativa, è possibile configurare il cluster per la crittografia al termine della configurazione.
+
+. Selezionare *Inizializza*.
++
+Una volta completata la configurazione, l'utente viene reindirizzato all'indirizzo IP di gestione del cluster.
+
+. In *rete*, selezionare *Configura protocolli*.
++
+[cols="2"]
+|===
+| Per configurare IP (iSCSI e NVMe/TCP), procedere come indicato di seguito. | Per configurare FC e NVMe/FC, esegui queste operazioni... 
+
+
+ a| 
+.. Selezionare *IP*, quindi selezionare *Configura interfacce IP*.
+.. Selezionare *Aggiungi subnet*.
+.. Immettere un nome per la subnet, quindi immettere gli indirizzi IP della subnet.
+.. Immettere la subnet mask e, se si desidera, immettere un gateway, quindi selezionare *Aggiungi*.
+.. Selezionare la subnet appena creata, quindi selezionare *Salva*.
+.. Selezionare *Salva*.
+
+ a| 
+.. Selezionare *FC*, quindi selezionare *Configura interfacce FC* e/o *Configura interfacce NVMe/FC*.
+.. Selezionare le porte FC e/o NVMe/FC, quindi selezionare *Salva*.
+
+
+|===
+. In alternativa, scaricare ed eseguire link:https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["ActiveIQ Config Advisor"] per confermare la configurazione.
++
+ActiveIQ Config Advisor è uno strumento per i sistemi NetApp che verifica la presenza di errori di configurazione più comuni.
+
+
+
+.Quali sono le prossime novità?
+Siete pronti a link:set-up-data-access.html["impostare l'accesso ai dati"] partire dai vostri client SAN al vostro sistema ASA R2.

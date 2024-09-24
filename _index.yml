@@ -1,0 +1,46 @@
+---
+indexpage:
+  title: Documentazione di ASA r2
+  summary: I sistemi NetApp ASA R2 forniscono una soluzione hardware e software unificata
+    che crea un'esperienza semplificata specifica delle esigenze dei clienti SAN.
+  keywords: asa r2, ontap, documentation, asa a1k, asa a70, asa a90
+  lead: I nuovi sistemi NetApp ASA R2 (ASA A1K, ASA A70 e ASA A90) forniscono una
+    soluzione hardware e software unificata che crea un'esperienza semplificata specifica
+    per le esigenze dei clienti solo SAN.
+  tiles:
+  - title: Inizia subito
+    links:
+    - title: Scopri di più
+      url: "/get-started/learn-about.html"
+    - title: Avvio rapido
+      url: "/get-started/quick-start.html"
+  - title: Gestione dei dati
+    links:
+    - title: Eseguire il provisioning dello storage SAN
+      url: "/manage-data/provision-san-storage.html"
+    - title: Clonazione dei dati
+      url: "/manage-data/data-cloning.html"
+    - title: Modificare le unità di archiviazione
+      url: "/manage-data/modify-storage-units.html"
+  - title: Proteggere e proteggere i dati
+    links:
+    - title: Creare snapshot
+      url: "/data-protection/create-snapshots.html"
+    - title: Configurare la replica snapshot
+      url: "/data-protection/snapshot-replication.html"
+    - title: Esegui la crittografia dei dati inutilizzati
+      url: "/secure-data/encrypt-data-at-rest.html"
+  - title: Ulteriori risorse su ASA R2
+    links:
+    - title: Scheda informativa su ASA
+      url: https://www.netapp.com/data-storage/all-flash-san-storage-array/
+    - title: Riferimento comando ONTAP
+      url: https://docs.netapp.com/us-en/ontap-cli/
+    - title: Riferimento all'API REST ONTAP
+      url: https://docs.netapp.com/us-en/ontap-restapi/index.html
+    - title: Riferimento EMS ONTAP
+      url: https://docs.netapp.com/us-en/ontap-ems/index.html
+  - title: Altre risorse ONTAP
+    links:
+    - title: Documentazione per altri sistemi ONTAP
+      url: https://docs.netapp.com/us-en/ontap-family/

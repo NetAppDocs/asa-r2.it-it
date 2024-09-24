@@ -1,0 +1,94 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-cluster-networking.html 
+keywords: add a broadcast domain, broadcast domains, reassign ports, create a vlan, create vlans 
+summary: Gestione di sistema di ONTAP consente di eseguire operazioni di amministrazione di base della rete di storage sul sistema ASA R2. 
+---
+= Gestisci il networking dei cluster sui sistemi storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puoi utilizzare Gestione sistema di ONTAP per eseguire un'amministrazione di base della rete di storage sul sistema ASA R2. Ad esempio, è possibile aggiungere un dominio di broadcast o riassegnare le porte a un dominio di broadcast diverso.
+
+
+
+== Aggiungere un dominio di broadcast
+
+Utilizza i domini di broadcast per semplificare la gestione della rete cluster raggruppando le porte di rete appartenenti alla stessa rete Layer 2. Le Storage Virtual Machine (VM) possono quindi utilizzare le porte nel gruppo per il traffico di dati o di gestione.
+
+Il dominio di broadcast "Default" (predefinito) e il dominio di broadcast "Cluster" (cluster) vengono creati durante la configurazione del cluster. Il dominio di broadcast "Default" contiene le porte che si trovano nello spazio IPSpace "Default". Queste porte vengono utilizzate principalmente per la gestione dei dati. Anche le porte di gestione del cluster e dei nodi si trovano in questo dominio di broadcast. Il dominio di broadcast "Cluster" contiene le porte che si trovano nell'IPSpace "Cluster". Queste porte vengono utilizzate per la comunicazione del cluster e includono tutte le porte del cluster di tutti i nodi del cluster.
+
+Dopo l'inizializzazione del cluster è possibile creare altri domini di broadcast. Quando si crea un dominio di broadcast, viene creato automaticamente un gruppo di failover che contiene le stesse porte.
+
+.A proposito di questa attività
+L'MTU (Maximum Transmission Unit) delle porte aggiunte a un dominio di broadcast viene aggiornato al valore MTU impostato nel dominio di broadcast.
+
+.Fasi
+. In System Manager, selezionare *rete > Panoramica*.
+. In domini *Broadcast*, selezionare image:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"].
+. Immettere un nome per il dominio di broadcast o accettare il nome predefinito.
++
+Tutti i nomi di dominio di trasmissione devono essere univoci all'interno di un IPSpace.
+
+. Selezionare IPSpace per il dominio di broadcast.
++
+Se non si specifica un nome IPSpace, il dominio di broadcast viene creato nell'IPSpace "Default".
+
+. Immettere l'unità massima di trasmissione (MTU).
++
+MTU è il pacchetto di dati più grande che può essere accettato nel dominio di trasmissione.
+
+. Selezionare le porte desiderate, quindi selezionare *Salva*.
+
+
+.Risultato
+È stato aggiunto un nuovo dominio di trasmissione.
+
+
+
+== Riassegnare le porte a un dominio di broadcast diverso
+
+Le porte possono appartenere a un solo dominio di trasmissione. Se si desidera modificare il dominio di broadcast a cui appartiene una porta, è necessario riassegnare la porta dal dominio di broadcast esistente a un nuovo dominio di broadcast.
+
+.Fasi
+. In System Manager, selezionare *rete > Panoramica*.
+. In *Domini di trasmissione*, selezionare image:icon_kabob.gif["tre punti blu verticali"] accanto al nome del dominio, quindi selezionare *Modifica*.
+. Deselezionare le porte Ethernet che si desidera riassegnare a un altro dominio.
+. Selezionare il dominio di broadcast al quale si desidera riassegnare la porta, quindi selezionare *Riassegna*.
+. Selezionare *Salva*.
+
+
+.Risultato
+Le porte sono state riassegnate a un dominio di broadcast diverso.
+
+
+
+== Creare un VLAN
+
+Una VLAN è costituita da porte switch raggruppate in un dominio di broadcast. Le reti VLAN consentono di aumentare la protezione, isolare i problemi e limitare i percorsi disponibili all'interno dell'infrastruttura di rete IP.
+
+.Prima di iniziare
+Gli switch implementati nella rete devono essere conformi agli standard IEEE 802.1Q o disporre di un'implementazione delle VLAN specifica del vendor.
+
+.A proposito di questa attività
+* Non è possibile creare una VLAN su una porta del gruppo di interfacce che non contiene porte membri.
+* Quando si configura una VLAN su una porta per la prima volta, la porta potrebbe spegnersi, causando una disconnessione temporanea della rete. Le successive aggiunte di VLAN alla stessa porta non influiscono sullo stato della porta.
+* Non creare una VLAN su un'interfaccia di rete con lo stesso identificativo della VLAN nativa dello switch. Ad esempio, se l'interfaccia di rete e0b si trova sulla VLAN nativa 10, non creare una VLAN e0b-10 su tale interfaccia.
+
+
+.Fasi
+. In System Manager, selezionare *rete > porte Ethernet*, quindi selezionare image:icon_vlan.png["un segno più blu seguito dalla parola vlan"].
+. Selezionare il nodo e il dominio di broadcast per la VLAN.
+. Selezionare la porta per la VLAN.
++
+La VLAN non può essere collegata a una porta che ospita una LIF del cluster o a porte assegnate all'IPSpace del cluster.
+
+. Immettere un ID VLAN.
+. Selezionare *Salva*.
+
+
+.Risultato
+È stata creata una VLAN per aumentare la protezione, isolare i problemi e limitare i percorsi disponibili all'interno dell'infrastruttura di rete IP.

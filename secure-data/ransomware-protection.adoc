@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: secure-data/ransomware-protection.html 
+keywords: asa r2, secure data, data security, ransomware, ransomware attacks, protection 
+summary: Utilizza snapshot a prova di manomissione per proteggere i tuoi dati. Le snapshot a prova di manomissione non possono essere eliminate e utilizzate per ripristinare i dati compromessi da un attacco ransomware. 
+---
+= Proteggiti dagli attacchi ransomware sui sistemi storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per una protezione avanzata contro gli attacchi ransomware, replica le snapshot su un cluster remoto, quindi blocca le snapshot di destinazione per renderle a prova di manomissione. Gli snapshot bloccati non possono essere eliminati accidentalmente o in modo pericoloso. Puoi utilizzare snapshot bloccate per ripristinare i dati, se un'unità di storage viene mai compromessa da un attacco ransomware.
+
+
+
+== Inizializzare l'orologio SnapLock Compliance
+
+Prima di poter creare snapshot a prova di manomissione, è necessario inizializzare il clock SnapLock Compliance sui cluster locali e di destinazione.
+
+.Fasi
+. Selezionare *Cluster > Overview* (Cluster > Panoramica).
+. Nella sezione *nodi*, selezionare *Inizializza orologio SnapLock Compliance*.
+. Selezionare *Inizializza*.
+. Verificare che l'orologio di conformità sia inizializzato.
++
+.. Selezionare *Cluster > Overview* (Cluster > Panoramica).
+.. Nella sezione *nodi*, selezionare image:icon_show_hide.png["tre colonne blu su sfondo bianco"]; quindi selezionare *SnapLock Compliance Clock*.
+
+
+
+
+.Cosa succederà?
+Dopo aver inizializzato l'orologio SnapLock Compliance sui cluster locali e di destinazione, si è pronti per link:../data-protection/snapshot-replication.html#step-3-create-a-replication-relationship["creare una relazione di replica con gli snapshot bloccati"].

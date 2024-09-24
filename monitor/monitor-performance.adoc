@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: monitor/monitor-performance.html 
+keywords: monitor, cluster, performance, storage units, latency, iops, throughput 
+summary: 'Monitora le performance del cluster e delle unità di storage per determinare l"impatto di latenza, IOPS e throughput sulle applicazioni business-critical.' 
+searchtitle: Monitorare le performance del cluster con Gestione di sistema ONTAP| ASA R2 
+---
+= Monitora le performance del cluster e delle unità storage sui sistemi storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Utilizza ONTAP System Manager per monitorare le performance generali del cluster e le performance di specifiche unità di storage e determinare l'impatto di latenza, IOPS e throughput sulle applicazioni business-critical. Le prestazioni possono essere monitorate in vari periodi di tempo, da un'ora a un anno.
+
+Ad esempio, si supponga che un'applicazione critica stia riscontrando un'elevata latenza e un basso throughput. Se non vedi le performance del cluster degli ultimi cinque giorni di lavoro, noterai una diminuzione delle performance alla stessa ora ogni giorno. Queste informazioni vengono utilizzate per determinare se l'applicazione critica è in competizione per le risorse cluster quando inizia l'esecuzione in background di un processo non critico. Potrai quindi modificare la policy di QoS per limitare l'impatto del carico di lavoro non critico sulle risorse di sistema e garantire che il carico di lavoro critico soddisfi gli obiettivi minimi di throughput.
+
+
+
+== Monitoraggio delle performance del cluster
+
+Utilizza le metriche delle performance del cluster per determinare se è necessario spostare i carichi di lavoro per ridurre al minimo la latenza e massimizzare IOPS e throughput per le tue applicazioni critiche.
+
+.Fasi
+. In System Manager, selezionare *Dashboard*.
+. In *Performance*, visualizzare la latenza, gli IOPS e il throughput del cluster in base a ora, giorno, settimana, mese o anno.
+. Selezionare image:icon_download.png["freccia blu verso il basso"] per scaricare i dati sulle prestazioni.
+
+
+.Quali sono le prossime novità?
+Utilizza le metriche delle performance del cluster per analizzare se è necessario modificare le policy QoS o apportare altre modifiche ai carichi di lavoro dell'applicazione per massimizzare le performance complessive del cluster.
+
+
+
+== Monitorare le prestazioni dell'unità di archiviazione
+
+Utilizza le metriche di performance delle unità di storage per determinare l'impatto di applicazioni specifiche su latenza, IOPS e throughput.
+
+.Fasi
+. In System Manager, selezionare *Storage*.
+. Selezionare l'unità di archiviazione che si desidera monitorare, quindi selezionare *Panoramica*.
+. In *Performance*, visualizzare la latenza, gli IOPS e il throughput dell'unità di storage in base a ora, giorno, settimana, mese o anno.
+. Selezionare image:icon_download.png["freccia blu verso il basso"] per scaricare i dati sulle prestazioni.
+
+
+.Quali sono le prossime novità?
+Utilizza le metriche di performance delle tue unità di storage per analizzare se è necessario modificare le policy di QoS assegnate alle tue unità di storage per ridurre la latenza e massimizzare IOPS e throughput.

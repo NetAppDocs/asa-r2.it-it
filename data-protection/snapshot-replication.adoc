@@ -1,0 +1,187 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapshot-replication.html 
+keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication 
+summary: Utilizza ONTAP System Manager per copiare i dati in una posizione remota per eseguire backup e disaster recovery. La configurazione richiede la creazione di una relazione e di un criterio di replica. 
+searchtitle: Replica le snapshot su un cluster remoto utilizzando ONTAP System Manager| ASA R2 
+---
+= Replica le snapshot su un cluster remoto dai sistemi storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La replica Snapshot è un processo in cui i gruppi di coerenza nel sistema ASA R2 vengono copiati in una posizione remota a livello geografico. Dopo la replica iniziale, le modifiche ai gruppi di coerenza vengono copiate nella posizione remota in base a un criterio di replica. È possibile utilizzare gruppi di coerenza replicati per il disaster recovery o la migrazione dei dati.
+
+
+NOTE: La replica Snapshot da un sistema di storage ASA R2 è supportata solo su un altro sistema di storage ASA R2. Non è possibile replicare gli snapshot da un sistema ASA R2 a un sistema ASA, AFF o FAS corrente.
+
+Per impostare la replica Snapshot, è necessario stabilire una relazione di replica tra il sistema ASA R2 e la posizione remota. La relazione di replica è governata da un criterio di replica. Durante la configurazione del cluster viene creato un criterio predefinito per la replica di tutti gli snapshot. È possibile utilizzare il criterio predefinito o, facoltativamente, crearne uno nuovo.
+
+
+
+== Passaggio 1: Creare una relazione peer cluster
+
+Prima di poter proteggere i dati replicandoli in un cluster remoto, è necessario creare una relazione di peer cluster tra il cluster locale e quello remoto.
+
+.Fasi
+. Nel cluster locale, in System Manager, selezionare *Cluster > Impostazioni*.
+. In *Impostazioni cluster* accanto a *image:icon_kabob.gif["tre punti blu verticali"]peer cluster* selezionare , quindi selezionare *Aggiungi un peer cluster*.
+. Selezionare *Lauch remote cluster*; in questo modo viene generata una passphrase da utilizzare per l'autenticazione con il cluster remoto.
+. Dopo aver generato la passphrase per il cluster remoto, incollarla sotto *Passphrase* nel cluster locale.
+. Selezionare image:icon_add.gif["segno più blu seguito dalla parola aggiungi in lettere blu"]; quindi immettere l'indirizzo IP dell'interfaccia di rete intercluster.
+. Selezionare *Initiate cluster peering*.
+
+
+.Quali sono le prossime novità?
+Hai effettuato il peering per un cluster ASA R2 locale con un cluster remoto. È ora possibile creare una relazione di replica.
+
+
+
+== Passaggio 2: Se si desidera, creare un criterio di replica
+
+Questo criterio definisce quando gli aggiornamenti eseguiti nel cluster ASA R2 vengono replicati nel sito remoto.
+
+.Fasi
+. In Gestione sistema, selezionare *protezione > Criteri*, quindi selezionare *Criteri di replica*.
+. Selezionare image:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"].
+. Immettere un nome per il criterio di replica o accettare il nome predefinito, quindi immettere una descrizione.
+. Selezionare *ambito criterio*.
++
+Se si desidera applicare il criterio di replica all'intero cluster, selezionare *Cluster*. Se si desidera applicare il criterio di replica solo alle unità di archiviazione in una VM di archiviazione specifica, selezionare *VM di archiviazione*.
+
+. Selezionare il *tipo di criterio*.
++
+[cols="2,6a"]
+|===
+| Opzione | Fasi 
+
+
+| Copiare i dati nel sito remoto dopo che sono stati scritti nell'origine.  a| 
+.. Selezionare *asincrono*.
+.. In *Trasferisci snapshot dall'origine*, accettare la pianificazione di trasferimento predefinita o selezionarne una diversa.
+.. Selezionare per trasferire tutte le istantanee o per creare regole per determinare quali istantanee trasferire.
+.. Facoltativamente, attivare la compressione di rete.
+
+
+
+
+| Scrivere i dati contemporaneamente sui siti di origine e remoti.  a| 
+.. Selezionare *sincrono*.
+
+
+|===
+. Selezionare *Salva*.
+
+
+.Quali sono le prossime novità?
+È stato creato un criterio di replica e ora è possibile creare una relazione di replica tra il sistema ASA R2 e la posizione remota.
+
+.Per ulteriori informazioni
+Ulteriori informazioni su link:../administer/manage-client-vm-access.html["Macchine virtuali di storage per l'accesso dei client"].
+
+
+
+== Fase 3: Creare una relazione di replica
+
+Una relazione di replica snapshot stabilisce una connessione tra il sistema ASA R2 e una posizione remota in modo da poter replicare i gruppi di coerenza in un cluster remoto. È possibile utilizzare gruppi di coerenza replicati per il disaster recovery o per la migrazione dei dati.
+
+Per una protezione contro gli attacchi ransomware, quando configuri un rapporto di replica, puoi selezionare di bloccare gli snapshot di destinazione. Gli snapshot bloccati non possono essere eliminati accidentalmente o in modo pericoloso. Puoi utilizzare snapshot bloccate per ripristinare i dati se un'unità di storage viene compromessa da un attacco ransomware.
+
+.Prima di iniziare
+Se si desidera bloccare gli snapshot di destinazione, è necessario link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["Inizializzare il clock di conformità snapshot"] prima creare la relazione di replica.
+
+Creare una relazione di replica con o senza snapshot di destinazione bloccati.
+
+[role="tabbed-block"]
+====
+.Con istantanee bloccate
+--
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Selezionare un gruppo di coerenza.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Proteggi*.
+. In *protezione remota*, selezionare *Replica in un cluster remoto*.
+. Selezionare *criterio di replica*.
++
+È necessario selezionare un criterio di replica _vault_.
+
+. Selezionare *Impostazioni destinazione*.
+. Selezionare *Blocca istantanee di destinazione per impedire l'eliminazione*
+. Immettere il periodo di conservazione dei dati massimo e minimo.
+. Per ritardare l'avvio del trasferimento dati, deselezionare *Avvia trasferimento immediatamente*.
++
+Il trasferimento iniziale dei dati inizia immediatamente per impostazione predefinita.
+
+. In alternativa, per ignorare la pianificazione di trasferimento predefinita, selezionare *Impostazioni destinazione*, quindi selezionare *Sovrascrivi pianificazione trasferimento*.
++
+Il programma di trasferimento deve essere di almeno 30 minuti per essere supportato.
+
+. Selezionare *Salva*.
+
+
+--
+.Senza istantanee bloccate
+--
+.Fasi
+. In System Manager, selezionare *protezione > Replica*.
+. Selezionare per creare la relazione di replica con la destinazione locale o l'origine locale.
++
+[cols="2,2"]
+|===
+| Opzione | Fasi 
+
+
+| Destinazioni locali  a| 
+.. Selezionare *Destinazioni locali*, quindi selezionare image:icon_replicate_blue_bg.png["rettangolo con sfondo blu e la parola replicata in lettere bianche"].
+.. Cercare e selezionare il gruppo di coerenza di origine.
++
+Il gruppo di coerenza _source_ fa riferimento al gruppo di coerenza del cluster locale che si desidera replicare.
+
+
+
+
+
+| Fonti locali  a| 
+.. Selezionare *origini locali*, quindi selezionare image:icon_replicate_blue_bg.png["rettangolo con sfondo blu e la parola replicata in lettere bianche"] .
+.. Cercare e selezionare il gruppo di coerenza di origine.
++
+Il gruppo di coerenza _source_ fa riferimento al gruppo di coerenza del cluster locale che si desidera replicare.
+
+.. In *destinazione di replica*, selezionare il cluster in cui eseguire la replica, quindi selezionare la VM di archiviazione.
+
+
+|===
+. Selezionare un criterio di replica.
+. Per ritardare l'avvio del trasferimento dati, selezionare *Impostazioni destinazione*, quindi deselezionare *Avvia immediatamente trasferimento*.
++
+Il trasferimento iniziale dei dati inizia immediatamente per impostazione predefinita.
+
+. In alternativa, per ignorare la pianificazione di trasferimento predefinita, selezionare *Impostazioni destinazione*, quindi selezionare *Sovrascrivi pianificazione trasferimento*.
++
+Il programma di trasferimento deve essere di almeno 30 minuti per essere supportato.
+
+. Selezionare *Salva*.
+
+
+--
+====
+.Quali sono le prossime novità?
+Una volta creati un criterio e una relazione di replica, il trasferimento iniziale dei dati inizia come definito nel criterio di replica. Se si desidera, è possibile verificare il failover della replica per verificare se il sistema ASA R2 non è in linea.
+
+
+
+== Passaggio 4: Verifica del failover della replica
+
+In alternativa, convalida la possibilità di fornire con successo dati da unità di storage replicate su un cluster remoto se il cluster di origine non è in linea.
+
+.Fasi
+. In System Manager, selezionare *protezione > Replica*.
+. Passare il mouse sulla relazione di replica che si desidera verificare, quindi selezionare image:icon_kabob.gif["tre punti blu verticali"].
+. Selezionare *Test failover*.
+. Immettere le informazioni di failover, quindi selezionare *Test failover*.
+
+
+.Quali sono le prossime novità?
+Ora che i dati sono protetti con la replica snapshot per il disaster recovery, è necessario che link:../secure-data/encrypt-data-at-rest.html["esegui la crittografia dei dati inutilizzati"]non possano essere letti se un disco nel sistema ASA R2 viene riutilizzato, restituito, smarrito o rubato.
