@@ -16,7 +16,13 @@ In caso di problemi con le operazioni dei dati host, è possibile utilizzare Ges
 .Fasi
 . In System Manager, selezionare *host*.
 +
-Lo stato di connettività host è indicato accanto al nome del gruppo host come segue: * *OK*: Indica che tutti gli iniziatori sono connessi a entrambi i nodi. * *Partially Connected*: Indica che alcuni iniziatori non sono connessi a entrambi i nodi. * *Nessuno collegato*: Indica che non sono collegati iniziatori.
+Lo stato della connettività host viene indicato accanto al nome del gruppo di host come segue:
+
++
+** *OK*: Indica che tutti gli iniziatori sono collegati a entrambi i nodi.
+** *Partially Connected*: Indica che alcuni iniziatori non sono connessi a entrambi i nodi.
+** *Nessuno collegato*: Indica che non sono collegati iniziatori.
+
 
 
 

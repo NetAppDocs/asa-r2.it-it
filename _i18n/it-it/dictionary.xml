@@ -256,7 +256,6 @@
   <block id="cd5ce84f06573fa36efd7de37fc1e5ba" category="summary">In caso di problemi con le operazioni dei dati host, è possibile utilizzare Gestione sistema di ONTAP per verificare che la connessione dall'host al sistema di storage ASA R2 sia attiva.</block>
   <block id="29aef3c4098e0c02a759b7ceeffd7bf5" category="doc">Verifica della connettività host sul sistema di storage ASA R2</block>
   <block id="2066e94a3e5e94a8e4ebdca7307614e8" category="list-text">In System Manager, selezionare *host*.</block>
-  <block id="d6a0ea19a115b4b6c1b0c1db29d0f8c8" category="paragraph">Lo stato di connettività host è indicato accanto al nome del gruppo host come segue: * *OK*: Indica che tutti gli iniziatori sono connessi a entrambi i nodi. * *Partially Connected*: Indica che alcuni iniziatori non sono connessi a entrambi i nodi. * *Nessuno collegato*: Indica che non sono collegati iniziatori.</block>
   <block id="7d19a1e7e72002fdb422d749fd4507db" category="paragraph">Aggiorna l'host per correggere i problemi di connettività. Il ONTAP verificherà nuovamente lo stato della connessione ogni quindici minuti.</block>
   <block id="69cb7ab40e4d5787db8003ef13bf1939" category="summary">Creare uno snapshot per eseguire il backup dei dati sul sistema ASA R2. È possibile creare snapshot manuali o utilizzare un gruppo di coerenza per pianificare snapshot automatiche.</block>
   <block id="a72d39c43f1da3c8e4c29dc1a6cf6185" category="searchtitle">Create snapshot per eseguire il backup dei dati utilizzando Gestione di sistema di ONTAP | ASA R2</block>
@@ -1586,4 +1585,8 @@
   <block id="580170da57ca90dca0f62ce9faf29c6e" category="sidebar">Connessioni NVMe sicure</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">Note di rilascio</block>
   <block id="4eae1c6da6a9edad5e5228cf8cfe3cdb" category="sidebar">Novità di ONTAP 9.16.0</block>
+  <block id="0a57cb4625de2148aa1f3fe6815e78eb" category="paragraph">Lo stato della connettività host viene indicato accanto al nome del gruppo di host come segue:</block>
+  <block id="5b13dc2b1f3390e14daacb1f2f882717" category="list-text">*OK*: Indica che tutti gli iniziatori sono collegati a entrambi i nodi.</block>
+  <block id="c2520bb5c23501e13bc7e06dde3ae9fd" category="list-text">*Partially Connected*: Indica che alcuni iniziatori non sono connessi a entrambi i nodi.</block>
+  <block id="031e3ca05bd720350a450cc6267211e2" category="list-text">*Nessuno collegato*: Indica che non sono collegati iniziatori.</block>
 </blocks>
