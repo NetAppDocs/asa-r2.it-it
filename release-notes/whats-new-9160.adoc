@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-Scopri le nuove funzionalità disponibili in ONTAP 9.16,10 per i sistemi ASA R2.
+Scopri le nuove funzionalità disponibili in ONTAP 9.16,0 per i sistemi ASA R2.
 
 
 
