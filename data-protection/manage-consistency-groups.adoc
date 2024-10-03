@@ -60,7 +60,7 @@ quindi selezionare image:icon_dropdown_arrow.gif["freccia blu rivolta verso il b
 
 
 .Cosa succederà
-Ora che i tuoi dati sono protetti con le snapshot, dovresti link:../secure-data/encrypt-data-at-rest.html["configurare la replica snapshot"]copiare i tuoi gruppi di coerenza in una posizione geograficamente remota per il backup e il disaster recovery.
+Ora che i tuoi dati sono protetti con snapshot, dovresti link:../secure-data/encrypt-data-at-rest.html["configurare la replica snapshot"]copiare i tuoi gruppi di coerenza in una posizione geograficamente remota per il backup e il disaster recovery.
 
 
 
@@ -147,7 +147,7 @@ Se è necessario continuare la protezione dei dati per l'unità di archiviazione
 Se non è più necessario gestire i membri di un gruppo di coerenza come una singola unità, è possibile eliminare il gruppo di coerenza. Dopo l'eliminazione di un gruppo di coerenza, le unità di storage presenti in precedenza nel gruppo rimangono attive nel cluster.
 
 .Prima di iniziare
-Se il gruppo di coerenza che si desidera eliminare si trova in una relazione di replica, è necessario interrompere la relazione prima di eliminare il gruppo di coerenza. Dopo aver eliminato un gruppo di coerenza di replica, le unità di storage presenti nel gruppo di coerenza rimangono attive nel cluster e le relative copie replicate rimangono nel cluster remoto.
+Se il gruppo di coerenza che si desidera eliminare si trova in una relazione di replica, è necessario interrompere la relazione prima di eliminare il gruppo di coerenza. Dopo aver eliminato un gruppo di coerenza della replica, le unità di storage presenti nel gruppo rimangono attive nel cluster e le relative copie replicate rimangono nel cluster remoto.
 
 .Fasi
 . In System Manager, selezionare *protezione > gruppi di coerenza*.

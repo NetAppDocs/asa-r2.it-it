@@ -80,4 +80,4 @@ I nuovi cluster contengono automaticamente una SVM dati predefinita con i protoc
 La creazione di un'unità di storage (LUN o namespace) crea automaticamente un volume dalla zona di disponibilità dello storage. Ciò si traduce in uno spazio dei nomi comune e semplificato. L'eliminazione di un'unità di memorizzazione elimina automaticamente il volume associato.
 
 .Modifiche a thin provisioning e thick provisioning
-Le unità di storage per vengono sempre fornite in thin provisioning sui sistemi di storage ASA R2. Il thick provisioning non è supportato.
+Sulle unità di storage ASA R2 viene sempre utilizzato il thin provisioning. Il thick provisioning non è supportato.

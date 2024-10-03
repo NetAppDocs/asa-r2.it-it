@@ -31,7 +31,7 @@ Dopo aver configurato il cluster, è necessario verificare la connettività Auto
 
 
 .Quali sono le prossime novità?
-Il supporto tecnico è in grado di ricevere messaggi AutoSupport dal sistema ASA R2 e dispone dei dati necessari per assisterti in caso di problemi.
+Hai confermato che il supporto tecnico può ricevere messaggi AutoSupport dal tuo sistema ASA R2, assicurandoti che disponga dei dati necessari per aiutarti in caso di problemi.
 
 
 

@@ -332,7 +332,6 @@
   <block id="a3d38335033dbc3e63c68f76b308e45c" category="list-text">In *numero massimo di snapshot*, immettere il numero massimo di snapshot che si desidera conservare del gruppo di coerenza.</block>
   <block id="72c9cc57bd3acc347a45ea0b780c14ab" category="list-text">Facoltativamente, in *SnapMirror label* (etichetta *) immettere un'etichetta SnapMirror.</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">Cosa succederà</block>
-  <block id="6b14136e2b75ff639f5ca263a5dd2a6a" category="paragraph">Ora che i tuoi dati sono protetti con le snapshot, dovresti <block ref="c9073dd826fc7721b98f9930c55d01b2" category="inline-link-macro-rx"></block>copiare i tuoi gruppi di coerenza in una posizione geograficamente remota per il backup e il disaster recovery.</block>
   <block id="cf8693d6af83f33c68a196b12cffa29d" category="section-title">Rimozione della data Protection delle snapshot da un gruppo di coerenza</block>
   <block id="0e79d9ba3e974f486c0f5945f4e9673a" category="paragraph">Quando si rimuove la protezione dei dati snapshot da un gruppo di coerenza, gli snapshot vengono disattivati per tutte le unità di archiviazione nel gruppo di coerenza.</block>
   <block id="ddc789e2715034046ecb8d1c8ec50205" category="list-text">Passare il mouse sul gruppo di coerenza che si desidera interrompere la protezione.</block>
@@ -365,7 +364,6 @@
   <block id="9c09f709a9761f564907022b7331dbb1" category="paragraph">Se è necessario continuare la protezione dei dati per l'unità di archiviazione, aggiungere l'unità di archiviazione a un altro gruppo di coerenza.</block>
   <block id="793fd1e28f15d34822702f9d70403404" category="section-title">Eliminare un gruppo di coerenza</block>
   <block id="2cd894b6ee2553a527a03b1a9086238b" category="paragraph">Se non è più necessario gestire i membri di un gruppo di coerenza come una singola unità, è possibile eliminare il gruppo di coerenza. Dopo l'eliminazione di un gruppo di coerenza, le unità di storage presenti in precedenza nel gruppo rimangono attive nel cluster.</block>
-  <block id="8ca9256ffdf569f8b36fe638e605aa91" category="paragraph">Se il gruppo di coerenza che si desidera eliminare si trova in una relazione di replica, è necessario interrompere la relazione prima di eliminare il gruppo di coerenza. Dopo aver eliminato un gruppo di coerenza di replica, le unità di storage presenti nel gruppo di coerenza rimangono attive nel cluster e le relative copie replicate rimangono nel cluster remoto.</block>
   <block id="3e905f617938aef0b388912bce87f2e2" category="list-text">Passare il mouse sul gruppo di coerenza che si desidera eliminare.</block>
   <block id="b32275e0392f5cbab8806c7ce85e42f5" category="list-text">Accettare l'avviso, quindi selezionare *Elimina*.</block>
   <block id="dde86492e27a0d7b75963e7c4b928397" category="paragraph">Dopo aver eliminato un gruppo di coerenza, le unità di archiviazione precedentemente presenti nel gruppo di coerenza non sono più protette dagli snapshot. Considerare l'aggiunta di queste unità di storage a un altro gruppo di coerenza per proteggerle dalla perdita di dati.</block>
@@ -523,7 +521,6 @@
   <block id="71ba518a68888a9623c97c1553396f78" category="list-text">In Gestione di sistema, selezionare *Cluster &gt;Settings*.</block>
   <block id="ab7f391aba14be442463b48ba048fc7d" category="list-text">Accanto a *AutoSupport* selezionare <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>; quindi selezionare *verifica connettività*.</block>
   <block id="02b1e4285506fc0cffd29844e8121e1a" category="list-text">Immettere un oggetto per il messaggio AutoSupport, quindi selezionare *Invia messaggio AutoSupport di prova*.</block>
-  <block id="fcb35f0da100ee7cfd8c2c2acdcbb8c0" category="paragraph">Il supporto tecnico è in grado di ricevere messaggi AutoSupport dal sistema ASA R2 e dispone dei dati necessari per assisterti in caso di problemi.</block>
   <block id="825777dd1ed1433192f80c9ec3cc95ab" category="section-title">Aggiungi destinatari AutoSupport</block>
   <block id="4ceed55a3a8a0b3cd4cf3b3ad2f6c061" category="paragraph">Aggiungere i membri dell'organizzazione di assistenza interna all'elenco degli indirizzi e-mail che ricevono i messaggi AutoSupport.</block>
   <block id="9b7d22da73a3e8a3cf955ff556c4bae7" category="list-text">Accanto a *AutoSupport* selezionare <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>; quindi selezionare *altre opzioni*.</block>
@@ -1070,7 +1067,6 @@
   <block id="363188350b1fe2b934c479c977a89ece" category="paragraph-title">Creazione automatica di un volume</block>
   <block id="eee98269dcd20c90abcc0a7bfb22f37c" category="paragraph">La creazione di un'unità di storage (LUN o namespace) crea automaticamente un volume dalla zona di disponibilità dello storage. Ciò si traduce in uno spazio dei nomi comune e semplificato. L'eliminazione di un'unità di memorizzazione elimina automaticamente il volume associato.</block>
   <block id="deb157545e882ae10d45f43fcb06f0df" category="paragraph-title">Modifiche a thin provisioning e thick provisioning</block>
-  <block id="0cc302b38ca94109fc2cffd503adb3d4" category="paragraph">Le unità di storage per vengono sempre fornite in thin provisioning sui sistemi di storage ASA R2. Il thick provisioning non è supportato.</block>
   <block id="3abf1b035bc420caf188c022ea7d792d" category="summary">L'API REST di ASA R2 si basa sull'API REST fornita con la personalità ONTAP unificata, con una serie di modifiche adattate alle caratteristiche e alle capacità uniche della personalità ASA R2.</block>
   <block id="48c7d320d017a90d970e154c81d07dc1" category="doc">Supporto delle API REST per ASA R2</block>
   <block id="83e5ee07fc92447fe7a6ceed082d0c01" category="section-title">Tipi di modifiche alle API</block>
@@ -1142,8 +1138,6 @@
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">I file di avviso forniscono informazioni sul copyright e sulle licenze di terze parti utilizzate nel software NetApp.</block>
   <block id="b46e4e89d5c6947e865dbb8abc5ed28c" category="summary">Scopri come eseguire le procedure di manutenzione sul tuo sistema ASA R2.</block>
   <block id="c65b7989475d7b4b884961e0e5c53286" category="doc">Esegui la manutenzione del tuo sistema storage ASA R2</block>
-  <block id="2cc42d8e162137e099ab248df06c4f19" category="inline-link">Documentazione di manutenzione di ASA R2</block>
-  <block id="a779dc7ba81016ed421e7c384c5d1e30" category="paragraph"><block ref="54785b1ca9681752f04c4a927f80eaa1" category="inline-link-rx"></block>Per informazioni su come eseguire le procedure di manutenzione sui componenti del sistema ASA R2, consultare la sezione.</block>
   <block id="637cdb5787a38a4d0da33ae01aa8fe4c" category="summary">Clona unità di storage e gruppi di coerenza su ASA R2 per creare copie dei dati da utilizzare all'esterno dell'ambiente di produzione per svariati scopi.</block>
   <block id="5efa28b67f38b8acf6f260494435aeb9" category="searchtitle">Cloning dei dati con ONTAP System Manager | ASA R2</block>
   <block id="b672b3c3c67f9dc97cb7aa4016ffd8de" category="doc">Clonazione dei dati sui sistemi di storage ASA R2</block>
@@ -1335,7 +1329,6 @@
   <block id="7210645d4515e7cb96d5b26a294a9f25" category="searchtitle">Monitorare le performance del cluster con Gestione di sistema ONTAP| ASA R2</block>
   <block id="064023636601914c7dfacc81fa4e3b57" category="doc">Monitora le performance del cluster e delle unità storage sui sistemi storage ASA R2</block>
   <block id="ac48862a6c885879fa8b73f630f8e98f" category="paragraph">Utilizza ONTAP System Manager per monitorare le performance generali del cluster e le performance di specifiche unità di storage e determinare l'impatto di latenza, IOPS e throughput sulle applicazioni business-critical. Le prestazioni possono essere monitorate in vari periodi di tempo, da un'ora a un anno.</block>
-  <block id="d2fee2bd5b0bc27aba9325efd2cf7765" category="paragraph">Ad esempio, si supponga che un'applicazione critica stia riscontrando un'elevata latenza e un basso throughput. Se non vedi le performance del cluster degli ultimi cinque giorni di lavoro, noterai una diminuzione delle performance alla stessa ora ogni giorno. Queste informazioni vengono utilizzate per determinare se l'applicazione critica è in competizione per le risorse cluster quando inizia l'esecuzione in background di un processo non critico. Potrai quindi modificare la policy di QoS per limitare l'impatto del carico di lavoro non critico sulle risorse di sistema e garantire che il carico di lavoro critico soddisfi gli obiettivi minimi di throughput.</block>
   <block id="9ed62a90862b2040ffb0a91ecf532fff" category="section-title">Monitoraggio delle performance del cluster</block>
   <block id="4d46d963226f35fc56c0527f9740cc00" category="paragraph">Utilizza le metriche delle performance del cluster per determinare se è necessario spostare i carichi di lavoro per ridurre al minimo la latenza e massimizzare IOPS e throughput per le tue applicazioni critiche.</block>
   <block id="1d1e5cd96b3e552f9fc410fb90447401" category="list-text">In System Manager, selezionare *Dashboard*.</block>
@@ -1587,4 +1580,10 @@
   <block id="c2520bb5c23501e13bc7e06dde3ae9fd" category="list-text">*Partially Connected*: Indica che alcuni iniziatori non sono connessi a entrambi i nodi.</block>
   <block id="031e3ca05bd720350a450cc6267211e2" category="list-text">*Nessuno collegato*: Indica che non sono collegati iniziatori.</block>
   <block id="d28f4031342956661d79f1274d2a395c" category="paragraph">Scopri le nuove funzionalità disponibili in ONTAP 9.16,0 per i sistemi ASA R2.</block>
+  <block id="6913e721908f172fd672e46e9459c4ad" category="paragraph">Se il gruppo di coerenza che si desidera eliminare si trova in una relazione di replica, è necessario interrompere la relazione prima di eliminare il gruppo di coerenza. Dopo aver eliminato un gruppo di coerenza della replica, le unità di storage presenti nel gruppo rimangono attive nel cluster e le relative copie replicate rimangono nel cluster remoto.</block>
+  <block id="22a4c2b7564a7f7d551ab23d23fbcac8" category="paragraph">Hai confermato che il supporto tecnico può ricevere messaggi AutoSupport dal tuo sistema ASA R2, assicurandoti che disponga dei dati necessari per aiutarti in caso di problemi.</block>
+  <block id="3ae7feb5d9cb2335f10922aa1130319d" category="paragraph">Sulle unità di storage ASA R2 viene sempre utilizzato il thin provisioning. Il thick provisioning non è supportato.</block>
+  <block id="c43d68b5b8370d3423bfb0b13dfe0abe" category="inline-link">Documentazione di manutenzione di ASA R2</block>
+  <block id="f2abf1f4083409f0d65b59ffbcd13341" category="paragraph"><block ref="6805eee0c680715323289cabd48eb628" category="inline-link-rx"></block>Per informazioni su come eseguire le procedure di manutenzione sui componenti del sistema ASA R2, consultare la sezione.</block>
+  <block id="77ae7cb145355765cca98cef84bef3eb" category="paragraph">Ad esempio, si supponga che un'applicazione critica stia riscontrando un'elevata latenza e un basso throughput. Osservando le performance del cluster degli ultimi cinque giorni di lavoro, noterai una diminuzione delle performance ogni giorno alla stessa ora. Queste informazioni vengono utilizzate per determinare se l'applicazione critica è in competizione per le risorse cluster quando inizia l'esecuzione in background di un processo non critico. Potrai quindi modificare la policy di QoS per limitare l'impatto del carico di lavoro non critico sulle risorse di sistema e garantire che il carico di lavoro critico soddisfi gli obiettivi minimi di throughput.</block>
 </blocks>
