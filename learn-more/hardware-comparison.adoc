@@ -81,3 +81,6 @@ La creazione di un'unità di storage (LUN o namespace) crea automaticamente un v
 
 .Modifiche a thin provisioning e thick provisioning
 Sulle unità di storage ASA R2 viene sempre utilizzato il thin provisioning. Il thick provisioning non è supportato.
+
+.Modifiche alla compressione dei dati
+L'efficienza dello storage sensibile alla temperatura non viene applicata ai sistemi ASA R2. Nei sistemi ASA R2, la compressione non è basata sui dati _hot_ (utilizzati di frequente) o _cold_ (utilizzati di rado). La compressione inizia senza attendere che i dati diventino "cold".
