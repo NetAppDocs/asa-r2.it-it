@@ -25,7 +25,7 @@ Per gestire AutoSupport è necessario essere un amministratore del cluster.
 Dopo aver configurato il cluster, è necessario verificare la connettività AutoSupport per verificare che il supporto tecnico riceva i messaggi generati da AutoSupport.
 
 .Fasi
-. In Gestione di sistema, selezionare *Cluster >Settings*.
+. In System Manager, selezionare *Cluster >Settings*.
 . Accanto a *AutoSupport* selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *verifica connettività*.
 . Immettere un oggetto per il messaggio AutoSupport, quindi selezionare *Invia messaggio AutoSupport di prova*.
 
@@ -40,7 +40,7 @@ Hai confermato che il supporto tecnico può ricevere messaggi AutoSupport dal tu
 Aggiungere i membri dell'organizzazione di assistenza interna all'elenco degli indirizzi e-mail che ricevono i messaggi AutoSupport.
 
 .Fasi
-. In Gestione di sistema, selezionare *Cluster >Settings*.
+. In System Manager, selezionare *Cluster >Settings*.
 . Accanto a *AutoSupport* selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *altre opzioni*.
 . Accanto a *e-mail*, selezionare image:icon_edit_pencil_blue_outline.png["icona a forma di matita"]; quindi selezionare image:icon_add.gif["Segno più blu seguito dalla parola Aggiungi"].
 . Immettere l'indirizzo e-mail del destinatario, quindi la categoria del destinatario.
@@ -60,7 +60,7 @@ Gli indirizzi e-mail aggiunti riceveranno nuovi messaggi AutoSupport per la cate
 In caso di problemi del sistema ASA R2, i dati di AutoSupport possono ridurre significativamente il tempo necessario per identificare e risolvere i problemi.
 
 .Fasi
-. In Gestione di sistema, selezionare *Cluster >Settings*.
+. In System Manager, selezionare *Cluster >Settings*.
 . Accanto a *AutoSupport* selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *generate and send* (genera e invia*).
 . Immettere un oggetto per il messaggio AutoSupport, quindi selezionare *Invia*.
 
@@ -75,7 +75,7 @@ I dati AutoSupport vengono inviati all'assistenza tecnica.
 Se si sta eseguendo un aggiornamento o una manutenzione sul sistema ASA R2, potrebbe essere utile sospendere la generazione di casi di supporto AutoSupport fino al completamento dell'aggiornamento o della manutenzione.
 
 .Fasi
-. In Gestione di sistema, selezionare *Cluster >Settings*.
+. In System Manager, selezionare *Cluster >Settings*.
 . Accanto a *AutoSupport* selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Sospendi generazione casi di supporto*.
 . Specificare il numero di ore per sospendere la generazione di casi di supporto, quindi selezionare i nodi per i quali non si desidera generare casi.
 . Selezionare *Invia*.
@@ -91,7 +91,7 @@ I casi AutoSupport non verranno generati durante il tempo specificato. Se l'upgr
 Se la generazione di casi di supporto è stata sospesa durante una finestra di aggiornamento o manutenzione, riprendere la generazione di casi di supporto subito dopo il completamento dell'aggiornamento o della manutenzione.
 
 .Fasi
-. In Gestione di sistema, selezionare *Cluster >Settings*.
+. In System Manager, selezionare *Cluster >Settings*.
 . Accanto a *AutoSupport* selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Riprendi generazione caso supporto*.
 . Selezionare i nodi per i quali si desidera riprendere i casi AutoSupport generati.
 . Selezionare *Invia*.
