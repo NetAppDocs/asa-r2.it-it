@@ -32,6 +32,6 @@ I sistemi ASA R2 non supportano la combinazione di cluster con gli attuali siste
 
 .Per ulteriori informazioni
 * Per ulteriori informazioni sul supporto e sulle limitazioni dei sistemi ASA R2, consultare link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
-* Ulteriori informazioni su link:../learn-more/hardware-comparison.html["I nuovi sistemi ASA R2 rispetto ai sistemi ASA"].
+* Ulteriori informazioni su link:../learn-more/hardware-comparison.html["I sistemi ASA R2 rispetto ai sistemi ASA"].
 * Ulteriori informazioni su link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"].
 
