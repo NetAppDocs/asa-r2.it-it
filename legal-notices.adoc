@@ -51,4 +51,4 @@ I file di avviso forniscono informazioni sul copyright e sulle licenze di terze 
 
 == ONTAP
 
-link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3329264["Avviso per ONTAP 9.16.01"^]
+link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3329264["Avviso per ONTAP 9.16.1"^]
