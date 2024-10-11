@@ -444,7 +444,6 @@
   <block id="40bf81e755dc73fb04ab21c9f9f5756c" category="searchtitle">Replica le snapshot su un cluster remoto utilizzando ONTAP System Manager| ASA R2</block>
   <block id="52e62ad767d46ccf1912124d9b984dd6" category="doc">Replica le snapshot su un cluster remoto dai sistemi storage ASA R2</block>
   <block id="f2b39b01edbe286e89542affc03f6d4f" category="paragraph">La replica Snapshot è un processo in cui i gruppi di coerenza nel sistema ASA R2 vengono copiati in una posizione remota a livello geografico. Dopo la replica iniziale, le modifiche ai gruppi di coerenza vengono copiate nella posizione remota in base a un criterio di replica. È possibile utilizzare gruppi di coerenza replicati per il disaster recovery o la migrazione dei dati.</block>
-  <block id="69ed1baaf5609225833ab8e05dd02cda" category="admonition">La replica Snapshot da un sistema di storage ASA R2 è supportata solo su un altro sistema di storage ASA R2. Non è possibile replicare gli snapshot da un sistema ASA R2 a un sistema ASA, AFF o FAS corrente.</block>
   <block id="a11f569aa7659d38ad74c3348435869e" category="paragraph">Per impostare la replica Snapshot, è necessario stabilire una relazione di replica tra il sistema ASA R2 e la posizione remota. La relazione di replica è governata da un criterio di replica. Durante la configurazione del cluster viene creato un criterio predefinito per la replica di tutti gli snapshot. È possibile utilizzare il criterio predefinito o, facoltativamente, crearne uno nuovo.</block>
   <block id="bb35c8e1197f3cb1f834baa178f51fdd" category="section-title">Passaggio 1: Creare una relazione peer cluster</block>
   <block id="256483a2b5ed8710e7c8fdf9ce515426" category="paragraph">Prima di poter proteggere i dati replicandoli in un cluster remoto, è necessario creare una relazione di peer cluster tra il cluster locale e quello remoto.</block>
@@ -1590,4 +1589,5 @@
   <block id="7f4ce7e91f585315eb8df215a736469e" category="paragraph"><block ref="7f4ce7e91f585315eb8df215a736469e" category="inline-link-macro-rx"></block></block>
   <block id="7634d59040fd3f0630abac42ed05842e" category="inline-link-macro">I sistemi ASA R2 rispetto ai sistemi ASA</block>
   <block id="0a1c5c73cbf93d4b2d88ff0be84d2900" category="list-text">Ulteriori informazioni su <block ref="c736257475481e43d317d6d66a81a5cb" category="inline-link-macro-rx"></block>.</block>
+  <block id="420a0f9e5b6b25901e8477f2031c4f09" category="admonition">La replica Snapshot per un sistema di storage ASA R2 è supportata solo da e verso un altro sistema di storage ASA R2. Non è possibile replicare snapshot da un sistema ASA R2 a un sistema ASA, AFF o FAS corrente o da un sistema ASA, AFF o FAS corrente a un sistema ASA R2.</block>
 </blocks>

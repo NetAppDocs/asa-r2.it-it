@@ -15,7 +15,7 @@ searchtitle: Replica le snapshot su un cluster remoto utilizzando ONTAP System M
 La replica Snapshot è un processo in cui i gruppi di coerenza nel sistema ASA R2 vengono copiati in una posizione remota a livello geografico. Dopo la replica iniziale, le modifiche ai gruppi di coerenza vengono copiate nella posizione remota in base a un criterio di replica. È possibile utilizzare gruppi di coerenza replicati per il disaster recovery o la migrazione dei dati.
 
 
-NOTE: La replica Snapshot da un sistema di storage ASA R2 è supportata solo su un altro sistema di storage ASA R2. Non è possibile replicare gli snapshot da un sistema ASA R2 a un sistema ASA, AFF o FAS corrente.
+NOTE: La replica Snapshot per un sistema di storage ASA R2 è supportata solo da e verso un altro sistema di storage ASA R2. Non è possibile replicare snapshot da un sistema ASA R2 a un sistema ASA, AFF o FAS corrente o da un sistema ASA, AFF o FAS corrente a un sistema ASA R2.
 
 Per impostare la replica Snapshot, è necessario stabilire una relazione di replica tra il sistema ASA R2 e la posizione remota. La relazione di replica è governata da un criterio di replica. Durante la configurazione del cluster viene creato un criterio predefinito per la replica di tutti gli snapshot. È possibile utilizzare il criterio predefinito o, facoltativamente, crearne uno nuovo.
 
