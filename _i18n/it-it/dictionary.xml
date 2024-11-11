@@ -1607,7 +1607,7 @@
   <block id="7ec849e005dbd9c153a3b9fc38bf47df" category="paragraph">Per impostazione predefinita, la dislocazione dello spazio (denominata anche "hole punzoning" e "unmap") è abilitata per gli spazi dei nomi NVMe. La deallocazione dello spazio consente a un host di disallocare blocchi non utilizzati dagli spazi dei nomi per recuperare spazio.</block>
   <block id="9228b29536da5aa86ee6865642b7a754" category="paragraph">Questo migliora notevolmente l'efficienza complessiva dello storage, in particolare con file system che hanno un turnover di dati elevato.</block>
   <block id="459e6c3f59570324cab3a799ce9f4d6f" category="inline-link-macro">Eseguire la migrazione delle chiavi di crittografia dei dati ONTAP tra manager delle chiavi</block>
-  <block id="ba905aa152bc67dfe7369966e1f7b161" category="paragraph">Per passare dal gestore delle chiavi integrato a un gestore delle chiavi esterno o viceversa, vedere <block ref="ddc33c992daebda8b45882e4c40e07d4" category="inline-link-macro-rx"></block>.</block>
   <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">Novità di ONTAP 9.16.1</block>
   <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">Modifiche ai valori predefiniti e ai limiti di ONTAP</block>
+  <block id="ec7ed1b959417fb145bcf5bc5351a4e1" category="paragraph">Per passare dal gestore delle chiavi integrato a un gestore delle chiavi esterno o viceversa, vedere <block ref="6c5d784251393a5f6fda5c1a058497d1" category="inline-link-macro-rx"></block>.</block>
 </blocks>
