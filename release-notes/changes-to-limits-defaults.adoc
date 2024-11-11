@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: release-notes/changes-to-limits-defaults.html 
+keywords: release notes, changes, updates, defaults, limits, asa r2, asa a1k, asa 70, asa 90 
+summary: Informazioni sulle modifiche ai limiti e alle impostazioni predefinite che interessano i sistemi ASA R2. 
+---
+= Modifiche ai limiti e alle impostazioni predefinite di ONTAP che interessano i sistemi ASA R2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Informazioni sulle modifiche ai limiti e alle impostazioni predefinite che interessano i sistemi ASA R2. NetApp si impegna ad aiutare i propri clienti a comprendere le impostazioni predefinite più importanti e a limitare le modifiche in ogni release di ONTAP.
+
+
+
+== Modifiche ai limiti ONTAP
+
+[cols="2,4,4"]
+|===
+| Funzione | Modifica del limite | Modificato nella versione... 
+
+
+| Unità di stoccaggio | Il numero massimo di unità storage è aumentato da 2500 per coppia ha a 10.000 per coppia ha. | ONTAP 9.16.1 
+|===

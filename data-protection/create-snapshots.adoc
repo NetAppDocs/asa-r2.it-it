@@ -61,7 +61,7 @@ Se si creano più unità, ciascuna viene creata con la stessa capacità e lo ste
 
 Uno snapshot è una copia locale di sola lettura dei dati che è possibile utilizzare per ripristinare le unità di storage in un momento specifico.
 
-Le istantanee possono essere create su richiesta o automaticamente a intervalli regolari in base a link:https://review.docs.netapp.com/us-en/asa-r2_asa-r2-9160/data-protection/policies-schedules.html["policy e calendario di snapshot"]. La policy e la pianificazione degli snapshot specificano quando creare gli snapshot, il numero di copie da conservare, il nome e l'etichetta per la replica. Ad esempio, un sistema potrebbe creare uno snapshot ogni giorno alle ore 12:10, conservare le due copie più recenti, assegnarle il nome "giornaliero" (allegato con un indicatore data e ora) ed etichettarle "giornalmente" per la replica.
+Le istantanee possono essere create su richiesta o automaticamente a intervalli regolari in base a link:policies-schedules.html["policy e calendario di snapshot"]. La policy e la pianificazione degli snapshot specificano quando creare gli snapshot, il numero di copie da conservare, il nome e l'etichetta per la replica. Ad esempio, un sistema potrebbe creare uno snapshot ogni giorno alle ore 12:10, conservare le due copie più recenti, assegnarle il nome "giornaliero" (allegato con un indicatore data e ora) ed etichettarle "giornalmente" per la replica.
 
 .Tipi di snapshot
 È possibile creare uno snapshot on-demand di una singola unità di storage o di un gruppo di coerenza. È possibile creare istantanee automatiche di un gruppo di coerenza contenente più unità di archiviazione. Non è possibile creare istantanee automatiche di una singola unità di archiviazione.

@@ -277,7 +277,6 @@
   <block id="e7c7a96626caf7f10a69abd91e0c9657" category="section-title">Passaggio 2: Creare un'istantanea</block>
   <block id="5ad8d455ea57e1690a8dd08af1513587" category="paragraph">Uno snapshot è una copia locale di sola lettura dei dati che è possibile utilizzare per ripristinare le unità di storage in un momento specifico.</block>
   <block id="a55eea56b3b5ac156631717b66974529" category="inline-link-macro">policy e calendario di snapshot</block>
-  <block id="aa2f9feb235086807c06e316a374c42b" category="paragraph">Le istantanee possono essere create su richiesta o automaticamente a intervalli regolari in base a <block ref="174ad3d131cf18990fcf462c1e80dea1" category="inline-link-macro-rx"></block>. La policy e la pianificazione degli snapshot specificano quando creare gli snapshot, il numero di copie da conservare, il nome e l'etichetta per la replica. Ad esempio, un sistema potrebbe creare uno snapshot ogni giorno alle ore 12:10, conservare le due copie più recenti, assegnarle il nome "giornaliero" (allegato con un indicatore data e ora) ed etichettarle "giornalmente" per la replica.</block>
   <block id="778e49c36a4b37504a26fe297bcd89cd" category="paragraph-title">Tipi di snapshot</block>
   <block id="d6acd69ed4935a0b24bcc6574f0a4d59" category="paragraph">È possibile creare uno snapshot on-demand di una singola unità di storage o di un gruppo di coerenza. È possibile creare istantanee automatiche di un gruppo di coerenza contenente più unità di archiviazione. Non è possibile creare istantanee automatiche di una singola unità di archiviazione.</block>
   <block id="92cd7e74f8f496ce11ec549a066c7294" category="list-text">Snapshot on-demand</block>
@@ -1590,4 +1589,25 @@
   <block id="420a0f9e5b6b25901e8477f2031c4f09" category="admonition">La replica Snapshot per un sistema di storage ASA R2 è supportata solo da e verso un altro sistema di storage ASA R2. Non è possibile replicare snapshot da un sistema ASA R2 a un sistema ASA, AFF o FAS corrente o da un sistema ASA, AFF o FAS corrente a un sistema ASA R2.</block>
   <block id="3f808654ebfed6aae875b71a402ac91b" category="inline-link-macro">Avviso per ONTAP 9.16.1</block>
   <block id="ccde34ed9a96a11b25c1db2a8c9acb87" category="paragraph"><block ref="ccde34ed9a96a11b25c1db2a8c9acb87" category="inline-link-macro-rx"></block></block>
+  <block id="82f8a3cbf0a93791bbbfc70a1b650bcf" category="paragraph">Le istantanee possono essere create su richiesta o automaticamente a intervalli regolari in base a <block ref="83bfa2dc5e6407223dca634141b43309" category="inline-link-macro-rx"></block>. La policy e la pianificazione degli snapshot specificano quando creare gli snapshot, il numero di copie da conservare, il nome e l'etichetta per la replica. Ad esempio, un sistema potrebbe creare uno snapshot ogni giorno alle ore 12:10, conservare le due copie più recenti, assegnarle il nome "giornaliero" (allegato con un indicatore data e ora) ed etichettarle "giornalmente" per la replica.</block>
+  <block id="45572a9b40e369d2ef8629844808cced" category="summary">Informazioni sulle modifiche ai limiti e alle impostazioni predefinite che interessano i sistemi ASA R2.</block>
+  <block id="1103c7c9b683247c76b5f25f9cd64b74" category="doc">Modifiche ai limiti e alle impostazioni predefinite di ONTAP che interessano i sistemi ASA R2</block>
+  <block id="1daa1b3cc6e7b6b7a591ba10582085a8" category="paragraph">Informazioni sulle modifiche ai limiti e alle impostazioni predefinite che interessano i sistemi ASA R2. NetApp si impegna ad aiutare i propri clienti a comprendere le impostazioni predefinite più importanti e a limitare le modifiche in ogni release di ONTAP.</block>
+  <block id="d579ca395df40cbbb953cb531ce23a3d" category="section-title">Modifiche ai limiti ONTAP</block>
+  <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">Funzione</block>
+  <block id="4d209cddba5e4e3f517cda6d0180e867" category="cell">Modifica del limite</block>
+  <block id="b0aeee779af528e83de1fcb141fbbca7" category="cell">Modificato nella versione...</block>
+  <block id="d705195acc2d17086d7e28da066d6c23" category="cell">Unità di stoccaggio</block>
+  <block id="6f758206269a4d26aaaac9a25afe7fe5" category="cell">Il numero massimo di unità storage è aumentato da 2500 per coppia ha a 10.000 per coppia ha.</block>
+  <block id="31272abf1c9209ab4acd0bf10f129338" category="cell">ONTAP 9.16.1</block>
+  <block id="456488f81b27ee2e1475e6d76ffad2ca" category="summary">Scopri le nuove funzionalità disponibili in ONTAP 9.16,1 per i sistemi ASA R2.</block>
+  <block id="02b0c0371a6864d344959c06c5237165" category="doc">Novità di ONTAP 9.16,1 per i sistemi ASA R2</block>
+  <block id="fd18465573ec21a6218982055981f6b1" category="section-title">Efficienza dello storage</block>
+  <block id="3a405933969f80a6182b8257c15c10ff" category="cell">Deallocazione dello spazio NVMe abilitata per impostazione predefinita</block>
+  <block id="7ec849e005dbd9c153a3b9fc38bf47df" category="paragraph">Per impostazione predefinita, la dislocazione dello spazio (denominata anche "hole punzoning" e "unmap") è abilitata per gli spazi dei nomi NVMe. La deallocazione dello spazio consente a un host di disallocare blocchi non utilizzati dagli spazi dei nomi per recuperare spazio.</block>
+  <block id="9228b29536da5aa86ee6865642b7a754" category="paragraph">Questo migliora notevolmente l'efficienza complessiva dello storage, in particolare con file system che hanno un turnover di dati elevato.</block>
+  <block id="459e6c3f59570324cab3a799ce9f4d6f" category="inline-link-macro">Eseguire la migrazione delle chiavi di crittografia dei dati ONTAP tra manager delle chiavi</block>
+  <block id="ba905aa152bc67dfe7369966e1f7b161" category="paragraph">Per passare dal gestore delle chiavi integrato a un gestore delle chiavi esterno o viceversa, vedere <block ref="ddc33c992daebda8b45882e4c40e07d4" category="inline-link-macro-rx"></block>.</block>
+  <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">Novità di ONTAP 9.16.1</block>
+  <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">Modifiche ai valori predefiniti e ai limiti di ONTAP</block>
 </blocks>
