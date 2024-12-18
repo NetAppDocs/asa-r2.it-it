@@ -551,7 +551,6 @@
   <block id="18aec681e94562add9f015e57e17b8d0" category="list-text">Per inviare un caso di supporto, in Gestione sistema, selezionare *cluster &gt;supporto*, quindi selezionare *Vai al supporto NetApp*.</block>
   <block id="ce3bbf8e2056eaff8c2c9a52eb4ce4dc" category="list-text">Per visualizzare un caso inviato in precedenza, in System Manager selezionare *Cluster &gt;Support*, quindi selezionare *View my cases*.</block>
   <block id="c4bd20e96bacd4ca7f4f874cb8a77b00" category="summary">I sistemi ASA R2 (ASA A1K, ASA A70 e ASA A90) offrono una soluzione hardware e software unificata che crea un'esperienza semplificata per i clienti solo SAN.</block>
-  <block id="0ef2f5aecf77f5521c5e2b69fdb889af" category="searchtitle">Scopri di più sui sistemi storage ASA A1K, ASA A70 e ASA A90</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">Informazioni sui sistemi di storage ASA R2</block>
   <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">In un sistema ASA R2, il software ONTAP e System Manager sono ottimizzati per fornire il supporto per le funzionalità SAN essenziali, rimuovendo al contempo funzioni e funzioni non supportate in ambienti SAN.</block>
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">I sistemi ASA R2 introducono l'utilizzo di unità di storage con gruppi di coerenza:</block>
@@ -1611,4 +1610,5 @@
   <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">Il rapporto di riduzione dei dati rappresenta la quantità di spazio risparmiato grazie all'efficienza dello storage.</block>
   <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">SnapMirror (asincrono e sincrono) è supportato dai sistemi ASA R2 solo ai sistemi ASA R2. SnapMirror non è supportato dai sistemi ASA R2 ai sistemi AFF o FAS.</block>
   <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">Avvio rapido dei sistemi storage ASA R2</block>
+  <block id="426ed8a052d2d7277d60ee8001b9d37e" category="searchtitle">Scopri i sistemi storage ASA R2: A1K, A90 e A70</block>
 </blocks>
