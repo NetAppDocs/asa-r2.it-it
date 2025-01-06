@@ -1611,4 +1611,19 @@
   <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">SnapMirror (asincrono e sincrono) è supportato dai sistemi ASA R2 solo ai sistemi ASA R2. SnapMirror non è supportato dai sistemi ASA R2 ai sistemi AFF o FAS.</block>
   <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">Avvio rapido dei sistemi storage ASA R2</block>
   <block id="426ed8a052d2d7277d60ee8001b9d37e" category="searchtitle">Scopri i sistemi storage ASA R2: A1K, A90 e A70</block>
+  <block id="465ce601131c87fafd3a4a3da5836246" category="summary">I sistemi ASA R2 seguono le stesse raccomandazioni e linee guida per la configurazione degli host SAN di tutti gli altri sistemi ONTAP.</block>
+  <block id="9a364a877707d0b61983419895ba3632" category="doc">Configurazione host SAN con sistemi ASA R2</block>
+  <block id="31eb0490b298463d8797eab8041ed748" category="paragraph">Si consiglia di utilizzare due o più switch per collegare il sistema di storage a uno o più host SAN. Per le configurazioni iSCSI, la topologia di rete che collega host, switch e sistema di storage viene definita _network_. Per le configurazioni FC e FC-NVMe, questa stessa topologia di rete è indicata come _fabric_.</block>
+  <block id="1ea2e359c5275499813dff319ee20baa" category="paragraph">Si consiglia di utilizzare configurazioni multi-network o multi-fabric (quelle che utilizzano due o più switch) in quanto forniscono ridondanza sia a livello di switch che di storage. Questa ridondanza rende il tuo sistema storage più tollerante agli errori e garantisce il supporto di operazioni senza interruzioni.</block>
+  <block id="37fdee11e5eadf392d943f0a18609831" category="paragraph">L'illustrazione seguente è un esempio di una configurazione FC con più host utilizzando due fabric per accedere a una singola coppia ha. Anche i numeri delle porte di destinazione FC (0C, 0d, 1a, 1b) sono esempi. I numeri di porta effettivi variano a seconda del modello di piattaforma e se si utilizzano adattatori di espansione.</block>
+  <block id="cafd65a257cc24af0e84e8951ad9d9b5" category="image-alt">Due fabric FC che collegano più host a una singola coppia ha</block>
+  <block id="7934e04423cdef3122abed138d14e800" category="inline-link-macro">Configurazione SAN per host iSCSI</block>
+  <block id="1697498835ad65fe0eb56d5a08926207" category="inline-link-macro">Configurazione SAN per host FC e FC/NVMe</block>
+  <block id="ebd194f81358f792dec388e009d8bec3" category="paragraph">Ulteriori informazioni su <block ref="9880b1feac4156c93ea0abed0c0efc7f" category="inline-link-macro-rx"></block>. Ulteriori informazioni su <block ref="e620f7fdd29d4d62cc1639e7aa82a5ed" category="inline-link-macro-rx"></block>.</block>
+  <block id="f32de8a0d0833354764d0913e73367fa" category="section-title">Raccomandazione di zoning per gli host FC</block>
+  <block id="3efb87f7842540462326a834b157f4ab" category="paragraph">È necessario configurare gli host FC per l'utilizzo della zoning. I sistemi ASA R2 seguono le stesse raccomandazioni e linee guida sullo zoning degli host FC di tutti gli altri sistemi ONTAP.</block>
+  <block id="db6c51496ac3638e90475615dca619b4" category="paragraph">Una zona è un raggruppamento logico di una o più porte all'interno di un fabric. Affinché i dispositivi siano in grado di individuarsi, stabilire sessioni tra loro e comunicare, entrambe le porte devono avere un'appartenenza di zona comune.</block>
+  <block id="61cf7293359faa875bba34aec2374d5e" category="inline-link-macro">Zoning FC/FC-NVMe</block>
+  <block id="05c164818e6cf72673636c3f026f35fd" category="paragraph">Ulteriori informazioni su <block ref="04395b79c4c7664c0e1d06aced656acd" category="inline-link-macro-rx"></block>.</block>
+  <block id="9567f97a2f92160f66cfc2ac7b1e9cc2" category="sidebar">Impostare la configurazione dell'host SAN</block>
 </blocks>
