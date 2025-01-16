@@ -900,7 +900,6 @@
   <block id="b1d1ac1660761a14f96c8c2916c338ee" category="inline-link-macro">Installazione dell'hardware per il sistema di storage ASA R2</block>
   <block id="1657efe0ea96d15a299ea1851942c2a9" category="paragraph">Dopo aver preparato l'installazione dell'hardware ASA R2, si <block ref="fb5e4a441151f85bf2036b60142e5f3c" category="inline-link-macro-rx"></block>.</block>
   <block id="7c67b8b9f7d3533c33fb6cecf037204c" category="doc">Abilitare l'accesso ai dati dagli host SAN al sistema di storage ASA R2</block>
-  <block id="2fa6f858dba87204a24e814faeae2b1a" category="paragraph">Per impostare l'accesso ai dati, è necessario verificare che i parametri e le impostazioni specifici sul client SAN fondamentali per il corretto funzionamento con ONTAP siano configurati correttamente. Se utilizzate VMware, dovreste migrare le vostre macchine virtuali.</block>
   <block id="4c686f129e697b3603247005c22c0238" category="section-title">Configurare l'accesso ai dati dagli host SAN</block>
   <block id="f66720607a76ceed4cebe5d6d2110bf4" category="paragraph">La configurazione necessaria per impostare l'accesso ai dati dal sistema ASA R2 agli host SAN varia IN base al sistema operativo host e al protocollo. La corretta configurazione è importante per ottenere le migliori performance e il successo del failover.</block>
   <block id="e3e3a193f32926fa7dded05dbaba1a71" category="inline-link-macro">Client SCSI VMware vSphere</block>
@@ -1626,4 +1625,18 @@
   <block id="61cf7293359faa875bba34aec2374d5e" category="inline-link-macro">Zoning FC/FC-NVMe</block>
   <block id="05c164818e6cf72673636c3f026f35fd" category="paragraph">Ulteriori informazioni su <block ref="04395b79c4c7664c0e1d06aced656acd" category="inline-link-macro-rx"></block>.</block>
   <block id="9567f97a2f92160f66cfc2ac7b1e9cc2" category="sidebar">Impostare la configurazione dell'host SAN</block>
+  <block id="fbbf9bfec249398ad3da62c3698ce2ad" category="paragraph">Per impostare l'accesso ai dati, è necessario assicurarsi che i parametri e le impostazioni critiche sul client SAN per il corretto funzionamento con ONTAP siano configurati correttamente. Se si fornisce storage per l'ambiente VMware, è necessario installare OTV 10,3 semplicemente per la gestione dello storage ASA R2.</block>
+  <block id="1496c484b551cb8fd3b8676b0332a8a2" category="section-title">Configura il tuo sistema ASA R2 come provider di storage nel tuo ambiente VMware</block>
+  <block id="a9e0f432b63d28e01f9f96baf47e7876" category="paragraph">Puoi utilizzare i tool ONTAP per VMware per abilitare facilmente il tuo sistema ASA R2 come storage provider nel tuo ambiente VMware.</block>
+  <block id="5d5cb8b837d9b4bfd91c87d5d93d3eef" category="paragraph">Strumenti ONTAP per VMware vSphere è un set di strumenti che funzionano in combinazione con VMware vCenter Server Virtual Appliance (vCSA) per una facile gestione delle macchine virtuali sugli host VMware ESXi.</block>
+  <block id="2e0332b2709dcff7df5d28c654c54066" category="inline-link-macro">Tool ONTAP per VMware vSphere 10,3</block>
+  <block id="8e4d015f72125fee6a1076da698cfa9b" category="paragraph">I sistemi ASA R2 sono supportati da <block ref="cf4d7ec541bcf67d4856d52c8275160d" category="inline-link-macro-rx"></block> e versioni successive.</block>
+  <block id="8b1987d01ceab7f9e7729fcf1f463c97" category="inline-link-macro">Implementa i tool ONTAP per VMware</block>
+  <block id="8a8beafe3fa2e4ea217e97bf12a3bb91" category="paragraph">Scopri come <block ref="5a39da81f88e74c1cffe4258059e9f43" category="inline-link-macro-rx"></block>e quindi utilizzalo per effettuare le seguenti operazioni:</block>
+  <block id="6245e46af5a3bdaf57696763c4214c70" category="inline-link-macro">Aggiungere istanze di vCenter Server</block>
+  <block id="384abfcd711546895f3224c5e42e8128" category="list-text"><block ref="384abfcd711546895f3224c5e42e8128" category="inline-link-macro-rx"></block></block>
+  <block id="9a36f8e08fbdd31aefe88585b5de036e" category="inline-link-macro">Configurare le impostazioni dell'host ESXi</block>
+  <block id="28098493f634877a20d2a424bec3e673" category="list-text"><block ref="28098493f634877a20d2a424bec3e673" category="inline-link-macro-rx"></block></block>
+  <block id="0fc12de41b656aa3f728162d7984cb09" category="inline-link-macro">Rilevamento del sistema di storage e degli host ASA R2</block>
+  <block id="73a36b5cc4b414970076f394e3abf9e4" category="list-text"><block ref="73a36b5cc4b414970076f394e3abf9e4" category="inline-link-macro-rx"></block></block>
 </blocks>
