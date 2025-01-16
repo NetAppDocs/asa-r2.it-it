@@ -35,7 +35,7 @@ Puoi utilizzare i tool ONTAP per VMware per abilitare facilmente il tuo sistema 
 
 Strumenti ONTAP per VMware vSphere è un set di strumenti che funzionano in combinazione con VMware vCenter Server Virtual Appliance (vCSA) per una facile gestione delle macchine virtuali sugli host VMware ESXi.
 
-I sistemi ASA R2 sono supportati da link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/concepts/ontap-tools-overview.html["Tool ONTAP per VMware vSphere 10,3"] e versioni successive.
+I sistemi ASA R2 sono supportati da link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/concepts/ontap-tools-overview.html["Tool ONTAP per VMware vSphere 10,3"^] e versioni successive.
 
 Scopri come link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-10/deploy/ontap-tools-deployment.html["Implementa i tool ONTAP per VMware"^]e quindi utilizzalo per effettuare le seguenti operazioni:
 

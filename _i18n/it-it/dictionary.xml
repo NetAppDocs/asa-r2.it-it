@@ -1630,7 +1630,6 @@
   <block id="a9e0f432b63d28e01f9f96baf47e7876" category="paragraph">Puoi utilizzare i tool ONTAP per VMware per abilitare facilmente il tuo sistema ASA R2 come storage provider nel tuo ambiente VMware.</block>
   <block id="5d5cb8b837d9b4bfd91c87d5d93d3eef" category="paragraph">Strumenti ONTAP per VMware vSphere è un set di strumenti che funzionano in combinazione con VMware vCenter Server Virtual Appliance (vCSA) per una facile gestione delle macchine virtuali sugli host VMware ESXi.</block>
   <block id="2e0332b2709dcff7df5d28c654c54066" category="inline-link-macro">Tool ONTAP per VMware vSphere 10,3</block>
-  <block id="8e4d015f72125fee6a1076da698cfa9b" category="paragraph">I sistemi ASA R2 sono supportati da <block ref="cf4d7ec541bcf67d4856d52c8275160d" category="inline-link-macro-rx"></block> e versioni successive.</block>
   <block id="8b1987d01ceab7f9e7729fcf1f463c97" category="inline-link-macro">Implementa i tool ONTAP per VMware</block>
   <block id="6245e46af5a3bdaf57696763c4214c70" category="inline-link-macro">Aggiungere istanze di vCenter Server</block>
   <block id="9a36f8e08fbdd31aefe88585b5de036e" category="inline-link-macro">Configurare le impostazioni dell'host ESXi</block>
@@ -1639,4 +1638,5 @@
   <block id="a40657a47b74f3006bcfdd2899235090" category="list-text"><block ref="a40657a47b74f3006bcfdd2899235090" category="inline-link-macro-rx"></block></block>
   <block id="b57ea9712535452d1a9c410e0f1f4f93" category="list-text"><block ref="b57ea9712535452d1a9c410e0f1f4f93" category="inline-link-macro-rx"></block></block>
   <block id="8182eb8f155278176f93ebb4d84774dc" category="list-text"><block ref="8182eb8f155278176f93ebb4d84774dc" category="inline-link-macro-rx"></block></block>
+  <block id="8027cf82d29e89bcd72c0f7ae984c222" category="paragraph">I sistemi ASA R2 sono supportati da <block ref="6a0b5c767b375da41f0e7140f5d8129e" category="inline-link-macro-rx"></block> e versioni successive.</block>
 </blocks>
