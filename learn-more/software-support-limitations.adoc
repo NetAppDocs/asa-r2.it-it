@@ -14,7 +14,13 @@ summary: 'Sebbene i sistemi ASA R2 offrano un"ampia gamma di supporto per le sol
 Sebbene i sistemi ASA R2 offrano un'ampia gamma di supporto per le soluzioni SAN, alcune funzionalità del software ONTAP non sono supportate.
 
 .I sistemi ASA R2 non supportano quanto segue:
-* Failover LIF iSCSI
+* Failover automatico della LIF iSCSI di default
++
+Nei sistemi ASA R2, la LIF di networking predefinita è condivisa tra host NVMe e SCSI, quindi non supporta il failover automatico. Per attivare il failover automatico della LIF iSCSI, è necessario link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["Crea una LIF solo iSCSI"]. Il failover automatico è attivato per impostazione predefinita solo su iSCSI LIFS.
+
++
+Quando è abilitato il failover automatico di LIF iSCSI, in caso di failover dello storage, la LIF iSCSI viene automaticamente migrata dal nodo home o dalla porta al nodo partner di ha o alla porta, per poi tornare indietro una volta completato il failover. Oppure, se la porta di una LIF iSCSI diventa guasta, la LIF viene migrata automaticamente a una porta funzionante nel suo nodo home corrente e quindi nuovamente alla porta originale una volta che la porta è nuovamente funzionante.
+
 * FabricPool
 * Thick provisioning LUN
 * MetroCluster
@@ -27,11 +33,15 @@ Sebbene i sistemi ASA R2 offrano un'ampia gamma di supporto per le soluzioni SAN
 
 .I sistemi ASA R2 supportano quanto segue:
 * SnapLock
++
+link:../secure-data/ransomware-protection.html["Informazioni su come bloccare le istantanee"] Sul sistema ASA R2.
+
 * Crittografia a doppio layer
++
+link:../secure-data/encrypt-data-at-rest.html["Scopri come applicare la crittografia a doppio livello"] Ai dati sul sistema ASA R2.
+
 
 
 .Per ulteriori informazioni
 * Per link:https://hwu.netapp.com/["NetApp Hardware Universe"^]ulteriori informazioni sul supporto hardware e sulle limitazioni di ASA R2, consultare la.
-* link:../secure-data/ransomware-protection.html["Informazioni su come bloccare le istantanee"] Sul sistema ASA R2.
-* link:../secure-data/encrypt-data-at-rest.html["Scopri come applicare la crittografia a doppio livello"] Ai dati sul sistema ASA R2.
 
