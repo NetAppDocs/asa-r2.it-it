@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: administer/add-nodes.html 
+keywords: rename, node, renaming, asa r2 
+summary: 'Potrebbe essere necessario rinominare un nodo per allinearlo alle convenzioni di denominazione dell"organizzazione o per altri motivi amministrativi.' 
+---
+= Aggiungere nodi ASA R2 a un cluster ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A partire da ONTAP 9.16.1, i sistemi storage ASA R2 supportano fino a 12 nodi per cluster. Dopo aver cablato e acceso i nuovi nodi di una coppia ha, è necessario unirli al cluster.
+
+.Prima di iniziare
+Raccogliere le seguenti informazioni:
+
+* L'indirizzo IP del nodo
+* Indirizzo IP dell'interfaccia di rete intercluster
+* La subnet mask di rete intercluster
+* Gateway di rete intercluster
+* Per configurare il gestore delle chiavi incorporato (OKM), è necessaria la passphrase OKM.
+
+
+.Fasi
+. In System Manager, selezionare *Cluster > Panoramica*.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"] accanto al nodo che si desidera unire al cluster, quindi selezionare *Aggiungi nodo*
+. Immettere l'indirizzo IP di ciascun nodo.
+. Inserire l'indirizzo IP dell'interfaccia di rete intercluster, la subnet mask e il gateway.
+. Se si desidera configurare il gestore delle chiavi incorporato (OKM), immettere la passphrase OKM.
++
+*Per impostazione predefinita è selezionato Configura gestore chiavi integrato per la crittografia*.
+
+. Selezionare *Aggiungi*.
+
+
+.Risultato
+La nuova coppia ha è unita al cluster.
+
+.Quali sono le prossime novità?
+Dopo aver aggiunto la nuova coppia ha al cluster è possibile link:../install-setup/set-up-data-access.html["Abilitare l'accesso ai dati dagli host SAN"] accedere ai nuovi nodi.

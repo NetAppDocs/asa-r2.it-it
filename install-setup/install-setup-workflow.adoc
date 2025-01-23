@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: install-setup/install-setup-workflow.html 
 keywords: asa r2, install, setup, workflow 
-summary: 'Inizia subito con l"installazione e la configurazione del sistema storage ASA R2 e implementa come coppia ha nel tuo ambiente ONTAP.' 
+summary: 'Inizia subito con l"installazione e la configurazione del sistema di storage ASA R2 e implementalo nel tuo ambiente ONTAP.' 
 ---
 = Flusso di lavoro di installazione e setup per i sistemi storage ASA R2
 :allow-uri-read: 

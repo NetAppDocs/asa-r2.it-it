@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: administer/reboot-take-over-give-back-nodes.html 
-keywords: reboot, take over, give back, nodes, asa r2, asa r2, asa a1k, asa 70, asa 90 
+keywords: reboot, take over, give back, nodes, asa r2, asa a1k, asa a90, asa a70 
 summary: Potrebbe essere necessario riavviare un nodo per la manutenzione, la risoluzione dei problemi, gli aggiornamenti software o altri motivi amministrativi. 
 ---
 = Riavviare un nodo su un sistema storage ASA R2

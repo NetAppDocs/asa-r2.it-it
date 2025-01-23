@@ -51,7 +51,7 @@ Modificare il criterio di qualità del servizio (QoS) predefinito
 
 Questa opzione non è disponibile se in precedenza non è stato impostato il criterio QoS predefinito sulla Storage Virtual Machine (VM) su cui viene creata l'unità di storage.
  a| 
-.. In *archiviazione e ottimizzazione*, accanto a *qualità del servizio (QoS)*, selezionare image:icon_dropdown_arrow.gif["icona della freccia blu rivolta verso il basso"] .
+.. In *archiviazione e ottimizzazione*, accanto a *qualità del servizio (QoS)*, selezionare image:icon_dropdown_arrow.gif["icona della freccia blu rivolta verso il basso"].
 .. Selezionare un criterio QoS esistente.
 
 
@@ -76,6 +76,17 @@ La definizione di un throughput minimo e di IOPS per un'unità di storage garant
 
 
 .. Selezionare *Aggiungi*.
+
+
+
+
+ a| 
+Modificare il livello di servizio delle prestazioni predefinito.
+
+I sistemi ASA R2 offrono due livelli di performance. Il livello di prestazioni predefinito è *Extreme*, ovvero il livello più alto disponibile. È possibile ridurre il livello di prestazioni a *prestazioni*.
+ a| 
+.. In *archiviazione e ottimizzazione*, accanto al livello di servizio *prestazioni*, selezionare image:icon_dropdown_arrow.gif["icona della freccia blu rivolta verso il basso"].
+.. Selezionare *prestazioni*.
 
 
 

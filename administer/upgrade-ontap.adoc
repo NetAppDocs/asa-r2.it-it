@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: administer/upgrade-ontap.html 
+keywords: update, firmware, system files, automatic updates, automated updates, asa r2, disable, 
+summary: ONTAP aggiorna automaticamente il firmware sui sistemi ASA R2. È possibile utilizzare System Manager per disattivare gli aggiornamenti automatici e visualizzare gli aggiornamenti prima che vengano installati. 
+---
+= Aggiornare ONTAP sui sistemi storage ASA R2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando aggiorni il software ONTAP sul tuo sistema ASA R2, potrai sfruttare le nuove e migliorate funzionalità di ONTAP che ti consentono di ridurre i costi, accelerare i carichi di lavoro critici, migliorare la sicurezza ed espandere l'ambito di protezione dei dati disponibile per la tua organizzazione.
+
+Gli aggiornamenti del software ONTAP per i sistemi ASA R2 seguono lo stesso processo degli aggiornamenti per altri sistemi ONTAP. Se si dispone di un contratto SupportEdge attivo per Active IQ Digital Advisor (noto anche come Digital Advisor), è necessario link:https://docs.netapp.com/us-en/ontap/upgrade/create-upgrade-plan.html["Prepararsi per l'aggiornamento con Upgrade Advisor"^]. Upgrade Advisor fornisce informazioni che consentono di ridurre al minimo le incertezze e i rischi valutando il cluster e creando un piano di upgrade specifico per la configurazione in uso. Se non si dispone di un contratto SupportEdge attivo per Active IQ Digital Advisor, è necessario link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["Prepararsi all'aggiornamento senza Upgrade Advisor"^].
+
+Dopo aver preparato l'aggiornamento, si consiglia di eseguire gli aggiornamenti utilizzando link:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["Upgrade automatizzato senza interruzioni (ANDU) da System Manager"]. ANDU sfrutta la tecnologia di failover ad alta disponibilità (ha) di ONTAP per garantire che i cluster continuino a servire i dati senza interruzioni durante l'upgrade.
+
+Ulteriori informazioni su link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["Aggiornamenti software ONTAP"].

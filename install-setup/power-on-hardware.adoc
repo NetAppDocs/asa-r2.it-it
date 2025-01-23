@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/power-on-hardware.html 
-keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a70, asa a90, asa c80, power on 
+keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, power on 
 summary: Alimenta ogni shelf NS224 per assegnare un ID shelf univoco, accendere i controller ASA R2 e fissare i cavi di alimentazione. 
 ---
 = Accendere il sistema di storage ASA R2

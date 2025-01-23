@@ -13,6 +13,10 @@ summary: Utilizzare gruppi di coerenza per eseguire diverse azioni contemporanea
 [role="lead"]
 Un gruppo di coerenza è un insieme di unità di archiviazione gestite come una singola unità. Utilizza gruppi di coerenza per una gestione semplificata dello storage. Ad esempio, si supponga di disporre di un database composto da 10 unità di archiviazione in un gruppo di coerenza ed è necessario eseguire il backup dell'intero database. Invece di eseguire il backup di ciascuna unità di storage, è possibile eseguire il backup dell'intero database semplicemente aggiungendo la protezione dei dati snapshot al gruppo di coerenza. Il backup delle unità di storage come gruppo di coerenza anziché singolarmente fornisce anche un backup coerente di tutte le unità, mentre il backup delle singole unità può potenzialmente creare incoerenze.
 
+A partire da ONTAP 9.16.1, è possibile utilizzare Gestione sistema per creare gruppi di coerenza gerarchici sul sistema ASA R2. In una struttura gerarchica, uno o più gruppi di coerenza sono configurati come figli in un gruppo di coerenza di origine.
+
+I gruppi di coerenza gerarchici consentono di applicare singole policy di snapshot a ciascun gruppo di coerenza figlio e di replicare le snapshot di tutti i gruppi di coerenza figlio in un cluster remoto come una singola unità replicando l'immagine di origine. In questo modo, si semplificano la protezione e la gestione dei dati per strutture di dati complesse. Ad esempio, si supponga di creare un gruppo di coerenza di origine denominato `SVM1_app` che contiene due gruppi di coerenza child: `SVM1app_data` Per i dati dell'applicazione e `SVM1app_logs` per i log delle applicazioni. Le copie Snapshot di `SVM1app_data` vengono eseguite ogni 15 minuti e le copie Snapshot di `SVM1app_logs` vengono eseguite ogni ora. Il gruppo di coerenza di origine `SVM1_app,` dispone di una policy SnapMirror che replica le snapshot di entrambi `SVM1app_data` e `SVM1app_logs` in un cluster remoto ogni 24 ore. Il gruppo di coerenza di origine `SVM1_app` viene gestito come una singola unità e i gruppi di coerenza child vengono gestiti come unità separate.
+
 
 
 == Aggiungi la data Protection delle snapshot a un gruppo di coerenza
@@ -139,6 +143,107 @@ L'unità di archiviazione non è più un membro del gruppo di coerenza.
 
 .Cosa succederà
 Se è necessario continuare la protezione dei dati per l'unità di archiviazione, aggiungere l'unità di archiviazione a un altro gruppo di coerenza.
+
+
+
+== Converti un gruppo di coerenza esistente in un gruppo di coerenza di origine
+
+Le unità di storage non possono essere direttamente associate a un gruppo di coerenza di origine. Se si converte un gruppo di coerenza esistente in un gruppo padre, viene creato un nuovo gruppo di coerenza figlio e le unità di archiviazione appartenenti al gruppo di coerenza convertito vengono spostate nel nuovo gruppo di coerenza figlio.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza che si desidera convertire in un gruppo di coerenza di origine.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Promuovi a gruppo di coerenza principale*.
+. Immettere un nome per il gruppo di coerenza principale o accettare il nome predefinito, quindi selezionare il tipo di componente del gruppo di coerenza.
+. Selezionare *Promuovi*.
+
+
+.Quali sono le prossime novità?
+È possibile creare ulteriori gruppi di coerenza figlio nel gruppo di coerenza di origine. È anche possibile link:../secure-data/encrypt-data-at-rest.html["configurare la replica snapshot"]copiare il gruppo di coerenza di origine in una posizione geograficamente remota per il backup e il disaster recovery.
+
+
+
+== Creare un gruppo di coerenza figlio
+
+La creazione di gruppi di coerenza figlio consente di applicare singole policy di snapshot a ciascun figlio, applicando al contempo un criterio di replica a tutti i gruppi di coerenza figlio al livello principale.
+
+È possibile creare un gruppo di coerenza figlio da un gruppo di coerenza nuovo o esistente.
+
+[role="tabbed-block"]
+====
+.Da un nuovo gruppo di coerenza
+--
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza di origine al quale si desidera aggiungere un gruppo di coerenza figlio.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Aggiungi un nuovo gruppo di coerenza figlio*.
+. Immettere un nome per il gruppo di coerenza figlio o accettare il nome predefinito, quindi selezionare il tipo di componente del gruppo di coerenza.
+. Selezionare per aggiungere unità di archiviazione esistenti al gruppo di coerenza secondario o per creare nuove unità di archiviazione.
++
+Se si creano nuove unità di archiviazione, immettere il numero di unità che si desidera creare e la capacità per unità, quindi immettere le informazioni sull'host.
+
++
+Se si creano più unità di archiviazione, ogni unità viene creata con la stessa capacità e lo stesso sistema operativo host. Per assegnare una capacità diversa a ciascuna unità, selezionare *Aggiungi una capacità diversa*.
+
+. Selezionare *Aggiungi*.
+
+
+--
+.Da un gruppo di coerenza esistente
+--
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Selezionare il gruppo di coerenza esistente che si desidera creare un gruppo di coerenza figlio.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Sposta in un gruppo di coerenza diverso*.
++
+Se il gruppo di coerenza che si desidera utilizzare è già il figlio di un altro gruppo di coerenza, è necessario scollegarlo dal gruppo di coerenza di origine esistente prima di spostarlo in un nuovo gruppo di coerenza di origine.
+
+. Immettere un nuovo nome per il gruppo di coerenza figlio o accettare il nome predefinito, quindi selezionare il tipo di componente del gruppo di coerenza.
+. Selezionare il gruppo di coerenza esistente che si desidera creare per il gruppo di coerenza di origine o selezionare per creare un nuovo gruppo di coerenza di origine.
++
+Se si sceglie di creare un nuovo gruppo di coerenza di origine, immettere un nome per il gruppo di coerenza di origine o accettare il nome predefinito, quindi selezionare il tipo di componente dell'applicazione di coerenza.
+
+. Selezionare *Sposta*.
+
+
+--
+====
+.Cosa succederà
+Dopo aver creato un gruppo di coerenza figlio, è possibile link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["applicazione di singole policy di protezione degli snapshot"]farlo a ciascun gruppo di coerenza figlio. Puoi anche link:snapshot-replication.html["impostare un criterio di replica"] sul gruppo di coerenza di origine per replicare le snapshot di tutti i gruppi di coerenza child in un cluster remoto come una singola unità.
+
+
+
+== Demotizza un gruppo di coerenza di origine in un singolo gruppo di coerenza
+
+Quando si _demote_ un gruppo di coerenza padre in un singolo gruppo di coerenza, le unità di archiviazione dei gruppi di coerenza figlio associati vengono aggiunte al gruppo di coerenza padre. I gruppi di coerenza child vengono eliminati e l'origine viene gestita come un singolo gruppo di coerenza.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza di origine che si desidera ridurre.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Demote in un singolo gruppo di coerenza*.
+. Selezionare *Demote*
+
+
+.Quali sono le prossime novità?
+link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["Aggiunta di una policy per lo snapshot"] al gruppo di coerenza retrocesso, al fine di proteggere le unità di storage gestite in precedenza dai gruppi di coerenza figlio.
+
+
+
+== Scollegare un gruppo di coerenza figlio da un gruppo di coerenza di origine
+
+Quando si scollega un gruppo di coerenza figlio da un gruppo di coerenza di origine, il gruppo di coerenza figlio viene rimosso dal gruppo di coerenza di origine e gestito come singolo gruppo di coerenza. Il criterio di replica applicato all'immagine principale non viene più applicato al gruppo di coerenza secondario autonomo.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Selezionare il gruppo di coerenza di origine.
+. Selezionare il gruppo di coerenza figlio che si desidera scollegare.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Disconnetti da principale*.
+. Immettere un nuovo nome per il gruppo di coerenza che si sta scollegando o accettare il nome predefinito, quindi selezionare il tipo di applicazione del gruppo di coerenza.
+. Selezionare *Scollega*.
+
+
+.Quali sono le prossime novità?
+link:snapshot-replication.html["Impostare un criterio di replica"] per replicare le snapshot del gruppo di coerenza figlio staccato in un cluster remoto come un unico gruppo di coerenza.
 
 
 

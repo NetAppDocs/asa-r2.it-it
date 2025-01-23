@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: administer/increase-storage-capacity.html 
-keywords: increase, capacity, node, shelf, drive, expand, storage, asa r2, asa r2, asa a1k, asa 70, asa 90 
+keywords: increase, capacity, node, shelf, drive, expand, storage, asa r2, asa a1k, asa a90, asa a70 
 summary: Aggiungi dischi a un nodo o shelf per aumentare la capacità delle unità storage di ASA R2. 
 ---
 = Aumentare la capacità dello storage sui sistemi storage ASA R2

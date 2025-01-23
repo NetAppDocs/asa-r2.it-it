@@ -33,6 +33,31 @@ Se lo spazio del cluster sta per esaurirsi o se non ha la capacità necessaria p
 
 
 
+== Monitorare l'utilizzo delle zone di disponibilità dello storage
+
+Ogni coppia ha in un sistema ASA R2 utilizza un pool di storage comune chiamato _zona di disponibilità dello storage_. La zona di disponibilità dello storage ha accesso a tutti i dischi disponibili nel sistema storage ed è visibile a entrambi i nodi nella coppia ha.
+
+Se nel cluster sono presenti 4 o più nodi, è possibile visualizzare la quantità di spazio utilizzata dalla zona di disponibilità dello storage per ciascuna coppia ha. Questa metrica non è disponibile per i cluster a 2 nodi.
+
+.Fasi
+. In System Manager, selezionare *Cluster*, quindi selezionare *Panoramica*.
++
+Viene visualizzato un riepilogo dell'utilizzo delle zone di disponibilità dello storage per ogni coppia ha nel cluster.
+
+. Se si desiderano metriche più dettagliate, selezionare una disponibilità dello storage specifica.
++
+In *Panoramica*, vengono visualizzate la capacità della zona di disponibilità dello storage, la quantità di spazio utilizzato e il rapporto di riduzione dei dati.
+
++
+In *unità di archiviazione* viene visualizzato un elenco di tutte le unità di archiviazione nella zona di disponibilità di archiviazione.
+
+
+
+.Quali sono le prossime novità?
+Se lo spazio nella zona di disponibilità dello storage si sta esaurendo, è necessario pianificare link:../manage-data/move-storage-units.html["spostare le unità di archiviazione"]un'altra zona di disponibilità dello storage per bilanciare l'utilizzo dello storage nel cluster.
+
+
+
 == Monitorare l'utilizzo dell'unità di archiviazione
 
 Monitorare la quantità di storage consumata da un'unità di storage in modo da poter aumentare in maniera proattiva le dimensioni dell'unità di storage in base alle proprie esigenze di business.

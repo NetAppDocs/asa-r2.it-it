@@ -22,6 +22,8 @@ Un gruppo di coerenza è un insieme di unità di archiviazione gestite come una 
 
 Creare un gruppo di coerenza utilizzando nuove unità di archiviazione o un gruppo di coerenza utilizzando le unità di archiviazione esistenti.
 
+Quando si crea un gruppo di coerenza utilizzando nuove unità di archiviazione, è possibile assegnare una capacità diversa a ciascuna unità di archiviazione, modificare il livello di servizio delle prestazioni predefinito e creare fino a cinque gruppi di coerenza figlio. Quando si crea un gruppo di coerenza utilizzando unità di archiviazione esistenti, è possibile aggiungere unità di archiviazione già in uso.
+
 [role="tabbed-block"]
 ====
 .Utilizzare nuove unità di conservazione
@@ -31,14 +33,43 @@ Creare un gruppo di coerenza utilizzando nuove unità di archiviazione o un grup
 . Selezionare image:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"]; quindi selezionare *utilizzo di nuove unità di memorizzazione*.
 . Immettere un nome per la nuova unità di archiviazione, il numero di unità e la capacità per unità.
 +
-Se si creano più unità, ciascuna viene creata con la stessa capacità e lo stesso sistema operativo host. Per assegnare una capacità diversa a ciascuna unità, selezionare *altre opzioni*, quindi selezionare *Aggiungi una capacità diversa*.
+Se si creano più unità, ciascuna viene creata con la stessa capacità e lo stesso sistema operativo host per impostazione predefinita. È possibile assegnare una capacità diversa a ogni unità.
 
-. Selezionare il sistema operativo host e la mappatura dell'host.
-. Selezionare *Aggiungi*.
+. Se si desidera eseguire una delle seguenti operazioni, selezionare *altre opzioni* e completare la procedura richiesta.
++
+[cols="2, 4a"]
+|===
+| Opzione | Fasi 
+
+
+ a| 
+Assegnare una capacità diversa a ciascuna unità di memorizzazione
+ a| 
+Selezionare *Aggiungi una capacità diversa*.
+
+
+
+ a| 
+Modificare il livello di servizio delle prestazioni predefinito
+ a| 
+In *livello di servizio prestazioni*, selezionare un livello di servizio diverso.
+
+
+
+ a| 
+Creare un gruppo di coerenza figlio
+ a| 
+Selezionare *Aggiungi gruppo di coerenza figlio*.
+
+.. Selezionare il sistema operativo host e la mappatura dell'host.
+.. Selezionare *Aggiungi*.
 
 
 .Quali sono le prossime novità?
 È stato creato un gruppo di coerenza contenente le unità di archiviazione che si desidera proteggere. A questo punto è possibile creare un'istantanea.
+
+|===
+
 
 --
 .Utilizzare le unità di archiviazione esistenti

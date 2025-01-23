@@ -14,6 +14,8 @@ entries:
     url: "/monitor/monitor-storage.html"
   - title: Aumentare la capacità di storage
     url: "/administer/increase-storage-capacity.html"
+- title: Aggiornamento ONTAP
+  url: "/administer/upgrade-ontap.html"
 - title: Aggiornare il firmware
   url: "/administer/update-firmware.html"
 - title: Visualizza informazioni
@@ -22,6 +24,8 @@ entries:
   url: "/monitor/view-events-jobs.html"
 - title: Gestire i nodi
   entries:
+  - title: Aggiungere nodi
+    url: "/administer/add-nodes.html"
   - title: Riavviare, takeover e restituire i nodi
     url: "/administer/reboot-take-over-give-back-nodes.html"
   - title: Rinomina nodi

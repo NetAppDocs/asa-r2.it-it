@@ -150,3 +150,19 @@ Aggiungere un nuovo host
 ====
 .Quali sono le prossime novità?
 Per proteggere i dati è necessario ricorrere link:../data-protection/create-snapshots.html#step-2-create-a-snapshot["creare snapshot"] al gruppo di coerenza clonato.
+
+
+
+== Clone del gruppo di coerenza split
+
+Quando si suddivide un clone del gruppo di coerenza, il clone viene dissociato dal gruppo di coerenza di origine e viene allocato lo spazio su disco per il clone. Il clone diventa un gruppo di coerenza standalone che può essere utilizzato indipendentemente dal gruppo di coerenza di origine.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Posizionare il puntatore del mouse sul clone del gruppo di coerenza che si desidera suddividere.
+. Selezionare *Dividi clone*.
+. Selezionare *Dividi*.
+
+
+.Risultato
+Il clone viene dissociato dal gruppo di coerenza di origine e lo spazio su disco viene allocato per il clone.
