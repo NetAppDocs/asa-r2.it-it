@@ -61,15 +61,13 @@ Creare un gruppo di coerenza figlio
  a| 
 Selezionare *Aggiungi gruppo di coerenza figlio*.
 
-.. Selezionare il sistema operativo host e la mappatura dell'host.
-.. Selezionare *Aggiungi*.
+|===
+. Selezionare il sistema operativo host e la mappatura dell'host.
+. Selezionare *Aggiungi*.
 
 
 .Quali sono le prossime novità?
 È stato creato un gruppo di coerenza contenente le unità di archiviazione che si desidera proteggere. A questo punto è possibile creare un'istantanea.
-
-|===
-
 
 --
 .Utilizzare le unità di archiviazione esistenti
