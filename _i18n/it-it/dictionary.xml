@@ -1713,7 +1713,6 @@
   <block id="ee498a1797cb05156ed6a63b8ff17543" category="paragraph"><block ref="2e81c1e2e7e67baddc7dd1eab1535a95" category="inline-link-macro-rx"></block> per replicare le snapshot del gruppo di coerenza figlio staccato in un cluster remoto come un unico gruppo di coerenza.</block>
   <block id="ab8f09c8990747589e661d2b7b0d3f20" category="summary">I sistemi ASA R2 (ASA A1K, A90, A70) offrono una soluzione hardware e software unificata per un'esperienza semplificata solo ai clienti SAN.</block>
   <block id="2168b2f72c5b19d6c97100664276ea67" category="searchtitle">Informazioni sui sistemi ASA A1K, A90 e A70</block>
-  <block id="a2d4e1cad7dfa6160fb66fdbda1b87c5" category="paragraph">I sistemi ASA R2 supportano tutti i protocolli SAN (iSCSI, FC, NVMe/FC, NVMe/TCP). I protocolli iSCSI, FC e NVMe/FC supportano l'architettura Active-Active simmetrica per il multipathing, in modo che tutti i percorsi tra gli host e lo storage siano Active/ottimizzati. I protocolli iSCSI e NVMe/TCP supportano percorsi diretti tra gli host e lo storage.</block>
   <block id="109a51a8a2c0a685a3c75a58d3c4230b" category="summary">Per iniziare con un sistema ASA R2 (ASA A1K, A90, A70), installare l'hardware, configurare il cluster, configurare l'accesso ai dati ed eseguire il provisioning dello storage.</block>
   <block id="1e6107a968feb6567db48861306cc49f" category="searchtitle">Installare e configurare i sistemi di storage ASA A1K, A90 e A70</block>
   <block id="e5c51f544e69319bec042113911e203e" category="paragraph"><block ref="1284f4e581f500fae0f4daa3e9543a0c" category="inline-link-macro-rx"></block> Il tuo sistema ASA R2 e implementalo nell'ambiente ONTAP.</block>
@@ -1763,4 +1762,9 @@
   <block id="3214e36fd00eb6d4da6f5d9b64f41cb1" category="sidebar">Gestire le unità di archiviazione</block>
   <block id="611bc8bee4d5b03a55be78ab0ca75f66" category="sidebar">Spostare le unità di archiviazione</block>
   <block id="ffb5ca95f1d59040ebadb90640b1970b" category="cell"><block ref="ffb5ca95f1d59040ebadb90640b1970b" category="inline-link-macro-rx"></block></block>
+  <block id="07f2a299db43ab53ccb5d7b05918e3fc" category="paragraph">I sistemi ASA R2 supportano tutti i protocolli SAN (iSCSI, FC, NVMe/FC, NVMe/TCP). I protocolli iSCSI, FC, NVMe/FC e NVMe/TCP supportano l'architettura Active-Active simmetrica per il multipathing, in modo che tutti i percorsi tra gli host e lo storage siano attivi/ottimizzati. I protocolli iSCSI e NVMe/TCP supportano percorsi diretti tra gli host e lo storage.</block>
+  <block id="30388d1a3ab1a01f6930553a577eb80b" category="section-title">Supporto del protocollo</block>
+  <block id="de67fc8f6fb798124dcbf65615888af5" category="inline-link-macro">Supporto NVMe per multipathing Active/Active simmetrico</block>
+  <block id="ac187c37acbb455a3ec9ef006a79fdf8" category="cell"><block ref="ac187c37acbb455a3ec9ef006a79fdf8" category="inline-link-macro-rx"></block></block>
+  <block id="ac12d691d1b6c417de929f3b833cef99" category="cell">NVMe/FC e NVMe/TCP ora supportano l'architettura Active-Active simmetrica per il multipathing, in modo che tutti i percorsi tra gli host e lo storage siano Active/ottimizzati.</block>
 </blocks>
