@@ -51,5 +51,3 @@ Oltre a NSE, puoi anche abilitare la crittografia software per aggiungere un alt
 
 .Quali sono le prossime novità?
 Ora che hai crittografato i tuoi dati a riposo, se stai utilizzando il protocollo NVMe/TCP, potrai link:nvme-tcp-connections.html["crittografare tutti i dati inviati in rete"] collegare l'host NVMe/TCP e il sistema ASA R2.
-
-Per passare dal gestore delle chiavi integrato a un gestore delle chiavi esterno o viceversa, vedere link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/migrate-keys-between-key-managers.html["Eseguire la migrazione delle chiavi di crittografia dei dati ONTAP tra manager delle chiavi"^].
