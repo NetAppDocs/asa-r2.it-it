@@ -43,6 +43,9 @@ I seguenti sistemi NetApp ASA R2 sono supportati a partire da ONTAP 9.16.1. Ques
 | Aggiornare | Descrizione 
 
 
+| link:../secure-data/migrate-encryption-keys-between-key-managers.html["Supporto della migrazione delle chiavi di crittografia tra gestori delle chiavi"] | Passando dal gestore delle chiavi integrato di ONTAP a un gestore delle chiavi esterno a livello di cluster, puoi utilizzare l'interfaccia a riga di comando (CLI) di ONTAP per migrare facilmente le chiavi di crittografia da un gestore delle chiavi all'altro. 
+
+
 | link:../data-protection/manage-consistency-groups.html["Supporto di gruppi di coerenza gerarchici"] | I gruppi di coerenza gerarchici consentono di creare un gruppo di coerenza di origine che contiene più gruppi di coerenza child. In questo modo, si semplificano la protezione e la gestione dei dati per strutture di dati complesse. 
 |===
 
