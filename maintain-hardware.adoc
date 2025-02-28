@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: maintain-hardware.html 
-keywords: asa r2, asa a1k, asa a90, asa a70, maintain, hardware 
+keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, maintain, hardware 
 summary: Scopri come eseguire le procedure di manutenzione sul tuo sistema ASA R2. 
 ---
 = Esegui la manutenzione del tuo sistema storage ASA R2

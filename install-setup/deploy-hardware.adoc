@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/deploy-hardware.html 
-keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70 
+keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50 
 summary: 'Scopri come installare i kit guide per il sistema di storage ASA R2 e gli shelf di storage e come fissare l"hardware ASA R2 nel cabinet o nel rack per telecomunicazioni.' 
 ---
 = Installare il sistema di storage ASA R2
@@ -27,7 +27,12 @@ Dopo aver preparato l'installazione del sistema di archiviazione ASA R2, install
 .. Fissare il sistema di archiviazione all'armadietto o al rack per telecomunicazioni utilizzando le viti di montaggio incluse.
 
 
-. Installazione del ripiano:
+. Fissare il frontalino alla parte anteriore del sistema di archiviazione.
+. Se il sistema ASA R2 viene fornito con un dispositivo di gestione dei cavi, collegarlo al retro del sistema di archiviazione.
++
+image::../media/drw_affa1k_install_cable_mgmt_ieops-1697.svg[Installare il dispositivo di gestione dei cavi]
+
+. Installare e fissare lo shelf di archiviazione:
 +
 .. Posizionare la parte posteriore del ripiano sulle guide, quindi sostenere il ripiano dal basso e farlo scorrere nell'armadietto o nel rack per telecomunicazioni.
 +
@@ -36,11 +41,6 @@ Se si installano più shelf, posizionare il primo shelf direttamente sopra i con
 .. Fissare il ripiano all'armadietto o al rack per telecomunicazioni utilizzando le viti di montaggio in dotazione.
 
 
-. Collegare i dispositivi di gestione dei cavi al retro del sistema di archiviazione.
-+
-image::../media/drw_affa1k_install_cable_mgmt_ieops-1697.svg[Installare il dispositivo di gestione dei cavi]
-
-. Fissare il frontalino alla parte anteriore del sistema di archiviazione.
 
 
 .Quali sono le prossime novità?

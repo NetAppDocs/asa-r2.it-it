@@ -1,9 +1,9 @@
 ---
 sidebar: sidebar 
 permalink: get-started/learn-about.html 
-keywords: asa r2, asa a1k, asa a90, asa a70, learn more, learn about, get started 
-summary: 'I sistemi ASA R2 (ASA A1K, A90, A70) offrono una soluzione hardware e software unificata per un"esperienza semplificata solo ai clienti SAN.' 
-searchtitle: Informazioni sui sistemi ASA A1K, A90 e A70 
+keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, learn more, learn about, get started 
+summary: 'I sistemi ASA R2 (ASA A1K, A90, A70, A50, A30, A20) offrono una soluzione hardware e software unificata per un"esperienza semplificata solo ai clienti SAN.' 
+searchtitle: Informazioni sui sistemi ASA A1K, A90, A70, A50, A30 e A20 
 ---
 = Informazioni sui sistemi di storage ASA R2
 :allow-uri-read: 
@@ -12,7 +12,17 @@ searchtitle: Informazioni sui sistemi ASA A1K, A90 e A70
 
 
 [role="lead"]
-I sistemi NetApp ASA R2 (ASA A1K, ASA A70 e ASA A90) forniscono una soluzione hardware e software unificata che crea un'esperienza semplificata specifica per le esigenze dei clienti solo SAN.
+I sistemi NetApp ASA R2 forniscono una soluzione hardware e software unificata che crea un'esperienza semplificata specifica delle esigenze dei clienti SAN.
+
+Le seguenti piattaforme ASA sono classificate come sistemi ASA R2:
+
+* ASA A1K
+* ASA A90
+* ASA A70
+* ASA A50
+* ASA A30
+* ASA A20
+
 
 I sistemi ASA R2 supportano tutti i protocolli SAN (iSCSI, FC, NVMe/FC, NVMe/TCP). I protocolli iSCSI, FC, NVMe/FC e NVMe/TCP supportano l'architettura Active-Active simmetrica per il multipathing, in modo che tutti i percorsi tra gli host e lo storage siano attivi/ottimizzati. I protocolli iSCSI e NVMe/TCP supportano percorsi diretti tra gli host e lo storage.
 

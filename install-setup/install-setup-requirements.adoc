@@ -23,7 +23,7 @@ Per installare il sistema di storage ASA R2 sono necessari i seguenti strumenti 
 * Cinturino da scariche elettrostatiche (ESD)
 * Torcia
 * Computer portatile o console con connessione USB/seriale
-* Graffetta o penna a sfera con punta stretta per l'impostazione di NS224 ID scaffali
+* Graffetta o penna a sfera con punta stretta per impostare gli ID dei ripiani di conservazione
 * Cacciavite Phillips n. 2
 
 
@@ -31,7 +31,7 @@ Per installare il sistema di storage ASA R2 sono necessari i seguenti strumenti 
 
 == Precauzioni per il sollevamento
 
-I sistemi storage ASA R2 e gli shelf di storage NS224 sono pesanti. Prestare attenzione durante il sollevamento e lo spostamento di questi elementi.
+I sistemi storage e gli shelf di storage ASA R2 sono pesanti. Prestare attenzione durante il sollevamento e lo spostamento di questi elementi.
 
 
 
@@ -41,29 +41,51 @@ Prendere le precauzioni necessarie quando si sposta o si solleva il sistema di a
 
 [role="tabbed-block"]
 ====
-.ASA A1K
+.A1K
 --
-Un sistema di storage ASA A1K può pesare fino a 28,5 kg (62,83 lb). Per sollevare l'impianto, utilizzare due persone o un sollevatore idraulico.
+Un sistema di storage ASA A1K può pesare fino a 28,5 kg (62,83 lb). Per sollevare l'impianto di stoccaggio, utilizzare due persone o un sollevatore idraulico.
 
-image::../media/drw_a1k_weight_caution_ieops-1698.svg[Icona di avvertenza sollevamento AFF A1K]
+image::../media/drw_a1k_weight_caution_ieops-1698.svg[Icona di avvertenza sollevamento ASA A1K]
 
 --
-.ASA A70 e ASA A90
+.A70 e A90
 --
-Un sistema storage ASA A70 o ASA A90 può pesare fino a 68,8 kg (151,68 libbre). Per sollevare l'impianto, utilizzare quattro persone o un sollevatore idraulico.
+Un sistema storage ASA A70 o ASA A90 può pesare fino a 68,8 kg (151,68 libbre). Per sollevare l'impianto di stoccaggio, utilizzare quattro persone o un sollevatore idraulico.
 
-image::../media/drw_a70-90_weight_icon_ieops-1730.svg[AFF A90]
+image::../media/drw_a70-90_weight_icon_ieops-1730.svg[ASA A90]
+
+--
+.A20, A30 E A50
+--
+Un sistema storage ASA A20, ASA A30 o ASA A50 può pesare fino a 27,9 kg (61,5 libbre). Per sollevare l'impianto di stoccaggio, utilizzare due persone o un sollevatore idraulico.
+
+image::../media/drw_g_lifting_weight_ieops-1831.svg[ASA A20,A30,or an A50 weight caution icon]
 
 --
 ====
 
 
-=== Peso del ripiano
+=== Pesi dei ripiani
 
-Un ripiano di stoccaggio NS224 può pesare fino a 30,29 kg (66,78 lb). Per sollevare il ripiano portaoggetti, utilizzare due persone o un sollevatore idraulico. Tenere tutti i componenti nel ripiano portaoggetti (anteriore e posteriore) per evitare di sbilanciare il peso del ripiano.
+Prendere le precauzioni necessarie quando si sposta o si solleva il ripiano.
 
-image::../media/drw_ns224_lifting_weight_ieops-1716.svg[NS224 attenzione al sollevamento]
+[role="tabbed-block"]
+====
+.NS224 ripiano
+--
+Un ripiano NS224 può pesare fino a 30,29 kg (66,78 lb). Per sollevare il ripiano, utilizzare due persone o un sollevatore idraulico. Tenere tutti i componenti nel ripiano (anteriore e posteriore) per evitare di sbilanciare il peso del ripiano.
 
+image::../media/drw_ns224_lifting_weight_ieops-1716.svg[NS224 NSM100 attenzione al sollevamento]
+
+--
+.NS224 shelf con NSM100B moduli
+--
+Uno shelf NS224 con NSM100B moduli può pesare fino a 25,8 kg (56,8 lb). Per sollevare il ripiano, utilizzare due persone o un sollevatore idraulico. Tenere tutti i componenti nel ripiano (anteriore e posteriore) per evitare di sbilanciare il peso del ripiano.
+
+image::../media/drw_ns224_nsm100b_lifting_weight_ieops-1832.svg[NS224 con NSM100b attenzione al sollevamento]
+
+--
+====
 .Informazioni correlate
 * https://library.netapp.com/ecm/ecm_download_file/ECMP12475945["Informazioni sulla sicurezza e avvisi normativi"^]
 
