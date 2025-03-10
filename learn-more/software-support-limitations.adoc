@@ -28,7 +28,6 @@ Quando è abilitato il failover automatico di LIF iSCSI, in caso di failover del
 * API ONTAP S3 SnapMirror e S3
 * SnapMirror (asincrono e sincrono) al cloud
 * Da SnapMirror (asincrono e sincrono) a sistemi R2 non ASA
-* Mappa LUN selettiva (SLM)
 
 
 .I sistemi ASA R2 supportano quanto segue:
