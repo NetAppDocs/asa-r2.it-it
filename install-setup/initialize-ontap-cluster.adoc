@@ -36,7 +36,7 @@ Durante la configurazione del cluster, ONTAP consiglia una serie di interfacce d
 
 
 .Fasi
-. Rilevamento della rete cluster
+. Individuare la rete cluster
 +
 .. Collegare il computer portatile allo switch di gestione e accedere ai computer e ai dispositivi di rete.
 .. Aprire file Explorer.

@@ -684,7 +684,6 @@
   <block id="e28af899651d52d4e958ed29e85f0c9c" category="list-text">Indirizzi IP del server dei nomi DNS</block>
   <block id="178e188a7017b433a79efd35d6037e4c" category="list-text">Indirizzi IP del server NTP</block>
   <block id="2676562cc6b0cf6c0163b1086bb1c6c9" category="list-text">Data subnet mask (Subnet mask dati)</block>
-  <block id="60d902b0a36cd8bdaed2c0e3cade40ba" category="list-text">Rilevamento della rete cluster</block>
   <block id="13a5c797fb82f415ef3d13e5c012faf4" category="list-text">Collegare il computer portatile allo switch di gestione e accedere ai computer e ai dispositivi di rete.</block>
   <block id="098bbae74bb948e3ff3baff0a28b2546" category="list-text">Aprire file Explorer.</block>
   <block id="b43b6fc30d6fa5fad81a00f958b516dc" category="list-text">Selezionare *rete*, quindi fare clic con il pulsante destro del mouse e selezionare *Aggiorna*.</block>
@@ -1040,7 +1039,6 @@
   <block id="1749d12df3df2319d3eee218a277ff83" category="list-text">MetroCluster</block>
   <block id="f1345c9c1d33e2624cdc41782fec6885" category="list-text">Protocolli a oggetti</block>
   <block id="372f3c3be292ea7811b9c24f14765c78" category="list-text">API ONTAP S3 SnapMirror e S3</block>
-  <block id="cbb51e0b1487ab3d93d6d940a1533133" category="list-text">Mappa LUN selettiva (SLM)</block>
   <block id="fa445878b9d320833cecf582e9e36c4b" category="list-title">I sistemi ASA R2 supportano quanto segue:</block>
   <block id="7c2e86b53f6831d08fa968613cefaa23" category="list-text">SnapLock</block>
   <block id="272175c607c14852d532cd2cf2304f90" category="list-text">Crittografia a doppio layer</block>
@@ -1904,4 +1902,5 @@
   <block id="9e607734cbe02d05fcbdf2a8bd579b3a" category="inline-link-macro">Supporto della migrazione delle chiavi di crittografia tra gestori delle chiavi</block>
   <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">Passando dal gestore delle chiavi integrato di ONTAP a un gestore delle chiavi esterno a livello di cluster, puoi utilizzare l'interfaccia a riga di comando (CLI) di ONTAP per migrare facilmente le chiavi di crittografia da un gestore delle chiavi all'altro.</block>
+  <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">Individuare la rete cluster</block>
 </blocks>
