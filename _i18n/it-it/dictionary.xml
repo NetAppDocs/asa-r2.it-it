@@ -1903,4 +1903,5 @@
   <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">Passando dal gestore delle chiavi integrato di ONTAP a un gestore delle chiavi esterno a livello di cluster, puoi utilizzare l'interfaccia a riga di comando (CLI) di ONTAP per migrare facilmente le chiavi di crittografia da un gestore delle chiavi all'altro.</block>
   <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">Individuare la rete cluster</block>
+  <block id="54ece869b1ae7921e7f18bd670ac879c" category="list-text">Per i sistemi storage ASAr2 A20, A30 o A50, il display dell'ID dello shelf sulla parte anteriore dello chassis del sistema non si illumina. L'ID dello shelf interno del sistema è fissato a 00.</block>
 </blocks>
