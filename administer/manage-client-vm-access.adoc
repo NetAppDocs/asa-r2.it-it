@@ -71,9 +71,9 @@ Quando si specifica l'intervallo di indirizzi IP per la subnet, non sovrapporre 
 
 Una LIF (interfaccia di rete) è un indirizzo IP associato a una porta fisica o logica. Creare LIF sulle porte che servono per accedere ai dati. Le macchine virtuali storage servono dati ai client attraverso una o più LIF. In caso di guasto di un componente, una LIF può essere sottoposta a failover o migrata su una porta fisica differente, così che la comunicazione di rete non venga interrotta.
 
-Al momento della creazione di una LIF dati IP, questa può servire sia il traffico iSCSI che NVMe/TCP per impostazione predefinita. Occorre creare LIF dati separate per il traffico FC e NVMe/FC.
+Su un sistema ASA R2, puoi creare LIF IP, FC, NVMe/FC. Una LIF dati IP può servire sia il traffico iSCSI che NVMe/TCP per impostazione predefinita. Occorre creare LIF dati separate per il traffico FC e NVMe/FC.
 
-Se vuoi attivare il failover automatico di un LIF iSCSI, devi creare un LIF solo iSCSI. Quando è abilitato il failover automatico di LIF iSCSI, in caso di failover dello storage, la LIF iSCSI viene automaticamente migrata dal nodo home o dalla porta al nodo partner di ha o alla porta, per poi tornare indietro una volta completato il failover. Oppure, se la porta di una LIF iSCSI diventa guasta, la LIF viene migrata automaticamente a una porta funzionante nel suo nodo home corrente e quindi nuovamente alla porta originale una volta che la porta è nuovamente funzionante.
+Se vuoi attivare il failover automatico di una LIF iSCSI, devi creare una LIF IP solo per il traffico iSCSI. Quando viene abilitato il failover automatico di iSCSI LIF, in caso di failover dello storage, l'IP iSCSI LIF viene automaticamente migrato dal nodo home o dalla porta al nodo partner ha o alla porta, per poi tornare indietro al termine del failover. Oppure, se la porta di una LIF iSCSI IP diventa guasta, la LIF viene automaticamente migrata a una porta funzionante nel suo nodo home corrente e quindi nuovamente alla porta originale una volta che la porta è nuovamente funzionante.
 
 .Prima di iniziare
 * Per eseguire questa attività, è necessario essere un amministratore del cluster.
@@ -87,7 +87,7 @@ Se vuoi attivare il failover automatico di un LIF iSCSI, devi creare un LIF solo
 . Selezionare *interfacce di rete*, quindi image:icon_add_blue_bg.png["rettangolo blu con un segno più seguito dalla parola aggiungi in lettere bianche"].
 . Seleziona il tipo di interfaccia e il protocollo, quindi seleziona la VM storage.
 +
-Per creare una LIF con un solo protocollo, selezionare un solo protocollo. Ad esempio, per creare una LIF solo iSCSI, selezionare *iSCSI*.
+Per attivare il failover di iSCSI LIF, selezionare solo il protocollo IP.
 
 . Immettere un nome per la LIF o accettare il nome predefinito.
 . Selezionare il nodo principale dell'interfaccia di rete, quindi inserire l'indirizzo IP e la subnet mask.
