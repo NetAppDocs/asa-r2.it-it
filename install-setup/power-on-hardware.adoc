@@ -183,10 +183,10 @@ image::../media/drw_psu_layout_1_ieops-1886.svg[Schema di collegamento dell'alim
 --
 ====
 +
-** Il sistema inizia l'avvio. L'avvio iniziale può richiedere fino a otto minuti.
-** I LED lampeggiano e le ventole si avviano, a indicare che i controller si stanno accendendo.
-** Le ventole potrebbero essere molto rumorose al primo avvio. Il rumore della ventola all'avviamento è normale.
-** Per i sistemi storage ASAr2 A20, A30 o A50, il display dell'ID dello shelf sulla parte anteriore dello chassis del sistema non si illumina. L'ID dello shelf interno del sistema è fissato a 00.
+** Il sistema avvia il processo di avvio. La sequenza di avvio iniziale può richiedere fino a otto minuti.
+** Durante il processo di avvio, i LED lampeggiano e le ventole si attivano, segnalando che i controller si stanno accendendo.
+** Tenere presente che le ventole potrebbero emettere un elevato livello di rumore al primo avvio. Il rumore della ventola all'avviamento è normale.
+** Per i sistemi storage ASA A20, ASA A30 e ASA A50, il display dell'ID dello shelf sulla parte anteriore dello chassis del sistema non si illumina.
 
 
 
