@@ -71,7 +71,7 @@ Quando si specifica l'intervallo di indirizzi IP per la subnet, non sovrapporre 
 
 Una LIF (interfaccia di rete) è un indirizzo IP associato a una porta fisica o logica. Creare LIF sulle porte che servono per accedere ai dati. Le macchine virtuali storage servono dati ai client attraverso una o più LIF. In caso di guasto di un componente, una LIF può essere sottoposta a failover o migrata su una porta fisica differente, così che la comunicazione di rete non venga interrotta.
 
-Su un sistema ASA R2, puoi creare LIF IP, FC, NVMe/FC. Una LIF dati IP può servire sia il traffico iSCSI che NVMe/TCP per impostazione predefinita. Occorre creare LIF dati separate per il traffico FC e NVMe/FC.
+Su un sistema ASA R2, puoi creare LIF IP, FC e NVMe/FC. Una LIF dati IP può servire sia il traffico iSCSI che NVMe/TCP per impostazione predefinita. Occorre creare LIF dati separate per il traffico FC e NVMe/FC.
 
 Se vuoi attivare il failover automatico di una LIF iSCSI, devi creare una LIF IP solo per il traffico iSCSI. Quando viene abilitato il failover automatico di iSCSI LIF, in caso di failover dello storage, l'IP iSCSI LIF viene automaticamente migrato dal nodo home o dalla porta al nodo partner ha o alla porta, per poi tornare indietro al termine del failover. Oppure, se la porta di una LIF iSCSI IP diventa guasta, la LIF viene automaticamente migrata a una porta funzionante nel suo nodo home corrente e quindi nuovamente alla porta originale una volta che la porta è nuovamente funzionante.
 
