@@ -16,6 +16,28 @@ Le unità storage di un sistema ASA R2 sono contenute in Storage Virtual Machine
 
 
 
+== Creare una VM di storage
+
+Durante la configurazione del cluster viene creata la macchina virtuale (VM) per lo storage dei dati predefinita. Tutte le nuove unità di storage vengono create all'interno della macchina virtuale predefinita per lo storage dei dati, a meno che non si crei e selezioni una macchina virtuale di storage diversa. Potresti voler creare una macchina virtuale storage aggiuntiva per separare le unità di storage per diverse applicazioni, reparti o client. Ad esempio, potrebbe essere necessario creare una macchina virtuale per lo storage per il proprio ambiente di sviluppo e un'altra macchina virtuale per lo storage per il proprio ambiente di produzione, oppure creare una macchina virtuale per lo storage per il reparto finanziario e un'altra macchina virtuale per il marketing.
+
+.Fasi
+. Selezionare *Cluster > Storage VM*.
+. Selezionare image:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"].
+. Immettere un nome per la VM di archiviazione o accettare il nome predefinito.
+. In *Configura protocolli*, selezionare i protocolli per la VM di storage.
++
+Selezionare *IP* per iSCSI e NVMe/TCP. Selezionare *FC* per Fibre Channel o NVMe/FC.
+
+. In *Storage VM Administration*, selezionare *Manage Administrator account* (Gestisci account amministratore), quindi immettere il nome utente e la password per l'account amministratore.
+. Aggiunta di un'interfaccia di rete per la macchina virtuale di storage.
+. Selezionare *Salva*.
+
+
+.Quali sono le prossime novità?
+Hai creato una macchina virtuale per lo storage. È ora possibile utilizzare la VM di storage in link:../manage-data/provision-san-storage.html["provisioning dello storage"].
+
+
+
 == Creare IPspaces
 
 Un IPSpace è uno spazio di indirizzi IP distinto in cui risiedono le macchine virtuali di storage. Quando si creano IPSpace, è possibile abilitare le VM di storage a disporre di storage, amministrazione e routing propri e sicuri. È inoltre possibile consentire ai client di domini di rete separati amministrativamente di utilizzare indirizzi IP sovrapposti dello stesso intervallo di subnet di indirizzi IP.
@@ -96,6 +118,26 @@ Per attivare il failover di iSCSI LIF, selezionare solo il protocollo IP.
 
 .Risultato
 È stata creata una LIF per l'accesso ai dati.
+
+.Quali sono le prossime novità?
+Se hai creato una LIF IP per iSCSI, puoi usare l'interfaccia a riga di comando (CLI) di ONTAP per abilitare il failover automatico di LIF iSCSI.
+
+
+
+=== Attiva il failover automatico della LIF iSCSI
+
+Se nell'SVM sono presenti LIF iSCSI non abilitate per il failover automatico della LIF, nemmeno le LIF create di recente saranno abilitate per il failover automatico della LIF. Se il failover automatico della LIF non è abilitato e in caso di failover, la LIF iSCSI non migrerà.
+
+Devi usare l'interfaccia a riga di comando (CLI) di ONTAP per abilitare il failover automatico di iSCSI LIF.
+
+.Fase
+. Attiva il failover automatico della LIF iSCSI:
++
+[source, cli]
+----
+network interface modify -vserver <SVM_name> -lif <iscsi_lif> -failover-policy sfo-partner-only -auto-revert true
+----
+
 
 
 
