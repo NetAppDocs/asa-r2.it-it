@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/power-on-hardware.html 
-keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50, power on 
+keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50, asa c30, power on 
 summary: Accendere ogni shelf per assegnare un ID univoco allo shelf, accendere i controller ASA R2 e fissare i cavi di alimentazione. 
 ---
 = Accendere il sistema di storage ASA R2
@@ -156,6 +156,11 @@ image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Collegamenti del
 image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[Collegamenti della console]
 
 --
+.C30
+--
+image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[Collegamenti della console]
+
+--
 ====
 
 
@@ -181,12 +186,17 @@ image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Schema di collegamen
 image::../media/drw_psu_layout_1_ieops-1886.svg[Schema di collegamento dell'alimentazione del sistema di archiviazione A20 o A30 o A50]
 
 --
+.C30
+--
+image::../media/drw_psu_layout_1_ieops-1886.svg[Schema di collegamento dell'alimentazione del sistema di archiviazione A20 o A30 o A50]
+
+--
 ====
 +
 ** Il sistema avvia il processo di avvio. La sequenza di avvio iniziale può richiedere fino a otto minuti.
 ** Durante il processo di avvio, i LED lampeggiano e le ventole si attivano, segnalando che i controller si stanno accendendo.
 ** Tenere presente che le ventole potrebbero emettere un elevato livello di rumore al primo avvio. Il rumore della ventola all'avviamento è normale.
-** Per i sistemi storage ASA A20, ASA A30 e ASA A50, il display dell'ID dello shelf sulla parte anteriore dello chassis del sistema non si illumina.
+** Nei sistemi di archiviazione ASA A20, A30, A50 e ASA C30, il display ID scaffale sulla parte anteriore del telaio del sistema non si illumina.
 
 
 

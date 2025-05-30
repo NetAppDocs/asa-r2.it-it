@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/deploy-hardware.html 
-keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50 
+keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50, asa c30 
 summary: 'Scopri come installare i kit guide per il sistema di storage ASA R2 e gli shelf di storage e come fissare l"hardware ASA R2 nel cabinet o nel rack per telecomunicazioni.' 
 ---
 = Installare il sistema di storage ASA R2
@@ -24,6 +24,7 @@ Dopo aver preparato l'installazione del sistema di archiviazione ASA R2, install
 . Installare e fissare il sistema di archiviazione nell'armadietto o nel rack per telecomunicazioni:
 +
 .. Posizionare il sistema di stoccaggio sulle guide al centro del cabinet o del rack per telecomunicazioni, quindi sostenere il sistema di archiviazione dal basso e farlo scorrere in posizione.
+.. Assicurarsi che i perni guida dell'armadio o del rack Telco si inseriscano saldamente nelle fessure delle guide del sistema di archiviazione.
 .. Fissare il sistema di archiviazione all'armadietto o al rack per telecomunicazioni utilizzando le viti di montaggio incluse.
 
 
