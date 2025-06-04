@@ -21,9 +21,9 @@ Per impostazione predefinita, gli aggiornamenti consigliati per il firmware dell
 
 .Fasi
 . In System Manager, selezionare *Cluster > Settings*.
-. Accanto a *aggiornamento automatico* selezionare image:icon_kabob.gif["tre punti blu verticali"], quindi selezionare *Abilita*.
-. Leggere e accettare l'EULA.
-. Accettare le impostazioni predefinite per aggiornare automaticamente il firmware e i file di sistema. In alternativa, selezionare per visualizzare le notifiche o per chiudere automaticamente gli aggiornamenti consigliati.
+. In *Aggiornamenti software*, seleziona *Abilita*.
+. Leggi l'EULA.
+. Accetta l'impostazione predefinita "Mostra notifica" per gli aggiornamenti consigliati. Facoltativamente, seleziona "Aggiorna automaticamente" o "Ignora automaticamente" gli aggiornamenti consigliati.
 . Selezionare per confermare che le modifiche apportate agli aggiornamenti verranno applicate a tutti gli aggiornamenti correnti e futuri.
 . Selezionare *Salva*.
 
@@ -39,7 +39,7 @@ Disattivare gli aggiornamenti automatici se si desidera visualizzare gli aggiorn
 
 .Fasi
 . In System Manager, selezionare *Cluster > Settings*.
-. Accanto a *aggiornamento automatico* selezionare image:icon_kabob.gif["tre punti blu verticali"], quindi selezionare *Disabilita*.
+. In *Aggiornamenti software*, seleziona *Disattiva*.
 
 
 .Risultato
@@ -53,7 +53,7 @@ Visualizza un elenco di aggiornamenti del firmware e dei file di sistema scarica
 
 .Fasi
 . In System Manager, selezionare *Cluster > Settings*.
-. Accanto a *aggiornamento automatico* selezionare image:icon_kabob.gif["tre punti blu verticali"], quindi selezionare *Visualizza tutti gli aggiornamenti automatici*.
+. Accanto ad *Aggiornamenti software* seleziona image:icon_arrow.gif["freccia blu rivolta verso destra"] , quindi seleziona *Visualizza tutti gli aggiornamenti automatici*.
 
 
 
@@ -64,7 +64,7 @@ Visualizza un elenco di aggiornamenti del firmware e dei file di sistema scarica
 
 .Fasi
 . In System Manager, selezionare *Cluster > Settings*.
-. Accanto a *aggiornamento automatico* selezionare image:icon_kabob.gif["tre punti blu verticali"], quindi selezionare *Modifica aggiornamenti automatici*.
+. Accanto ad *Aggiornamenti software* seleziona image:icon_arrow.gif["freccia blu rivolta verso destra"] , quindi seleziona *Tutti gli altri aggiornamenti*.
 . Aggiorna le selezioni per gli aggiornamenti automatici.
 . Selezionare *Salva*.
 
@@ -80,8 +80,9 @@ Se si desidera la flessibilità di visualizzare gli aggiornamenti consigliati pr
 
 .Fasi
 . Scaricare il file di aggiornamento del firmware su un server o un client locale.
-. In System Manager, selezionare *Cluster > Overview*, quindi selezionare *Update*.
-. Selezionare *aggiornamento firmware*; quindi selezionare image:icon_update_firmware.png["rettangolo blu contenente un segno più seguito dalle parole che aggiornano il firmware in lettere bianche"].
+. In Gestione sistema, seleziona *Cluster > Panoramica*, quindi seleziona *Tutti gli altri aggiornamenti*.
+. In *Aggiornamenti manuali*, seleziona *Aggiungi file firmware*; quindi seleziona *Scarica dal server* o *Carica dal client locale*.
+. Installare il file di aggiornamento del firmware.
 
 
 .Risultato
