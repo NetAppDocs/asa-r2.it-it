@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-unplanned-failover.html 
-keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+keywords: asa r2, reestablish, snapmirror active sync, unplanned failover, disaster recovery 
 summary: Scopri come ristabilire le relazioni di sincronizzazione attiva SnapMirror dopo un failover non pianificato dei cluster ASA r2. 
 ---
 = Ripristinare la relazione di sincronizzazione attiva SnapMirror dopo un failover non pianificato dei cluster ASA r2

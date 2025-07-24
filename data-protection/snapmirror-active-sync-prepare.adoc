@@ -16,7 +16,7 @@ Per preparare la configurazione SnapMirror ActiveSync sul tuo sistema ASA r2 dov
 .Fasi
 . Esaminare la sincronizzazione attiva SnapMirror link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/prerequisites-reference.html["prerequisiti"^] .
 . link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/interoperability-reference.html["Verifica che i sistemi operativi host siano supportati"^] per la sincronizzazione attiva SnapMirror .
-. Rivedere il link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/limits-reference.html["limiti degli oggetti"] che potrebbero avere un impatto sulla tua configurazione.
+. Rivedere il link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/limits-reference.html["limiti degli oggetti"^] che potrebbero avere un impatto sulla tua configurazione.
 . Verificare il supporto del protocollo host per SnapMirror ActiveSync sul sistema ASA r2.
 +
 Il supporto per la sincronizzazione attiva SnapMirror sui sistemi ASA r2 varia in base alla versione ONTAP e al protocollo host.

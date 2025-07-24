@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: data-protection/protect-kubernetes.html 
-keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication 
-summary: 'Utilizza Astra Control per migrare applicazioni e dati da un cluster Kubernetes all"altro, replicare le applicazioni sui sistemi remoti e clonare le applicazioni.' 
+keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, kubernetes, trident protect 
+summary: Utilizza Trident Protect per migrare applicazioni e dati da un cluster Kubernetes a un altro, replicare applicazioni su sistemi remoti e clonare applicazioni. 
 ---
 = Proteggi le applicazioni Kubernetes sui sistemi storage ASA R2
 :allow-uri-read: 
