@@ -217,27 +217,6 @@ Gli host NVMe vengono aggiunti al sistema ASA R2 e sarai pronto per mappare gli 
 ====
 
 
-== Creare gruppi di host
-
-In un sistema ASA R2, un _gruppo host_ è il meccanismo utilizzato per fornire agli host l'accesso alle unità di archiviazione. Un gruppo di host si riferisce a un igroup per host SCSI o a un sottosistema NVMe per host NVMe. Un host può vedere solo le unità di archiviazione mappate ai gruppi host a cui appartiene. Quando un gruppo host viene mappato a un'unità di archiviazione, gli host che sono membri del gruppo, sono quindi in grado di montare (creare directory e strutture di file su) l'unità di archiviazione.
-
-I gruppi di host vengono creati automaticamente o manualmente quando si creano le unità di archiviazione. Per creare gruppi host prima o dopo la creazione dell'unità di archiviazione, è possibile utilizzare facoltativamente i seguenti passaggi.
-
-.Fasi
-. Da System Manager, selezionare *host*.
-. Selezionare gli host che si desidera aggiungere al gruppo host.
-+
-Dopo aver selezionato il primo host, l'opzione da aggiungere a un gruppo di host viene visualizzata sopra l'elenco degli host.
-
-. Selezionare *Aggiungi al gruppo host*.
-. Cercare e selezionare il gruppo host a cui si desidera aggiungere l'host.
-
-
-.Quali sono le prossime novità?
-È stato creato un gruppo host ed è ora possibile associarlo a un'unità di archiviazione.
-
-
-
 == Mappare l'unità di archiviazione a un host
 
 Dopo aver creato le unità di storage ASA R2 e aver aggiunto gli initiator degli host, è necessario mappare gli host alle unità di storage per iniziare a fornire i dati. Le unità di archiviazione sono mappate agli host come parte del processo di creazione delle unità di archiviazione. È inoltre possibile mappare le unità di storage esistenti a host nuovi o esistenti in qualsiasi momento.

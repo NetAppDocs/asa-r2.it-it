@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: secure-data/respond-anti-ransomware-protection-alerts.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: Visualizza gli avvisi sui potenziali attacchi ransomware e agisci in Gestione sistema. 
+---
+= Rispondi alla protezione autonoma dal ransomware con avvisi AI sui sistemi di archiviazione ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se la protezione autonoma dai ransomware con intelligenza artificiale (ARP/AI) rileva attività anomale su una o più unità di archiviazione del sistema ASA r2, viene generato un avviso nella dashboard di System Manager. È necessario visualizzare l'avviso, verificare l'attività e, se necessario, intervenire per bloccare qualsiasi potenziale minaccia ai dati.
+
+Se viene visualizzato un messaggio di avviso ARP/AI, prima di intervenire è consigliabile utilizzare l'apposito strumento di controllo dell'integrità dell'applicazione per verificare l'integrità dei dati sull'unità di archiviazione. La verifica dell'integrità dei dati dell'unità di archiviazione aiuta a determinare se l'attività è accettabile o se si tratta di un potenziale attacco ransomware.
+
+[cols="2,2"]
+|===
+| Se l'attività anomala è ... | Allora fai così... 
+
+
+| Accettabile | Contrassegna l'attività come falso positivo. 
+
+
+| Un potenziale attacco ransomware | Contrassegna l'attività come potenziale attacco ransomware. 
+
+
+| Indeterminato | Non intervenire immediatamente. Monitorare l'unità di archiviazione fino a 7 giorni. Se l'unità di archiviazione continua a funzionare normalmente, contrassegnare l'attività come falso positivo. Se l'unità di archiviazione continua a presentare attività anomale, contrassegnare l'attività come potenziale attacco ransomware. 
+|===
+.Fasi
+. In System Manager, selezionare *Dashboard*.
++
+Se ARP ha rilevato un'attività anomala su una o più unità di archiviazione, viene visualizzato un messaggio in *Avvisi*.
+
+. Selezionare il messaggio di avviso.
+. In *Panoramica eventi*, seleziona il messaggio *Avvisi* che indica il numero di unità di archiviazione con attività anomala.
+. In *Unità di archiviazione con attività anomala*, seleziona l'unità di archiviazione.
+. Selezionare *Sicurezza*.
++
+Se si verifica un'attività anomala sull'unità di archiviazione, viene visualizzato un messaggio in *Anti-ransomware*.
+
+. Seleziona *Scegli un'azione*.
+. Seleziona *Segnala come falso positivo* oppure *Segnala come potenziale attacco ransomware*.
+

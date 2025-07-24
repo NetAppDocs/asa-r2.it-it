@@ -25,6 +25,9 @@ Per impostare la replica Snapshot, è necessario stabilire una relazione di repl
 
 Prima di poter proteggere i dati replicandoli in un cluster remoto, è necessario creare una relazione di peer cluster tra il cluster locale e quello remoto.
 
+.Prima di iniziare
+I prerequisiti per il peering dei cluster sono gli stessi per i sistemi ASA r2 e per gli altri sistemi ONTAP . link:https://docs.netapp.com/us-en/ontap/peering/prerequisites-cluster-peering-reference.html["Esaminare i prerequisiti per il peering del cluster"] .
+
 .Fasi
 . Nel cluster locale, in System Manager, selezionare *Cluster > Impostazioni*.
 . In *Impostazioni cluster* accanto a *image:icon_kabob.gif["tre punti blu verticali"]peer cluster* selezionare , quindi selezionare *Aggiungi un peer cluster*.

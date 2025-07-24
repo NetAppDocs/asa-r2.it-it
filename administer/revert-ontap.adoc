@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: administer/revert-ontap.html 
+keywords: update, revert, ontap, asa r2 
+summary: ONTAP aggiorna automaticamente il firmware sui sistemi ASA R2. È possibile utilizzare System Manager per disattivare gli aggiornamenti automatici e visualizzare gli aggiornamenti prima che vengano installati. 
+---
+= Ripristina ONTAP sui sistemi di archiviazione ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+I ripristini del software ONTAP per i sistemi ASA r2 seguono lo stesso processo dei ripristini per gli altri sistemi ONTAP .
+
+Il ripristino di un cluster ONTAP è dispendioso. È necessario disattivare il cluster per tutta la durata del ripristino. Non ripristinare un cluster di produzione senza l'assistenza del supporto tecnico. È possibile ripristinare un cluster nuovo o di test senza assistenza. Se il ripristino di un sistema nuovo o di test fallisce o se viene completato correttamente, ma non si è soddisfatti delle prestazioni del cluster nel proprio ambiente di produzione, è necessario contattare il supporto tecnico per assistenza.
+
+link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["Ripristinare un cluster ONTAP"] .
+
+
+
+== Ripristina i requisiti per i sistemi ASA r2
+
+Alcune configurazioni del cluster ASA r2 richiedono di eseguire azioni specifiche prima di iniziare un ripristino del software ONTAP .
+
+
+
+=== Ritorno da ONTAP 9.17.1
+
+Se si esegue il ripristino da ONTAP 9.17.1 su un sistema ASA r2, è necessario eseguire le seguenti azioni prima di iniziare il ripristino:
+
+[cols="2"]
+|===
+| Se hai... | Prima di tornare indietro dovresti... 
+
+
+| Gruppi di coerenza gerarchica in una relazione di sincronizzazione attiva SnapMirror | Rimuovere la relazione di sincronizzazione attiva SnapMirror 
+
+
+| Relazioni di importazione attive | Elimina le relazioni di importazione attive 
+
+
+| Protezione anti-ransomware abilitata | Disattiva la protezione anti-ransomware 
+|===

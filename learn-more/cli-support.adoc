@@ -11,9 +11,9 @@ summary: 'Alcuni comandi ONTAP non sono supportati sui sistemi ASA r2 (ASA A1K, 
 
 
 [role="lead"]
-Invece degli aggregati tradizionali, che gestiscono un set specifico di dischi disponibili in un sistema storage, i sistemi ASA R2 utilizzano _una zona di disponibilità dello storage_. Una zona di disponibilità dello storage è un pool comune di storage che ha accesso a tutti i dischi disponibili nel sistema di archiviazione. La zona di disponibilità dello storage è visibile a entrambi i nodi in una coppia ha ASA R2. Quando viene creata un'unità di storage (namespace LUN o NVMe), ONTAP crea automaticamente un volume contenente una Storage Virtual Machine (VM) nella zona di disponibilità dello storage per alloggiare l'unità di storage.
+Invece di aggregati, il livello di storage nei sistemi ASA r2 utilizza zone di disponibilità dello storage. Una zona di disponibilità dello storage è un pool comune di storage disponibile per una singola coppia HA. Entrambi i nodi della coppia HA hanno accesso a tutti i dischi disponibili nella loro zona di disponibilità dello storage condivisa. Quando viene creata un'unità di storage (LUN o namespace NVMe), ONTAP crea automaticamente un volume nella zona di disponibilità dello storage appropriata per ospitare l'unità di storage.
 
-Grazie a questo approccio semplificato alla gestione dello storage, `storage aggregate` i comandi non sono supportati sui sistemi ASA R2.  `lun` `volume`Anche il supporto di determinati comandi e parametri è limitato.
+Grazie a questo approccio semplificato alla gestione dello storage,  `storage aggregate` i comandi non sono supportati sui sistemi ASA r2. Il supporto per alcuni  `lun` ,  `storage` E  `volume` anche i comandi e i parametri sono limitati.
 
 I seguenti comandi e set di comandi non sono supportati in ASA su R2:
 

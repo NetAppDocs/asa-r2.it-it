@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: data-protection/create-svm-peer-relationship.html 
+keywords: restore data, asa r2, data restoration 
+summary: 'Se i dati di un gruppo di coerenza vengono danneggiati o persi, è possibile ripristinare l"intero gruppo di coerenza da uno snapshot remoto.' 
+---
+= Creare una relazione peer tra VM di storage intercluster su sistemi di storage ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Una relazione peer definisce le connessioni di rete che consentono ai cluster e alle macchine virtuali (VM) di storage di scambiare dati in modo sicuro. Crea relazioni peer tra VM di storage su cluster diversi per abilitare la protezione dei dati e il disaster recovery utilizzando SnapMirror.
+
+link:https://docs.netapp.com/us-en/ontap/peering/peering-basics-concept.html["Scopri di più sulle relazioni tra pari"^] .
+
+.Prima di iniziare
+Prima di poter creare una relazione peer della VM di archiviazione, è necessario aver stabilito una relazione peer tra i cluster locale e remoto. link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["Creare una relazione tra cluster"] se non l'hai già fatto.
+
+.Fasi
+. In Gestione sistema, selezionare *Protezione > Panoramica*.
+. In *Peer VM di archiviazione* seleziona *Aggiungi un peer VM di archiviazione*.
+. Selezionare la VM di archiviazione sul cluster locale; quindi selezionare la VM di archiviazione sul cluster remoto.
+. Selezionare *Aggiungi un peer VM di archiviazione*.
+

@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: learn-more/additional-supported-ontap-features.html 
+keywords: asa r2, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, cli, comand line interface 
+summary: Poiché i sistemi ASA r2 eseguono una versione semplificata di ONTAP, molte attività ONTAP comuni e funzioni di System Manager vengono eseguite nello stesso modo sui sistemi ASA r2 come sugli altri sistemi ONTAP . 
+---
+= Funzionalità ONTAP comuni supportate sui sistemi ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Poiché i sistemi ASA r2 eseguono una versione semplificata di ONTAP, molte attività ONTAP comuni e funzioni di System Manager vengono eseguite nello stesso modo sui sistemi ASA r2 come sugli altri sistemi ONTAP .
+
+Per ulteriori informazioni sulle caratteristiche e funzioni comuni, consultare la seguente documentazione ONTAP .
+
+
+
+== Amministrazione ONTAP
+
+* link:https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["Impara a cercare, filtrare e ordinare le informazioni in ONTAP System Manager"^] .
+* link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_interface_groups.html["Combina le porte fisiche per creare gruppi di interfacce"^] .
+* link:https://docs.netapp.com/us-en/ontap/concept_nvme_provision_overview.html["Scopri di più sul provisioning NVMe over Fabrics (NVMe-oF)"^] .
+
+
+
+
+== Sicurezza dei dati
+
+* link:https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["Scopri di più sull'autenticazione OAuth 2.0"^] .
+* link:https://docs.netapp.com/us-en/ontap/concepts/client-access-storage-concept.html["Scopri di più sull'autenticazione e l'autorizzazione del client"^] .
+* link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authentication-task.html["Impara a configurare l'autenticazione SAML"^] .
+* link:https://docs.netapp.com/us-en/ontap/task_security_administrator_access.html["Gestire l'accesso dell'amministratore ONTAP"^] .
+
+
+
+
+== Protezione dei dati
+
+* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-key-server-task.html["Configurare server chiave esterni in cluster in ONTAP"^] .
+* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-hw-task.html["Abilita la gestione delle chiavi esterne (basata su HW)"^] .
+* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-nve-task.html["Abilita la gestione delle chiavi esterne (NVE)"^] .
+

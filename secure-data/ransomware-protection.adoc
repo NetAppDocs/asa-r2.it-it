@@ -4,7 +4,7 @@ permalink: secure-data/ransomware-protection.html
 keywords: asa r2, secure data, data security, ransomware, ransomware attacks, protection 
 summary: Utilizza snapshot a prova di manomissione per proteggere i tuoi dati. Le snapshot a prova di manomissione non possono essere eliminate e utilizzate per ripristinare i dati compromessi da un attacco ransomware. 
 ---
-= Proteggiti dagli attacchi ransomware sui sistemi storage ASA R2
+= Crea snapshot a prova di manomissione per proteggerti dagli attacchi ransomware sui sistemi di archiviazione ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

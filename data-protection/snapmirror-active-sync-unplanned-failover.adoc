@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-unplanned-failover.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: Scopri come ristabilire le relazioni di sincronizzazione attiva SnapMirror dopo un failover non pianificato dei cluster ASA r2. 
+---
+= Ripristinare la relazione di sincronizzazione attiva SnapMirror dopo un failover non pianificato dei cluster ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un'operazione di failover automatico non pianificato (AUFO) si verifica quando il cluster primario è inattivo o isolato. Il mediatore rileva quando si verifica un failover ed esegue un failover automatico non pianificato sul cluster secondario. Il cluster secondario viene convertito in primario e inizia a servire i client.
+
+.Prima di iniziare
+* La relazione di sincronizzazione attiva SnapMirror deve essere sincronizzata.
+* Non è possibile avviare un failover pianificato quando è in corso un'operazione non distruttiva, ad esempio lo spostamento di un'unità di archiviazione.
+* Il mediatore ONTAP deve essere configurato, connesso e in quorum.
+
+
+.Fasi
+. Selezionare *Protezione > Replica*.
+. Seleziona la relazione di sincronizzazione attiva SnapMirror che devi ristabilire.
+. Attendi che lo stato della relazione venga visualizzato come *InSync*.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"] ; quindi selezionare *Failover* per riprendere le operazioni sul cluster primario originale.
+
+
+.Cosa succederà
+Per evitare la perdita dei percorsi I/O verso gli host, è necessario eseguire nuovamente la scansione dei percorsi host dopo aver ripreso le operazioni sul cluster primario.

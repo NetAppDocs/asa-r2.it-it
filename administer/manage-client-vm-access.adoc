@@ -108,9 +108,6 @@ Se vuoi attivare il failover automatico di una LIF iSCSI, devi creare una LIF IP
 . Selezionare *rete > Panoramica*.
 . Selezionare *interfacce di rete*, quindi image:icon_add_blue_bg.png["rettangolo blu con un segno più seguito dalla parola aggiungi in lettere bianche"].
 . Seleziona il tipo di interfaccia e il protocollo, quindi seleziona la VM storage.
-+
-Per attivare il failover di iSCSI LIF, selezionare solo il protocollo IP.
-
 . Immettere un nome per la LIF o accettare il nome predefinito.
 . Selezionare il nodo principale dell'interfaccia di rete, quindi inserire l'indirizzo IP e la subnet mask.
 . Selezionare *Salva*.
@@ -120,22 +117,81 @@ Per attivare il failover di iSCSI LIF, selezionare solo il protocollo IP.
 È stata creata una LIF per l'accesso ai dati.
 
 .Quali sono le prossime novità?
-Se hai creato una LIF IP per iSCSI, puoi usare l'interfaccia a riga di comando (CLI) di ONTAP per abilitare il failover automatico di LIF iSCSI.
+È possibile utilizzare l'interfaccia della riga di comando (CLI) ONTAP per creare un LIF solo iSCSI con failover automatico.
 
 
 
-=== Attiva il failover automatico della LIF iSCSI
+=== Creare una policy di servizio LIF personalizzata solo iSCSI
 
-Se nell'SVM sono presenti LIF iSCSI non abilitate per il failover automatico della LIF, nemmeno le LIF create di recente saranno abilitate per il failover automatico della LIF. Se il failover automatico della LIF non è abilitato e in caso di failover, la LIF iSCSI non migrerà.
+Se si desidera creare LIF solo iSCSI con failover LIF automatico, è necessario prima creare una policy di servizio LIF solo iSCSI personalizzata.
 
-Devi usare l'interfaccia a riga di comando (CLI) di ONTAP per abilitare il failover automatico di iSCSI LIF.
+Per creare la policy di servizio personalizzata è necessario utilizzare l'interfaccia della riga di comando (CLI) ONTAP .
 
 .Fase
-. Attiva il failover automatico della LIF iSCSI:
+. Impostare il livello di privilegio su Advanced (avanzato):
 +
 [source, cli]
 ----
-network interface modify -vserver <SVM_name> -lif <iscsi_lif> -failover-policy sfo-partner-only -auto-revert true
+set -privilege advanced
+----
+. Creare una policy di servizio LIF personalizzata solo iSCSI:
++
+[source, cli]
+----
+network interface service-policy create -vserver <SVM_name> -policy <service_policy_name> -services data-core,data-iscsi
+----
+. Verificare che la policy del servizio sia stata creata:
++
+[source, cli]
+----
+network interface service-policy show -policy <service_policy_name>
+----
+. Restituisci il livello di privilegio all'amministratore:
++
+[source, cli]
+----
+set -privilege admin
+----
+
+
+
+
+=== Crea LIF solo iSCSI con failover LIF automatico
+
+Se nell'SVM sono presenti LIF iSCSI non abilitate per il failover automatico della LIF, nemmeno le LIF create di recente saranno abilitate per il failover automatico della LIF. Se il failover automatico della LIF non è abilitato e in caso di failover, la LIF iSCSI non migrerà.
+
+.Prima di iniziare
+È necessario aver creato un criterio di servizio LIF personalizzato solo iSCSI.
+
+.Fasi
+. Crea LIF solo iSCSI con failover LIF automatico:
++
+[source, cli]
+----
+network interface create -vserver <SVM_name> -lif <iscsi_lif_name> -service-policy <service_policy_name> -home-node <home_node> -home-port <port_name> -address <ip_address> -netmask <netmask> -failover-policy sfo-partner-only -status-admin up
+----
++
+** Si consiglia di creare due LIF iSCSI su ciascun nodo, uno per il fabric A e l'altro per il fabric B. Ciò garantisce ridondanza e bilanciamento del carico per il traffico iSCSI. Nell'esempio seguente, vengono creati in totale quattro LIF iSCSI, due su ciascun nodo, uno per ciascun fabric.
++
+[listing]
+----
+network interface create -vserver svm1 -lif iscsi-lif-01a -service-policy custom-data-iscsi -home-node node1 -home-port e2b -address <node01-iscsi-a–ip> -netmask 255.255.255.0 -failover-policy sfo-partner-only -status-admin up
+
+network interface create -vserver svm1 -lif iscsi-lif-01b -service-policy custom-data-iscsi -home-node node1 -home-port e4b -address <node01-iscsi-b–ip> -netmask 255.255.255.0 -failover-policy sfo-partner-only -status-admin up
+
+network interface create -vserver svm1 -lif iscsi-lif-02a -service-policy custom-data-iscsi -home-node node2 -home-port e2b -address <node02-iscsi-a–ip> -netmask 255.255.255.0 -failover-policy sfo-partner-only -status-admin up
+
+network interface create -vserver svm1 -lif iscsi-lif-02b -service-policy custom-data-iscsi -home-node node2 -home-port e4b -address <node02-iscsi-b–ip> -netmask 255.255.255.0 -failover-policy sfo-partner-only -status-admin up
+----
+** Se si utilizzano VLAN, regolare il  `home-port` parametro per includere le informazioni sulla porta VLAN per la rispettiva struttura iSCSI, ad esempio,  `-home-port e2b-<iSCSI-A-VLAN>` per iSCSI fabric A e  `-home-port e4b-<iSCSI-B-VLAN>` .
+** Se si utilizzano gruppi di interfaccia (ifgroup) con VLAN, regolare il  `home-port` parametro per includere la porta VLAN appropriata, ad esempio,  `-home-port a0a-<iSCSI-A-VLAN>` per iSCSI fabric A e  `-home-port a0a-<iSCSI-B-VLAN>` per la struttura iSCSI B dove  `a0a` è ifgroup e a0a-<iSCSI-A-VLAN> e a0a-<iSCSI-B-VLAN> sono le rispettive porte VLAN per la fabric iSCSI A e la fabric iSCSI B.
+
+
+. Verificare che i LIF iSCSI siano stati creati:
++
+[source, cli]
+----
+network interface show -lif iscsi*
 ----
 
 

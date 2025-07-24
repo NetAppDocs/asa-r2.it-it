@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: administer/rebalance-workloads.html 
+keywords: rename, node, renaming, asa r2 
+summary: A partire da ONTAP 9.17.1, ONTAP ribilancia automaticamente i carichi di lavoro tra i nodi in una coppia HA del sistema ASA r2 per prestazioni ottimali. 
+---
+= Ribilanciare i carichi di lavoro tra i nodi sui sistemi di archiviazione ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A partire da ONTAP 9.17.1, ONTAP ribilancia automaticamente i carichi di lavoro tra i nodi di una coppia HA di un sistema ASA r2 per prestazioni ottimali. Ad esempio, se l'utilizzo su un nodo aumenta al 70% mentre l'utilizzo sul suo partner HA è solo del 30%, ONTAP sposta automaticamente i carichi di lavoro in modo che l'utilizzo di ciascun nodo sia più uniforme. Poiché i nodi della coppia HA condividono la stessa zona di disponibilità dello storage, il ribilanciamento dei carichi di lavoro è un'operazione senza copia e senza alcun impatto sulle prestazioni.
+
+
+
+== Modificare il periodo di valutazione predefinito per il ribilanciamento automatico del carico di lavoro
+
+Il ribilanciamento automatico del carico di lavoro è abilitato per impostazione predefinita 14 giorni dopo l'aggiornamento a ONTAP 9.17.1 o l'inizializzazione di un nuovo cluster ONTAP 9.17.1 ASA r2. È possibile utilizzare l'interfaccia a riga di comando (CLI) ONTAP per aumentare o diminuire il periodo di valutazione predefinito in base alle proprie esigenze operative.
+
+.Fasi
+. Verifica il numero di giorni rimanenti nel periodo di valutazione:
++
+[source, cli]
+----
+placement rebalance config show -fields evaluation-window
+----
+. Modificare il periodo di valutazione del ribilanciamento:
++
+[source, cli]
+----
+placement rebalance config modify -evaluation-window <number_of_evaluation_days>
+----
++
+Nell'esempio seguente il periodo di valutazione rimanente viene impostato su 10 giorni.
+
++
+[listing]
+----
+placement rebalance config modify -evaluation-window 10
+----
+
+
+
+
+== Modificare l'impostazione di ribilanciamento automatico del carico di lavoro
+
+Il ribilanciamento automatico del carico di lavoro è abilitato per impostazione predefinita 14 giorni dopo l'aggiornamento a ONTAP 9.17.1 o l'inizializzazione di un nuovo cluster ONTAP 9.17.1 ASA r2. È possibile modificare l'impostazione predefinita per disabilitare il ribilanciamento automatico del carico di lavoro o impostarlo su uno stato di avviso per segnalare i carichi di lavoro sbilanciati senza spostarli automaticamente.
+
+.Fase
+. Verifica la modalità di ribilanciamento attualmente impostata sui tuoi nodi:
++
+[source, cli]
+----
+placement rebalance config show -fields mode
+----
+. Modificare l'impostazione di ribilanciamento automatico del carico di lavoro:
++
+[source, cli]
+----
+placement rebalance config modify -mode <disabled|advisory|automated>
+----
+. Verificare che la modalità di ribilanciamento sia modificata:
++
+[source, cli]
+----
+placement rebalance config show -fields mode
+----
+
+
+
+
+== Attivare manualmente il ribilanciamento del carico di lavoro
+
+Se hai disabilitato il ribilanciamento automatico del carico di lavoro, puoi comunque attivarlo manualmente. Questa opzione è utile se desideri ribilanciare i carichi di lavoro dopo un periodo di aggiustamenti manuali o se hai impostato la modalità di ribilanciamento su *consultivo* e desideri intervenire in base ai flag del carico di lavoro.
+
+.Fasi
+. Verifica la modalità di ribilanciamento attualmente impostata sui tuoi nodi:
++
+[source, cli]
+----
+placement rebalance config show -fields mode
+----
+. Se la modalità di ribilanciamento non è impostata su *consultivo*, impostarla su *consultivo*:
++
+[source, cli]
+----
+placement rebalance config modify -mode advisory
+----
+. Attiva manualmente un ribilanciamento del carico di lavoro:
++
+[source, cli]
+----
+balanced-placement rebalance execute
+----
+. Visualizza lo stato dell'operazione di ribilanciamento:
++
+[source, cli]
+----
+placement rebalance config show-evaluation
+----
+
+
+.Quali sono le prossime novità?
+Se si desidera impostare la modalità di ribilanciamento su *automatizzata* o *disabilitata*, è possibile farlo utilizzando  `placement rebalance config modify` comando.

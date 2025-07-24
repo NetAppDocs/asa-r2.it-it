@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-confirm-cluster-configuration.html 
+keywords: asa r2, data protection, business continuity, snapmirror active sync, cluster configuration 
+summary: Visualizza gli avvisi sui potenziali attacchi ransomware e agisci in Gestione sistema. 
+---
+= Conferma la configurazione del cluster ASA r2 prima di configurare SnapMirror ActiveSync
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapMirror Active Sync si basa su cluster peer per proteggere i dati in caso di failover. Prima di configurare SnapMirror Active Sync, è necessario verificare che i cluster ASA r2 siano in una relazione di peering supportata e soddisfino altri requisiti di configurazione.
+
+.Fasi
+. Verificare che esista una relazione di peering tra i cluster.
++
+
+NOTE: Lo spazio IP predefinito è richiesto da SnapMirror ActiveSync per le relazioni tra peer del cluster. Uno spazio IP personalizzato non è supportato.
+
++
+link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["Creare una relazione tra cluster"] .
+
+. Verificare che esista una relazione peer tra le macchine virtuali di archiviazione (VM) su ciascun cluster.
++
+link:create-svm-peer-relationship.html["Creare una relazione peer tra VM di storage intercluster"^] .
+
+. Verificare che almeno un LIF sia stato creato su ciascun nodo del cluster.
++
+link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["Creare un LIF"]
+
+. Verificare che le unità di archiviazione necessarie siano state create e mappate sui gruppi host.
++
+link:../manage-data/provision-san-storage.html#create-storage-units["Crea un'unità di archiviazione"] E link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["mappare l'unità di archiviazione a un gruppo host"] .
+
+. Eseguire nuovamente la scansione dell'host dell'applicazione per individuare nuove unità di archiviazione.
+
+
+.Quali sono le prossime novità?
+Dopo aver confermato la configurazione del cluster, sei pronto per link:install-ontap-mediator.html["installare ONTAP Mediator"] .

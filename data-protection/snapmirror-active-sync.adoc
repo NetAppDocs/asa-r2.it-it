@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync.html 
+keywords: asa r2, data protection, business continuity, snapmirror active sync, zero rpo, zero rto, disaster recovery, symmetric active/active, workflow 
+summary: 'Utilizza SnapMirror ActiveSync per proteggere le applicazioni host che richiedono un obiettivo di punto di ripristino (RPO) pari a zero e un obiettivo di tempo di ripristino (RTO) pari a zero da interruzioni dovute a un"interruzione imprevista o a un disastro del sito.' 
+---
+= Flusso di lavoro di configurazione della sincronizzazione attiva SnapMirror
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La protezione dei dati ActiveSync ONTAP SnapMirror consente ai servizi aziendali di continuare a funzionare anche in caso di guasto completo del sito, supportando il failover delle applicazioni in modo trasparente utilizzando una copia secondaria. Non è necessario alcun intervento manuale o scripting personalizzato per attivare un failover con ActiveSync SnapMirror .
+
+Sebbene le procedure di System Manager per la configurazione SnapMirror Active Sync siano diverse sui sistemi ASA r2 rispetto ai sistemi NetApp FAS, AFF e ASA che eseguono la personalità ONTAP unificata, i requisiti, l'architettura e il funzionamento di SnapMirror Active Sync sono gli stessi.
+
+link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["Scopri di più sulla sincronizzazione attiva SnapMirror"^] .
+
+Sui sistemi ASA r2, SnapMirror ActiveSync supporta configurazioni simmetriche attive/attive. In una configurazione simmetrica attive/attive, entrambi i siti possono accedere allo storage locale per l'I/O attivo.
+
+Scopri di più su link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["configurazioni simmetriche attive/attive"^] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Preparati a configurare la sincronizzazione attiva SnapMirror .
+[role="quick-margin-para"]
+A link:snapmirror-active-sync-prepare.html["prepararsi a configurare SnapMirror ActiveSync"] sul tuo sistema ASA r2 dovresti rivedere i prerequisiti di configurazione, confermare il supporto per i tuoi sistemi operativi host ed essere a conoscenza dei limiti degli oggetti che potrebbero avere un impatto sulla configurazione specifica.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] Conferma la configurazione del cluster.
+[role="quick-margin-para"]
+Prima di configurare la sincronizzazione attiva SnapMirror , dovresti link:snapmirror-active-sync-confirm-cluster-configuration.html["verificare che i cluster ASA r2 siano nelle corrette relazioni di peering e soddisfino altri requisiti di configurazione"] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"] Installa ONTAP Mediator.
+[role="quick-margin-para"]
+È possibile utilizzare ONTAP Mediator o ONTAP Cloud Mediator per monitorare lo stato del cluster e garantire la continuità operativa. Se si utilizza ONTAP Mediator, è necessario link:install-ontap-mediator.html["installarlo"] sul tuo host. Se utilizzi ONTAP Cloud Mediator, puoi saltare questo passaggio.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"] Configurare ONTAP Mediator o ONTAP Cloud Mediator utilizzando certificati autofirmati.
+[role="quick-margin-para"]
+Devi link:configure-ontap-mediator.html["configurare il mediatore ONTAP o il mediatore cloud ONTAP"] prima di poter iniziare a utilizzarlo con SnapMirror ActiveSync per il monitoraggio dei cluster.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinque"] Configurare la sincronizzazione attiva SnapMirror .
+[role="quick-margin-para"]
+link:configure-snapmirror-active-sync.html["Configurare la sincronizzazione attiva SnapMirror"] per creare una copia dei tuoi dati in un sito secondario e consentire alle tue applicazioni host di eseguire automaticamente e in modo trasparente il failover in caso di disastro.

@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: data-protection/configure-snapmirror-active-sync.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: Scopri come configurare la sincronizzazione attiva SnapMirror per garantire la continuità aziendale creando una copia secondaria dei dati e abilitando il failover automatico in caso di emergenza. 
+---
+= Configurare SnapMirror ActiveSync sui sistemi ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Configura la sincronizzazione attiva SnapMirror per creare una copia dei tuoi dati in un sito secondario e consentire alle tue applicazioni host di eseguire il failover in modo automatico e trasparente in caso di disastro.
+
+Sui sistemi ASA r2, SnapMirror ActiveSync supporta configurazioni simmetriche attive/attive. In una configurazione simmetrica attive/attive, entrambi i siti possono accedere allo storage locale per l'I/O attivo.
+
+
+NOTE: Se si utilizza il protocollo iSCSI o FC e si utilizzano gli strumenti ONTAP per VMware Sphere, è possibile facoltativamente link:https://docs.netapp.com/us-en/netapp-solutions/vmware/vmware-vmsc-with-smas.html["utilizzare ONTAP Tools per VMware per configurare SnapMirror ActiveSync"^] .
+
+.Prima di iniziare
+link:create-snapshots.html#step-1-optionally-create-a-consistency-group["Crea un gruppo di coerenza"] sul sito primario con nuove unità di storage. Se si desidera creare una configurazione attiva/attiva simmetrica non uniforme, creare anche un gruppo di coerenza sul sito secondario con nuove unità di storage.
+
+Scopri di più su  https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/#key-concepts["non uniforme"] configurazioni simmetriche attive/attive.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passa il mouse sul nome del gruppo di coerenza che vuoi proteggere con SnapMirror ActiveSync.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"] e quindi seleziona *Proteggi*.
+. In *protezione remota*, selezionare *Replica in un cluster remoto*.
+. Seleziona un peer del cluster esistente oppure scegli di *Aggiungerne uno nuovo*.
+. Selezionare la VM di archiviazione.
+. Per la policy di replicazione, selezionare *AutomatedFailOverDuplex*.
+. Se si sta creando una configurazione attiva/attiva simmetrica non uniforme, selezionare *Impostazioni di destinazione*; quindi immettere il nome del nuovo gruppo di coerenza di destinazione creato prima di iniziare questa procedura.
+. Selezionare *Salva*.
+
+
+.Risultato
+SnapMirror Active Sync è configurato per proteggere i tuoi dati in modo da consentirti di continuare le operazioni senza alcun obiettivo di punto di ripristino (RPO) e senza alcun obiettivo di tempo di ripristino (RTO) in caso di disastro.

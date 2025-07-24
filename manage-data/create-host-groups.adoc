@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: manage-data/create-host-groups.html 
+keywords: create host group, map storage units, host access, asa r2 
+summary: 'Crea gruppi host per fornire agli host l"accesso alle unità di archiviazione e gestire in modo efficace le mappature di archiviazione.' 
+---
+= Crea gruppi host sul tuo sistema ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In un sistema ASA R2, un _gruppo host_ è il meccanismo utilizzato per fornire agli host l'accesso alle unità di archiviazione. Un gruppo di host si riferisce a un igroup per host SCSI o a un sottosistema NVMe per host NVMe. Un host può vedere solo le unità di archiviazione mappate ai gruppi host a cui appartiene. Quando un gruppo host viene mappato a un'unità di archiviazione, gli host che sono membri del gruppo, sono quindi in grado di montare (creare directory e strutture di file su) l'unità di archiviazione.
+
+I gruppi di host vengono creati automaticamente o manualmente quando si creano le unità di archiviazione. Per creare gruppi host prima o dopo la creazione dell'unità di archiviazione, è possibile utilizzare facoltativamente i seguenti passaggi.
+
+.Fasi
+. Da System Manager, selezionare *host*.
+. Selezionare gli host che si desidera aggiungere al gruppo host.
++
+Dopo aver selezionato il primo host, l'opzione da aggiungere a un gruppo di host viene visualizzata sopra l'elenco degli host.
+
+. Selezionare *Aggiungi al gruppo host*.
+. Cercare e selezionare il gruppo host a cui si desidera aggiungere l'host.
+
+
+.Quali sono le prossime novità?
+Hai creato un gruppo host e ora puoi link:provision-san-storage.html#map-the-storage-unit-to-a-host["mapparlo su un'unità di archiviazione"] .

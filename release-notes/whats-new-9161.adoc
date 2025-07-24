@@ -69,7 +69,7 @@ I seguenti sistemi NetApp ASA R2 sono supportati a partire da ONTAP 9.16.1. Ques
 | Aggiornare | Descrizione 
 
 
-| Supporto del ribilanciamento automatico delle unità storage | ONTAP ribilancierà automaticamente le unità storage in tutte le zone di disponibilità dello storage per performance e utilizzo ottimale della capacità. 
+| link:../learn-more/hardware-comparison.html["Supporto del ribilanciamento automatico delle unità storage"] | ONTAP ribilancierà automaticamente le unità storage in tutte le zone di disponibilità dello storage per performance e utilizzo ottimale della capacità. 
 
 
 | Deallocazione dello spazio NVMe abilitata per impostazione predefinita  a| 

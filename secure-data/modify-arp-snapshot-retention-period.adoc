@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: secure-data/modify-arp-snapshot-retention-period.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: Scopri come modificare i periodi di conservazione degli snapshot ARP in base alle tue esigenze aziendali e di archiviazione. 
+---
+= Modificare i periodi di conservazione degli snapshot ARP/AI sui sistemi di archiviazione ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se la protezione autonoma dal ransomware con intelligenza artificiale (ARP/AI) rileva un'attività anomala su una o più unità di archiviazione del sistema ASA r2, crea automaticamente uno snapshot ARP per proteggere i dati dell'unità. A seconda della capacità di archiviazione e dei requisiti aziendali per i dati, potrebbe essere necessario aumentare o ridurre il periodo di conservazione predefinito degli snapshot ARP. Ad esempio, potrebbe essere necessario aumentare il periodo di conservazione per le applicazioni aziendali critiche in modo da avere, se necessario, periodi di conservazione più lunghi per il ripristino dei dati, oppure potrebbe essere necessario ridurre il periodo di conservazione per le applicazioni non critiche per risparmiare spazio di archiviazione.
+
+Il periodo di conservazione predefinito per lo snapshot ARP varia a seconda dell'azione intrapresa in risposta all'attività anomala.
+
+[cols="2,2"]
+|===
+| Se intraprendi questa azione... | Per impostazione predefinita, gli snapshot ARP vengono conservati per... 
+
+
+| Contrassegna come falso positivo | 12 ore 
+
+
+| Contrassegna come potenziale attacco ransomware | 7 giorni 
+
+
+| Non intraprendere azioni immediate | 10 giorni 
+|===
+I periodi di conservazione predefiniti possono essere modificati utilizzando l'interfaccia della riga di comando (CLI) ONTAP . Vedere  https://docs.netapp.com/us-en/ontap/anti-ransomware/modify-automatic-snapshot-options-task.html["Modifica le opzioni per gli snapshot automatici ONTAP"] per conoscere i passaggi da seguire per modificare il periodo di conservazione predefinito.
