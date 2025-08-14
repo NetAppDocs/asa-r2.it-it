@@ -19,6 +19,9 @@ A partire da ONTAP 9.17.1, ONTAP ribilancia automaticamente i carichi di lavoro 
 
 Il ribilanciamento automatico del carico di lavoro è abilitato per impostazione predefinita 14 giorni dopo l'aggiornamento a ONTAP 9.17.1 o l'inizializzazione di un nuovo cluster ONTAP 9.17.1 ASA r2. È possibile utilizzare l'interfaccia a riga di comando (CLI) ONTAP per aumentare o diminuire il periodo di valutazione predefinito in base alle proprie esigenze operative.
 
+
+NOTE: Non è possibile tornare alla ONTAP 9.17.1 sul sistema ASA r2 dopo aver abilitato il ribilanciamento automatico del carico di lavoro.
+
 .Fasi
 . Verifica il numero di giorni rimanenti nel periodo di valutazione:
 +
