@@ -30,7 +30,7 @@ Alcune configurazioni del cluster ASA r2 richiedono di eseguire azioni specifich
 Se si esegue il ripristino da ONTAP 9.17.1 su un sistema ASA r2, è necessario eseguire le seguenti azioni prima di iniziare il ripristino:
 
 
-NOTE: link:administer/rebalance-workloads.html["Ribilanciamento automatico del carico di lavoro"]è abilitato per impostazione predefinita 14 giorni dopo l'aggiornamento a ONTAP 9.17.1 o l'inizializzazione di un nuovo cluster ONTAP 9.17.1 ASA r2.  Non è possibile tornare alla ONTAP 9.17.1 sul sistema ASA r2 dopo aver abilitato il ribilanciamento automatico del carico di lavoro.
+NOTE: link:../administer/rebalance-workloads.html["Ribilanciamento automatico del carico di lavoro"]è abilitato per impostazione predefinita 14 giorni dopo l'aggiornamento a ONTAP 9.17.1 o l'inizializzazione di un nuovo cluster ONTAP 9.17.1 ASA r2. Non è possibile tornare alla ONTAP 9.17.1 sul sistema ASA r2 dopo aver abilitato il ribilanciamento automatico del carico di lavoro.
 
 [cols="2"]
 |===
