@@ -14,7 +14,7 @@ summary: Eliminazione delle unità di storage per ridurre la quantità di storag
 Eliminare un'unità di archiviazione se non è più necessario mantenere i dati contenuti nell'unità. L'eliminazione delle unità di archiviazione non più necessarie può consentire di liberare spazio per altre applicazioni host.
 
 .Prima di iniziare
-Se l'unità di archiviazione che si desidera eliminare si trova in un gruppo di coerenza che si trova nella relazione di replica, è necessario link:../data-protection/manage-consistency-groups.html#remove-a-storage-unit-from-a-consistency-group["rimuovere l'unità di archiviazione dal gruppo di coerenza"] prima di eliminarla.
+Se l'unità di archiviazione che si desidera eliminare si trova in un gruppo di coerenza con una relazione di replica, è necessariolink:../data-protection/manage-consistency-groups-add-remove-storage-units.html#remove-a-storage-unit-from-a-consistency-group["rimuovere l'unità di archiviazione dal gruppo di coerenza"] prima di eliminarlo.
 
 .Fasi
 . In System Manager, selezionare *Storage*.

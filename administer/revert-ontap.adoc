@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: administer/revert-ontap.html 
 keywords: update, revert, ontap, asa r2 
-summary: ONTAP aggiorna automaticamente il firmware sui sistemi ASA R2. È possibile utilizzare System Manager per disattivare gli aggiornamenti automatici e visualizzare gli aggiornamenti prima che vengano installati. 
+summary: I ripristini del software ONTAP per i sistemi ASA r2 seguono lo stesso processo dei ripristini per gli altri sistemi ONTAP . Il ripristino di un cluster ONTAP è dispendioso. 
 ---
 = Ripristina ONTAP sui sistemi di archiviazione ASA r2
 :allow-uri-read: 
@@ -30,14 +30,14 @@ Alcune configurazioni del cluster ASA r2 richiedono di eseguire azioni specifich
 Se si esegue il ripristino da ONTAP 9.17.1 su un sistema ASA r2, è necessario eseguire le seguenti azioni prima di iniziare il ripristino:
 
 
-NOTE: link:../administer/rebalance-workloads.html["Ribilanciamento automatico del carico di lavoro"]è abilitato per impostazione predefinita 14 giorni dopo l'aggiornamento a ONTAP 9.17.1 o l'inizializzazione di un nuovo cluster ONTAP 9.17.1 ASA r2. Non è possibile tornare alla ONTAP 9.17.1 sul sistema ASA r2 dopo aver abilitato il ribilanciamento automatico del carico di lavoro.
+NOTE: link:rebalance-workloads.html["Ribilanciamento automatico del carico di lavoro"]è abilitato per impostazione predefinita 14 giorni dopo l'aggiornamento a ONTAP 9.17.1 o l'inizializzazione di un nuovo cluster ONTAP 9.17.1 ASA r2. Non è possibile tornare alla ONTAP 9.17.1 sul sistema ASA r2 dopo aver abilitato il ribilanciamento automatico del carico di lavoro.
 
 [cols="2"]
 |===
 | Se hai... | Prima di tornare indietro dovresti... 
 
 
-| Gruppi di coerenza gerarchica in una relazione di sincronizzazione attiva SnapMirror | Rimuovere la relazione di sincronizzazione attiva SnapMirror 
+| Gruppi di coerenza gerarchica in una relazione di sincronizzazione attiva SnapMirror | link:../data-protection/snapmirror-active-sync-delete-relationship.html["Elimina la relazione di sincronizzazione attiva SnapMirror"] 
 
 
 | Relazioni di importazione attive | Elimina le relazioni di importazione attive 

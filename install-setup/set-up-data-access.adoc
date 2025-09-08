@@ -25,7 +25,7 @@ Consultare la documentazione dell'host SAN ONTAP per link:https://docs.netapp.co
 
 == Migrazione di macchine virtuali VMware
 
-Per migrare il carico di lavoro delle macchine virtuali da un sistema storage ASA a un sistema storage ASA R2, NetApp consiglia di utilizzare link:https://www.vmware.com/products/cloud-infrastructure/vsphere/vmotion["VMware vSphere vMotion"^] per eseguire una migrazione live e senza interruzioni dei dati.
+Se è necessario migrare il carico di lavoro della VM da un sistema di archiviazione ASA a un sistema di archiviazione ASA r2, NetApp consiglia di utilizzarelink:https://www.vmware.com/products/cloud-infrastructure/vsphere-foundation["VMware vSphere vMotion"^] per eseguire una migrazione dei tuoi dati in tempo reale e senza interruzioni.
 
 .Informazioni correlate
 * Scopri di più su link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-why.html["i vantaggi dell'utilizzo di ONTAP per vSphere"^] .

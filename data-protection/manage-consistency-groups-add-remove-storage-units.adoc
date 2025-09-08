@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-add-remove-storage-units.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity, shrink 
+summary: Aumentare o diminuire le dimensioni di un gruppo di coerenza modificando il numero di unità di archiviazione nel gruppo di coerenza. 
+---
+= Modificare la dimensione dei gruppi di coerenza sul sistema ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Aumentare o diminuire le dimensioni di un gruppo di coerenza modificando il numero di unità di archiviazione nel gruppo di coerenza.
+
+
+
+== Aggiungere unità di archiviazione a un gruppo di coerenza
+
+Espandere la quantità di storage gestita da un gruppo di coerenza aggiungendo unità di archiviazione al gruppo di coerenza.
+
+È possibile aggiungere unità di archiviazione esistenti al gruppo di coerenza oppure creare nuove unità di archiviazione da aggiungere al gruppo di coerenza.
+
+.Prima di iniziare
+Se si esegue ONTAP 9.16.1 e il gruppo di coerenza che si desidera espandere si trova in una relazione di sincronizzazione attiva SnapMirror , è necessariolink:snapmirror-active-sync-delete-relationship.html["elimina la relazione di sincronizzazione attiva SnapMirror"] prima di poter aggiungere unità di archiviazione.  Se si esegue ONTAP 9.16.1 e il gruppo di coerenza si trova in una relazione di replica asincrona, è necessariolink:snapmirror-active-sync-break-relationship.html["rompere la relazione"] prima di poter espandere il gruppo di coerenza.  In ONTAP 9.17.1 e versioni successive non è necessario eliminare la relazione di sincronizzazione attiva SnapMirror o interrompere la relazione asincrona prima di espandere un gruppo di coerenza.
+
+[role="tabbed-block"]
+====
+.Aggiungere unità di archiviazione esistenti
+--
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza che si desidera espandere.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Espandi*.
+. Selezionare *utilizzando le unità di archiviazione esistenti*.
+. Selezionare le unità di archiviazione da aggiungere al gruppo di coerenza, quindi selezionare *Espandi*.
+
+
+--
+.Aggiungere nuove unità di archiviazione
+--
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza che si desidera espandere.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Espandi*.
+. Selezionare *utilizzo di nuove unità di archiviazione*.
+. Immettere il numero di unità che si desidera creare e la capacità per unità.
++
+Se si creano più unità, ciascuna viene creata con la stessa capacità e lo stesso sistema operativo host. Per assegnare una capacità diversa a ciascuna unità, selezionare *Aggiungi una capacità diversa* per assegnare una capacità diversa a ciascuna unità.
+
+. Selezionare *Espandi*.
+
+
+.Cosa succederà
+Dopo aver creato una nuova unità di archiviazione, è necessario link:../manage-data/provision-san-storage.html#add-host-initiators["aggiungere iniziatori host"] e link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["mappare l'unità di archiviazione appena creata a un host"]. L'aggiunta di host initiator rende gli host idonei ad accedere alle unità di storage ed eseguire operazioni sui dati. La mappatura di un'unità di archiviazione a un host consente all'unità di archiviazione di iniziare a fornire i dati all'host a cui viene mappato.
+
+--
+====
+.Quali sono le prossime novità?
+Gli snapshot esistenti del gruppo di coerenza non includeranno le nuove unità di archiviazione aggiunte. È necessario che link:create-snapshots.html#step-2-create-a-snapshot["creare uno snapshot immediato"]il gruppo di coerenza protegga le nuove unità di archiviazione aggiunte fino a quando non viene creato automaticamente lo snapshot pianificato successivo.
+
+
+
+== Rimuovere un'unità di archiviazione da un gruppo di coerenza
+
+È necessario rimuovere un'unità di archiviazione da un gruppo di coerenza se si desidera eliminare l'unità di archiviazione, se si desidera gestirla come parte di un gruppo di coerenza diverso o se non è più necessario proteggere i dati in essa contenuti. La rimozione di un'unità di archiviazione da un gruppo di coerenza interrompe la relazione tra l'unità di archiviazione e il gruppo di coerenza, ma non elimina l'unità di archiviazione.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Fare doppio clic sul gruppo di coerenza da cui si desidera rimuovere un'unità di archiviazione.
+. Nella sezione *Panoramica*, in *unità di archiviazione*, selezionare l'unità di archiviazione che si desidera rimuovere, quindi selezionare *Rimuovi dal gruppo di coerenza*.
+
+
+.Risultato
+L'unità di archiviazione non è più un membro del gruppo di coerenza.
+
+.Cosa succederà
+Se è necessario continuare la protezione dei dati per l'unità di archiviazione, aggiungere l'unità di archiviazione a un altro gruppo di coerenza.

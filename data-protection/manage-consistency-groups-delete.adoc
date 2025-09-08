@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-delete.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace 
+summary: 'Se non è più necessario gestire i membri di un gruppo di coerenza come un"unica unità, è possibile eliminare il gruppo di coerenza.' 
+---
+= Elimina i gruppi di coerenza sul tuo sistema ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se non è più necessario gestire i membri di un gruppo di coerenza come un'unica unità, è possibile eliminare il gruppo di coerenza.  Dopo l'eliminazione di un gruppo di coerenza, le unità di archiviazione precedentemente presenti nel gruppo rimangono attive nel cluster.  Se il gruppo di coerenza era in una relazione di replica, le copie replicate rimangono sul cluster remoto.
+
+.Prima di iniziare
+Se si esegue ONTAP 9.16.1 e il gruppo di coerenza che si desidera eliminare si trova in una relazione di sincronizzazione attiva SnapMirror , è necessariolink:snapmirror-active-sync-delete-relationship.html["elimina la relazione di sincronizzazione attiva SnapMirror"] prima di eliminare il gruppo di coerenza.  L'eliminazione di questa relazione prima di modificare un gruppo di coerenza non è richiesta in ONTAP 9.17.1 e versioni successive.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza che si desidera eliminare.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Elimina*.
+. Accettare l'avviso, quindi selezionare *Elimina*.
+
+
+.Quali sono le prossime novità?
+Dopo aver eliminato un gruppo di coerenza, le unità di archiviazione precedentemente presenti nel gruppo di coerenza non sono più protette dagli snapshot. Considerare l'aggiunta di queste unità di storage a un altro gruppo di coerenza per proteggerle dalla perdita di dati.

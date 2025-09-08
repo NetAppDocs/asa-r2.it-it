@@ -39,7 +39,7 @@ I sistemi ASA r2 utilizzano unità di archiviazione con gruppi di coerenza per s
 
 Per proteggere i dati da attacchi dannosi come furti o ransomware, i sistemi ASA r2 supportano un gestore di chiavi integrato, crittografia a doppio livello, autenticazione a più fattori e verifica multi-amministratore. Anche gli snapshot a prova di manomissione sono supportati sui sistemi ASA r2 secondari.
 
-I sistemi ASA R2 non supportano la combinazione di cluster con gli attuali sistemi ASA, AFF o FAS.
+I sistemi ASA r2 non supportano la miscelazione di cluster con i sistemi ASA, AFF o FAS .
 
 .Per ulteriori informazioni
 * Per ulteriori informazioni sul supporto e sulle limitazioni dei sistemi ASA R2, consultare link:https://hwu.netapp.com/["NetApp Hardware Universe"^].

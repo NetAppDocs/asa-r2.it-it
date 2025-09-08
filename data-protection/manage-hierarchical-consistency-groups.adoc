@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-hierarchical-consistency-groups.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
+summary: Utilizzare gruppi di coerenza per eseguire contemporaneamente diverse azioni su più unità di archiviazione anziché eseguire azioni singolarmente su ciascuna unità.  In una struttura gerarchica, uno o più gruppi di coerenza sono configurati come figli sotto un gruppo di coerenza padre. 
+---
+= Gestisci gruppi di coerenza gerarchica sul tuo sistema ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A partire da ONTAP 9.16.1, è possibile utilizzare System Manager per creare gruppi di coerenza gerarchica sul sistema ASA r2.  In una struttura gerarchica, uno o più gruppi di coerenza sono configurati come figli sotto un gruppo di coerenza padre.  È possibile applicare policy di snapshot individuali a ciascun gruppo di coerenza figlio e replicare gli snapshot di tutti i gruppi di coerenza figlio su un cluster remoto come un'unica unità replicando il gruppo padre.  Ciò semplifica la protezione e la gestione dei dati per strutture dati complesse.
+
+
+
+== Promuovi un gruppo di coerenza esistente in un gruppo di coerenza padre
+
+Se si promuove un gruppo di coerenza esistente a padre, viene creato un nuovo gruppo di coerenza figlio e le unità di archiviazione appartenenti al gruppo di coerenza promosso vengono spostate nel nuovo gruppo di coerenza figlio.  Le unità di archiviazione non possono essere associate direttamente a un gruppo di coerenza padre.
+
+.Prima di iniziare
+Se si esegue ONTAP 9.16.1 e il gruppo di coerenza che si desidera promuovere è in una relazione di sincronizzazione attiva SnapMirror , è necessariolink:snapmirror-active-sync-delete-relationship.html["elimina la relazione di sincronizzazione attiva SnapMirror"] prima che il gruppo di coerenza possa essere promosso.  Se si esegue ONTAP 9.16.1 e il gruppo di coerenza si trova in una relazione di replica asincrona, è necessariolink:snapmirror-active-sync-break-relationship.html["rompere la relazione"] prima di poter promuovere il gruppo di coerenza.  In ONTAP 9.17.1 e versioni successive non è necessario eliminare la relazione di sincronizzazione attiva SnapMirror o interrompere la relazione asincrona prima di promuovere un gruppo di coerenza.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza che si desidera convertire in un gruppo di coerenza di origine.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Promuovi a gruppo di coerenza principale*.
+. Immettere un nome per il nuovo gruppo di coerenza figlio oppure accettare il nome predefinito; quindi selezionare il tipo di componente del gruppo di coerenza.
+. Selezionare *Promuovi*.
+
+
+.Quali sono le prossime novità?
+È possibile creare gruppi di coerenza figlio aggiuntivi sotto il gruppo di coerenza padre.  Puoi anchelink:../secure-data/encrypt-data-at-rest.html["configurare la replica snapshot"] per copiare i gruppi di coerenza padre e figlio in una posizione geograficamente remota per il backup e il ripristino di emergenza.
+
+
+
+== Demotizza un gruppo di coerenza di origine in un singolo gruppo di coerenza
+
+Quando si declassa un gruppo di coerenza padre a un singolo gruppo di coerenza, le unità di archiviazione dei gruppi di coerenza figlio associati vengono aggiunte al gruppo di coerenza padre.  I gruppi di coerenza figlio vengono eliminati e il padre viene quindi gestito come un singolo gruppo di coerenza.
+
+.Prima di iniziare
+Se si esegue ONTAP 9.16.1 e il gruppo di coerenza che si desidera declassare si trova in una relazione di sincronizzazione attiva SnapMirror , è necessariolink:snapmirror-active-sync-delete-relationship.html["elimina la relazione di sincronizzazione attiva SnapMirror"] prima che il gruppo di coerenza possa essere declassato.  Se si esegue ONTAP 9.16.1 e il gruppo di coerenza si trova in una relazione di replica asincrona, è necessariolink:snapmirror-active-sync-break-relationship.html["rompere la relazione"] prima di poter declassare il gruppo di coerenza.  In ONTAP 9.17.1 e versioni successive non è necessario eliminare la relazione di sincronizzazione attiva SnapMirror o interrompere la relazione asincrona prima di espandere un gruppo di coerenza.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza di origine che si desidera ridurre.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Demote in un singolo gruppo di coerenza*.
+. Selezionare *Demote*
+
+
+.Quali sono le prossime novità?
+link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["Aggiunta di una policy per lo snapshot"] al gruppo di coerenza retrocesso, al fine di proteggere le unità di storage gestite in precedenza dai gruppi di coerenza figlio.
+
+
+
+== Creare un gruppo di coerenza figlio
+
+La creazione di gruppi di coerenza figlio consente di applicare criteri di snapshot individuali a ciascun figlio.  A partire da ONTAP 9.17.1, è anche possibile applicare policy di replicazione individuali direttamente a ciascun elemento figlio.  In ONTAP 9.16.1, i criteri di replicazione possono essere applicati solo a livello padre.
+
+È possibile creare un gruppo di coerenza figlio da un gruppo di coerenza nuovo o esistente.
+
+[role="tabbed-block"]
+====
+.Da un nuovo gruppo di coerenza
+--
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza di origine al quale si desidera aggiungere un gruppo di coerenza figlio.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Aggiungi un nuovo gruppo di coerenza figlio*.
+. Immettere un nome per il gruppo di coerenza figlio o accettare il nome predefinito, quindi selezionare il tipo di componente del gruppo di coerenza.
+. Selezionare per aggiungere unità di archiviazione esistenti al gruppo di coerenza secondario o per creare nuove unità di archiviazione.
++
+Se si creano nuove unità di archiviazione, immettere il numero di unità che si desidera creare e la capacità per unità, quindi immettere le informazioni sull'host.
+
++
+Se si creano più unità di archiviazione, ogni unità viene creata con la stessa capacità e lo stesso sistema operativo host. Per assegnare una capacità diversa a ciascuna unità, selezionare *Aggiungi una capacità diversa*.
+
+. Selezionare *Aggiungi*.
+
+
+--
+.Da un gruppo di coerenza esistente
+--
+.Prima di iniziare
+Se il gruppo di coerenza che si desidera utilizzare è già figlio di un altro gruppo di coerenza, è necessariolink:manage-hierarchical-consistency-groups.html#detach-a-child-consistency-group-from-a-parent-consistency-group["staccarlo dal gruppo di coerenza padre esistente"] prima di poterlo spostare in un nuovo gruppo di coerenza padre.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Selezionare il gruppo di coerenza esistente che si desidera creare un gruppo di coerenza figlio.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Sposta in un gruppo di coerenza diverso*.
+. Immettere un nuovo nome per il gruppo di coerenza figlio o accettare il nome predefinito, quindi selezionare il tipo di componente del gruppo di coerenza.
+. Selezionare il gruppo di coerenza esistente che si desidera creare per il gruppo di coerenza di origine o selezionare per creare un nuovo gruppo di coerenza di origine.
++
+Se si sceglie di creare un nuovo gruppo di coerenza di origine, immettere un nome per il gruppo di coerenza di origine o accettare il nome predefinito, quindi selezionare il tipo di componente dell'applicazione di coerenza.
+
+. Selezionare *Sposta*.
+
+
+--
+====
+.Cosa succederà
+Dopo aver creato un gruppo di coerenza figlio, puoilink:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["applicazione di singole policy di protezione degli snapshot"] a ciascun gruppo di coerenza figlio.  Puoi anchelink:snapshot-replication.html["impostare politiche di replicazione"] sui gruppi di coerenza padre e figlio per replicare i gruppi di coerenza in una posizione remota.
+
+
+
+== Scollegare un gruppo di coerenza figlio da un gruppo di coerenza di origine
+
+Quando si scollega un gruppo di coerenza figlio da un gruppo di coerenza padre, il gruppo di coerenza figlio viene rimosso dal gruppo di coerenza padre e gestito come un singolo gruppo di coerenza.  La politica di replica applicata al padre non viene più applicata al gruppo di coerenza figlio staccato.
+
+.Prima di iniziare
+Se si esegue ONTAP 9.16.1 e il gruppo di coerenza che si desidera scollegare si trova in una relazione di sincronizzazione attiva SnapMirror , è necessariolink:snapmirror-active-sync-delete-relationship.html["elimina la relazione di sincronizzazione attiva SnapMirror"] prima che il gruppo di coerenza possa essere staccato.  Se si esegue ONTAP 9.16.1 e il gruppo di coerenza si trova in una relazione di replica asincrona, è necessariolink:snapmirror-active-sync-break-relationship.html["rompere la relazione"] prima di poter staccare il gruppo di coerenza.  In ONTAP 9.17.1 e versioni successive non è necessario eliminare la relazione di sincronizzazione attiva SnapMirror o interrompere la relazione asincrona prima di espandere un gruppo di coerenza.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Selezionare il gruppo di coerenza di origine.
+. Selezionare il gruppo di coerenza figlio che si desidera scollegare.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Disconnetti da principale*.
+. Immettere un nuovo nome per il gruppo di coerenza che si sta scollegando o accettare il nome predefinito, quindi selezionare il tipo di applicazione del gruppo di coerenza.
+. Selezionare *Scollega*.
+
+
+.Quali sono le prossime novità?
+link:snapshot-replication.html["Impostare un criterio di replica"]per replicare gli snapshot del gruppo di coerenza figlio staccato su un cluster remoto.

@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-add-remove-snapshots.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
+summary: Creare snapshot dei gruppi di coerenza per proteggere i dati nelle unità di archiviazione che fanno parte del gruppo di coerenza.  Se non è più necessario proteggere i dati in nessuna delle unità di archiviazione del gruppo di coerenza, è possibile rimuovere la protezione snapshot. 
+---
+= Proteggi i gruppi di coerenza sul tuo sistema ASA r2 con gli snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Crea snapshot dei gruppi di coerenza nel tuo sistema di archiviazione ASA r2 per proteggere i dati nelle unità di archiviazione che fanno parte del gruppo di coerenza.  Se non è più necessario proteggere i dati in nessuna delle unità di archiviazione del gruppo di coerenza, è possibile rimuovere la protezione snapshot dal gruppo di coerenza.
+
+Se non è più necessario proteggere i dati da unità di archiviazione specifiche nel gruppo di coerenza, è possibile rimuovere tali unità di archiviazione dal gruppo di coerenza.
+
+
+
+== Aggiungi la data Protection delle snapshot a un gruppo di coerenza
+
+Quando si aggiunge la protezione dei dati di snapshot a un gruppo di coerenza, le snapshot locali del gruppo di coerenza vengono acquisite a intervalli regolari in base a una pianificazione predefinita.
+
+È possibile utilizzare snapshot link:restore-data.html["ripristinare i dati"]persi o danneggiati.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza che si desidera proteggere.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Modifica*.
+. In *protezione locale*, selezionare *Pianifica istantanee*.
+. Selezionare un criterio di snapshot.
++
+Accettare il criterio snapshot predefinito, selezionare un criterio esistente o creare un nuovo criterio.
+
++
+[cols="2,6a"]
+|===
+| Opzione | Fasi 
+
+
+| Selezionare un criterio snapshot esistente  a| 
+Selezionare image:icon_dropdown_arrow.gif["freccia blu rivolta verso il basso"] accanto al criterio predefinito, quindi selezionare il criterio esistente che si desidera utilizzare.
+
+
+
+| Creare una nuova policy per le istantanee  a| 
+.. Selezionare image:icon_add.gif["segno più blu seguito dalla parola add"], quindi immettere il nome del nuovo criterio.
+.. Selezionare l'ambito del criterio.
+.. In *piani di lavoro* selezionare image:icon_add.gif["segno più blu seguito dalla parola add"].
+.. Selezionare il nome visualizzato in *Nome pianificazione*;
++
+quindi selezionare image:icon_dropdown_arrow.gif["freccia blu rivolta verso il basso"].
+
+.. Selezionare la pianificazione dei criteri.
+.. In *numero massimo di snapshot*, immettere il numero massimo di snapshot che si desidera conservare del gruppo di coerenza.
+.. Facoltativamente, in *SnapMirror label* (etichetta *) immettere un'etichetta SnapMirror.
+.. Selezionare *Salva*.
+
+
+|===
+. Selezionare *Salva*.
+
+
+.Cosa succederà
+Ora che i tuoi dati sono protetti con snapshot, dovresti link:../secure-data/encrypt-data-at-rest.html["configurare la replica snapshot"]copiare i tuoi gruppi di coerenza in una posizione geograficamente remota per il backup e il disaster recovery.
+
+
+
+== Rimozione della data Protection delle snapshot da un gruppo di coerenza
+
+Quando si rimuove la protezione dei dati snapshot da un gruppo di coerenza, gli snapshot vengono disattivati per tutte le unità di archiviazione nel gruppo di coerenza.
+
+.Fasi
+. In System Manager, selezionare *protezione > gruppi di coerenza*.
+. Passare il mouse sul gruppo di coerenza che si desidera interrompere la protezione.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Modifica*.
+. In *protezione locale*, deselezionare Pianifica snapshot.
+. Selezionare *Modifica*.
+
+
+.Risultato
+Gli snapshot non verranno acquisiti per nessuna delle unità di archiviazione nel gruppo di coerenza.

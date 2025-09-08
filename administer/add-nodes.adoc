@@ -11,7 +11,7 @@ summary: 'Potrebbe essere necessario rinominare un nodo per allinearlo alle conv
 
 
 [role="lead"]
-A partire da ONTAP 9.16.1, i sistemi storage ASA R2 supportano fino a 12 nodi per cluster. Dopo aver cablato e acceso i nuovi nodi di una coppia ha, è necessario unirli al cluster.
+A partire da ONTAP 9.16.1, i sistemi di storage ASA r2 supportano fino a 12 nodi per cluster.  Dopo aver cablato e acceso i nuovi nodi di una coppia HA, è necessario unirli al cluster.
 
 .Prima di iniziare
 Raccogliere le seguenti informazioni:

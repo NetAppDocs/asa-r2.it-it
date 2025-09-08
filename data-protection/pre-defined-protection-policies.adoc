@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: data-protection/pre-defined-protection-policies.html 
+keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication, policy, pre-defined, default, custom, policies 
+summary: La politica di replicazione definisce quando gli aggiornamenti eseguiti sul cluster ASA r2 vengono replicati sul sito remoto.  ONTAP include varie policy di protezione dei dati predefinite che puoi utilizzare per le tue relazioni di replicazione. 
+---
+= Scopri di più sulle policy di protezione dei dati ONTAP predefinite
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La politica di replicazione definisce quando gli aggiornamenti eseguiti sul cluster ASA r2 vengono replicati sul sito remoto.  ONTAP include varie policy di protezione dei dati predefinite che puoi utilizzare per le tue relazioni di replicazione.
+
+Se le policy predefinite non soddisfano le tue esigenze, puoilink:snapshot-replication.html#step-2-optionally-create-a-custom-replication-policy["creare una politica di replicazione personalizzata"] .
+
+I sistemi ASA r2 supportano le seguenti policy di protezione predefinite.
+
+[cols="3,4,1"]
+|===
+| Politica | Descrizione | Tipo di polizza 
+
+
+| Asincrono | Una policy SnapMirror asincrona e vault unificata per il mirroring del file system attivo più recente e snapshot giornalieri e settimanali con una pianificazione di trasferimento oraria. | Asincrono 
+
+
+| AutomatedFailOverDuplex | Policy per SnapMirror sincrono con garanzia RTO pari a zero e replica di sincronizzazione bidirezionale. | Sincronizzazione attiva SnapMirror 
+
+
+| CloudBackupDefault | Criterio di sicurezza con regola giornaliera. | Asincrono 
+
+
+| Backup giornaliero | Criterio di Vault con regola giornaliera e programma di trasferimento giornaliero. | Asincrono 
+
+
+| DPDefault | Criterio asincrono SnapMirror per il mirroring di tutti gli snapshot e dell'ultimo file system attivo. | Asincrono 
+
+
+| MirrorAllSnapshots | Criterio asincrono SnapMirror per il mirroring di tutti gli snapshot e dell'ultimo file system attivo. | Asincrono 
+
+
+| MirrorAllSnapshotsDiscardNetwork | Criterio asincrono SnapMirror per il mirroring di tutti gli snapshot e dell'ultimo file system attivo, escluse le configurazioni di rete. | Asincrono 
+
+
+| MirrorAndVault | Una policy SnapMirror asincrona e vault unificata per il mirroring del file system attivo più recente e degli snapshot giornalieri e settimanali. | Asincrono 
+
+
+| MirrorAndVaultDiscardNetwork | Una policy SnapMirror asincrona e vault unificata per il mirroring del file system attivo più recente e degli snapshot giornalieri e settimanali, escludendo le configurazioni di rete. | Asincrono 
+
+
+| MirrorLatest | Criterio asincrono SnapMirror per il mirroring dell'ultimo file system attivo. | Asincrono 
+
+
+| Unified7year | Politica SnapMirror unificata con conservazione di 7 anni. | Asincrono 
+
+
+| XDPDefault | Criterio di sicurezza con regole giornaliere e settimanali. | Asincrono 
+|===

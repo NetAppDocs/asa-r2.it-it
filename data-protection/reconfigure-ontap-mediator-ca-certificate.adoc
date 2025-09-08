@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: data-protection/reconfigure-ontap-mediator-ca-certificate.html 
+keywords: asa r2, data protection, protect data, configure mediator, reconfigure, reinitialize, ontap mediator, cloud mediator, self-signed, ca, certificates 
+summary: Se si configura ONTAP Mediator o ONTAP Cloud Mediator con un certificato autofirmato, è possibile riconfigurare il mediatore per utilizzare un certificato di terze parti.  Per motivi di sicurezza, la tua organizzazione potrebbe preferire o richiedere certificati di terze parti. 
+---
+= Riconfigurare ONTAP Mediator o ONTAP Cloud Mediator per utilizzare un certificato di terze parti sui sistemi ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se si configura ONTAP Mediator o ONTAP Cloud Mediator con un certificato autofirmato, è possibile riconfigurare il mediatore per utilizzare un certificato di terze parti.  Per motivi di sicurezza, la tua organizzazione potrebbe preferire o richiedere certificati di terze parti.
+
+
+
+== Passaggio 1: rimuovere la configurazione del mediatore
+
+Per riconfigurare il mediatore, è necessario prima rimuovere la sua configurazione corrente dal cluster.
+
+.Fasi
+. In Gestione sistema, selezionare *Protezione > Panoramica*.
+. Nel riquadro di destra, sotto *Mediatori*, selezionaimage:icon_kabob.gif["tre punti blu verticali"] accanto al peer del cluster con la configurazione del mediatore che si desidera rimuovere; quindi selezionare *Rimuovi*.
++
+Se sono installati più mediatori e si desidera rimuovere tutte le configurazioni, selezionareimage:icon_kabob.gif["tre punti blu verticali"] accanto a *Mediatori*; quindi seleziona *Rimuovi*.
+
+. Selezionare *Rimuovi* per confermare che si desidera rimuovere la configurazione del mediatore.
+
+
+
+
+== Passaggio 2: rimuovere il certificato autofirmato
+
+Dopo aver rimosso la configurazione del mediatore, è necessario rimuovere il certificato autofirmato associato dal cluster.
+
+.Fasi
+. Selezionare *Cluster > Settings* (cluster > Impostazioni).
+. In *Sicurezza*, seleziona *Certificati*.
+. Seleziona il certificato che desideri rimuovere.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Elimina*.
+
+
+
+
+== Passaggio 3: reinstallare il mediatore con un certificato di terze parti
+
+Dopo aver rimosso il certificato autofirmato associato, è possibile riconfigurare il mediatore con il certificato di terze parti.
+
+.Fasi
+. Selezionare *Protezione > Panoramica*.
+. Nel riquadro di destra, in *Mediatori*, seleziona *Aggiungi un mediatore*.
+. Selezionare il *Tipo di mediatore*.
+. Per un mediatore *Cloud*, inserisci l'ID organizzazione, l'ID client e il segreto client. Per un mediatore *in sede*, immettere l'indirizzo IP, la porta, il nome utente del mediatore e la password del mediatore.
+. Seleziona un cluster peer dall'elenco dei cluster peer idonei oppure seleziona *Aggiungi un cluster peer* per aggiungerne uno nuovo.
+. In *Certificato*, immettere le informazioni sul certificato di terze parti.
+. Selezionare *Aggiungi*.
+
+
+.Risultato
+ONTAP Mediator o ONTAP Cloud Mediator viene riconfigurato per utilizzare il certificato di terze parti.  Ora puoi utilizzare il mediatore per gestire le relazioni di sincronizzazione attiva SnapMirror .

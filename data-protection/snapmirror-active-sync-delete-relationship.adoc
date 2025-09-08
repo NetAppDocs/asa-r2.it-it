@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-delete-relationship.html 
+keywords: asa r2, data protection, business continuity, delete, snapmirror active sync, disaster recovery 
+summary: 'Se non hai più bisogno di RPO e RTO prossimi allo zero per un"applicazione aziendale, puoi rimuovere la protezione di sincronizzazione attiva SnapMirror eliminando la relazione di sincronizzazione attiva SnapMirror associata.' 
+---
+= Elimina una relazione di sincronizzazione attiva SnapMirror sul tuo sistema ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Se non hai più bisogno di RPO e RTO prossimi allo zero per un'applicazione aziendale, dovresti rimuovere la protezione SnapMirror Active Sync eliminando la relazione SnapMirror Active Sync associata.  Se si esegue ONTAP 9.16.1 su un sistema ASA r2, potrebbe essere necessario eliminare anche la relazione di sincronizzazione attiva SnapMirror prima di poter apportare determinate modifiche geometriche ai gruppi di coerenza in una relazione di sincronizzazione attiva SnapMirror .
+
+
+
+== Passaggio 1: terminare la replicazione dell'host
+
+Se il gruppo host del cluster di origine viene replicato nel cluster di destinazione e i gruppi di coerenza di destinazione vengono mappati sul gruppo host replicato, è necessario terminare la replica dell'host sul cluster di origine prima di poter eliminare la relazione di sincronizzazione attiva SnapMirror .
+
+.Fasi
+. In System Manager, selezionare *host*.
+. Accanto a un host contenente il gruppo host di cui si desidera interrompere la replica, selezionareimage:icon_kabob.gif["tre punti blu verticali"] e quindi seleziona *Modifica*.
+. Deseleziona *Replica configurazione host*, quindi seleziona *Aggiorna*.
+
+
+
+
+== Passaggio 2: eliminare la relazione di sincronizzazione attiva SnapMirror
+
+Per rimuovere la protezione SnapMirror ActiveSync da un gruppo di coerenza, è necessario eliminare la relazione SnapMirror ActiveSync.
+
+.Fasi
+. In System Manager, selezionare *protezione > Replica*.
+. Seleziona *Destinazioni locali* o *Fonti locali*.
+. Accanto alla relazione di sincronizzazione attiva SnapMirror che desideri rimuovere, selezionaimage:icon_kabob.gif["tre punti blu verticali"] ; quindi seleziona *Elimina*.
+. Selezionare *Rilascia gli snapshot di base del gruppo di coerenza di origine*.
+. Selezionare *Delete* (Elimina).
+
+
+.Risultato
+La relazione di sincronizzazione attiva SnapMirror viene rimossa e gli snapshot di base del gruppo di coerenza di origine vengono rilasciati.  Le unità di archiviazione nel gruppo di coerenza non sono più protette da SnapMirror ActiveSync.
+
+.Quali sono le prossime novità?
+link:snapshot-replication.html["Configurare la replica snapshot"]per copiare il gruppo di coerenza in una posizione geograficamente remota per il backup e il ripristino di emergenza.

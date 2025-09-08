@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-break-relationship.html 
+keywords: asa r2, data protection, business continuity, remove, delete, break, relationship, snapmirror active sync, disaster recovery 
+summary: In determinate situazioni potrebbe essere necessario interrompere una relazione di replica asincrona. 
+---
+= Interrompere una relazione di replica asincrona sul sistema ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+In determinate situazioni potrebbe essere necessario interrompere una relazione di replica asincrona.  Ad esempio, se si esegue ONTAP 9.16.1 e si desidera aumentare le dimensioni di un gruppo di coerenza che si trova in una relazione di replica asincrona, è necessario interrompere la relazione prima di poter modificare le dimensioni del gruppo di coerenza.
+
+.Fasi
+. In System Manager, selezionare *protezione > Replica*.
+. Seleziona *Destinazioni locali* o *Fonti locali*.
+. Accanto alla relazione che vuoi interrompere, selezionaimage:icon_kabob.gif["tre punti blu verticali"] ; quindi seleziona *Interrompi*.
+. Selezionare *Interruzione*.
+
+
+.Risultato
+La relazione asincrona tra il gruppo di coerenza primario e quello secondario è interrotta.

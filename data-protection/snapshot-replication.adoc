@@ -15,9 +15,13 @@ searchtitle: Replica le snapshot su un cluster remoto utilizzando ONTAP System M
 La replica Snapshot è un processo in cui i gruppi di coerenza nel sistema ASA R2 vengono copiati in una posizione remota a livello geografico. Dopo la replica iniziale, le modifiche ai gruppi di coerenza vengono copiate nella posizione remota in base a un criterio di replica. È possibile utilizzare gruppi di coerenza replicati per il disaster recovery o la migrazione dei dati.
 
 
-NOTE: La replica Snapshot per un sistema di storage ASA R2 è supportata solo da e verso un altro sistema di storage ASA R2. Non è possibile replicare snapshot da un sistema ASA R2 a un sistema ASA, AFF o FAS corrente o da un sistema ASA, AFF o FAS corrente a un sistema ASA R2.
+NOTE: La replica degli snapshot per un sistema di archiviazione ASA r2 è supportata solo da e verso un altro sistema di archiviazione ASA r2.  Non è possibile replicare snapshot da un sistema ASA r2 a un sistema ASA, AFF o FAS o da un sistema ASA, AFF o FAS a un sistema ASA r2.
 
 Per impostare la replica Snapshot, è necessario stabilire una relazione di replica tra il sistema ASA R2 e la posizione remota. La relazione di replica è governata da un criterio di replica. Durante la configurazione del cluster viene creato un criterio predefinito per la replica di tutti gli snapshot. È possibile utilizzare il criterio predefinito o, facoltativamente, crearne uno nuovo.
+
+A partire da ONTAP 9.17.1, è possibile applicare criteri di replica asincrona ai gruppi di coerenza in una relazione gerarchica.  La replica asincrona non è supportata per i gruppi di coerenza nelle relazioni gerarchiche in ONTAP 9.16.1.
+
+link:manage-hierarchical-consistency-groups.html["Scopri di più sui gruppi di coerenza gerarchica (padre/figlio)"] .
 
 
 
@@ -42,9 +46,11 @@ Hai effettuato il peering per un cluster ASA R2 locale con un cluster remoto. È
 
 
 
-== Passaggio 2: Se si desidera, creare un criterio di replica
+== Passaggio 2: Facoltativamente, creare una policy di replica personalizzata
 
-Questo criterio definisce quando gli aggiornamenti eseguiti nel cluster ASA R2 vengono replicati nel sito remoto.
+La politica di replicazione definisce quando gli aggiornamenti eseguiti sul cluster ASA r2 vengono replicati sul sito remoto.  ONTAP include varie policy di protezione dei dati predefinite che puoi utilizzare per le tue relazioni di replicazione.  Se i criteri predefiniti non soddisfano le tue esigenze, puoi creare un criterio di replica personalizzato.
+
+Scopri di piùlink:pre-defined-protection-policies.html["politiche di protezione dei dati ONTAP predefinite"] .
 
 .Fasi
 . In Gestione sistema, selezionare *protezione > Criteri*, quindi selezionare *Criteri di replica*.
@@ -93,7 +99,12 @@ Una relazione di replica snapshot stabilisce una connessione tra il sistema ASA 
 Per una protezione contro gli attacchi ransomware, quando configuri un rapporto di replica, puoi selezionare di bloccare gli snapshot di destinazione. Gli snapshot bloccati non possono essere eliminati accidentalmente o in modo pericoloso. Puoi utilizzare snapshot bloccate per ripristinare i dati se un'unità di storage viene compromessa da un attacco ransomware.
 
 .Prima di iniziare
-Se si desidera bloccare gli snapshot di destinazione, è necessario link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["Inizializzare il clock di conformità snapshot"] prima creare la relazione di replica.
+* link:pre-defined-protection-policies.html["Scopri di più sulle policy di replicazione"] .
++
+Quando si crea una relazione di replica, è necessario selezionare il criterio di replica appropriato per la relazione di replica.  È possibile utilizzare una policy predefinita oppure crearne una personalizzata.
+
+* Se si desidera bloccare gli snapshot di destinazione, è necessario link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["Inizializzare il clock di conformità snapshot"] prima creare la relazione di replica.
+
 
 Creare una relazione di replica con o senza snapshot di destinazione bloccati.
 
@@ -149,9 +160,6 @@ Il gruppo di coerenza _source_ fa riferimento al gruppo di coerenza del cluster 
 | Fonti locali  a| 
 .. Selezionare *origini locali*, quindi selezionare image:icon_replicate_blue_bg.png["rettangolo con sfondo blu e la parola replicata in lettere bianche"] .
 .. Cercare e selezionare il gruppo di coerenza di origine.
-+
-Il gruppo di coerenza _source_ fa riferimento al gruppo di coerenza del cluster locale che si desidera replicare.
-
 .. In *destinazione di replica*, selezionare il cluster in cui eseguire la replica, quindi selezionare la VM di archiviazione.
 
 

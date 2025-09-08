@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: administer/upgrade-ontap.html 
 keywords: update, firmware, system files, automatic updates, automated updates, asa r2, disable, 
-summary: ONTAP aggiorna automaticamente il firmware sui sistemi ASA R2. È possibile utilizzare System Manager per disattivare gli aggiornamenti automatici e visualizzare gli aggiornamenti prima che vengano installati. 
+summary: Gli aggiornamenti software ONTAP per i sistemi ASA r2 seguono lo stesso processo degli aggiornamenti per gli altri sistemi ONTAP .  Quando aggiorni il software ONTAP sul tuo sistema ASA r2, puoi sfruttare le nuove e migliorate funzionalità ONTAP . 
 ---
 = Aggiornare ONTAP sui sistemi storage ASA R2
 :allow-uri-read: 
