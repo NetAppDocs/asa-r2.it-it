@@ -2506,4 +2506,6 @@
   <block id="f9e11d9c895b9f2de1a25a03e810d34d" category="sidebar">Aggiungere o rimuovere unità di archiviazione ai gruppi di coerenza</block>
   <block id="5a0dfc6f986e17a79c038bc9a2aeec2d" category="sidebar">Elimina gruppi di coerenza</block>
   <block id="36bed646725e085252916c3131fbf1b2" category="sidebar">Gestire gruppi di coerenza gerarchica</block>
+  <block id="e130096a0ace158c7893eedbd19e7115" category="inline-link-macro">La sincronizzazione NTP fallisce dopo la modifica dell'IP LIF</block>
+  <block id="31fea35e33141cfa7edd94a1254d7007" category="paragraph">ONTAP utilizza il Network Time Protocol (NTP) per sincronizzare l'ora nel cluster. Dopo aver modificato gli indirizzi IP LIF, potrebbe essere necessario aggiornare la configurazione NTP per evitare errori di sincronizzazione. Per ulteriori informazioni, fare riferimento all'articolo della Knowledge Base<block ref="eb416b4e77f6226862164baac134c11c" category="inline-link-macro-rx"></block> .</block>
 </blocks>
