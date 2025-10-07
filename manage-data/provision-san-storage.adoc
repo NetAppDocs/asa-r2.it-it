@@ -34,10 +34,10 @@ Se si creano più unità di archiviazione, ciascuna viene creata con la stessa c
 . Immettere la capacità dell'unità di archiviazione, quindi selezionare il sistema operativo host.
 . Accettare la *mappatura host* selezionata automaticamente o selezionare un gruppo host diverso per l'unità di archiviazione a cui eseguire la mappatura.
 +
-*Host mapping* si riferisce al gruppo host a cui verrà mappata la nuova unità di archiviazione. Se esiste un gruppo host preesistente per il tipo di host selezionato per la nuova unità di archiviazione, il gruppo host preesistente viene selezionato automaticamente per la mappatura dell'host. È possibile accettare il gruppo di host selezionato automaticamente per la mappatura host oppure selezionare un gruppo di host diverso.
+*Mappatura host* si riferisce al gruppo host a cui verrà mappata la nuova unità di archiviazione.  Se esiste un gruppo host preesistente per il tipo di host selezionato per la nuova unità di archiviazione, il gruppo host preesistente viene selezionato automaticamente per la mappatura degli host.  È possibile accettare il gruppo host selezionato automaticamente oppure selezionarne uno diverso.
 
 +
-Se non esiste un gruppo di host preesistente per gli host in esecuzione sul sistema operativo specificato, ONTAP crea automaticamente un nuovo gruppo di host.
+Se non esiste un gruppo host preesistente per gli host in esecuzione sul sistema operativo specificato, ONTAP crea automaticamente un nuovo gruppo host.
 
 . Se si desidera eseguire una delle seguenti operazioni, selezionare *altre opzioni* e completare la procedura richiesta.
 +
@@ -82,11 +82,12 @@ La definizione di un throughput minimo e di IOPS per un'unità di storage garant
 
  a| 
 Modificare il livello di servizio delle prestazioni predefinito.
-
-I sistemi ASA R2 offrono due livelli di performance. Il livello di prestazioni predefinito è *Extreme*, ovvero il livello più alto disponibile. È possibile ridurre il livello di prestazioni a *prestazioni*.
  a| 
 .. In *archiviazione e ottimizzazione*, accanto al livello di servizio *prestazioni*, selezionare image:icon_dropdown_arrow.gif["icona della freccia blu rivolta verso il basso"].
 .. Selezionare *prestazioni*.
++
+I sistemi ASA r2 offrono due livelli di prestazioni.  Il livello di prestazioni predefinito è *Extreme*, ovvero il livello più alto disponibile.  È possibile abbassare il livello a *Prestazioni*.
+
 
 
 
