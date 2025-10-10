@@ -41,7 +41,7 @@ I sistemi ASA r2 supportano i seguenti limiti di archiviazione:
 | Dimensioni dell'unità di stoccaggio | 128 TB | 128 TB 
 
 
-| Unità di archiviazione per gruppo di coerenza | 80 | 80 
+| Unità di archiviazione per gruppo di coerenza | 256 | 256 
 
 
 | Macchine virtuali | 800 | 1200 
