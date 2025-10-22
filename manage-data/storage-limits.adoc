@@ -68,12 +68,15 @@ I seguenti limiti si applicano alle unità di archiviazione e ai gruppi di coere
 
 I seguenti limiti si applicano alle unità di archiviazione e ai gruppi di coerenza in una relazione di replica di sincronizzazione attiva SnapMirror .  La sincronizzazione attiva SnapMirror è supportata a partire da ONTAP 9.17.1 solo su cluster a 2 nodi.
 
-[cols="3"]
+[cols="2"]
 |===
-| Limite massimo | Per coppia HA | Gruppi di coerenza 
+| Limite massimo | Per coppia HA 
 
 
-| 50 | Unità di stoccaggio | 400 
+| Gruppi di coerenza | 50 
+
+
+| Unità di stoccaggio | 400 
 |===
 .Per ulteriori informazioni
 Per un elenco completo dei limiti di archiviazione più recenti di ASA R2, vedere link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
