@@ -147,6 +147,13 @@ image::../media/drw_70-90_switched_cluster_cabling_ieops-1657.svg[Connessioni cl
 --
 Creare connessioni al cluster ONTAP. Per i cluster senza switch, collegare i controller l'uno all'altro. Per i cluster commutati, collegare i controller agli switch di rete del cluster.
 
+[NOTE]
+====
+Gli esempi di cablaggio cluster/HA mostrano configurazioni comuni.
+
+Se non vedi la tua configurazione qui, vai a link:https://hwu.netapp.com["NetApp Hardware Universe"^] per informazioni complete sulla configurazione e sulla priorità degli slot per cablare il sistema di archiviazione.
+
+====
 *Cablaggio cluster senza switch*
 
 Collegare i controller l'uno all'altro per creare connessioni del cluster ONTAP.
@@ -329,6 +336,13 @@ image::../media/drw_isi_a20_switched_2p_25gbe_cabling_ieops-2019.svg[diagramma d
 --
 Creare connessioni al cluster ONTAP. Per i cluster senza switch, collegare i controller l'uno all'altro. Per i cluster commutati, collegare i controller agli switch di rete del cluster.
 
+[NOTE]
+====
+Gli esempi di cablaggio cluster/HA mostrano configurazioni comuni.
+
+Se non vedi la tua configurazione qui, vai a link:https://hwu.netapp.com["NetApp Hardware Universe"^] per informazioni complete sulla configurazione e sulla priorità degli slot per cablare il sistema di archiviazione.
+
+====
 *Cablaggio cluster senza switch*
 
 Collegare i controller l'uno all'altro per creare connessioni del cluster ONTAP.
@@ -537,6 +551,13 @@ image::../media/drw_70-90_network_cabling2_ieops-1655.svg[Cavo alla rete Etherne
 --
 Collegare le porte del modulo Ethernet o le porte del modulo Fibre Channel (FC) alla rete host.
 
+[NOTE]
+====
+Gli esempi di cablaggio della rete host mostrano configurazioni comuni.
+
+Se non vedi la tua configurazione qui, vai a link:https://hwu.netapp.com["NetApp Hardware Universe"^] per informazioni complete sulla configurazione e sulla priorità degli slot per cablare il sistema di archiviazione.
+
+====
 *Cablaggio host Ethernet*
 
 .ASA A30 e ASA A50 con due moduli i/o GbE a 2 porte da 40/100 GB
@@ -585,6 +606,13 @@ image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[Cavo per 
 --
 Collegare le porte del modulo Ethernet o le porte del modulo Fibre Channel (FC) alla rete host.
 
+[NOTE]
+====
+Gli esempi di cablaggio della rete host mostrano configurazioni comuni.
+
+Se non vedi la tua configurazione qui, vai a link:https://hwu.netapp.com["NetApp Hardware Universe"^] per informazioni complete sulla configurazione e sulla priorità degli slot per cablare il sistema di archiviazione.
+
+====
 *Cablaggio host Ethernet*
 
 .ASA C30 con due moduli I/O 40/100 GbE a 2 porte
