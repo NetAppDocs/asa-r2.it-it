@@ -11,7 +11,7 @@ summary: A partire da ONTAP 9.17.1, ONTAP ribilancia automaticamente i carichi d
 
 
 [role="lead"]
-A partire da ONTAP 9.17.1, ONTAP ribilancia automaticamente i carichi di lavoro tra i nodi di una coppia HA di un sistema ASA r2 per prestazioni ottimali. Ad esempio, se l'utilizzo su un nodo aumenta al 70% mentre l'utilizzo sul suo partner HA è solo del 30%, ONTAP sposta automaticamente i carichi di lavoro in modo che l'utilizzo di ciascun nodo sia più uniforme. Poiché i nodi della coppia HA condividono la stessa zona di disponibilità dello storage, il ribilanciamento dei carichi di lavoro è un'operazione senza copia e senza alcun impatto sulle prestazioni.
+A partire da ONTAP 9.17.1, ONTAP ribilancia automaticamente i carichi di lavoro tra i nodi di una coppia HA di un sistema ASA r2 per prestazioni ottimali. Ad esempio, se l'utilizzo dello spazio su un nodo aumenta al 70% mentre l'utilizzo sul suo partner HA è solo del 30%, ONTAP sposta automaticamente i carichi di lavoro in modo che l'utilizzo dello spazio di ciascun nodo sia più uniforme. Poiché i nodi della coppia HA condividono la stessa zona di disponibilità dello storage, il ribilanciamento dei carichi di lavoro è un'operazione senza copia e senza alcun impatto sulle prestazioni.
 
 
 
