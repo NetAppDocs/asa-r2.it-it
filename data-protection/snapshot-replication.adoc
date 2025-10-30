@@ -60,27 +60,14 @@ Scopri di piùlink:pre-defined-protection-policies.html["politiche di protezione
 +
 Se si desidera applicare il criterio di replica all'intero cluster, selezionare *Cluster*. Se si desidera applicare il criterio di replica solo alle unità di archiviazione in una VM di archiviazione specifica, selezionare *VM di archiviazione*.
 
-. Selezionare il *tipo di criterio*.
+. Per *Tipo di criterio*, selezionare *Asincrono*.
 +
-[cols="2,6a"]
-|===
-| Opzione | Fasi 
 
+NOTE: Con la politica asincrona, i dati vengono copiati sul sito remoto dopo essere stati scritti sulla sorgente. La replica sincrona non è supportata per i sistemi ASA r2.
 
-| Copiare i dati nel sito remoto dopo che sono stati scritti nell'origine.  a| 
-.. Selezionare *asincrono*.
-.. In *Trasferisci snapshot dall'origine*, accettare la pianificazione di trasferimento predefinita o selezionarne una diversa.
-.. Selezionare per trasferire tutte le istantanee o per creare regole per determinare quali istantanee trasferire.
-.. Facoltativamente, attivare la compressione di rete.
-
-
-
-
-| Scrivere i dati contemporaneamente sui siti di origine e remoti.  a| 
-.. Selezionare *sincrono*.
-
-
-|===
+. In *Trasferisci snapshot dall'origine*, accettare la pianificazione di trasferimento predefinita o selezionarne una diversa.
+. Selezionare per trasferire tutte le istantanee o per creare regole per determinare quali istantanee trasferire.
+. Facoltativamente, attivare la compressione di rete.
 . Selezionare *Salva*.
 
 

@@ -26,8 +26,6 @@ Quando è abilitato il failover automatico di LIF iSCSI, in caso di failover del
 * MetroCluster
 * Protocolli a oggetti
 * API ONTAP S3 SnapMirror e S3
-* SnapMirror (asincrono e sincrono) al cloud
-* Da SnapMirror (asincrono e sincrono) a sistemi R2 non ASA
 
 
 .I sistemi ASA R2 supportano quanto segue:
@@ -38,6 +36,20 @@ link:../secure-data/ransomware-protection.html["Informazioni su come bloccare le
 * Crittografia a doppio layer
 +
 link:../secure-data/encrypt-data-at-rest.html["Scopri come applicare la crittografia a doppio livello"] Ai dati sul sistema ASA R2.
+
+
+
+
+
+== Supporto per la replica SnapMirror
+
+La replica SnapMirror è supportata sui sistemi ASA r2 con le seguenti limitazioni:
+
+* La replica sincrona SnapMirror non è supportata.
+* La sincronizzazione attiva SnapMirror è supportata solo tra due sistemi ASA r2.
+* La replica asincrona SnapMirror è supportata solo tra due sistemi ASA r2. La replica asincrona SnapMirror non è supportata tra un sistema ASA r2 e un sistema ASA, AFF o FAS o il cloud.
++
+Scopri di più sulink:data-protection/pre-defined-protection-policies.html["Criteri di replica SnapMirror supportati sui sistemi ASA r2"] .
 
 
 

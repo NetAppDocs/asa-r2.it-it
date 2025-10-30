@@ -15,6 +15,9 @@ La politica di replicazione definisce quando gli aggiornamenti eseguiti sul clus
 
 Se le policy predefinite non soddisfano le tue esigenze, puoilink:snapshot-replication.html#step-2-optionally-create-a-custom-replication-policy["creare una politica di replicazione personalizzata"] .
 
+
+NOTE: I sistemi ASA r2 non supportano la replica sincrona.
+
 I sistemi ASA r2 supportano le seguenti policy di protezione predefinite.
 
 [cols="3,4,1"]
