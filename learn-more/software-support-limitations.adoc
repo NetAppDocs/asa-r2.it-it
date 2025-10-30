@@ -47,9 +47,12 @@ La replica SnapMirror è supportata sui sistemi ASA r2 con le seguenti limitazio
 
 * La replica sincrona SnapMirror non è supportata.
 * La sincronizzazione attiva SnapMirror è supportata solo tra due sistemi ASA r2.
++
+Scopri di più sulink:../data-protection/snapmirror-active-sync.html["Sincronizzazione attiva SnapMirror sui sistemi ASA r2"] .
+
 * La replica asincrona SnapMirror è supportata solo tra due sistemi ASA r2. La replica asincrona SnapMirror non è supportata tra un sistema ASA r2 e un sistema ASA, AFF o FAS o il cloud.
 +
-Scopri di più sulink:data-protection/pre-defined-protection-policies.html["Criteri di replica SnapMirror supportati sui sistemi ASA r2"] .
+Scopri di più sulink:../data-protection/pre-defined-protection-policies.html["Criteri di replica SnapMirror supportati sui sistemi ASA r2"] .
 
 
 
