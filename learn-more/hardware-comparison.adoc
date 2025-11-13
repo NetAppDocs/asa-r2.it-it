@@ -12,9 +12,9 @@ searchtitle: Confrontare i sistemi ASA R2 con gli altri sistemi ONTAP
 
 
 [role="lead"]
-I sistemi ASA r2 offrono una soluzione hardware e software per ambienti SAN-only, basata su piattaforme flash. I sistemi ASA r2 si differenziano dagli altri sistemi ONTAP (ASA, AFF e FAS) per l'implementazione della personalità ONTAP , del livello di storage e dei protocolli supportati.
+I sistemi ASA r2 offrono una soluzione hardware e software per ambienti SAN-only basata su soluzioni all-flash. I sistemi ASA r2 si differenziano dagli altri sistemi ONTAP (ASA, AFF e FAS) per l'implementazione della personalità ONTAP , del livello di storage e dei protocolli supportati.
 
-Le seguenti piattaforme ASA sono classificate come sistemi ASA R2:
+I seguenti sono classificati come sistemi ASA r2:
 
 * ASA A1K
 * ASA A90
@@ -99,8 +99,8 @@ Grazie a questo approccio automatizzato e semplificato alla gestione dello stora
 
 Di seguito sono descritte le principali differenze tra i sistemi ASA R2 e i sistemi FAS, AFF e ASA relativi all'interfaccia a riga di comando (CLI) e all'API REST di ONTAP.
 
-.Creazione di SVM predefinita con servizi di protocollo
-I nuovi cluster contengono automaticamente una SVM dati predefinita con i protocolli SAN abilitati. Le interfacce LIF dati IP supportano i protocolli iSCSI e NVMe/TCP e utilizzano `default-data-blocks` la policy di servizio per impostazione predefinita.
+.Creazione di VM di archiviazione predefinita con servizi di protocollo
+I nuovi cluster contengono automaticamente una macchina virtuale (VM) di archiviazione dati predefinita con i protocolli SAN abilitati.  I dati IP LIF supportano i protocolli iSCSI e NVMe/TCP e utilizzano `default-data-blocks` politica di servizio per impostazione predefinita.
 
 .Creazione automatica di un volume
 La creazione di un'unità di storage (LUN o namespace) crea automaticamente un volume dalla zona di disponibilità dello storage. Ciò si traduce in uno spazio dei nomi comune e semplificato. L'eliminazione di un'unità di memorizzazione elimina automaticamente il volume associato.

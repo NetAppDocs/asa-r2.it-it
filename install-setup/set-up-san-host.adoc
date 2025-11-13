@@ -17,7 +17,7 @@ Si consiglia di utilizzare due o più switch per collegare il sistema di storage
 
 Si consiglia di utilizzare configurazioni multi-network o multi-fabric (quelle che utilizzano due o più switch) in quanto forniscono ridondanza sia a livello di switch che di storage. Questa ridondanza rende il tuo sistema storage più tollerante agli errori e garantisce il supporto di operazioni senza interruzioni.
 
-L'illustrazione seguente è un esempio di una configurazione FC con più host utilizzando due fabric per accedere a una singola coppia ha. Anche i numeri delle porte di destinazione FC (0C, 0d, 1a, 1b) sono esempi. I numeri di porta effettivi variano a seconda del modello di piattaforma e se si utilizzano adattatori di espansione.
+L'illustrazione seguente è un esempio di una configurazione FC con più host che utilizzano due fabric per accedere a una singola coppia HA.  Anche i numeri delle porte di destinazione FC (0c, 0d, 1a, 1b) sono esempi.  I numeri di porta effettivi variano a seconda del modello del sistema e dell'eventuale utilizzo di adattatori di espansione.
 
 image::multi-fabric-san-configuration.png[Due fabric FC che collegano più host a una singola coppia ha]
 

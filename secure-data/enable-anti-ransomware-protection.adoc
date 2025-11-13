@@ -25,9 +25,9 @@ Dopo aver abilitato ARP/AI, dovresti link:../administer/update-firmware.html#ena
 
 
 
-== Abilita ARP/AI su tutte le unità di archiviazione in una SVM
+== Abilita ARP/AI su tutte le unità di archiviazione in una VM di archiviazione
 
-È possibile abilitare ARP/AI per impostazione predefinita su tutte le unità di storage create in una macchina virtuale di storage (SVM). Ciò significa che ARP/AI sarà automaticamente abilitato su tutte le nuove unità di storage create nella SVM. È anche possibile applicare ARP/AI alle unità di storage esistenti nella SVM.
+È possibile abilitare ARP/AI per impostazione predefinita su tutte le unità di storage create in una macchina virtuale di storage (VM). Ciò significa che tutte le nuove unità di archiviazione create nella VM di archiviazione avranno ARP/AI abilitato automaticamente.  È anche possibile applicare ARP/AI alle unità di archiviazione esistenti nella VM di archiviazione.
 
 .Fasi
 . In System Manager, seleziona *Cluster > VM di archiviazione*.
@@ -42,13 +42,13 @@ In questo modo, per impostazione predefinita, ARP/AI viene abilitato su tutte le
 
 
 .Risultato
-Per impostazione predefinita, tutte le nuove unità di archiviazione create sull'SVM sono protette dagli attacchi ransomware e le attività sospette vengono segnalate in System Manager.
+Per impostazione predefinita, tutte le nuove unità di archiviazione create sulla VM di archiviazione sono protette dagli attacchi ransomware e le attività sospette vengono segnalate in System Manager.
 
 
 
-== Abilitare ARP/AI su unità di archiviazione specifiche in una SVM
+== Abilita ARP/AI su unità di archiviazione specifiche in una VM di archiviazione
 
-Se non si desidera abilitare ARP/AI su tutte le unità di archiviazione in una SVM, è possibile selezionare le unità specifiche che si desidera abilitare.
+Se non si desidera abilitare ARP/AI su tutte le unità di archiviazione in una VM di archiviazione, è possibile selezionare le unità specifiche che si desidera abilitare.
 
 .Fasi
 . In System Manager, selezionare *Storage*.

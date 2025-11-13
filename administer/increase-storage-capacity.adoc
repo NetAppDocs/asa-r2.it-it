@@ -17,12 +17,12 @@ Aggiungi dischi a un nodo o a uno shelf per aumentare la capacità dello storage
 
 == Utilizzare NetApp Hardware Universe per preparare l'installazione di una nuova unità
 
-Prima di installare una nuova unità su un nodo o su uno shelf, utilizzare la NetApp Hardware Universe per verificare che l'unità da aggiungere sia supportata dalla propria piattaforma ASA R2 e per identificare lo slot corretto per la nuova unità. Gli slot corretti per l'aggiunta di dischi variano a seconda del modello di piattaforma e della versione di ONTAP. In alcuni casi, è necessario aggiungere unità a slot specifici in sequenza.
+Prima di installare una nuova unità su un nodo o uno shelf, utilizzare NetApp Hardware Universe per confermare che l'unità che si desidera aggiungere sia supportata dal sistema ASA r2 e per identificare lo slot corretto per la nuova unità.  Gli slot corretti per l'aggiunta di unità variano a seconda del modello del sistema e della versione ONTAP .  In alcuni casi è necessario aggiungere unità a slot specifici in sequenza.
 
 .Fasi
 . Consultare la link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
 . In *prodotti*, selezionare le configurazioni hardware.
-. Seleziona la piattaforma ASA R2.
+. Seleziona il tuo sistema ASA r2.
 . Selezionare la versione di ONTAP, quindi selezionare *Mostra risultati*.
 . Sotto l'immagine, selezionare *fare clic qui per visualizzare le viste alternative*, quindi scegliere la vista corrispondente alla configurazione.
 . Utilizzare la vista della configurazione per verificare che la nuova unità sia supportata e lo slot corretto per l'installazione.
@@ -42,7 +42,7 @@ Ripetere i passi di questa procedura per ciascuna unità.
 
 .Fasi
 . Mettere a terra l'utente.
-. Rimuovere delicatamente il pannello frontale dalla parte anteriore della piattaforma.
+. Rimuovere delicatamente la cornice dalla parte anteriore del sistema.
 . Inserire la nuova unità nello slot corretto.
 +
 .. Con la maniglia della camma in posizione aperta, inserire il nuovo disco con entrambe le mani.

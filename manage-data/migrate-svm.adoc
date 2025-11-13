@@ -1,0 +1,239 @@
+---
+sidebar: sidebar 
+permalink: manage-data/migrate-svm.html 
+keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
+summary: 'Se lo spazio di una zona di disponibilità dello storage si sta esaurendo, è possibile spostare le unità di storage in un"altra zona di disponibilità dello storage per bilanciare l"utilizzo dello storage nel cluster.' 
+---
+= Migrare una VM di archiviazione da un cluster ASA a un cluster ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A partire da ONTAP 9.18.1, è possibile migrare senza interruzioni una macchina virtuale di archiviazione (VM) da qualsiasi cluster ASA a qualsiasi cluster ASA r2.  La migrazione da un cluster ASA a un cluster ASA r2 consente di adottare l'architettura semplificata e ottimizzata dei sistemi ASA r2 per ambienti solo SAN.
+
+La migrazione delle VM di archiviazione tra i sistemi di archiviazione ASA e ASA r2 è supportata come segue:
+
+[cols="2"]
+|===
+| Da uno qualsiasi dei seguenti sistemi ASA : | Per uno qualsiasi dei seguenti sistemi ASA r2: 
+
+
+ a| 
+* ASA C800
+* ASA C400
+* ASA C250
+* ASA A900
+* ASA A800
+* ASA A400
+* ASA A250
+* ASA A150
+* ASA AFF A800
+* ASA AFF A700
+* ASA AFF A400
+* ASA AFF A250
+* ASA AFF A220
+
+ a| 
+* ASA A1K
+* ASA C30
+* ASA A90
+* ASA A70
+* ASA A50
+* ASA A30
+* ASA A20
+
+
+|===
+
+NOTE: Per l'elenco più aggiornato dei sistemi ASA e ASA r2, vederelink:https://hwu.netapp.com/["NetApp Hardware Universe"^] .  I sistemi ASA r2 sono elencati in NetApp Hardware Universe come "ASA A-Series/C-Series (New)".
+
+È possibile migrare una VM di archiviazione a un cluster ASA r2 solo da un cluster ASA .  La migrazione da qualsiasi altro tipo di sistema ONTAP non è supportata.
+
+.Prima di iniziare
+Tutti i nodi nel cluster ASA r2 e nel cluster ASA devono eseguire ONTAP 9.18.1 o versione successiva.  Le versioni della patch ONTAP 9.18.1 sui nodi del cluster possono variare.
+
+
+
+== Passaggio 1: verificare lo stato della VM di archiviazione ASA
+
+Prima di migrare una VM di archiviazione da un sistema ASA , non devono essere presenti namespace NVMe o vVols e ogni volume nella VM di archiviazione deve contenere una sola LUN.  La migrazione degli spazi dei nomi NVMe e vVols non è supportata.  L'architettura dei sistemi ASA r2 richiede che i volumi contengano un singolo LUN.
+
+.Fasi
+. Verificare che non siano presenti spazi dei nomi NVMe nella VM di archiviazione:
++
+[source, cli]
+----
+vserver nvme namespace show -vserver <storage_VM>
+----
++
+Se vengono visualizzate le voci, gli oggetti NVMe devono esserelink:https://docs.netapp.com/us-en/ontap/nvme/convert-namespace-to-lun-task.html["convertito"^] ai LUN o rimossi.  Vedi il `vserver nvme namespace delete` e il `vserver nvme subsystem delete` comandi nellink:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["Riferimento comando ONTAP"^] per maggiori informazioni.
+
+. Verificare che non siano presenti vVols nella VM di archiviazione:
++
+[source, cli]
+----
+lun show -verser <storage_VM> -class protocol-endpoint,vvol
+----
++
+Se sono presenti vVols , è necessario copiarli su un'altra VM di archiviazione e quindi eliminarli dalla VM di archiviazione da migrare.  Vedi il `lun copy` E `lun delete` comandi nellink:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["Riferimento comando ONTAP"^] per maggiori informazioni.
+
+. Verificare che ogni volume nella VM di archiviazione contenga un singolo LUN:
++
+[source, cli]
+----
+lun show -verser <storage_VM>
+----
++
+Se un volume contiene più di un LUN, utilizzare `volume create` E `lun move` comandi per creare un rapporto volume-LUN di 1:1. Vedi illink:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["Riferimento comando ONTAP"^] per maggiori informazioni.
+
+
+
+.Cosa succederà?
+Ora sei pronto per creare una relazione peer tra i cluster ASA e ASA r2.
+
+
+
+== Passaggio 2: creare una relazione peer tra cluster tra i cluster ASA e ASA r2
+
+Prima di poter migrare una VM di archiviazione da un cluster ASA a un cluster ASA r2, è necessario creare una relazione peer.  Una relazione peer definisce le connessioni di rete che consentono ai cluster ONTAP e alle VM di archiviazione di scambiare dati in modo sicuro.
+
+.Prima di iniziare
+È necessario aver creato LIF intercluster su ogni nodo nei cluster sottoposti a peering utilizzando uno dei seguenti metodi.
+
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-share-data-ports-task.html["Configurare i LIF intercluster sulle porte dati condivise"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-dedicated-ports-task.html["Configurare i LIF intercluster su porte dati dedicate"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-ports-own-networks-task.html["Configurare LIF intercluster in spazi IP personalizzati"^]
+
+
+.Fasi
+. Sul cluster ASA r2, creare una relazione peer con il cluster ASA e generare una passphrase:
++
+[source, cli]
+----
+cluster peer create -peer-addrs <ASA_cluster_LIF_IPs> -generate-passphrase
+----
++
+L'esempio seguente crea una relazione peer tra cluster 1 e cluster 2 e crea una passphrase generata dal sistema:
+
++
+[listing]
+----
+cluster1::> cluster peer create -peer-addrs 10.98.191.193 -generate-passphrase
+Passphrase: UCa+6lRVICXeL/gq1WrK7ShR
+            Peer Cluster Name: cluster2
+            Initial Allowed Vserver Peers: -
+            Expiration Time: 6/7/2017 09:16:10 +5:30
+            Intercluster LIF IP: 10.140.106.185
+Warning: make a note of the passphrase - it cannot be displayed again.
+
+----
+. Copia la passphrase generata.
+. Sul cluster ASA , creare una relazione peer con il cluster ASA r2:
++
+[source, cli]
+----
+cluster peer create -peer-addrs <ASA_r2_LIF_IPs>
+----
+. Immettere la passphrase generata sul cluster ASA r2.
+. Verificare che la relazione peer del cluster sia stata creata:
++
+[source, cli]
+----
+cluster peer show
+----
++
+L'esempio seguente mostra l'output previsto per i cluster peered correttamente.
+
++
+[listing]
+----
+cluster1::> cluster peer show
+
+Peer Cluster Name   Cluster Serial Number   Availability   Authentication
+-----------------   ---------------------   -------------- --------------
+cluster2             1-80-123456             Available      ok
+----
+
+
+.Risultato
+I cluster ASA e ASA r2 sono peered e i dati delle VM di archiviazione possono essere trasferiti in modo sicuro.
+
+.Cosa succederà?
+Ora sei pronto a preparare la tua VM di archiviazione ASA per la migrazione.
+
+
+
+== Passaggio 3: preparare la migrazione della VM di archiviazione da un cluster ASA a un cluster ASA r2
+
+Prima di migrare una macchina virtuale di archiviazione (VM) da un cluster ASA a un cluster ASA r2, è necessario eseguire un controllo preliminare della migrazione e risolvere eventuali problemi.  Non è possibile eseguire la migrazione finché il controllo preliminare non viene superato con successo.
+
+.Fase
+. Dal cluster ASA r2, esegui il controllo preliminare della migrazione:
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM> -source-cluster <asa_cluster> -check-only true
+----
++
+Se è necessario risolvere eventuali problemi per preparare il cluster ASA alla migrazione, vengono visualizzati il ​​problema e l'azione correttiva.  Risolvi il problema e ripeti il ​​controllo preliminare finché non viene completato correttamente.
+
+
+
+.Cosa succederà?
+Ora sei pronto per migrare la tua VM di archiviazione dal cluster ASA a un cluster ASA r2.
+
+
+
+== Passaggio 4: migrare una VM di archiviazione ASA in un cluster ASA r2
+
+Dopo aver preparato il cluster ASA e creato la necessaria relazione peer con il cluster ASA r2, è possibile iniziare la migrazione della VM di archiviazione.
+
+Quando si esegue una migrazione di VM di storage, è consigliabile lasciare il 30% di spazio CPU sia sul cluster ASA che sul cluster ASA r2 per consentire l'esecuzione del carico di lavoro CPU.
+
+.A proposito di questa attività
+Dopo la migrazione della VM di storage, i client vengono automaticamente trasferiti al cluster ASA r2 e la VM di storage sul cluster ASA viene automaticamente rimossa.  Il cutover automatico e la rimozione automatica della VM di archiviazione sono abilitati per impostazione predefinita.  Facoltativamente, è possibile disabilitarli entrambi ed eseguire manualmente il cutover e la rimozione della VM di archiviazione.
+
+.Prima di iniziare
+* Il cluster ASA r2 deve disporre di spazio libero sufficiente per contenere la VM di archiviazione migrata.
+* Se la VM di archiviazione ASA contiene volumi crittografati, il gestore delle chiavi integrato o il gestore delle chiavi esterno sul sistema ASA r2 devono essere configurati a livello di cluster.
+* Le seguenti operazioni non possono essere eseguite sul cluster ASA di origine:
++
+** Operazioni di failover
+** WAFLIRON
+** impronta digitale
+** Spostamento, rehosting, clonazione, creazione, conversione o analisi del volume
+
+
+
+
+.Fasi
+. Dal cluster ASA r2, avviare la migrazione della VM di archiviazione:
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM_name> -source-cluster <ASA_cluster>
+----
++
+Per disattivare il passaggio automatico, utilizzare `-auto-cutover false` parametro.  Per disabilitare la rimozione automatica della VM di archiviazione ASA , utilizzare `-auto-source-cleanup false` parametro.
+
+. Monitorare lo stato della migrazione
++
+[source, cli]
+----
+vserver migrate show -vserver <storage_VM_name>
+----
++
+Una volta completata la migrazione, lo *stato* viene visualizzato come *migrazione-completata*.
+
+
+
+
+NOTE: Se è necessario mettere in pausa o annullare la migrazione prima che inizi il passaggio automatico, utilizzare `vserver migrate pause` e il `vserver migrate abort` comandi.  È necessario sospendere la migrazione prima di annullarla.  Non è possibile annullare la migrazione dopo l'avvio del cutover.
+
+.Risultato
+La VM di archiviazione viene migrata dal cluster ASA al cluster ASA r2.  Il nome e l'UUID della VM di archiviazione, il nome LIF dei dati, l'indirizzo IP e i nomi degli oggetti, come il nome del volume, rimangono invariati.  L'UUID degli oggetti migrati nella VM di archiviazione viene aggiornato.
+
+.Cosa succederà?
+Se hai disabilitato il cutover automatico e la rimozione automatica della VM di archiviazione,link:svm-post-migrate-cutover-cleanup.html["trasferire manualmente i client ASA sul cluster ASA r2 e rimuovere la VM di archiviazione dal cluster ASA"] .

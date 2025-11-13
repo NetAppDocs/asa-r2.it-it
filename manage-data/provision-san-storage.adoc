@@ -18,11 +18,15 @@ Durante il provisioning dello storage, è possibile consentire agli host SAN di 
 
 == Creare unità di archiviazione
 
-In un sistema ASA R2, un'unità di storage rende disponibile lo spazio di storage per gli host SAN per le operazioni sui dati. Un'unità di storage si riferisce a un LUN per gli host SCSI o a un namespace NVMe per gli host NVMe. Se il cluster è configurato per supportare gli host SCSI, viene richiesto di creare un LUN. Se il cluster è configurato per supportare gli host NVMe, viene richiesto di creare un namespace NVMe. Un'unità di archiviazione ASA R2 ha una capacità massima di 128TB GB.
+In un sistema ASA r2, un'unità di archiviazione mette a disposizione degli host SAN spazio di archiviazione per le operazioni sui dati.  Un'unità di archiviazione si riferisce a una LUN per gli host SCSI o a uno spazio dei nomi NVMe per gli host NVMe.  Se il cluster è configurato per supportare host SCSI, verrà richiesto di creare un LUN.  Se il cluster è configurato per supportare host NVMe, verrà richiesto di creare uno spazio dei nomi NVMe.  Un'unità di archiviazione ASA r2 ha una capacità massima di 128 TB.
 
 Consulta la link:https://hwu.netapp.com/["NetApp Hardware Universe"^] per i limiti di storage più attuali per i sistemi ASA R2.
 
 Gli iniziatori host vengono aggiunti e mappati all'unità di archiviazione come parte del processo di creazione dell'unità di archiviazione. È anche possibile link:provision-san-storage.html#add-host-initiators["aggiungere iniziatori host"]e link:provision-san-storage.html#map-the-storage-unit-to-a-host["mappa"]nelle unità di archiviazione dopo la creazione delle unità di archiviazione.
+
+A partire da ONTAP 9.18.1, è possibile modificare la riserva di snapshot e abilitare l'eliminazione automatica degli snapshot quando si crea un'unità di archiviazione.  La riserva snapshot è la quantità di spazio nell'unità di archiviazione riservata specificamente agli snapshot.  Quando la riserva snapshot è impostata con l'eliminazione automatica degli snapshot, gli snapshot più vecchi vengono eliminati automaticamente quando lo spazio utilizzato dagli snapshot supera la riserva snapshot.
+
+link:../data-protection/snapshot-reserve.html["Scopri di più sulla riserva di snapshot sui sistemi ASA r2"].
 
 .Fasi
 . In System Manager, selezionare *Storage*, quindi selezionare image:icon_add_blue_bg.png["icona rettangolare con sfondo blu e la parola aggiunta centrata in lettere bianche"].
@@ -63,7 +67,7 @@ Creare una nuova policy QoS
 .. In *archiviazione e ottimizzazione*, accanto a *qualità del servizio (QoS)*, selezionare image:icon_dropdown_arrow.gif["icona della freccia blu rivolta verso il basso"] .
 .. Selezionare *Definisci nuovo criterio*.
 .. Immettere un nome per il nuovo criterio QoS.
-.. Impostare un limite per la qualità del servizio, una garanzia di qualità del servizio o entrambi.
+.. Imposta un limite QoS, una garanzia QoS o entrambi.
 +
 ... In alternativa, sotto *limite*, specificare un limite massimo di throughput, un limite massimo di IOPS o entrambi.
 +
@@ -88,6 +92,15 @@ Modificare il livello di servizio delle prestazioni predefinito.
 +
 I sistemi ASA r2 offrono due livelli di prestazioni.  Il livello di prestazioni predefinito è *Extreme*, ovvero il livello più alto disponibile.  È possibile abbassare il livello a *Prestazioni*.
 
+
+
+
+
+ a| 
+Modificare la riserva snapshot predefinita e abilitare l'eliminazione automatica degli snapshot.
+ a| 
+.. In *Snapshot reserve %*, immettere il valore numerico per la percentuale di spazio dell'unità di archiviazione che si desidera allocare agli snapshot.
+.. Seleziona *Elimina automaticamente gli snapshot più vecchi*.
 
 
 

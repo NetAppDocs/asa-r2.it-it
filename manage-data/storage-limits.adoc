@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/storage-limits.html 
 keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20,asa c30 
-summary: Per performance, configurazione e supporto ottimali devi conoscere i limiti di storage di ASA R2. 
+summary: Per prestazioni, configurazione e supporto ottimali, è necessario conoscere i limiti di archiviazione ASA r2. 
 ---
 = Limiti di archiviazione di ASA R2
 :allow-uri-read: 
@@ -11,16 +11,18 @@ summary: Per performance, configurazione e supporto ottimali devi conoscere i li
 
 
 [role="lead"]
-Per performance, configurazione e supporto ottimali devi conoscere i limiti di storage di ASA R2.
+Per prestazioni, configurazione e supporto ottimali, è necessario conoscere i limiti di archiviazione di ASA r2.
+
+Per un elenco completo dei limiti di archiviazione più recenti di ASA R2, vedere link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
 
 I sistemi ASA r2 supportano i seguenti limiti di archiviazione:
 
 [cols="3"]
 |===
-| Limite massimo | Per coppia HA | Per cluster 
+|  | Massimo per coppia HA | Massimo per cluster 
 
 
-| Gruppo di coerenza | 256 | 256 
+| Gruppi di coerenza | 256 | 256 
 
 
 | Applicazioni aziendali | 100 | 350 
@@ -32,7 +34,7 @@ I sistemi ASA r2 supportano i seguenti limiti di archiviazione:
 | Gruppi di replicazione | 50 | 50 
 
 
-| Dimensione della zona di disponibilità dello storage | 2PB | 2 PB 
+| Dimensione della zona di disponibilità dello storage | 2 PB | 2 PB 
 
 
 | Unità di stoccaggio | 10.000 | 30.000 
@@ -44,13 +46,24 @@ I sistemi ASA r2 supportano i seguenti limiti di archiviazione:
 | Unità di archiviazione per gruppo di coerenza | 256 | 256 
 
 
+| Macchine virtuali di archiviazione  a| 
+* 256 (ONTAP 9.18.1 e versioni successive)
+* 32 (ONTAP 9.17.1 e precedenti)
+
+ a| 
+* 256 (ONTAP 9.18.1 e versioni successive)
+* 32 (ONTAP 9.17.1 e precedenti)
+
+
+
+
 | Macchine virtuali | 800 | 1200 
 |===
 
 
 == Limiti per le relazioni asincrone SnapMirror
 
-I seguenti limiti si applicano alle unità di archiviazione e ai gruppi di coerenza in una relazione di replica asincrona SnapMirror .
+I seguenti limiti si applicano alle unità di archiviazione e ai gruppi di coerenza in una relazione di replica asincrona SnapMirror . Per un elenco completo dei limiti di archiviazione ASA r2 più recenti,link:https://hwu.netapp.com/["NetApp Hardware Universe"^] .
 
 [cols="3"]
 |===
@@ -66,7 +79,9 @@ I seguenti limiti si applicano alle unità di archiviazione e ai gruppi di coere
 
 == Limiti per la relazione di sincronizzazione attiva SnapMirror
 
-I seguenti limiti si applicano alle unità di archiviazione e ai gruppi di coerenza in una relazione di replica di sincronizzazione attiva SnapMirror .  La sincronizzazione attiva SnapMirror è supportata a partire da ONTAP 9.17.1 solo su cluster a 2 nodi.
+I seguenti limiti si applicano alle unità di archiviazione e ai gruppi di coerenza in una relazione di replica di sincronizzazione attiva SnapMirror . La sincronizzazione attiva SnapMirror è supportata a partire da ONTAP 9.17.1 solo su cluster a due nodi.  A partire da ONTAP 9.18.1, la sincronizzazione attiva SnapMirror è supportata su cluster a quattro nodi.
+
+Per un elenco completo dei limiti di archiviazione ASA r2 più recenti,link:https://hwu.netapp.com/["NetApp Hardware Universe"^] .
 
 [cols="2"]
 |===
@@ -78,5 +93,3 @@ I seguenti limiti si applicano alle unità di archiviazione e ai gruppi di coere
 
 | Unità di stoccaggio | 400 
 |===
-.Per ulteriori informazioni
-Per un elenco completo dei limiti di archiviazione più recenti di ASA R2, vedere link:https://hwu.netapp.com/["NetApp Hardware Universe"^].

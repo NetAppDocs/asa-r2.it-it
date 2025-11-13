@@ -37,11 +37,11 @@ NOTE: link:rebalance-workloads.html["Ribilanciamento automatico del carico di la
 | Se hai... | Prima di tornare indietro dovresti... 
 
 
-| Gruppi di coerenza gerarchica in una relazione di sincronizzazione attiva SnapMirror | link:../data-protection/snapmirror-active-sync-delete-relationship.html["Elimina la relazione di sincronizzazione attiva SnapMirror"] 
+| Gruppi di coerenza gerarchica in una relazione di sincronizzazione attiva SnapMirror | link:../data-protection/snapmirror-active-sync-delete-relationship.html["Elimina la relazione di sincronizzazione attiva SnapMirror"]. 
 
 
-| Relazioni di importazione attive | Elimina le relazioni di importazione attive 
+| Relazioni di importazione attive | Elimina le relazioni di importazione attive. link:../install-setup/set-up-data-access.html#migrate-data-from-a-third-party-storage-system["Scopri di più sulle relazioni di importazione"]. 
 
 
-| Protezione anti-ransomware abilitata | Disattiva la protezione anti-ransomware 
+| Protezione anti-ransomware abilitata | link:../secure-data/pause-resume-anti-ransomware-protection.html["Sospendi la protezione anti-ransomware"]. 
 |===

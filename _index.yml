@@ -23,6 +23,8 @@ indexpage:
       url: "/manage-data/data-cloning.html"
     - title: Modificare le unità di archiviazione
       url: "/manage-data/modify-storage-units.html"
+    - title: Migrazione delle VM di archiviazione
+      url: "/manage-data/migrate-svm.html"
   - title: Proteggere e proteggere i dati
     links:
     - title: Creare snapshot
@@ -33,6 +35,8 @@ indexpage:
       url: "/data-protection/snapmirror-active-sync.html"
     - title: Esegui la crittografia dei dati inutilizzati
       url: "/secure-data/encrypt-data-at-rest.html"
+    - title: Abilita ARP/AI
+      url: "/secure-data/enable-anti-ransomware-protection.html"
   - title: Ulteriori risorse su ASA R2
     links:
     - title: Scheda informativa su ASA

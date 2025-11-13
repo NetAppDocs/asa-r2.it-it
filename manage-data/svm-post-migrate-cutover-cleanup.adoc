@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: manage-data/svm-post-migrate-cutover-cleanup.html 
+keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine, manual cutover, manual cleanup, remove source svm 
+summary: 'Se lo spazio di una zona di disponibilità dello storage si sta esaurendo, è possibile spostare le unità di storage in un"altra zona di disponibilità dello storage per bilanciare l"utilizzo dello storage nel cluster.' 
+---
+= Eseguire il cutover dei client e pulire la VM di archiviazione di origine dopo la migrazione a un sistema ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo la migrazione di una macchina virtuale di archiviazione (VM) da un cluster ASA a un cluster ASA r2, per impostazione predefinita i client vengono automaticamente trasferiti al cluster ASA r2 e la VM di archiviazione sul cluster ASA viene automaticamente rimossa.  Se si sceglie di disabilitare il cutover e la rimozione automatici della VM di archiviazione ASA durante la migrazione, sarà necessario eseguire manualmente questi passaggi al termine della migrazione.
+
+
+
+== Trasferire manualmente i client a un sistema ASA r2 dopo una migrazione della VM di storage
+
+Se si disabilita il cutover automatico del client durante la migrazione di una VM di archiviazione da un cluster ASA a un cluster ASA r2, una volta completata correttamente la migrazione, eseguire il cutover manualmente in modo che la VM di archiviazione ASA r2 possa fornire dati ai client.
+
+.Fasi
+. Sul cluster ASA r2, eseguire manualmente il cutover del client:
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. Verificare che l'operazione di cutover sia completa:
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.Risultato
+I dati vengono forniti ai tuoi client dalla VM di archiviazione sul tuo cluster ASA r2.
+
+.Cosa succederà?
+Ora sei pronto per rimuovere la VM di archiviazione dal cluster ASA di origine.
+
+
+
+== Rimuovere manualmente una VM di archiviazione ASA dopo la migrazione a un cluster ASA r2
+
+Se si disabilita la pulizia automatica dell'origine durante la migrazione di una VM di archiviazione da un cluster ASA a un cluster ASA r2, al termine della migrazione rimuovere la VM di archiviazione dal cluster ASA per liberare spazio di archiviazione.
+
+.Prima di iniziare
+I tuoi client dovrebbero fornire dati dal cluster ASA r2.
+
+.Fasi
+. Dal cluster ASA , verificare che lo stato della VM di archiviazione ASA sia *Pronto per la pulizia della sorgente*:
++
+[source, cli]
+----
+vserver migrate show
+----
+. Rimuovere la VM di archiviazione ASA :
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.Risultato
+La VM di archiviazione sul cluster ASA viene rimossa.

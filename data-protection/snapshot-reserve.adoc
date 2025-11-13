@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapshot-reserve.html 
+keywords: asa r2, snapshot reserve, percentage 
+summary: 'La riserva snapshot è la quantità di spazio nell"unità di archiviazione riservata specificamente agli snapshot.  Quando la riserva snapshot è impostata con l"eliminazione automatica degli snapshot, gli snapshot più vecchi vengono eliminati automaticamente quando lo spazio utilizzato dagli snapshot supera la riserva snapshot.' 
+---
+= Scopri di più sulla riserva di snapshot ONTAP sullo storage ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La riserva snapshot è la quantità di spazio nell'unità di archiviazione riservata specificamente agli snapshot.  Quando la riserva snapshot è impostata con l'eliminazione automatica degli snapshot, gli snapshot più vecchi vengono eliminati automaticamente quando lo spazio utilizzato dagli snapshot supera la riserva snapshot.  In questo modo si evita che gli snapshot consumino spazio nell'unità di archiviazione destinata ai dati utente.
+
+La riserva snapshot è impostata come percentuale della dimensione totale dell'unità di archiviazione.  Ad esempio, se l'unità di archiviazione è da 50 GB e si imposta la riserva snapshot al 10%, la quantità di spazio riservata per gli snapshot sarà di 5 GB.  Quando la quantità di spazio utilizzata dagli snapshot raggiunge i 5 GB, gli snapshot più vecchi vengono automaticamente eliminati per fare spazio ai nuovi snapshot.  Se la dimensione dell'unità di archiviazione aumenta a 100 GB, la riserva di snapshot aumenta a 10 GB.  La riserva massima di snapshot che puoi impostare è il 200%.  Se la tua unità di archiviazione raggiunge la dimensione massima di 128 TB, una riserva snapshot del 200% ti consente di eseguire 2 snapshot completi.
+
+Per impostazione predefinita, la riserva degli snapshot è impostata su 0% e l'eliminazione automatica degli snapshot non è abilitata.
+
+A partire da ONTAP 9.18.1, è possibile modificare la riserva snapshot predefinita durante o dopo la creazione delle unità di archiviazione e durante la creazione dei gruppi di coerenza.  È anche possibile modificare la riserva snapshot predefinita sulle macchine virtuali di archiviazione (VM) esistenti.  In ONTAP 9.17.1 e versioni precedenti, non è possibile modificare queste impostazioni.
+
+La riserva snapshot è impostata sulla stessa percentuale per tutte le unità di archiviazione in un gruppo di coerenza al momento della creazione del gruppo di coerenza.  La riserva snapshot deve essere impostata individualmente su tutte le unità di archiviazione aggiunte in seguito.

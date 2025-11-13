@@ -12,7 +12,7 @@ searchtitle: Create snapshot per eseguire il backup dei dati utilizzando Gestion
 
 
 [role="lead"]
-Per eseguire il backup dei dati sul sistema ASA R2, è necessario creare uno snapshot. Puoi utilizzare ONTAP System Manager per creare una snapshot manuale di una singola unità di storage o per creare un gruppo di coerenza e pianificare snapshot automatiche di più unità di storage contemporaneamente.
+Crea uno snapshot per eseguire il backup dei dati sul tuo sistema ASA r2.  Utilizzare ONTAP System Manager per creare uno snapshot manuale di una singola unità di archiviazione oppure per creare un gruppo di coerenza e pianificare snapshot automatici di più unità di archiviazione contemporaneamente.
 
 
 
@@ -22,7 +22,11 @@ Un gruppo di coerenza è un insieme di unità di archiviazione gestite come una 
 
 Creare un gruppo di coerenza utilizzando nuove unità di archiviazione o un gruppo di coerenza utilizzando le unità di archiviazione esistenti.
 
-Quando si crea un gruppo di coerenza utilizzando nuove unità di archiviazione, è possibile assegnare una capacità diversa a ciascuna unità di archiviazione, modificare il livello di servizio delle prestazioni predefinito e creare fino a cinque gruppi di coerenza figlio. Quando si crea un gruppo di coerenza utilizzando unità di archiviazione esistenti, è possibile aggiungere unità di archiviazione già in uso.
+A partire da ONTAP 9.18.1, è possibile impostare la percentuale di riserva degli snapshot e abilitare l'eliminazione automatica degli snapshot quando si crea un gruppo di coerenza con nuove unità di archiviazione.  La riserva snapshot è la quantità di spazio nell'unità di archiviazione riservata specificamente agli snapshot.  Quando la riserva snapshot è impostata con l'eliminazione automatica degli snapshot, gli snapshot più vecchi vengono eliminati automaticamente quando lo spazio utilizzato dagli snapshot supera la riserva snapshot.  Se la riserva degli snapshot e l'eliminazione automatica degli snapshot sono abilitate su un gruppo di coerenza padre, vengono abilitate anche su tutti i gruppi di coerenza figlio esistenti.  Se vengono aggiunti nuovi gruppi di coerenza figlio, questi non ereditano le impostazioni di riserva e di eliminazione degli snapshot del gruppo padre.
+
+link:snapshot-reserve.html["Scopri di più sulla riserva di snapshot sui sistemi di archiviazione ASA r2"].
+
+A partire da ONTAP 9.16.1, quando si creano gruppi di coerenza utilizzando nuove unità di archiviazione, è possibile configurare fino a cinque gruppi di coerenza figlio. link:manage-hierarchical-consistency-groups.html["Scopri di più sui gruppi di coerenza figlio sui sistemi ASA r2"].
 
 [role="tabbed-block"]
 ====
@@ -54,6 +58,17 @@ Modificare il livello di servizio delle prestazioni predefinito
  a| 
 In *livello di servizio prestazioni*, selezionare un livello di servizio diverso.
 
+I sistemi ASA r2 offrono due livelli di prestazioni.  Il livello di prestazioni predefinito è *Extreme*, ovvero il livello più alto disponibile.  È possibile abbassare il livello di prestazioni a *Prestazioni*.
+
+
+
+ a| 
+Modificare la riserva snapshot predefinita e abilitare l'eliminazione automatica degli snapshot
+ a| 
+.. In *Snapshot reserve %*, immettere il valore numerico per la percentuale di spazio dell'unità di archiviazione che si desidera allocare agli snapshot.
+.. Seleziona *Elimina automaticamente gli snapshot più vecchi*.
+
+
 
 
  a| 
@@ -67,7 +82,7 @@ Selezionare *Aggiungi gruppo di coerenza figlio*.
 
 
 .Quali sono le prossime novità?
-È stato creato un gruppo di coerenza contenente le unità di archiviazione che si desidera proteggere. A questo punto è possibile creare un'istantanea.
+Hai creato un gruppo di coerenza contenente le unità di archiviazione che desideri proteggere.  Ora puoi creare uno snapshot.
 
 --
 .Utilizzare le unità di archiviazione esistenti
@@ -80,7 +95,7 @@ Selezionare *Aggiungi gruppo di coerenza figlio*.
 
 
 .Quali sono le prossime novità?
-È stato creato un gruppo di coerenza contenente le unità di archiviazione che si desidera proteggere. A questo punto è possibile creare un'istantanea.
+Hai creato un gruppo di coerenza contenente le unità di archiviazione che desideri proteggere.  Ora puoi creare uno snapshot.
 
 --
 ====
@@ -97,7 +112,7 @@ Le istantanee possono essere create su richiesta o automaticamente a intervalli 
 
 * Snapshot on-demand
 +
-È possibile creare un'istantanea su richiesta di un'unità di archiviazione in qualsiasi momento. Non è necessario che l'unità di storage sia membro di un gruppo di coerenza per essere protetta da uno snapshot on-demand. Se si crea uno snapshot on-demand di un'unità di storage che è membro di un gruppo di coerenza, le altre unità di storage nel gruppo di coerenza non vengono incluse nello snapshot on-demand. Se si crea uno snapshot on-demand di un gruppo di coerenza, tutte le unità di storage nel gruppo di coerenza vengono incluse nell'istantanea.
+È possibile creare in qualsiasi momento uno snapshot on-demand di un'unità di archiviazione.  Non è necessario che l'unità di archiviazione faccia parte di un gruppo di coerenza per essere protetta da uno snapshot on-demand.  Se si crea uno snapshot on-demand di un'unità di archiviazione che è membro di un gruppo di coerenza, le altre unità di archiviazione nel gruppo di coerenza non vengono incluse nello snapshot on-demand.  Se si crea uno snapshot on-demand di un gruppo di coerenza, tutte le unità di archiviazione nel gruppo di coerenza vengono incluse nello snapshot.
 
 * Snapshot automatizzate
 +

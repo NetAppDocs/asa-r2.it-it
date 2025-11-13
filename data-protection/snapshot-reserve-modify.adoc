@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapshot-reserve-modify.html 
+keywords: asa r2, snapshot reserve, percentage 
+summary: 'La riserva snapshot è la quantità di spazio nell"unità di archiviazione riservata specificamente agli snapshot.  Quando la riserva snapshot è impostata con l"eliminazione automatica degli snapshot, gli snapshot più vecchi vengono eliminati automaticamente quando lo spazio utilizzato dagli snapshot supera la riserva snapshot.' 
+---
+= Modificare la riserva di snapshot su un sistema di archiviazione ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La riserva snapshot è la quantità di spazio nell'unità di archiviazione riservata specificamente agli snapshot.  Per impostazione predefinita, la riserva snapshot è impostata su 0%.  A partire da ONTAP 9.18.1, è possibile modificare la riserva snapshot predefinita dell'unità di archiviazione e abilitare l'eliminazione automatica degli snapshot.  Per impostazione predefinita, l'eliminazione automatica degli snapshot è disabilitata.  Quando viene impostato un valore di riserva per gli snapshot e viene abilitata l'eliminazione automatica degli snapshot, gli snapshot più vecchi vengono eliminati automaticamente quando lo spazio utilizzato dagli snapshot supera la riserva per gli snapshot.  In questo modo si evita che gli snapshot consumino spazio nell'unità di archiviazione destinata ai dati utente.
+
+link:snapshot-reserve.html["Scopri di più sulla riserva di snapshot sui sistemi di archiviazione ASA r2"].
+
+
+
+== Modifica la riserva di snapshot sulle unità di archiviazione
+
+Per impostare valori di riserva snapshot diversi, configurare ogni unità di archiviazione singolarmente.  Per utilizzare lo stesso valore per tutte le unità di archiviazione, modificare la riserva di snapshot sulla VM di archiviazione.
+
+.Fasi
+. In System Manager, selezionare *Storage*.
+. Passare il mouse sul nome dell'unità di archiviazione per la quale si desidera impostare la riserva di snapshot.
+. Selezionareimage:icon_kabob.gif["tre punti verticali"] , quindi seleziona *Modifica*.
+. In *Snapshot reserve %*, immettere il valore numerico per la percentuale di spazio dell'unità di archiviazione che si desidera allocare agli snapshot.
+. Verificare che sia selezionata l'opzione *Elimina automaticamente gli snapshot più vecchi*.
+. Selezionare *Salva*.
+
+
+.Risultato
+La riserva di snapshot è impostata sulla percentuale specificata.  Se la quantità di spazio occupata dagli snapshot raggiunge la riserva, gli snapshot più vecchi vengono eliminati automaticamente.
+
+
+
+== Modificare la riserva di snapshot su una VM di archiviazione
+
+Per impostare la stessa riserva di snapshot per tutte le unità di archiviazione in una VM di archiviazione, applicare la percentuale desiderata alla VM di archiviazione. .  Quando la riserva snapshot viene applicata alla VM di archiviazione, viene applicata a tutte le unità di archiviazione appena create all'interno della VM di archiviazione.  Non viene applicato alle unità di archiviazione create prima della modifica dell'impostazione.
+
+.Fasi
+. In System Manager, seleziona *Cluster > VM di archiviazione*; quindi seleziona *Impostazioni*.
+. In *Criteri*, accanto a *Snapshot*, selezionaimage:icon_kabob.gif["tre punti verticali"] ; quindi seleziona *Imposta/modifica l'impostazione predefinita della riserva snapshot*.
+. In *Snapshot reserve %*, immettere il valore numerico per la percentuale di spazio dell'unità di archiviazione che si desidera allocare agli snapshot.
+. Verificare che sia selezionata l'opzione *Elimina automaticamente gli snapshot più vecchi*.
+. Selezionare *Salva*.
+
+
+.Risultato
+La riserva di snapshot per le unità di archiviazione appena create è impostata sulla percentuale specificata.  Se la quantità di spazio occupata dagli snapshot in tali unità di archiviazione raggiunge la riserva, gli snapshot più vecchi vengono eliminati automaticamente.

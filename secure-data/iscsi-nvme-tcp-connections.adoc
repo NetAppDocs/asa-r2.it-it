@@ -17,11 +17,37 @@ Per i sistemi ASA R2, IPSec è disponibile per gli host iSCSI e NVMe/TCP.
 
 Su alcuni sistemi ASA R2, diverse operazioni crittografiche, come la crittografia e i controlli di integrità, possono essere scaricate su una scheda NIC (Network Interface Controller) supportata. La velocità di trasmissione per le operazioni scaricate sulla scheda NIC è di circa il 5% o inferiore. Ciò può migliorare significativamente le prestazioni e la velocità effettiva del traffico di rete protetto da IPsec.
 
-Le seguenti schede NIC sono supportate per l'offload hardware sui seguenti sistemi ASA R2:
+A partire da ONTAP 9.18.1, il supporto per l'offload hardware IPsec è esteso al traffico IPv6.
 
-[cols="2"]
+Le seguenti schede NIC sono supportate per l'offload hardware sui seguenti sistemi ASA r2 e versioni ONTAP :
+
+[cols="3"]
 |===
-| Scheda NIC supportata | Sistemi ASA r2 
+| Scheda NIC supportata | Sistemi ASA r2 | Versione ONTAP 
+
+
+ a| 
+X50135A (controller Ethernet 2p, 40G/100G)
+ a| 
+* ASA A1K
+* ASA A90
+* ASA A70
+
+ a| 
+ONTAP 9.17.1 e versioni successive
+
+
+
+ a| 
+X60135A (controller Ethernet 2p, 40G/100G)
+ a| 
+* ASA A50
+* ASA A30
+* ASA A20
+
+ a| 
+ONTAP 9.17.1 e versioni successive
+
 
 
  a| 
@@ -31,6 +57,8 @@ X50131A - (controller Ethernet 2P, 40G/100g/200G/400G)
 * ASA A90
 * ASA A70
 
+ a| 
+ONTAP 9.16.1 e versioni successive
 
 
 
@@ -41,7 +69,11 @@ X60132A - (controller Ethernet 4P, 10G/25g)
 * ASA A30
 * ASA A20
 
+ a| 
+ONTAP 9.16.1 e versioni successive
 
 |===
+Vedi illink:https://hwu.netapp.com/["NetApp Hardware Universe"^] per maggiori informazioni sui sistemi e sulle schede supportati.
+
 .Quali sono le prossime novità?
-link:https://docs.netapp.com/us-en/ontap/networking/ipsec-configure.html["Configurare la protezione IP per la rete ONTAP"]
+IPsec è configurato sul sistema ASA r2 nello stesso modo in cui lo è sugli altri sistemi ONTAP . Per maggiori informazioni, vedere link:https://docs.netapp.com/us-en/ontap/networking/ipsec-prepare.html["Prepararsi a configurare la sicurezza IP per la rete ONTAP"^].
