@@ -18,15 +18,17 @@ Durante il provisioning dello storage, è possibile consentire agli host SAN di 
 
 == Creare unità di archiviazione
 
-In un sistema ASA r2, un'unità di archiviazione mette a disposizione degli host SAN spazio di archiviazione per le operazioni sui dati.  Un'unità di archiviazione si riferisce a una LUN per gli host SCSI o a uno spazio dei nomi NVMe per gli host NVMe.  Se il cluster è configurato per supportare host SCSI, verrà richiesto di creare un LUN.  Se il cluster è configurato per supportare host NVMe, verrà richiesto di creare uno spazio dei nomi NVMe.  Un'unità di archiviazione ASA r2 ha una capacità massima di 128 TB.
+In un sistema ASA r2, un'unità di archiviazione mette a disposizione degli host SAN spazio di archiviazione per le operazioni sui dati. Un'unità di archiviazione si riferisce a una LUN per gli host SCSI o a uno spazio dei nomi NVMe per gli host NVMe. Se il cluster è configurato per supportare host SCSI, verrà richiesto di creare un LUN. Se il cluster è configurato per supportare host NVMe, verrà richiesto di creare uno spazio dei nomi NVMe.
 
-Consulta la link:https://hwu.netapp.com/["NetApp Hardware Universe"^] per i limiti di storage più attuali per i sistemi ASA R2.
+Un'unità di archiviazione ASA r2 ha una capacità massima di 128 TB. Vedi illink:https://hwu.netapp.com/["NetApp Hardware Universe"^] per i limiti di archiviazione più aggiornati per i sistemi ASA r2.
 
-Gli iniziatori host vengono aggiunti e mappati all'unità di archiviazione come parte del processo di creazione dell'unità di archiviazione. È anche possibile link:provision-san-storage.html#add-host-initiators["aggiungere iniziatori host"]e link:provision-san-storage.html#map-the-storage-unit-to-a-host["mappa"]nelle unità di archiviazione dopo la creazione delle unità di archiviazione.
+Gli iniziatori host vengono aggiunti e mappati all'unità di archiviazione come parte del processo di creazione dell'unità di archiviazione.  Puoi anchelink:provision-san-storage.html#add-host-initiators["aggiungere"] Elink:provision-san-storage.html#map-the-storage-unit-to-a-host["mappa"] iniziatori host dopo aver creato le unità di archiviazione.
 
-A partire da ONTAP 9.18.1, è possibile modificare la riserva di snapshot e abilitare l'eliminazione automatica degli snapshot quando si crea un'unità di archiviazione.  La riserva snapshot è la quantità di spazio nell'unità di archiviazione riservata specificamente agli snapshot.  Quando la riserva snapshot è impostata con l'eliminazione automatica degli snapshot, gli snapshot più vecchi vengono eliminati automaticamente quando lo spazio utilizzato dagli snapshot supera la riserva snapshot.
+A partire da ONTAP 9.18.1, è possibile modificare la riserva di snapshot e abilitare l'eliminazione automatica degli snapshot quando si crea un'unità di archiviazione. La riserva snapshot è la quantità di spazio nell'unità di archiviazione riservata specificamente agli snapshot. Quando la riserva snapshot è impostata con l'eliminazione automatica degli snapshot, gli snapshot più vecchi vengono eliminati automaticamente quando lo spazio utilizzato dagli snapshot supera la riserva snapshot.
 
 link:../data-protection/snapshot-reserve.html["Scopri di più sulla riserva di snapshot sui sistemi ASA r2"].
+
+Per impostazione predefinita, le unità di archiviazione sono sottoposte a thin provisioning.  Il thin provisioning consente all'unità di archiviazione di crescere fino alla dimensione assegnata, ma non riserva lo spazio in anticipo.  Lo spazio viene assegnato dinamicamente dallo spazio libero disponibile, in base alle necessità.  Ciò consente di ottenere una maggiore efficienza di archiviazione _sovradimensionando_ lo spazio disponibile.  Ad esempio, supponiamo di avere 1 TB di spazio libero e di dover creare quattro unità di archiviazione da 1 TB.  Invece di aggiungere immediatamente 3 TB di capacità di archiviazione aggiuntiva al sistema, è possibile creare unità di archiviazione, monitorare l'utilizzo dello spazio e aumentare la capacità di archiviazione man mano che le unità di archiviazione consumano spazio effettivo. Scopri di più sulink:https://docs.netapp.com/us-en/ontap/concepts/thin-provisioning-concept.html["provisioning sottile"^] .
 
 .Fasi
 . In System Manager, selezionare *Storage*, quindi selezionare image:icon_add_blue_bg.png["icona rettangolare con sfondo blu e la parola aggiunta centrata in lettere bianche"].
@@ -35,7 +37,14 @@ link:../data-protection/snapshot-reserve.html["Scopri di più sulla riserva di s
 +
 Se si creano più unità di archiviazione, ciascuna viene creata con la stessa capacità, sistema operativo host e mappatura host.
 
++
+Per ottimizzare il bilanciamento del carico di lavoro nell'intera zona di disponibilità dello storage, creare un numero pari di unità di storage.
+
 . Immettere la capacità dell'unità di archiviazione, quindi selezionare il sistema operativo host.
++
+
+CAUTION: Se si creano più unità di archiviazione, ogni unità verrà creata con la stessa capacità.  Moltiplica il numero di unità di archiviazione che stai creando per la capacità desiderata per assicurarti di avere abbastanza spazio utilizzabile.  Se non si dispone di spazio libero sufficiente e si sceglie di effettuare un provisioning eccessivo, monitorare attentamente l'utilizzo per evitare di esaurire lo spazio e perdere dati.
+
 . Accettare la *mappatura host* selezionata automaticamente o selezionare un gruppo host diverso per l'unità di archiviazione a cui eseguire la mappatura.
 +
 *Mappatura host* si riferisce al gruppo host a cui verrà mappata la nuova unità di archiviazione.  Se esiste un gruppo host preesistente per il tipo di host selezionato per la nuova unità di archiviazione, il gruppo host preesistente viene selezionato automaticamente per la mappatura degli host.  È possibile accettare il gruppo host selezionato automaticamente oppure selezionarne uno diverso.
@@ -148,7 +157,7 @@ TLS crittografa tutti i dati inviati in rete tra gli host NVMe/TCP e il sistema 
 
 .. Selezionare *Aggiungi iniziatore* per aggiungere altri iniziatori.
 +
-L'NQN host deve essere formattato come <nqn.yyyy-mm> seguito da un nome di dominio completo. L'anno deve essere uguale o successivo al 1970. La lunghezza massima totale deve essere 223. Un esempio di iniziatore NVMe valido è nqn.2014-08.com.example:string
+Formattare l'NQN dell'host come <nqn.aaaa-mm> seguito da un nome di dominio completo.  L'anno deve essere uguale o successivo al 1970.  La lunghezza massima totale dovrebbe essere 223.  Un esempio di un iniziatore NVMe valido è nqn.2014-08.com.example:string
 
 
 
@@ -233,7 +242,7 @@ Gli host NVMe vengono aggiunti al sistema ASA R2 e sarai pronto per mappare gli 
 
 == Mappare l'unità di archiviazione a un host
 
-Dopo aver creato le unità di storage ASA R2 e aver aggiunto gli initiator degli host, è necessario mappare gli host alle unità di storage per iniziare a fornire i dati. Le unità di archiviazione sono mappate agli host come parte del processo di creazione delle unità di archiviazione. È inoltre possibile mappare le unità di storage esistenti a host nuovi o esistenti in qualsiasi momento.
+Dopo aver creato le unità di archiviazione ASA r2 e aggiunto gli iniziatori host, mappare gli host alle unità di archiviazione per iniziare a fornire i dati.  Le unità di archiviazione vengono mappate sugli host come parte del processo di creazione delle unità di archiviazione.  È inoltre possibile mappare le unità di archiviazione esistenti su host nuovi o esistenti in qualsiasi momento.
 
 .Fasi
 . Selezionare *archiviazione*.
