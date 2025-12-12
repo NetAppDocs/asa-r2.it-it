@@ -53,21 +53,7 @@ Il livello di storage per i sistemi FAS, AFF e ASA utilizza gli aggregati come u
 .Sistemi ASA r2
 Invece di aggregati, il livello di storage nei sistemi ASA r2 utilizza zone di disponibilità dello storage. Una zona di disponibilità dello storage è un pool di storage comune disponibile per entrambi i nodi di una singola coppia HA. Entrambi i nodi della coppia HA hanno accesso a tutti i dischi disponibili nella loro zona di disponibilità dello storage condivisa. Ad esempio, in un cluster ONTAP di un sistema ASA r2 a 2 nodi, è presente una zona di disponibilità dello storage, accessibile da entrambi i nodi del cluster. In un cluster ONTAP di un sistema ASA r2 a 4 nodi, sono presenti due zone di disponibilità dello storage. Ogni coppia HA del cluster ha accesso a una delle zone di disponibilità dello storage.
 
-Quando viene creata un'unità di storage (basata su una LUN o su uno spazio dei nomi NVMe), ONTAP crea automaticamente un volume nella zona di disponibilità dello storage appropriata per ospitarla. Il volume appena creato viene automaticamente posizionato all'interno della zona di disponibilità dello storage per prestazioni ottimali e un utilizzo bilanciato della capacità. A seconda della versione di ONTAP, i sistemi ASA r2 supportano anche il ribilanciamento automatico delle unità di storage nella zona di disponibilità dello storage e il ribilanciamento automatico dei carichi di lavoro tra i nodi in una coppia HA.
-
-* Ribilanciamento automatico delle unità di archiviazione
-+
-A partire da ONTAP 9.16.1, se un'unità di archiviazione aumenta o diminuisce in modo tale da creare uno squilibrio nell'utilizzo dell'archiviazione nella zona di disponibilità dell'archiviazione, ONTAP sposta automaticamente le unità di archiviazione in base alle necessità per riequilibrare l'utilizzo e ottimizzare le prestazioni.
-
-* Ribilanciamento automatico del carico di lavoro
-+
-A partire da ONTAP 9.17.1, ONTAP ribilancia automaticamente i carichi di lavoro tra i nodi di una coppia HA di un sistema ASA r2 per prestazioni ottimali. Ad esempio, se l'utilizzo su un nodo aumenta al 70% mentre l'utilizzo sul suo partner HA è solo del 30%, ONTAP sposta automaticamente i carichi di lavoro in modo che l'utilizzo di ciascun nodo sia più uniforme. Poiché i nodi della coppia HA condividono la stessa zona di disponibilità dello storage, il ribilanciamento dei carichi di lavoro è un'operazione senza copia e senza alcun impatto sulle prestazioni. Il ribilanciamento automatico dei carichi di lavoro è abilitato per impostazione predefinita 14 giorni dopo l'aggiornamento a ONTAP 9.17.1 o l'inizializzazione di un nuovo cluster ONTAP 9.17.1 ASA r2. È possibile link:../administer/rebalance-workloads.html["modificare l'impostazione predefinita"] per abilitare o disabilitare il ribilanciamento automatico del carico di lavoro o per impostarlo in uno stato consultivo per segnalare i carichi di lavoro sbilanciati senza spostarli automaticamente.
-
-
-
-
-
-== Riepilogo delle differenze del sistema ASA R2
+Quando viene creata un'unità di storage (basata su una LUN o su uno spazio dei nomi NVMe), ONTAP crea automaticamente un volume nella zona di disponibilità dello storage appropriata per ospitarla. Il volume appena creato viene automaticamente posizionato all'interno della zona di disponibilità dello storage per prestazioni ottimali e un utilizzo bilanciato della capacità. == Riepilogo delle differenze del sistema ASA r2
 
 I sistemi ASA r2 differiscono dai sistemi FAS, AFF e ASA nei seguenti modi:
 
