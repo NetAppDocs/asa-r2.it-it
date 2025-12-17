@@ -25,7 +25,7 @@ Scopri di più sulle comuni funzionalità di protezione dei dati supportate sui 
 
 === Server di chiavi esterne in cluster
 
-È possibile configurare la connettività ai server di gestione delle chiavi esterni in cluster su una VM di archiviazione.  Con i server chiave in cluster, è possibile designare server chiave primari e secondari su una VM di archiviazione.  Durante la registrazione delle chiavi, ONTAP tenterà innanzitutto di accedere a un server di chiavi primario prima di tentare in sequenza di accedere ai server secondari finché l'operazione non viene completata correttamente, impedendo la duplicazione delle chiavi.
+È possibile configurare la connettività ai server di gestione delle chiavi esterne in cluster su una VM di archiviazione. Con i server chiave in cluster, è possibile designare server chiave primari e secondari su una VM di archiviazione. Durante la registrazione delle chiavi, ONTAP tenterà innanzitutto di accedere a un server di chiavi primario prima di tentare in sequenza di accedere ai server secondari finché l'operazione non viene completata correttamente, impedendo la duplicazione delle chiavi.
 
 link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-key-server-task.html["Impara a configurare server di chiavi esterne in cluster"^].
 

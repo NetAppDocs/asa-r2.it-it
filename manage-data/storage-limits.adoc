@@ -46,6 +46,9 @@ I sistemi ASA r2 supportano i seguenti limiti di archiviazione:
 | Unità di archiviazione per gruppo di coerenza | 256 | 256 
 
 
+| Gruppi di coerenza figlio per gruppo di coerenza padre | 64 | 64 
+
+
 | Macchine virtuali di archiviazione  a| 
 * 256 (ONTAP 9.18.1 e versioni successive)
 * 32 (ONTAP 9.17.1 e precedenti)

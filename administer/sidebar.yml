@@ -16,6 +16,8 @@ entries:
   url: "/administer/manage-cluster-networking.html"
 - title: Monitora l'utilizzo e aumenta la capacità
   entries:
+  - title: Scopri di più sull'equilibrio dello spazio
+    url: administer/space-balancing.html
   - title: Monitorare le performance dello storage
     url: "/monitor/monitor-performance.html"
   - title: Monitora l'utilizzo dello storage

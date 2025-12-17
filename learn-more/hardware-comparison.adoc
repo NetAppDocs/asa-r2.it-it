@@ -53,7 +53,11 @@ Il livello di storage per i sistemi FAS, AFF e ASA utilizza gli aggregati come u
 .Sistemi ASA r2
 Invece di aggregati, il livello di storage nei sistemi ASA r2 utilizza zone di disponibilità dello storage. Una zona di disponibilità dello storage è un pool di storage comune disponibile per entrambi i nodi di una singola coppia HA. Entrambi i nodi della coppia HA hanno accesso a tutti i dischi disponibili nella loro zona di disponibilità dello storage condivisa. Ad esempio, in un cluster ONTAP di un sistema ASA r2 a 2 nodi, è presente una zona di disponibilità dello storage, accessibile da entrambi i nodi del cluster. In un cluster ONTAP di un sistema ASA r2 a 4 nodi, sono presenti due zone di disponibilità dello storage. Ogni coppia HA del cluster ha accesso a una delle zone di disponibilità dello storage.
 
-Quando viene creata un'unità di storage (basata su una LUN o su uno spazio dei nomi NVMe), ONTAP crea automaticamente un volume nella zona di disponibilità dello storage appropriata per ospitarla. Il volume appena creato viene automaticamente posizionato all'interno della zona di disponibilità dello storage per prestazioni ottimali e un utilizzo bilanciato della capacità. == Riepilogo delle differenze del sistema ASA r2
+Quando viene creata un'unità di storage (basata su una LUN o su uno spazio dei nomi NVMe), ONTAP crea automaticamente un volume nella zona di disponibilità dello storage appropriata per ospitarla. Il volume appena creato viene automaticamente posizionato all'interno della zona di disponibilità dello storage per prestazioni ottimali e un utilizzo bilanciato della capacità. L'utilizzo della capacità è bilanciato all'interno della zona di disponibilità dello storage in base alla versione di ONTAP in uso. link:administer/space-balancing.html["Scopri di più sul bilanciamento della capacità in un cluster ASA r2"^].
+
+
+
+== Riepilogo delle differenze del sistema ASA r2
 
 I sistemi ASA r2 differiscono dai sistemi FAS, AFF e ASA nei seguenti modi:
 

@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: administer/space-balancing.html 
+keywords: capacity, space, rebalancing, balanced, placement, balance, asa r2 
+summary: 'Potrebbe essere necessario rinominare un nodo per allinearlo alle convenzioni di denominazione dell"organizzazione o per altri motivi amministrativi.' 
+---
+= Scopri di più sul bilanciamento della capacità ONTAP in un cluster ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per i sistemi ASA r2, ONTAP utilizza il _posizionamento bilanciato_ per posizionare automaticamente le unità di archiviazione appena create nella zona di migliore disponibilità di archiviazione, per prestazioni ottimali e un utilizzo bilanciato dello storage.  Se si esegue ONTAP 9.17.1 o versione successiva, lo spazio occupato dalle unità di archiviazione esistenti viene bilanciato tramite il _bilanciamento dinamico dello spazio_.  Se si esegue ONTAP 9.16.1, lo spazio utilizzato dalle unità di archiviazione esistenti viene bilanciato tramite il _ribilanciamento del carico di lavoro basato sulla copia_.
+
+[cols="2"]
+|===
+| Funzione | Supportato in... 
+
+
+| Posizionamento equilibrato | ONTAP 9.16.1 e versioni successive 
+
+
+| Bilanciamento dinamico dello spazio | ONTAP 9.17.1 e versioni successive 
+
+
+| Ribilanciamento del carico di lavoro basato sulla copia | Solo ONTAP 9.16.1 
+|===
+.Posizionamento equilibrato
+Grazie al _posizionamento bilanciato_, le unità di archiviazione appena create vengono automaticamente posizionate nella zona di migliore disponibilità di archiviazione, per prestazioni ottimali e un utilizzo bilanciato dello spazio di archiviazione.  Il posizionamento bilanciato è abilitato per impostazione predefinita in ONTAP 9.16.1 e versioni successive.
+
+.Bilanciamento dinamico dello spazio
+Grazie al _bilanciamento dinamico dello spazio_, ONTAP monitora attivamente la quantità di spazio libero nel cluster e sposta automaticamente le unità di storage all'interno delle zone di disponibilità dello storage per mantenere un utilizzo equilibrato dello spazio.  Un avviso EMS viene emesso automaticamente se l'utilizzo della capacità a livello di cluster raggiunge l'80% e un avviso EMS viene emesso automaticamente se raggiunge il 90%.
+
+Il bilanciamento dinamico dello spazio è abilitato per impostazione predefinita 14 giorni dopo l'aggiornamento o l'installazione di ONTAP 9.17.1 o versione successiva.  Se è necessario modificare il periodo di abilitazione predefinito di 14 giorni, contattare l'assistenza NetApp .  Non è possibile tornare alla versione ONTAP 9.17.1 dopo aver abilitato il bilanciamento dinamico dello spazio.
+
+Il bilanciamento dinamico dello spazio funziona in _modalità normale_ o _modalità a spazio ridotto_ in base alla media complessiva dello spazio libero in tutti i nodi del cluster (media globale).
+
+* *Modalità normale*
++
+In modalità normale, ONTAP verifica ogni tre minuti se è necessario un bilanciamento dinamico dello spazio.  Il bilanciamento dinamico dello spazio funziona in modalità normale quando sono vere le seguenti condizioni:
+
++
+** La media globale per lo spazio libero è del 10% o più.
+** Almeno un nodo nel cluster ha più spazio libero rispetto alla media globale.
+** Almeno un nodo nel cluster ha il 20% di spazio libero in meno rispetto alla media globale.
+
+
+* *Modalità spazio ridotto*
++
+In modalità spazio ridotto, ONTAP verifica ogni minuto se è necessario un bilanciamento dinamico dello spazio.  Il bilanciamento dinamico dello spazio funziona in modalità spazio ridotto quando si verificano le seguenti condizioni:
+
++
+** La media globale dello spazio libero è inferiore al 10%.
+** Almeno un nodo nel cluster ha più spazio libero rispetto alla media globale.
+** Almeno un nodo nel cluster ha meno spazio libero rispetto alla media globale.
+
+
+
+
+.Ribilanciamento del carico di lavoro basato sulla copia
+Con il _ribilanciamento del carico di lavoro basato sulla copia_, se si verifica uno squilibrio nell'utilizzo dello storage all'interno delle zone di disponibilità dello storage, ONTAP copia automaticamente l'unità di storage che crea lo squilibrio in una zona di disponibilità dello storage con maggiore spazio libero.  Se non c'è abbastanza spazio libero nella zona di disponibilità dell'archiviazione di destinazione, ONTAP non esegue alcuna azione di bilanciamento.  Il ribilanciamento del carico di lavoro basato sulla copia si applica solo al sistema ASA r2 che esegue ONTAP 9.16.1 ed è abilitato per impostazione predefinita su tali sistemi.  In ONTAP 9.17.1 e versioni successive, è sostituito dal bilanciamento dinamico dello spazio.
+
+Se è necessario modificare le impostazioni predefinite per il ribilanciamento del carico di lavoro basato sulla copia, contattare l'assistenza NetApp .
