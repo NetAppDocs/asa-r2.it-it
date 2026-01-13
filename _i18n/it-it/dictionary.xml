@@ -2085,7 +2085,6 @@
   <block id="ab3721eb6cf69168eba216763f76f9d8" category="cell">ARP/AI può essere abilitato sulle unità di archiviazione ASA r2. ARP/AI offre una protezione aggiuntiva dei dati rilevando e segnalando potenziali attacchi ransomware senza alcun periodo di apprendimento.</block>
   <block id="f231c7e641e6d267354740a6c9850600" category="cell">SnapMirror Active Sync aggiunge il supporto per carichi di lavoro VMware con accesso host NVMe/TCP e NVMe/FC per cluster ONTAP a due nodi. Il supporto dei carichi di lavoro VMware per NVMe/TCP è subordinato alla risoluzione del bug VMware con ID TR1049746.</block>
   <block id="2595874d578967634d23bb05c5c7197c" category="inline-link-macro">Supporto per il bilanciamento automatico del carico di lavoro</block>
-  <block id="c33e823e9a93260b53fe781334bf0f34" category="cell"><block ref="c33e823e9a93260b53fe781334bf0f34" category="inline-link-macro-rx"></block></block>
   <block id="f5f208592c87b0ba3e87b3ad6fad7fa6" category="cell">I carichi di lavoro vengono bilanciati automaticamente tra i nodi di una coppia HA per ottimizzare le prestazioni e l'utilizzo delle risorse.</block>
   <block id="cc9afe53172875d5c9c85e52f0ecbf07" category="summary">Abilita ARP/AI per rilevare potenziali minacce ransomware, intervenire automaticamente per proteggere i tuoi dati e visualizzare un messaggio di avviso in Gestione sistema per avvisarti di attività sospette.</block>
   <block id="7cd792910eb45c6b7d750838a44c4fe3" category="doc">Abilita la protezione autonoma dal ransomware con l'intelligenza artificiale sui tuoi sistemi di archiviazione ASA r2</block>
@@ -2735,4 +2734,5 @@
   <block id="354d3bc6178c825e83ed9c7eb99644cb" category="paragraph">Se non si desidera abilitare ARP/AI su tutte le unità di archiviazione in una VM di archiviazione, è possibile selezionare le unità specifiche che si desidera abilitare.</block>
   <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">Scopri di più sull'equilibrio dello spazio</block>
   <block id="72f3763acb9cf34e72f0598e6d1bebf8" category="sidebar">Creare una relazione peer VM di archiviazione</block>
+  <block id="bbaf1d1dee5098cd15496cd4ba1a66da" category="cell"><block ref="bbaf1d1dee5098cd15496cd4ba1a66da" category="inline-link-macro-rx"></block></block>
 </blocks>
