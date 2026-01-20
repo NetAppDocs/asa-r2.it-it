@@ -16,6 +16,8 @@ System Manager di ONTAP ti guida attraverso un workflow rapido e semplice per la
 
 Durante la configurazione del cluster viene creata la macchina virtuale (VM) per lo storage dei dati predefinita. In alternativa, è possibile abilitare il DNS (Domain Name System) per risolvere i nomi host, impostare il cluster in modo che utilizzi il NTP (Network Time Protocol) per la sincronizzazione dell'ora e abilitare la crittografia dei dati inutilizzati.
 
+In alcuni casi, potrebbe essere necessario link:../learn-more/cli-support.html#set-up-an-ontap-asa-r2-cluster-using-the-cli["utilizzare l'interfaccia della riga di comando (CLI) ONTAP per configurare il cluster"]. Ad esempio, dovresti utilizzare la CLI se i tuoi protocolli di sicurezza non ti consentono di collegare un laptop agli switch di gestione o se stai utilizzando un sistema operativo diverso da Windows.
+
 .Prima di iniziare
 Raccogliere le seguenti informazioni:
 

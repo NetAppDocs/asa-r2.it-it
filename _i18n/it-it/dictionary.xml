@@ -2004,7 +2004,6 @@
   <block id="5d356c397f5a143daadc1597a8fd7a34" category="list-text">Seleziona la relazione di sincronizzazione attiva SnapMirror che devi ristabilire.</block>
   <block id="9f4215830573390fcfe4dab1715a643e" category="list-text">Attendi che lo stato della relazione venga visualizzato come *InSync*.</block>
   <block id="a1f13cb349233b9c7d0b9e95fdff569e" category="list-text">Selezionare <block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block> ; quindi selezionare *Failover* per riprendere le operazioni sul cluster primario originale.</block>
-  <block id="b69b57f7782b4b37cff72f353a59ac84" category="paragraph">Per evitare la perdita dei percorsi I/O verso gli host, è necessario eseguire nuovamente la scansione dei percorsi host dopo aver ripreso le operazioni sul cluster primario.</block>
   <block id="4e815228ca61a1f75181e7efe619c495" category="summary">Utilizza SnapMirror ActiveSync per proteggere le applicazioni host che richiedono un obiettivo di punto di ripristino (RPO) pari a zero e un obiettivo di tempo di ripristino (RTO) pari a zero da interruzioni dovute a un'interruzione imprevista o a un disastro del sito.</block>
   <block id="497c72a2f611a19c23299b5daea37215" category="doc">Flusso di lavoro di configurazione della sincronizzazione attiva SnapMirror</block>
   <block id="c0da5a4756d4ac1721f7418cfa0145da" category="paragraph">La protezione dei dati ActiveSync ONTAP SnapMirror consente ai servizi aziendali di continuare a funzionare anche in caso di guasto completo del sito, supportando il failover delle applicazioni in modo trasparente utilizzando una copia secondaria. Non è necessario alcun intervento manuale o scripting personalizzato per attivare un failover con ActiveSync SnapMirror .</block>
@@ -2735,4 +2734,7 @@
   <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">Scopri di più sull'equilibrio dello spazio</block>
   <block id="72f3763acb9cf34e72f0598e6d1bebf8" category="sidebar">Creare una relazione peer VM di archiviazione</block>
   <block id="bbaf1d1dee5098cd15496cd4ba1a66da" category="cell"><block ref="bbaf1d1dee5098cd15496cd4ba1a66da" category="inline-link-macro-rx"></block></block>
+  <block id="91d54d0d46ef33d2bbd727e59b537fee" category="list-text">Per recuperare i percorsi I/O persi o aggiornare gli stati dei percorsi I/O sugli host, è necessario eseguire una nuova scansione dell'archiviazione/adattatore sugli host dopo che il cluster di archiviazione primario riprende a funzionare.</block>
+  <block id="682aa2cee69ce16837ee717d9beba117" category="inline-link-macro">utilizzare l'interfaccia della riga di comando (CLI) ONTAP per configurare il cluster</block>
+  <block id="ac1a39b823c12e10449f448872a387b1" category="paragraph">In alcuni casi, potrebbe essere necessario <block ref="b88ab746f7be66e2ab53ecac4b9fd72e" category="inline-link-macro-rx"></block>. Ad esempio, dovresti utilizzare la CLI se i tuoi protocolli di sicurezza non ti consentono di collegare un laptop agli switch di gestione o se stai utilizzando un sistema operativo diverso da Windows.</block>
 </blocks>

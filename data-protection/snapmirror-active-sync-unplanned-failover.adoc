@@ -17,6 +17,7 @@ Un'operazione di failover automatico non pianificato (AUFO) si verifica quando i
 * La relazione di sincronizzazione attiva SnapMirror deve essere sincronizzata.
 * Non è possibile avviare un failover pianificato quando è in corso un'operazione non distruttiva, ad esempio lo spostamento di un'unità di archiviazione.
 * Il mediatore ONTAP deve essere configurato, connesso e in quorum.
+* Per recuperare i percorsi I/O persi o aggiornare gli stati dei percorsi I/O sugli host, è necessario eseguire una nuova scansione dell'archiviazione/adattatore sugli host dopo che il cluster di archiviazione primario riprende a funzionare.
 
 
 .Fasi
@@ -25,6 +26,3 @@ Un'operazione di failover automatico non pianificato (AUFO) si verifica quando i
 . Attendi che lo stato della relazione venga visualizzato come *InSync*.
 . Selezionare image:icon_kabob.gif["tre punti blu verticali"] ; quindi selezionare *Failover* per riprendere le operazioni sul cluster primario originale.
 
-
-.Cosa succederà
-Per evitare la perdita dei percorsi I/O verso gli host, è necessario eseguire nuovamente la scansione dei percorsi host dopo aver ripreso le operazioni sul cluster primario.
