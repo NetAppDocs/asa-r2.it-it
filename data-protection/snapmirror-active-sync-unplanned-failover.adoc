@@ -11,7 +11,9 @@ summary: Scopri come ristabilire le relazioni di sincronizzazione attiva SnapMir
 
 
 [role="lead"]
-Un'operazione di failover automatico non pianificato (AUFO) si verifica quando il cluster primario è inattivo o isolato. Il mediatore rileva quando si verifica un failover ed esegue un failover automatico non pianificato sul cluster secondario. Il cluster secondario viene convertito in primario e inizia a servire i client.
+Sui sistemi ASA r2, SnapMirror active sync supporta configurazioni simmetriche active/active. In una configurazione simmetrica active/active, entrambi i siti possono accedere allo storage locale per l'I/O attivo. Se il cluster di origine si guasta o viene isolato, il mediatore attiva un failover automatico non pianificato (AUFO) e gestisce tutto l'I/O dal cluster di destinazione fino al recupero del cluster di origine.
+
+Se si verifica un AUFO della relazione di sincronizzazione attiva SnapMirror, è necessario ristabilire la relazione e riprendere le operazioni sul cluster di origine dopo che è tornato online.
 
 .Prima di iniziare
 * La relazione di sincronizzazione attiva SnapMirror deve essere sincronizzata.
