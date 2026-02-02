@@ -43,3 +43,6 @@ Se si verifica un'attività anomala sull'unità di archiviazione, viene visualiz
 . Seleziona *Scegli un'azione*.
 . Seleziona *Segnala come falso positivo* oppure *Segnala come potenziale attacco ransomware*.
 
+
+.Quali sono le prossime novità?
+Se sei a conoscenza di picchi di attività nella tua unità di storage, che si tratti di picchi occasionali o di un picco tipico di una nuova normalità, dovresti segnalarli come sicuri. Segnalare manualmente questi picchi come sicuri aiuta a migliorare l'accuratezza delle valutazioni delle minacce di ARP. Scopri come link:https://docs.netapp.com/us-en/ontap/anti-ransomware/manage-parameters-task.html#report-known-surges["segnala picchi noti di ARP/AI"^].

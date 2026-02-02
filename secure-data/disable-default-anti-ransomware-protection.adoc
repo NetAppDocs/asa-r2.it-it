@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: secure-data/disable-default-anti-ransomware-protection.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, disable 
+summary: 'Se disponi di una licenza Autonomous Ransomware Protection (ARP) installata sul tuo ASA r2 cluster, ARP viene abilitato per impostazione predefinita su tutte le unità di archiviazione esistenti e di nuova creazione 12 ore dopo l"aggiornamento a ONTAP 9.18.1 o l"inizializzazione di un nuovo ONTAP 9.18.1 ASA r2 cluster.' 
+---
+= Disattiva la protezione ransomware autonoma predefinita sui tuoi sistemi di archiviazione ASA r2
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando si inizializza un nuovo cluster ONTAP 9.18.1 ASA r2 o si aggiorna il cluster a ONTAP 9.18.1, ARP/AI viene automaticamente abilitato per impostazione predefinita su tutte le nuove unità di storage dopo un grace period di 12 ore. Se non si disabilita ARP/AI durante il grace period, viene abilitato a livello di cluster per le nuove unità di storage al termine del grace period.
+
+Le unità di archiviazione create in ONTAP 9.17.1 devono essere link:enable-anti-ransomware-protection.html["abilitato manualmente"] per ARP/AI.
+
+.Fasi
+È possibile disattivare l'abilitazione predefinita durante o dopo il grace period iniziale di 12 ore.
+
+[role="tabbed-block"]
+====
+.System Manager
+--
+. Selezionare *Cluster > Settings* (cluster > Impostazioni).
+. Disabilita ARP:
++
+** Per disattivare durante il grace period di 12 ore:
++
+... In *Anti-ransomware*, seleziona *Don't enable* e poi seleziona *Disable*.
+
+
+** Per disattivare dopo il grace period di 12 ore:
++
+... In *Anti-ransomware*, seleziona image:icon_pencil.gif["Modifica"] e poi deseleziona *Abilita per nuove unità di archiviazione*.
+... Seleziona *Save*
+
+
+
+
+
+
+--
+.CLI
+--
+. Verificare lo stato di abilitazione predefinito:
++
+[source, cli]
+----
+security anti-ransomware auto-enable show
+----
+. Disabilitare l'abilitazione predefinita per i volumi esistenti e nuovi:
++
+[source, cli]
+----
+security anti-ransomware auto-enable modify -default-existing-volume-state false -default-new-volume-state false
+----
+
+
+--
+====
