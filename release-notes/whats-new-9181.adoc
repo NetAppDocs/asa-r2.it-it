@@ -65,7 +65,7 @@ Scopri le nuove funzionalità disponibili in ONTAP 9.18.1 per i sistemi ASA r2.
 |===
 
 
-== Efficienza dello storage
+== Gestione dello storage
 
 [cols="2,4"]
 |===

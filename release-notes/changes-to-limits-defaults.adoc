@@ -28,7 +28,7 @@ Informazioni sulle modifiche ai limiti e alle impostazioni predefinite che inter
 | VM di archiviazione per cluster | Il numero massimo di macchine virtuali di archiviazione (VM) supportate per coppia HA è aumentato da 32 a 256. | ONTAP 9.18.1 
 
 
-| Sincronizzazione attiva SnapMirror | Il supporto per SnapMirror ActiveSync è aumentato da cluster a due nodi a cluster a quattro nodi. | ONTAP 9.18.1 
+| Sincronizzazione attiva SnapMirror | Il supporto per SnapMirror active sync è stato aumentato da cluster a due nodi a cluster a quattro nodi. | ONTAP 9.18.1 
 
 
 | Nodi per cluster  a| 

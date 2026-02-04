@@ -2768,4 +2768,5 @@
   <block id="b86583f9a9fc89f434a369308432e10e" category="inline-link-macro">segnala picchi noti di ARP/AI</block>
   <block id="114bbec71af5be00be6f74b75bcf02d1" category="paragraph">Se sei a conoscenza di picchi di attività nella tua unità di storage, che si tratti di picchi occasionali o di un picco tipico di una nuova normalità, dovresti segnalarli come sicuri. Segnalare manualmente questi picchi come sicuri aiuta a migliorare l'accuratezza delle valutazioni delle minacce di ARP. Scopri come <block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>.</block>
   <block id="b27281dcf866cc70bd075c0d39310671" category="sidebar">Disabilita l'abilitazione predefinita di ARP/AI</block>
+  <block id="74c34cd79314b0b0543df58dce891912" category="cell">Il supporto per SnapMirror active sync è stato aumentato da cluster a due nodi a cluster a quattro nodi.</block>
 </blocks>
