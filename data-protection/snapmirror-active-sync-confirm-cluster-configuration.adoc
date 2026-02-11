@@ -28,7 +28,7 @@ link:create-svm-peer-relationship.html["Creare una relazione peer tra VM di stor
 
 . Verificare che almeno un LIF sia stato creato su ciascun nodo del cluster.
 +
-link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["Creare un LIF"]
+link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["Creare un LIF"].
 
 . Verificare che le unità di archiviazione necessarie siano state create e mappate sui gruppi host.
 +

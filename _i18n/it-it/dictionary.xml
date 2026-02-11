@@ -184,7 +184,6 @@
   <block id="17ac6cdd9934a4f4aca00f5228a64555" category="list-text">Selezionare per confermare che le modifiche apportate agli aggiornamenti verranno applicate a tutti gli aggiornamenti correnti e futuri.</block>
   <block id="7ae6e72fcf95f7e0b8f4dbe1153d8398" category="paragraph">Gli aggiornamenti consigliati vengono scaricati e installati automaticamente nel sistema ASA R2 in base alle selezioni degli aggiornamenti.</block>
   <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">Disattivare gli aggiornamenti automatici</block>
-  <block id="6141cdc0ba26479d87d6b8c24af9fc18" category="paragraph">Disattivare gli aggiornamenti automatici se si desidera visualizzare gli aggiornamenti consigliati prima di installarli. Se si disattivano gli aggiornamenti automatici, è necessario eseguire manualmente gli aggiornamenti del firmware e dei file di sistema.</block>
   <block id="3a73131e5e1a3a498c8e055e84a30f60" category="paragraph">Gli aggiornamenti automatici sono disattivati. Controllare regolarmente la presenza di aggiornamenti consigliati e decidere se si desidera eseguire un'installazione manuale.</block>
   <block id="e8b8aa5f70e0a4459ca2284f8da3b813" category="section-title">Visualizzare gli aggiornamenti automatici</block>
   <block id="6edf33a55c81d08e5aac13aae918832c" category="paragraph">Visualizza un elenco di aggiornamenti del firmware e dei file di sistema scaricati nel cluster e pianificati per l'installazione automatica. Consente inoltre di visualizzare gli aggiornamenti precedentemente installati automaticamente.</block>
@@ -1943,7 +1942,6 @@
   <block id="63f65589705e420ce3e3c84f5a73edea" category="inline-link-macro">Creare una relazione peer tra VM di storage intercluster</block>
   <block id="0a1048623dcc4bf6a07e4f070c75b99a" category="list-text">Verificare che almeno un LIF sia stato creato su ciascun nodo del cluster.</block>
   <block id="f0a8f8a4710c7aff45926e4c429a8cc0" category="inline-link-macro">Creare un LIF</block>
-  <block id="d57b4f0ac425b878d2f45da8c8c89d8d" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block></block>
   <block id="b04d1fe353930783cf68fb978624b212" category="list-text">Verificare che le unità di archiviazione necessarie siano state create e mappate sui gruppi host.</block>
   <block id="12aa04a968692be25285a9fc7234d0d5" category="inline-link-macro">Crea un'unità di archiviazione</block>
   <block id="0dcd2c45a0db6a5c91ed22efb559bd29" category="inline-link-macro">mappare l'unità di archiviazione a un gruppo host</block>
@@ -2769,4 +2767,6 @@
   <block id="114bbec71af5be00be6f74b75bcf02d1" category="paragraph">Se sei a conoscenza di picchi di attività nella tua unità di storage, che si tratti di picchi occasionali o di un picco tipico di una nuova normalità, dovresti segnalarli come sicuri. Segnalare manualmente questi picchi come sicuri aiuta a migliorare l'accuratezza delle valutazioni delle minacce di ARP. Scopri come <block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>.</block>
   <block id="b27281dcf866cc70bd075c0d39310671" category="sidebar">Disabilita l'abilitazione predefinita di ARP/AI</block>
   <block id="74c34cd79314b0b0543df58dce891912" category="cell">Il supporto per SnapMirror active sync è stato aumentato da cluster a due nodi a cluster a quattro nodi.</block>
+  <block id="b930776d8572e5f3c1d7294d9809974c" category="paragraph">Disattiva gli aggiornamenti automatici solo se desideri gestire gli aggiornamenti interamente in autonomia. Con gli aggiornamenti automatici disattivati, il sistema non notificherà, scaricherà o installerà aggiornamenti. Sei responsabile del monitoraggio, del download, della pianificazione e dell'installazione manuale di tutti gli aggiornamenti.</block>
+  <block id="26f7abc505f53b85cb219303544259d3" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block>.</block>
 </blocks>

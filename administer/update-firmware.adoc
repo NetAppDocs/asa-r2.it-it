@@ -35,7 +35,7 @@ Gli aggiornamenti consigliati vengono scaricati e installati automaticamente nel
 
 == Disattivare gli aggiornamenti automatici
 
-Disattivare gli aggiornamenti automatici se si desidera visualizzare gli aggiornamenti consigliati prima di installarli. Se si disattivano gli aggiornamenti automatici, è necessario eseguire manualmente gli aggiornamenti del firmware e dei file di sistema.
+Disattiva gli aggiornamenti automatici solo se desideri gestire gli aggiornamenti interamente in autonomia. Con gli aggiornamenti automatici disattivati, il sistema non notificherà, scaricherà o installerà aggiornamenti. Sei responsabile del monitoraggio, del download, della pianificazione e dell'installazione manuale di tutti gli aggiornamenti.
 
 .Fasi
 . In System Manager, selezionare *Cluster > Settings*.
