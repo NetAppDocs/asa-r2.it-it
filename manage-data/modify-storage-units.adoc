@@ -11,7 +11,7 @@ summary: Rispondi ai cambiamenti delle performance e dei dati del sistema storag
 
 
 [role="lead"]
-Per ottimizzare le performance sul sistema ASA R2, potrebbe essere necessario modificare le unità di storage per aumentarne la capacità, aggiornare le policy di qualità del servizio o modificare gli host mappati alle unità. Ad esempio, se un nuovo workload dell'applicazione critica viene aggiunto a un'unità di storage esistente, potrebbe essere necessario modificare la policy di qualità del servizio applicata all'unità di storage per supportare il livello di performance necessario per la nuova applicazione.
+Per ottimizzare le prestazioni sul sistema ASA r2, potrebbe essere necessario modificare le unità di storage per aumentarne la capacità, aggiornare le policy QoS o cambiare gli host mappati alle unità. Ad esempio, se un nuovo carico di lavoro applicativo critico viene aggiunto a un'unità di storage esistente, potrebbe essere necessario modificare la policy di Quality of Service (QoS) applicata all'unità di storage per supportare il livello di prestazioni necessario per la nuova applicazione.
 
 .Aumentare la capacità
 Aumentare le dimensioni di un'unità di archiviazione prima che raggiunga la capacità massima per evitare una perdita di accesso ai dati che può verificarsi se l'unità di archiviazione esaurisce lo spazio scrivibile. La capacità di un'unità di archiviazione può essere aumentata a 128 TB, ovvero la dimensione massima consentita da ONTAP.
