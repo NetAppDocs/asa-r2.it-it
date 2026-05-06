@@ -17,7 +17,17 @@ entries:
   - title: Installare l'hardware
     url: "/install-setup/deploy-hardware.html"
   - title: Bulloneria dei cavi
-    url: "/install-setup/cable-hardware.html"
+    entries:
+    - title: Panoramica del cablaggio
+      url: "/install-setup/cable-hardware.html"
+    - title: Cavo ASA A1K
+      url: "/install-setup/cable-hardware-a1k.html"
+    - title: Cavo ASA A70 e A90
+      url: "/install-setup/cable-hardware-a70-90.html"
+    - title: Cavo ASA A20, A30 e A50
+      url: "/install-setup/cable-hardware-a20-30-50.html"
+    - title: Cavo ASA C30
+      url: "/install-setup/cable-hardware-c30.html"
   - title: Accendere il sistema
     url: "/install-setup/power-on-hardware.html"
 - title: Configurare il sistema ASA R2

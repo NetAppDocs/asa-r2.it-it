@@ -536,9 +536,7 @@
   <block id="416d7b4fb13f7595b6b5ae10eaf0da2e" category="paragraph"><block ref="24caf631dc8d0b7a958c2b39e9826f66" category="inline-link-macro-rx"></block> Per iniziare a fornire dati ai client SAN.</block>
   <block id="e9b1c7305928c9a53874abbfc70aef12" category="inline-link-macro">creazione di istantanee</block>
   <block id="f5f65ef11468147132736611aa414b0c" category="paragraph">È ora possibile utilizzare System Manager per proteggere i dati di <block ref="f2e8d78709894f634f64266a64a6a5f1" category="inline-link-macro-rx"></block>.</block>
-  <block id="4effe079c1a641bd05cf0513a1eaf8c6" category="summary">Scopri come collegare i cavi del controller ASA R2 alla rete e collegare i controller agli scaffali.</block>
   <block id="db8640dafbf216593610b43870a62e8d" category="doc">Collegare l'hardware per il sistema di storage ASA R2</block>
-  <block id="08f29f426eac8bb0b1cef738430fac57" category="paragraph">Dopo aver installato l'hardware rack per il sistema di storage ASA R2, installare i cavi di rete per i controller e collegare i cavi tra i controller e gli shelf di storage.</block>
   <block id="5d6a7459a3583d9e29f4b486d809b6a1" category="open-title">ASA A1K</block>
   <block id="ee6c90ad735c4fc892e900202d6ff034" category="list-text">Utilizzare il cavo di interconnessione Cluster/ha per collegare le porte da E1a a E1a e le porte da e7a a e7a.</block>
   <block id="883f8ccaa3b7bb186f5d85df551292e7" category="admonition">Il traffico di cluster Interconnect e quello di ha condividono le stesse porte fisiche.</block>
@@ -546,28 +544,14 @@
   <block id="29b62d617481485649ea2d5b54fca512" category="image-alt">Cavo ha del cluster</block>
   <block id="3e86dd6511e223ecedd044d86cd934bf" category="image-alt">Schema di cablaggio del cluster senza switch a due nodi</block>
   <block id="8637ca13eb3c1a10bb4383130268c950" category="list-text">Collegare le porte del modulo Ethernet alla rete host.</block>
-  <block id="e5878ec206640d3f0489cbe562e56856" category="paragraph">Di seguito sono riportati alcuni esempi tipici di cablaggio della rete host. Per informazioni sulla configurazione specifica del sistema, vedere <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> .</block>
-  <block id="b1a78b15892ed366f203ff3009cb08d9" category="admonition">Per ottenere le massime performance di sistema per il traffico cluster e ha, non utilizzare le porte e1b e e7b per le connessioni di rete host. Utilizzare una scheda host separata per ottimizzare le prestazioni.</block>
   <block id="d2163ed76fe91108f8a1e58f08924448" category="paragraph">*Cavo 100 GbE*</block>
-  <block id="dca4917cf460ca0094ae46e8d7178c17" category="image-alt">100GB cavo Ethernet</block>
-  <block id="63498c78e69ef7b5cc7cd5a1c0c3b724" category="image-alt">Cavo alla rete Ethernet 100GB</block>
-  <block id="1cddeaef0a0b08b7178f9023a157d0fc" category="list-text">Collegare gli switch di rete host 10/25 GbE.</block>
-  <block id="fbb2ead6e1dba22c64b785b1864b9809" category="paragraph">*Host 10/25 GbE*</block>
-  <block id="e6db43427a500d394f1d34dcfecf3b50" category="image-alt">Cavo Ethernet 10/25GB</block>
-  <block id="204d53c0ad48ec9abe6f3cde34241579" category="image-alt">Cavo alla rete Ethernet 10/25GB</block>
   <block id="1107155d6b0c900a6485f06681854862" category="image-alt">Cavi RJ-45</block>
   <block id="9c29eb35e98929529d99ca71cd855f4e" category="paragraph">*CAVI RJ-45 1000BASE-T.</block>
   <block id="a8536d671676b42d7c49328e04123a96" category="image-alt">Connettersi alla rete di gestione</block>
   <block id="38821947dff053760f4c97b648ca454a" category="admonition">Non collegare ancora i cavi di alimentazione.</block>
-  <block id="d4f534f2d370cb0f29178f31331b3536" category="image-alt">Cavo alla rete Ethernet da 100 GB</block>
-  <block id="5a8b74659281e9e3495bfc29767b645c" category="paragraph">*4 porte, 10/25 GbE host*</block>
-  <block id="06d20f31fccdd7b31221a7b1e1ed37d1" category="image-alt">Cavo da 10/25 GB</block>
-  <block id="95b007a39e5ec5c4d9b8e17f2ec0424d" category="image-alt">RJ45 cavi</block>
-  <block id="b3623f40c8ee8913ca5a6a7756d97ce9" category="paragraph">Scegliere una delle seguenti opzioni di cablaggio che corrisponda alla propria configurazione.</block>
   <block id="46d73bd828c75397e5f3cca81c4236e1" category="paragraph">Collegare ciascun controller ai moduli NSM sullo shelf NS224. La grafica mostra il cablaggio di ciascuno dei controller: Il cablaggio del controller A è mostrato in blu e il cablaggio del controller B è mostrato in giallo.</block>
   <block id="cdc609c675d24b2fff8b5acc2e37e89e" category="list-text">Sul controller A, collegare le seguenti porte:</block>
   <block id="f316f1854f33785f42807636a3284714" category="list-text">Collegare la porta e11a alla porta NSM A e0a.</block>
-  <block id="7fd21be5068998e5aac33f1cffcff76c" category="list-text">Collegare la porta e11b alla porta NSM B e0b.</block>
   <block id="2bc2dbfb240bdfb79a6c1bb80f34be8a" category="inline-image-macro">Controller A e11a e e11b su un singolo shelf NS224</block>
   <block id="e8e2e70664d58c738dc5f3e73dd79bbb" category="paragraph"><block ref="e8e2e70664d58c738dc5f3e73dd79bbb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ab7ef1e990b02e4f310f950e86665f24" category="list-text">Sul controller B, collegare le seguenti porte:</block>
@@ -588,22 +572,12 @@
   <block id="bfe3957a11dab27de6793691acba1b94" category="paragraph">*Cavi in rame 100 GbE QSFP28*</block>
   <block id="59850ec6ce706547c89ff81eb99141db" category="image-alt">Cavo in rame da 100 GbE QSFP28</block>
   <block id="9dcc8dc3a558729dc61c31c84e00c3e4" category="list-text">Collegare la porta e11a del controller A alla porta NSM A e0a.</block>
-  <block id="918349807746744597338bfd03ce241f" category="list-text">Collegare la porta e11b del controller A alla porta NSM B e0b.</block>
   <block id="956aab6b8733f2140ed524c12e37f4bd" category="paragraph"><block ref="956aab6b8733f2140ed524c12e37f4bd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a8861b3a8d06aef3022e3d2cfa014512" category="list-text">Collegare la porta e11a del controller B alla porta NSM B e0a.</block>
   <block id="6a5052a8c54e3e46dc1452dcb9c98eaa" category="list-text">Collegare la porta e11b del controller B alla porta NSM A e0b.</block>
   <block id="a35e9f25f382abbe5abcfeab4b53167c" category="inline-image-macro">Controller B e11a e e11b su un singolo shelf NS224</block>
   <block id="7f958fb1f7822d334698802022ec3956" category="paragraph"><block ref="7f958fb1f7822d334698802022ec3956" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e934f6c11392ce362b9b522d3905e905" category="list-text">Sul controller A, collegare le seguenti porte:</block>
-  <block id="622567f759d81c4e71f74d57546ee33a" category="list-text">Collegare la porta e11a allo shelf 1, la porta NSM A e0a.</block>
-  <block id="fa65b92c92e4c6583d514be0324b7aae" category="list-text">Collegare la porta e11b allo shelf 2, la porta NSM B e0b.</block>
-  <block id="884b219f88a01bf8fe5bf55db135e450" category="list-text">Collegare la porta E8a allo shelf 2, la porta NSM A e0a.</block>
-  <block id="3d76afb25e68cbf6ec448ba97c8d77a4" category="list-text">Collegare la porta e8b allo shelf 1, la porta NSM B e0b.</block>
   <block id="f574117739b3e8dc40831cbb75e78d7f" category="paragraph"><block ref="f574117739b3e8dc40831cbb75e78d7f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7c74d901dd29a71ee51992bf6462dd04" category="list-text">Collegare la porta e11a allo shelf 1, la porta NSM B e0a.</block>
-  <block id="1e063e8299a01fcdf8268f46edf62dfe" category="list-text">Collegare la porta e11b allo shelf 2, la porta NSM A e0b.</block>
-  <block id="a032a8830d9e7689c545a9f5d436568b" category="list-text">Collegare la porta E8a allo shelf 2, la porta NSM B e0a.</block>
-  <block id="a7ac225913423b42ae7801d894de31c8" category="list-text">Collegare la porta e8b allo shelf 1, la porta NSM A e0b.</block>
   <block id="bf1f9977d76210449a57d0b526df80f9" category="paragraph"><block ref="bf1f9977d76210449a57d0b526df80f9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4757f88150e08258ea28951d40a936cf" category="inline-link-macro">Accendere il sistema di archiviazione ASA R2</block>
   <block id="b5d10bcdc319c3ca8d1fb925a5259701" category="paragraph">Dopo aver collegato i controller di archiviazione alla rete e successivamente i controller agli shelf di archiviazione, è possibile <block ref="9e913a1648528438a924ea21dfe1e70d" category="inline-link-macro-rx"></block>.</block>
@@ -1632,25 +1606,15 @@
   <block id="c486d43df45ffe41cde84a1b0fa45aa0" category="paragraph"><block ref="c486d43df45ffe41cde84a1b0fa45aa0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e3eb777419d46f8ec20ca944795a4d26" category="list-text">Se si effettua il cablaggio a uno switch ottico, inserire il ricetrasmettitore ottico nella porta del controller prima di collegare il cavo alla porta dello switch.</block>
   <block id="d16a227aab66041a81c6f88b290eb486" category="section-title">Fase 1: Collegare i collegamenti cluster/ha</block>
-  <block id="e5f780ef73bd41c1dd64af7a1a1a31ac" category="paragraph">Collegare i controller al cluster ONTAP. Questa procedura varia in base al modello del sistema di storage in uso e alla configurazione del modulo i/O.</block>
   <block id="cc462bbdb3b8d9369a4c3f67dcc8095c" category="open-title">A1K</block>
-  <block id="fde22ae5f3a1cc39c61853ffe9a68675" category="paragraph">Creare connessioni al cluster ONTAP. Per i cluster senza switch, collegare i controller l'uno all'altro. Per i cluster commutati, collegare i controller agli switch di rete del cluster.</block>
   <block id="134e0586a0879fa097abfb47d5e64dbe" category="example-title">Cablaggio cluster senza switch</block>
   <block id="c4cbbd77402de8c27a0e7a305bcd7a83" category="list-text">Collegare la porta E1a del controller A alla porta E1a del controller B.</block>
-  <block id="0990249c3bba6596b74be9af46837266" category="list-text">Collegare la porta e7a del controller A alla porta E1a del controller B.</block>
   <block id="666ce5251c9c6f25db5da3d713f9b34a" category="example-title">Cablaggio del cluster con switch</block>
-  <block id="18695b824b22d82a916970e4903bf31d" category="paragraph">Utilizzare il cavo 100 GbE per collegare le porte da E1a a E1a e le porte da e7a a e7a.</block>
-  <block id="698b27a4b40df61ad4e02a808f16defc" category="admonition">Le configurazioni cluster con switch sono supportate in 9.16.1 e versioni successive.</block>
   <block id="bf419afe8104f0626b8c6f35d7546f54" category="list-text">Collegare la porta E1a sul controller A e la porta E1a sul controller B allo switch di rete del cluster A.</block>
   <block id="cf5e5d4912cff0cbaa590fc1ae9ce6d7" category="list-text">Collegare la porta e7a sul controller A e la porta e7a sul controller B allo switch di rete del cluster B.</block>
-  <block id="b222cca23840b6a495e76b8c300b08f2" category="image-alt">Cavo da 100 GB</block>
   <block id="f1d133e33e29362e931a34312a961d0b" category="image-alt">Connessioni cluster via cavo alla rete cluster</block>
   <block id="b1f39e4d9956723a4e80ea4844651e57" category="open-title">A70 e A90</block>
-  <block id="45078e841660b01dec689a55423c0ad7" category="paragraph">Utilizzare il cavo di interconnessione Cluster/ha per collegare le porte da E1a a E1a e le porte da e7a a e7a.</block>
   <block id="4c4c88c42c8601a756bccea16c845e74" category="open-title">A20, A30 E A50</block>
-  <block id="fd58de99944e8efb194dd7978a910460" category="paragraph">*Cablaggio cluster senza switch*</block>
-  <block id="27414c133f108cf7a16f5284d6f30c1c" category="paragraph">Collegare i controller l'uno all'altro per creare connessioni del cluster ONTAP.</block>
-  <block id="ae385fd98cef8d5576799c3e17b37de5" category="example-title">ASA A30 e ASA A50 con due moduli i/o GbE a 2 porte da 40/100 GB</block>
   <block id="3020ab19ecc6bea34da86a75211a1480" category="list-text">Collegare le connessioni di interconnessione cluster/ha:</block>
   <block id="6780657f10ef4bbe5e784f3b1e7777e3" category="admonition">Il traffico di cluster Interconnect e il traffico ha condividono le stesse porte fisiche (sui moduli i/o negli slot 2 e 4). Le porte sono 40/100 GbE.</block>
   <block id="81d3b176c84d195465a42037b378be34" category="list-text">Collegare la porta E2A del controller A alla porta E2A del controller B.</block>
@@ -1658,53 +1622,26 @@
   <block id="c2f3dca1342038cc2e96405818f97fc1" category="admonition">Le porte dei moduli i/o E2B e e4b non sono utilizzate e sono disponibili per la connettività di rete host.</block>
   <block id="29225cb045b4ca6180b60163acf195c6" category="paragraph">*100 cavi di interconnessione cluster/ha GbE*</block>
   <block id="11156b406be2310dbc7ea0be9d4c50ed" category="image-alt">Cavo ha 100 GbE cluster</block>
-  <block id="9cfa3d116e4d078fb40d2bc893df02d3" category="image-alt">schema di cablaggio del cluster senza switch a30 e a50 utilizzando due moduli io 100gbe</block>
-  <block id="a4f83d44ddc4f1d9024cb358c68b9839" category="example-title">ASA A30 e ASA A50 con un modulo i/o GbE a 2 porte da 40/100 GB</block>
   <block id="fe9b088094e89f3bfca3ca399c7b0db3" category="admonition">Il traffico di cluster Interconnect e il traffico ha condividono le stesse porte fisiche (sul modulo i/o nello slot 4). Le porte sono 40/100 GbE.</block>
   <block id="106e367c9573abf49a09d94f19c1bfc1" category="list-text">Collegare la porta e4b del controller A alla porta e4b del controller B.</block>
-  <block id="8664dd7c786c742954653ce492e9658d" category="image-alt">schema di cablaggio del cluster senza switch a30 e a50 utilizzando un modulo io 100gbe</block>
   <block id="41e7c843565f888c45e00de3fb7efbb7" category="example-title">ASA A20 con un modulo i/o GbE a 2 porte da 10/25 GB</block>
   <block id="12c884ae6ab63449a58d2a6afa1e2e37" category="admonition">Il traffico di cluster Interconnect e il traffico ha condividono le stesse porte fisiche (sul modulo i/o nello slot 4). Le porte sono 10/25 GbE.</block>
   <block id="1d26f858cfe843b7c2ef97cec62fa3e4" category="paragraph">*25 cavi di interconnessione cluster/ha GbE*</block>
-  <block id="7068e62ae38501c78d2ab15da6f10b16" category="inline-image-macro">Connettore GbE SFP in rame, larghezza=100px</block>
-  <block id="6fb39f4b9d1de8f2f3a463d3f9eedd52" category="paragraph"><block ref="6fb39f4b9d1de8f2f3a463d3f9eedd52" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7e04550968face4eb31df851171941f8" category="image-alt">diagramma di cablaggio del cluster senza switch a20 utilizzando un modulo io 25 gbe</block>
-  <block id="151c289f37f59079c337dd0b4878c201" category="paragraph">*Cablaggio cluster commutato*</block>
-  <block id="fa02cdb8515e1cd51b4eadba9fd50080" category="paragraph">Collegare i controller agli switch di rete cluster per creare connessioni cluster ONTAP.</block>
-  <block id="a8d16746fb80901317600cba36862a10" category="list-text">Collegare le connessioni di interconnessione cluster/ha:</block>
   <block id="b53a4effb80334f95a8d3a106ebd8d78" category="paragraph">*40/100 cavi di interconnessione cluster/ha GbE*</block>
   <block id="b0f68808f5130fe93780d063d5a249ef" category="image-alt">Cavo ha 40/100 GbE cluster</block>
-  <block id="fdf9561d280feaca372af24a497c913c" category="image-alt">schema di cablaggio del cluster commutato a30 e a50 utilizzando due moduli io 100gbe</block>
-  <block id="03b14fd60bbaa553460ca8bf5858ac71" category="list-text">Collegare i controller agli switch di rete cluster:</block>
   <block id="9d14c26ccbbb0d65a3b5d05e2013404b" category="paragraph">*10/25 cavi di interconnessione cluster/ha GbE*</block>
-  <block id="3488ff918c31f4a57e74bbab6ef9bcc9" category="inline-image-macro">diagramma di cablaggio del cluster con a20 switch utilizzando un modulo io 25gbe</block>
   <block id="7f99cbc2aa28ab9fed6e99fa94242b4a" category="section-title">Fase 2: Collegare i cavi delle connessioni di rete host</block>
-  <block id="11b5e1f572906bdd8b96e6f22d885cd4" category="paragraph">Collegare i controller alla rete host.</block>
-  <block id="40a36b0ffd7a648bae61167d750303ae" category="paragraph">Questa procedura varia in base al modello del sistema di storage in uso e alla configurazione del modulo i/O.</block>
-  <block id="3b29102e499249644dff327644d96081" category="list-text">Collegare le porte e9a e e9b allo switch di rete dati Ethernet.</block>
   <block id="4f3114ccf1048d4ddc64a6a3b00212c0" category="paragraph">Collegare le porte del modulo Ethernet o le porte del modulo Fibre Channel (FC) alla rete host.</block>
-  <block id="fa60bebf26c9f26f466d33f766281ef9" category="paragraph">*Cablaggio host Ethernet*</block>
   <block id="3202c4ba4b5ac6113c606ef9bb3c50cf" category="paragraph">Su ciascun controller, collegare le porte E2B e e4b agli switch di rete host Ethernet.</block>
   <block id="e827a0600a7ebd00f36ea855012f66a1" category="admonition">Le porte sui moduli i/o negli slot 2 e 4 sono 40/100 GbE (la connettività host è 40/100 GbE).</block>
   <block id="7329bfa51dec924de206ced093bea600" category="paragraph">*Cavi 40/100 GbE*</block>
-  <block id="8f31147c7cfeb7520dc9739e31dedc90" category="image-alt">Cavo da 40/100 GB</block>
-  <block id="ec83c89c1bfd1fa2fe72db4df75b0e43" category="image-alt">Collegare gli switch di rete host ethernet 40/100GbE</block>
-  <block id="3e42ab3fbc066a1e09943ca314bf3205" category="paragraph">Su ciascun controller, collegare le porte E2A, E2B, e2c e e2d agli switch di rete host Ethernet.</block>
   <block id="c053ea984f8ec26545ef5a0f8e3c516b" category="paragraph">*Cavi 10/25 GbE*</block>
-  <block id="b8382f91ab365521fe8568f720b6ddd4" category="paragraph">*Cablaggio host FC*</block>
   <block id="241c17a1be2cc4feae5c8c6007f8aed3" category="paragraph">*Cavi FC da 64 GB/s*</block>
-  <block id="176084e0e3d1d8b98919ade28704bd7b" category="inline-image-macro">Cavo fc da 64 GB, larghezza=100px</block>
-  <block id="0174aef3c6edce25256f90638a06bdca" category="paragraph"><block ref="0174aef3c6edce25256f90638a06bdca" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="53b32e6926c94a5a2ab06b2fe3836135" category="image-alt">Cavo per 64GB switch di rete host fc</block>
   <block id="945babbf23a8741321d27a1c4a0c4200" category="section-title">Fase 3: Collegare i collegamenti della rete di gestione</block>
   <block id="81c5a35ebe94a71ec0440d955458f3b2" category="paragraph">Collegare i controller alla rete di gestione.</block>
-  <block id="606df56893b9539a0efef8ec28ae5b04" category="paragraph">Contattare l'amministratore di rete per informazioni sulla connessione del sistema di archiviazione agli switch di rete di gestione.</block>
   <block id="c7900e3ee1f4eb935f449465b57ad5c1" category="paragraph">Utilizzare i cavi 1000BASE-T RJ-45 per collegare le porte di gestione (chiave inglese) di ciascun controller agli switch di rete di gestione.</block>
   <block id="827e1151fb167c880355e4177a701fcc" category="paragraph">Collegare le porte di gestione (chiave inglese) su ciascun controller agli switch di rete di gestione.</block>
   <block id="cc9dc8ff5d926a2f202e16be7619d147" category="section-title">Fase 4: Collegare i collegamenti dei ripiani</block>
-  <block id="0d76e0793ffa0c020fcde5112f3ab0ac" category="paragraph">Le seguenti procedure di cablaggio mostrano come collegare i controller a uno shelf di archiviazione.</block>
-  <block id="11f69ba457c92cc85e478b022d6fe27d" category="example-title">Opzione 1: Uno shelf storage NS224</block>
-  <block id="dbc80d316683c8c8fbd51c4f53c57169" category="example-title">Opzione 2: Due shelf storage NS224</block>
   <block id="302158186d4e933e7fd1df5cef7e5e27" category="paragraph">La grafica mostra il cablaggio del controller A in blu e il cablaggio del controller B in giallo.</block>
   <block id="43f628d39f94658277cbd1d5e2ec5913" category="list-text">Collegare il controller A allo shelf:</block>
   <block id="6c7c671b8bb322ab01af1c161215e3d7" category="list-text">Collegare la porta e3a del controller A alla porta NSM A e1a.</block>
@@ -1793,10 +1730,6 @@
   <block id="b1481e6f17d8c80e8f17d881ac08a5a1" category="paragraph">Hai creato una macchina virtuale per lo storage. È ora possibile utilizzare la VM di storage in <block ref="16349da302f4151e8c9d8212eacbac27" category="inline-link-macro-rx"></block>.</block>
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="list-title">Fase</block>
   <block id="a5e51e5f50ca83720f1d0d8b17c1e93b" category="list-text">Queste procedure mostrano le configurazioni comuni. Il cablaggio specifico dipende dai componenti ordinati per il sistema di storage in uso. Per informazioni dettagliate sulla configurazione e la priorità degli slot, vedere <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
-  <block id="ce48b5f9c255c35e0431b311322885fc" category="list-text">Le procedure di cablaggio cluster/ha e rete host mostrano le configurazioni comuni.</block>
-  <block id="ce72f54a68f16b1880e22ca0324ba2d3" category="paragraph">Se non vedi la tua configurazione nelle procedure di cablaggio, vai a <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> per informazioni complete sulla configurazione e sulla priorità degli slot per cablare correttamente il sistema di storage.</block>
-  <block id="b3f5957e8d13865a2baa9be1f21f2f26" category="list-text">Se si dispone di un sistema di archiviazione ASA A1K, ASA A70 o ASA A90, gli slot I/O sono numerati da 1 a 11.</block>
-  <block id="280b4844865d828381a08cf7c5fa9403" category="image-alt">Numerazione degli slot su un controller ASA A1K ASA A70 e ASA A90</block>
   <block id="f6380d621a082c0c194a242b5559335c" category="example-title">ASA A30 o ASA A50 con due moduli i/o GbE a 2 porte da 40/100 GB</block>
   <block id="9408328695e123555b17c0ac4d57eecd" category="list-text">Collegare la porta e4a del controller A allo switch di rete del cluster A.</block>
   <block id="815f2582bceacb80e5133f54d18837f2" category="list-text">Collegare la porta e2a del controller A allo switch di rete del cluster B.</block>
@@ -1809,28 +1742,17 @@
   <block id="9c5fd388a2ee6ceb65d30336d2fec257" category="open-title">C30</block>
   <block id="bc136eeedee4f222909ef4dc89936e65" category="example-title">ASA C30 con due moduli I/O 40/100 GbE a 2 porte</block>
   <block id="d10c45e8f7beef65a96450aa447c2f06" category="example-title">ASA C30 con un modulo I/O 40/100 GbE a 2 porte</block>
-  <block id="34976d581bae1d7b284bd3eaaebbf5da" category="image-alt">diagramma di cablaggio del cluster senza switch c30 utilizzando un modulo io 100gbe</block>
-  <block id="756127cf1c5d9fc6c88b92bfd2c43c60" category="image-alt">schema di cablaggio del cluster commutato C30 utilizzando due moduli IO da 100 GBE</block>
-  <block id="5c1af8c9ab8e0295670deef7823e8b23" category="list-text">Collegare i controller agli switch di rete del cluster:</block>
-  <block id="2a95db36543b0ed49d140f26d5c68cde" category="example-title">ASA A20, A30 e A50 con un modulo I/O 10/25 GbE a 4 porte</block>
-  <block id="41b996c4b4ae97eb30c867757090ffc8" category="example-title">ASA A20, A30 e A50 con un modulo I/O FC a 4 porte da 64 Gb/s</block>
   <block id="8246042d23ca859d83185957ac9c4044" category="list-text">Su ciascun controller, collegare le porte E2B e e4b agli switch di rete host Ethernet.</block>
   <block id="7358d22f4186a5e126b0fada0a666115" category="example-title">ASA C30 con un modulo i/o GbE a 4 porte da 10/25 GB</block>
-  <block id="baae66b5065d8c53c84d82ba2175779d" category="list-text">Su ciascun controller, collegare le porte E2A, E2B, e2c e e2d agli switch di rete host Ethernet.</block>
   <block id="84f30e54db618597e0548b01a8f9bb23" category="example-title">ASA C30 con un modulo I/O FC a 4 porte da 64 Gb/s</block>
   <block id="02b0ddc9c51a6fd3d072763fb5b859f3" category="paragraph">Per conoscere il numero massimo di ripiani supportati per il sistema di storage e per tutte le opzioni di cablaggio, ad esempio ottico e switch-attached, vedere <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
-  <block id="ed57089257c5bf0e9855c2abce5e2f2c" category="paragraph">I sistemi di archiviazione AFF A1K supportano ripiani NS224 con modulo NSM100 o NSM100B. Le principali differenze tra i moduli sono:</block>
-  <block id="bee9bdef55e93399a97d85b3925cfca2" category="list-text">I moduli a scaffale NSM100 utilizzano le porte integrate e0a ed e0b.</block>
   <block id="1d18f8f4fb2168d48bce60e13139f7da" category="list-text">I moduli shelf NSM100B utilizzano le porte e1a ed e1b nello slot 1.</block>
-  <block id="cc71e1eb20bbf56ae364562c6769007c" category="paragraph">Il seguente esempio di cablaggio mostra i moduli NSM100 negli scaffali NS224 quando si fa riferimento alle porte dei moduli sugli scaffali.</block>
   <block id="bf3082f44633e623761fac0a042bfa3f" category="inline-image-macro">Collegare le porte e11a ed e11b del controller B a un singolo ripiano NS224</block>
   <block id="68b3b4b28307463a871642d9f01ab048" category="paragraph"><block ref="68b3b4b28307463a871642d9f01ab048" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="01bd09c5271f772a108914f35e7efcd3" category="paragraph">I sistemi di archiviazione AFF A70 e 90 supportano ripiani NS224 con il modulo NSM100 o NSM100B. Le principali differenze tra i moduli sono:</block>
   <block id="2486a91e78743df4d0cc635c5b8b51c8" category="list-text">I moduli shelf NSM100 utilizzano le porte integrate e0a ed e0b.</block>
   <block id="a93a7a45b049b849ed9c03ad1c596615" category="paragraph">La procedura di cablaggio a scaffale NS224 mostra moduli NSM100B anziché moduli NSM100. Il cablaggio è lo stesso indipendentemente dal tipo di modulo NSM utilizzato, solo i nomi delle porte sono diversi:</block>
   <block id="30898d03a4ca37450e8ab2be81f38dd5" category="list-text">I moduli NSM100B utilizzano le porte e1a ed e1b su un modulo I/O nello slot 1.</block>
   <block id="e6c68585977f6b3e8b2b4ced88ca3d4d" category="list-text">I moduli NSM100 utilizzano le porte integrate (onboard) e0a ed e0b.</block>
-  <block id="215caa644827ccfb864125e557ed29f2" category="paragraph">Collegare ciascun controller a ciascun modulo NSM sullo scaffale NS224 utilizzando i cavi di archiviazione forniti con il sistema di archiviazione, che potrebbero essere del seguente tipo:</block>
   <block id="6c69c43899171bbdeff48b0407169a1e" category="list-text">Assicurarsi che i perni guida dell'armadio o del rack Telco si inseriscano saldamente nelle fessure delle guide del sistema di archiviazione.</block>
   <block id="260e26066a84ba8b3722b386796dd177" category="image-alt">Icona di attenzione peso ASA A90 ASA A70</block>
   <block id="430f612bc8e82ffd0dfe48278467d55e" category="image-alt">Icona di attenzione al peso ASA A20 A30 A50</block>
@@ -2390,9 +2312,6 @@
   <block id="5971035c0734629ac0d154a4b60ca9e9" category="paragraph">I sistemi ASA r2 supportano tutti i protocolli SAN (iSCSI, FC, NVMe/FC, NVMe/TCP).  I protocolli iSCSI, FC, NVMe/FC e NVMe/TCP supportano l'architettura simmetrica attiva-attiva per il multipathing, in modo che tutti i percorsi tra gli host e lo storage siano attivi/ottimizzati.  I protocolli iSCSI e NVMe/TCP supportano il collegamento diretto tra host e storage.  Per i protocolli Fibre Channel e NVMe/FC il collegamento diretto non è supportato.</block>
   <block id="d55bb9dedbbb937989198b01ce6688da" category="paragraph">*Mappatura host* si riferisce al gruppo host a cui verrà mappata la nuova unità di archiviazione.  Se esiste un gruppo host preesistente per il tipo di host selezionato per la nuova unità di archiviazione, il gruppo host preesistente viene selezionato automaticamente per la mappatura degli host.  È possibile accettare il gruppo host selezionato automaticamente oppure selezionarne uno diverso.</block>
   <block id="83e804a6917baea37d43dfd34c66ac73" category="paragraph">I sistemi ASA r2 offrono due livelli di prestazioni.  Il livello di prestazioni predefinito è *Extreme*, ovvero il livello più alto disponibile.  È possibile abbassare il livello a *Prestazioni*.</block>
-  <block id="4a1975a1a386f2f3f28c4859f5ea4976" category="paragraph">Gli esempi di cablaggio cluster/HA mostrano configurazioni comuni.</block>
-  <block id="11695514a878032b3fb5ecdf5e659b5b" category="paragraph">Se non vedi la tua configurazione qui, vai a <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> per informazioni complete sulla configurazione e sulla priorità degli slot per cablare il sistema di archiviazione.</block>
-  <block id="8c3a29fca49d6a772e0a2f8ab6ab7280" category="paragraph">Gli esempi di cablaggio della rete host mostrano configurazioni comuni.</block>
   <block id="19b78e8ad6af7cf1ea82e76fdac1aa7f" category="admonition">I sistemi ASA r2 non supportano la replica sincrona.</block>
   <block id="2e360c76c16280fe84148c9706ad34d6" category="list-text">Per *Tipo di criterio*, selezionare *Asincrono*.</block>
   <block id="f1f7f77e02139ed937613a8043556351" category="admonition">Con la politica asincrona, i dati vengono copiati sul sito remoto dopo essere stati scritti sulla sorgente. La replica sincrona non è supportata per i sistemi ASA r2.</block>
@@ -2766,8 +2685,112 @@
   <block id="8a7cfb8fa6ea38ee5f0146687bddcd42" category="doc">Attiva la protezione autonoma contro i ransomware con intelligenza artificiale sui tuoi sistemi di storage ASA r2</block>
   <block id="a9adededf161bd5d8bb9db9309976ce3" category="doc">Metti in pausa o riprendi la protezione autonoma contro i ransomware con intelligenza artificiale sui tuoi sistemi di storage ASA r2</block>
   <block id="bd38f3869f7e640b90d83fffd4208955" category="doc">Rispondi alla protezione autonoma contro i ransomware con avvisi basati sull'IA sui sistemi di storage ASA r2</block>
-  <block id="7c9f18ab5a6d9bddcd86839795bbf631" category="paragraph">Su ciascun controller, collegare le porte 2a, 2b, 2c e 2d agli switch di rete host FC.</block>
-  <block id="e075a310e0208871f253ed1786f7aa85" category="list-text">Su ciascun controller, collegare le porte 2a, 2b, 2c e 2d agli switch di rete host FC.</block>
   <block id="3e43f7eeca64d5c830b0064870a6156b" category="admonition">Indossare sempre un braccialetto con messa a terra collegato a un punto di messa a terra verificato durante le procedure di installazione e manutenzione. La mancata osservanza delle opportune precauzioni ESD può causare danni permanenti ai nodi controller, ai ripiani di storage e agli switch di rete.</block>
   <block id="fc4a9f6cd00df6dfa4d8144f15b57af3" category="paragraph">Quando viene creata un'unità di storage (basata su un LUN o su uno spazio dei nomi NVMe), ONTAP crea automaticamente un volume nella zona di disponibilità dello storage appropriata per ospitare l'unità di storage. Il volume appena creato viene automaticamente posizionato all'interno della zona di disponibilità dello storage per garantire prestazioni ottimali e un utilizzo bilanciato della capacità. L'utilizzo della capacità viene bilanciato all'interno della zona di disponibilità dello storage in base alla versione di ONTAP. <block ref="44cab674f8c9e72d3dcaedde750c6695" category="inline-link-macro-rx"></block>.</block>
+  <block id="862cd7ba2a996f4f7baaf919aeabdaa3" category="summary">Collega il sistema storage ASA A1K alla tua rete e agli shelf di storage per abilitare la comunicazione del cluster, l'accesso alla gestione e la connettività host SAN.</block>
+  <block id="243e327ffdfe8adbe580156b7693e7c6" category="doc">Cablare l'hardware per il sistema storage ASA A1K</block>
+  <block id="5cd2c89ebc8dcbd5218b6f7fb0ad4ced" category="paragraph">Collega il sistema storage ASA A1K alla rete e agli shelf di storage per abilitare la comunicazione del cluster, l'accesso di gestione e la connettività host SAN. Questa procedura include il cablaggio per l'interconnessione cluster/HA, la rete di gestione, la rete host e le connessioni agli shelf di storage.</block>
+  <block id="dec0566087f1a4e29282436402b0c0f9" category="list-text">Gli slot di I/O sull'ASA A1K sono numerati da 1 a 11.</block>
+  <block id="4d7f3bf998f11ec51e5b1d5c5c650e48" category="image-alt">Numerazione degli slot su un controller ASA A1K</block>
+  <block id="20873e3ed1a53a60cc84a9ced0e5add7" category="paragraph">Collegare i controller per creare le connessioni del cluster ONTAP. Per i cluster senza switch, collegare i controller tra loro. Per i cluster con switch, collegare i controller agli switch di rete del cluster.</block>
+  <block id="9f111fc1eda18bc0e82125c03d816b62" category="paragraph">Utilizzare questa opzione di cablaggio quando i due controller sono collegati direttamente tra loro senza utilizzare switch di rete cluster.</block>
+  <block id="e2e054e25b28fb3d74a683482ef337a6" category="list-text">Collegare la porta e7a del Controller A alla porta e7a del Controller B.</block>
+  <block id="d5029cecd62f8760a4e59f4e1ded8188" category="paragraph">Utilizzare questa opzione di cablaggio quando i controller si connettono agli switch di rete del cluster anziché essere collegati direttamente tra loro.</block>
+  <block id="7a09619ddfce9fb4229b642ddf64e42d" category="paragraph">Utilizzare il cavo 100 GbE per collegare le porte e1a ed e7a agli switch di rete del cluster.</block>
+  <block id="b0687668e131daffb55e72096ae511f6" category="admonition">Le configurazioni cluster commutate sono supportate in ONTAP 9.16.1 e versioni successive.</block>
+  <block id="6c2f5875cec2a33db9d2ba4133823107" category="image-alt">Cavo 100 GbE</block>
+  <block id="e827146f835b35a49ebac185b3e71933" category="paragraph">Di seguito sono riportati alcuni esempi tipici di cablaggio di rete host. Vedere <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> per la configurazione specifica del sistema.</block>
+  <block id="ee852d44863a0f18931d31e1304f2a30" category="open-title">Rete host 100 GbE</block>
+  <block id="53df37fe27945fce0099f4a1f6643aac" category="paragraph">Collega le porte e9a ed e9b allo switch di rete Ethernet da 100 GbE.</block>
+  <block id="9824c042102d15c7405ef541ce9da532" category="admonition">Per ottenere le massime prestazioni di sistema per il traffico cluster e HA, non utilizzare le porte e1b ed e7b per le connessioni di rete host. Utilizzare una scheda host separata per massimizzare le prestazioni.</block>
+  <block id="c35657f2a0ca762b2dc834e59706d0a0" category="list-text">Collegare la porta e9a del controller A e la porta e9a del controller B allo switch di rete Ethernet.</block>
+  <block id="06c93ea240456c0c48f36b272e2c416e" category="list-text">Collegare la porta e9b del controller A e la porta e9b del controller B allo switch di rete Ethernet.</block>
+  <block id="c3d5867afb4085374d620d010f87f316" category="image-alt">Cavo Ethernet 100 GbE</block>
+  <block id="6b31d403fdbc13c9617aa8a3eeda38f4" category="image-alt">Cavo per rete Ethernet 100 GbE</block>
+  <block id="4ec2ff0cb52dcf4c928e898140a8c8ca" category="open-title">Rete host 10/25 GbE</block>
+  <block id="26810ea54c16c859b23f39ec729c8745" category="paragraph">Collegare le porte del modulo I/O 10/25 GbE di ciascun controller agli switch di rete host.</block>
+  <block id="29f6e33bbed30159ab79780d6b858f8c" category="paragraph">*Cavo 10/25 GbE*</block>
+  <block id="b2dcf1497f8fc9020bb6cf45fb4b0850" category="image-alt">Cavo Ethernet 10/25 GbE</block>
+  <block id="0def4e1bc077b8bac52bb8ee6178c9e0" category="image-alt">Cavo per la rete Ethernet 10/25 GbE</block>
+  <block id="dd7645608af2345a9fe5b05b22c693a9" category="list-text">Collegare la porta di gestione (chiave inglese) del controller A allo switch di rete di gestione.</block>
+  <block id="81638cb65b5d99708ba3a0196539da59" category="list-text">Collegare la porta di gestione (chiave inglese) del controller B allo switch di rete di gestione.</block>
+  <block id="0e11d4e750e8b8e49b4cac74a5856795" category="paragraph">I sistemi storage ASA A1K supportano gli shelf NS224 con i moduli NSM100 o NSM100B. Le principali differenze tra i moduli sono:</block>
+  <block id="54af42a641b3277d4b8630d8f034e2cf" category="paragraph">I seguenti esempi di cablaggio mostrano i moduli NSM100 negli shelf NS224 quando si fa riferimento alle porte dei moduli degli shelf.</block>
+  <block id="912743bd08bcab72dfd73b51801833af" category="open-title">Una shelf di storage NS224</block>
+  <block id="6e289945211fa664e31883bec0349db4" category="paragraph">Utilizzate questa opzione di cablaggio quando disponete di un singolo ripiano NS224.</block>
+  <block id="fff62239bbf7b8e4f913dd0c94d3de2f" category="list-text">Collegare la porta e11b alla porta e0b di NSM B.</block>
+  <block id="bf2c3c8e7dee152193e278089e3f63af" category="open-title">Due shelf di storage NS224</block>
+  <block id="f9bd49e07d331e9532f7494edf12f7f9" category="paragraph">Utilizzate questa opzione di cablaggio quando avete due shelf NS224.</block>
+  <block id="4b3da06fa271f6bbc5f5ccba49e0787c" category="summary">Collega il sistema storage ASA A20, ASA A30 o ASA A50 alla tua rete e agli shelf di storage per abilitare la comunicazione del cluster, l'accesso alla gestione e la connettività host SAN.</block>
+  <block id="3585571af28e1fcc61f466b3f250321b" category="doc">Cablare l'hardware per i sistemi storage ASA A20, ASA A30 e ASA A50</block>
+  <block id="e785ca427bd575fee475b5a411399441" category="paragraph">Collegare il sistema storage ASA A20, ASA A30 o ASA A50 alla rete e agli shelf di storage per abilitare la comunicazione del cluster, l'accesso di gestione e la connettività host SAN. Questa procedura include il cablaggio per l'interconnessione cluster/HA, la rete di gestione, la rete host e le connessioni agli shelf di storage.</block>
+  <block id="5580d6ef55888e18898368c925aa8e52" category="paragraph">Collegare le porte di interconnessione cluster/HA sui moduli I/O negli slot 2 e 4.</block>
+  <block id="064e186439f62e18ea3e9f0bef51eaaa" category="image-alt">Schema di cablaggio di un cluster senza switch che utilizza due moduli I/O da 100 GbE</block>
+  <block id="97946d7a89e89a736323c25878b34550" category="paragraph">Collegare le porte di interconnessione cluster/HA sul modulo I/O nello slot 4.</block>
+  <block id="b5cdde2311f14ccefb46f3dc3ad532e1" category="image-alt">Schema di cablaggio di un cluster senza switch utilizzando un modulo I/O da 100 GbE</block>
+  <block id="697b7e9025bfe4610da6f8249d87b66b" category="inline-image-macro">Connettore SFP GbE in rame, width=100px</block>
+  <block id="9bf086f7264946cb697b39facc91abee" category="paragraph"><block ref="9bf086f7264946cb697b39facc91abee" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dd821b717f94aca553e793789f8e216b" category="image-alt">Schema di cablaggio del cluster senza switch ASA A20 utilizzando un modulo I/O da 25 GbE</block>
+  <block id="78cf93b0fe428a0be986a2c28a10216f" category="paragraph">Collegare le porte di interconnessione cluster/HA dei moduli I/O negli slot 2 e 4 agli switch di rete del cluster.</block>
+  <block id="f721c8d8c1b0d59653b1468361111bc6" category="image-alt">Schema di cablaggio di un cluster commutato che utilizza due moduli I/O da 100 GbE</block>
+  <block id="8c36cb2a1e1d7f5dc821ce32ab2aad17" category="paragraph">Collegare le porte di interconnessione cluster/HA del modulo I/O nello slot 4 agli switch di rete del cluster.</block>
+  <block id="0545e89ee4f5c26014a670e1d7950b99" category="image-alt">Schema di cablaggio del cluster commutato ASA A20 con un modulo I/O da 25 GbE</block>
+  <block id="bb8661c49545cac68358046e25b8f950" category="open-title">Cablaggio host Ethernet</block>
+  <block id="108e7b770dea3f3fb9b6db30c0e7b0f6" category="paragraph">Collega i controller alla rete host Ethernet utilizzando le porte appropriate in base alla configurazione del modulo I/O.</block>
+  <block id="4ffe44ab6e9b264ea42606360355c7e7" category="paragraph">Utilizzare le porte e2b ed e4b su ciascun controller per connettersi agli switch di rete host Ethernet.</block>
+  <block id="5440f83ac0f1961b9718b16cbbee71c5" category="image-alt">Cavo 40/100 GbE</block>
+  <block id="695fe1cf5e6a0640d9c0a580e896afcf" category="image-alt">Cavo per switch di rete host Ethernet 40/100 GbE</block>
+  <block id="90f6b993966ca9d1033178ef14f217fb" category="paragraph-title">ASA A20, A30 o A50 con un modulo I/O 10/25 GbE a 4 porte</block>
+  <block id="8bb3d2a21a34485e6db2b74185cd17f0" category="paragraph">Utilizzare tutte e quattro le porte del modulo I/O nello slot 2 per connettersi agli switch di rete host Ethernet.</block>
+  <block id="61b8eb0daf4df7a3dc287c5643e9d749" category="paragraph">Su ciascun controller, collegare le porte e2a, e2b, e2c ed e2d agli switch di rete host Ethernet.</block>
+  <block id="5b8fc167e0e357c3db2b01cd7f4e9a66" category="image-alt">Cavo per switch di rete host Ethernet 10/25 GbE</block>
+  <block id="91ca13b03c277f557b91f705d4455de5" category="open-title">Cablaggio host FC</block>
+  <block id="1c1b2907a48ad79cead7728a563058b8" category="paragraph">Collega i controller alla tua rete host Fibre Channel utilizzando il modulo FC I/O presente nel tuo sistema.</block>
+  <block id="399ae3aedef43d8aa96b108b34ceca9e" category="paragraph-title">ASA A20, A30 o A50 con un modulo I/O FC a 4 porte da 64 Gb/s</block>
+  <block id="d37574f05151bd7354077f01388f11f0" category="paragraph">Utilizzare tutte e quattro le porte del modulo FC I/O nello slot 2 per connettersi agli switch di rete host FC.</block>
+  <block id="ec4257d147313d17ed5ddcd446fdbc33" category="paragraph">Su ciascun controller, collegare le porte 2a, 2b, 2c e 2d agli switch di rete host FC.</block>
+  <block id="7f72a14fb0277ced8589a77f5ba89016" category="inline-image-macro">Cavo FC da 64 Gb/s, width=100px</block>
+  <block id="a0cbf5cd6c250cfc98469733988e93c3" category="paragraph"><block ref="a0cbf5cd6c250cfc98469733988e93c3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="be722354c7b27fd84abe13cbfcd8436a" category="image-alt">Cavo per switch di rete host FC a 64 Gb/s</block>
+  <block id="585b6140492ddd4e1c24943c91ede82e" category="paragraph">Collega ciascun controller a ciascun modulo NSM sullo shelf NS224 utilizzando i cavi di storage forniti con il tuo sistema storage.</block>
+  <block id="e635d58cc8b96a471dabf545b06e7765" category="summary">Collega il sistema storage ASA A70 o ASA A90 alla rete e agli shelf di storage per abilitare la comunicazione del cluster, l'accesso alla gestione e la connettività host SAN.</block>
+  <block id="45e8e93122b765edf18a80b301112d2a" category="doc">Collegare l'hardware per i sistemi storage ASA A70 e ASA A90</block>
+  <block id="eed9495d2a3e16e10e83299ab2ed30cd" category="paragraph">Collega il sistema storage ASA A70 o ASA A90 alla rete e agli shelf di storage per abilitare la comunicazione del cluster, l'accesso di gestione e la connettività host SAN. Questa procedura include il cablaggio per l'interconnessione cluster/HA, la rete di gestione, la rete host e le connessioni agli shelf di storage.</block>
+  <block id="eace96eebffb4ec4e1f967721335d20b" category="list-text">Gli slot di I/O sugli ASA A70 e ASA A90 sono numerati da 1 a 11.</block>
+  <block id="b468f81f152c7442341a7a0b4476cd28" category="image-alt">Numerazione degli slot su un controller ASA A70 e ASA A90</block>
+  <block id="573ed0ba8090b5ab41a8b79b2d80dd01" category="image-alt">Cavo 10/25 GbE</block>
+  <block id="41be252845b471322d13eb0900bef895" category="paragraph">I sistemi di storage ASA A70 e ASA A90 supportano gli shelf NS224 con il modulo NSM100 o NSM100B. Le principali differenze tra i moduli sono:</block>
+  <block id="c385525fc45151e02ea60146533c3edf" category="list-text">Collegare la porta e11b del controller A alla porta e0b dell'NSM B.</block>
+  <block id="b9d91673e9711b3a8a3667915e8cb65f" category="list-text">Collegare la porta e8a alla porta e0a dell'NSM A dello shelf 2.</block>
+  <block id="04979b05df402808972b3f92d35925ec" category="list-text">Collegare la porta e8b alla porta e0b dello shelf 1 NSM B.</block>
+  <block id="06a70b647822e90992f0c7eea9bd0794" category="list-text">Collegare la porta e8a alla porta e0a dello shelf 2 NSM B.</block>
+  <block id="ae896612727d08f4ea14287d42d8405e" category="list-text">Collegare la porta e8b alla porta e0b dell'NSM A dello shelf 1.</block>
+  <block id="add9ef06566aa747a568d6c949a2a3da" category="summary">Collega il sistema storage ASA C30 alla tua rete e agli shelf di storage per abilitare la comunicazione del cluster, l'accesso alla gestione e la connettività host SAN.</block>
+  <block id="343b661758507e0376b2c0cb2fc8dad3" category="doc">Cablare l'hardware per il sistema storage ASA C30</block>
+  <block id="e2b05032e011686997ce56657ec674f1" category="paragraph">Collega il sistema storage ASA C30 alla rete e agli shelf di storage per abilitare la comunicazione del cluster, l'accesso di gestione e la connettività host SAN. Questa procedura include il cablaggio per l'interconnessione cluster/HA, la rete di gestione, la rete host e le connessioni agli shelf di storage.</block>
+  <block id="8bd55d3efe3b89db8134189ae01028ac" category="paragraph">Su ciascun controller, collegare le porte e2a, e2b, e2c ed e2d agli switch di rete host Ethernet.</block>
+  <block id="468f12b5d04ca9e1620ef5e528cdfe38" category="paragraph">Su ciascun controller, collegare tramite cavo le porte 2a, 2b, 2c e 2d agli switch di rete host FC.</block>
+  <block id="96a4d3e4d0abeb2f84c09f72871def22" category="summary">Collega il tuo sistema storage ASA per abilitare la comunicazione del cluster, l'accesso alla rete host, la connettività di gestione e le connessioni agli shelf di storage.</block>
+  <block id="0aa4c55023cfd65ba65d97611d40fbff" category="section-title">Panoramica del cablaggio hardware</block>
+  <block id="41c6f5f51d5694a6c5d185a9ff4a08dc" category="paragraph">Il cablaggio varia a seconda del modello della piattaforma, poiché ogni modello di ASA r2 presenta posizioni degli slot, assegnazioni delle porte e configurazioni dei moduli I/O specifiche. Selezionare la procedura per il proprio modello di ASA r2:</block>
+  <block id="d51f85ee8109354c7c5378e98196c644" category="inline-link-macro">Cavo ASA A1K</block>
+  <block id="35d7c47540ce0b2b4d147996fb2f5190" category="list-text"><block ref="35d7c47540ce0b2b4d147996fb2f5190" category="inline-link-macro-rx"></block></block>
+  <block id="ffcdaaf5b5c4e40fbb6df596a03a9a33" category="inline-link-macro">Cavo ASA A70 e A90</block>
+  <block id="22781eddfb086c405b1920a5872bdcf4" category="list-text"><block ref="22781eddfb086c405b1920a5872bdcf4" category="inline-link-macro-rx"></block></block>
+  <block id="d9005041601129a7a20d625852a036fb" category="inline-link-macro">Cavo ASA A20, A30 e A50</block>
+  <block id="1a8acbbea4e00356717af5c39fdd877c" category="list-text"><block ref="1a8acbbea4e00356717af5c39fdd877c" category="inline-link-macro-rx"></block></block>
+  <block id="ef0c7254a0e7acd500a0855ded9774be" category="inline-link-macro">Cavo ASA C30</block>
+  <block id="e1356514455fb0efed1c11efd12d834a" category="list-text"><block ref="e1356514455fb0efed1c11efd12d834a" category="inline-link-macro-rx"></block></block>
+  <block id="a0ba1d004ed721e7e3f5750088cae041" category="paragraph">Durante il cablaggio hardware, collegherai quattro tipi di connessioni:</block>
+  <block id="3d702a0ee0de15cb1babf450141b5c80" category="list-text">*Connessioni cluster/HA*</block>
+  <block id="7510d822641a5af564a8eb3127645a5b" category="paragraph">Collega i due controller tra loro (cluster senza switch) o agli switch di rete del cluster (cluster con switch). Queste connessioni consentono la comunicazione del cluster e il failover ad alta disponibilità tra le coppie di controller. Il traffico di interconnessione del cluster e il traffico HA condividono le stesse porte fisiche.</block>
+  <block id="d95df3a36e17b29735e3dcf84c1ac8cc" category="list-text">*Connessioni di rete host*</block>
+  <block id="1820f2a3a2a2a5ff76e8f7d1a4c2e2be" category="paragraph">Collega i controller agli host SAN utilizzando Ethernet (iSCSI, NVMe/TCP) o Fibre Channel (FC, NVMe/FC) in base alla configurazione dell'host. Queste connessioni forniscono l'accesso ai dati per i carichi di lavoro di storage.</block>
+  <block id="d2f34cf269bc245bae005db8bed6ddbc" category="list-text">*Connessioni di rete di gestione*</block>
+  <block id="2f7570bf2ff6faba37c89a5527992afd" category="paragraph">Collega i controller alla tua rete di gestione per accedere all'amministrazione del sistema tramite ONTAP System Manager e CLI.</block>
+  <block id="13010f83748e76a39c5e73252589f134" category="list-text">*Connessioni shelf di storage*</block>
+  <block id="5e085fc3df0cbeed345ceb2834c11d72" category="paragraph">Collega i controller alle mensole di storage NS224 per fornire capacità di storage al tuo sistema.</block>
+  <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="section-title">Risorse aggiuntive</block>
+  <block id="e8a159e2ff115b18e83ff77937ef6345" category="paragraph">Le procedure di cablaggio mostrano le configurazioni più comuni. Il cablaggio specifico dipende dai componenti ordinati per il sistema storage. Per informazioni complete sulla configurazione e la priorità degli slot, vedere <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>.</block>
+  <block id="3b1d6e6330ca5bf54a0c22beaa407de9" category="sidebar">Panoramica del cablaggio</block>
 </blocks>
