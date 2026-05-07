@@ -84,7 +84,7 @@ link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authenticat
 
 È possibile delegare la crittografia e la decrittografia Transport Layer Security (TLS) dell'intero cluster alle schede Ethernet supportate. Ciò riduce il carico sulla CPU e migliora le prestazioni dei sistemi che utilizzano TLS.
 
-link:https://docs.netapp.com/us-en/ontap/networking/configure_tls_hardware_offload.html["Impara a configurare l'offload hardware TLS"^].
+link:https://docs.netapp.com/us-en/ontap/networking/configure-tls-offload.html["Impara a configurare l'offload hardware TLS"^].
 
 
 
