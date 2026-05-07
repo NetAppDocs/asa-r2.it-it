@@ -13,16 +13,17 @@ summary: 'Utilizza SnapMirror ActiveSync per proteggere le applicazioni host che
 [role="lead"]
 La protezione dei dati ActiveSync ONTAP SnapMirror consente ai servizi aziendali di continuare a funzionare anche in caso di guasto completo del sito, supportando il failover delle applicazioni in modo trasparente utilizzando una copia secondaria. Non è necessario alcun intervento manuale o scripting personalizzato per attivare un failover con ActiveSync SnapMirror .
 
-Sebbene le procedure di System Manager per la configurazione SnapMirror Active Sync siano diverse sui sistemi ASA r2 rispetto ai sistemi NetApp FAS, AFF e ASA che eseguono la personalità ONTAP unificata, i requisiti, l'architettura e il funzionamento di SnapMirror Active Sync sono gli stessi.
+Sebbene le procedure di System Manager per la configurazione della SnapMirror active sync siano diverse sui sistemi ASA r2 rispetto ai sistemi NetApp FAS, AFF e ASA che eseguono la personalità unificata di ONTAP, i requisiti, l'architettura e il funzionamento della SnapMirror active sync sono gli stessi. link:https://www.netapp.com/pdf.html?item=/media/138366-sb-3457-san-disaster-recovery-netapp-asa.pdf["Scopri di più sul disaster recovery con SnapMirror ActiveSync sul tuo sistema ASA r2"^]
+
+Sui sistemi ASA r2, SnapMirror active sync supporta configurazioni simmetriche attivo/attivo. In una configurazione simmetrica attivo/attivo, entrambi i siti possono accedere allo storage locale per l'I/O attivo. Ulteriori informazioni su link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["configurazioni simmetriche attive/attive"^].
 
 .A proposito di questa attività
-A partire da ONTAP 9.18.1, la sincronizzazione attiva SnapMirror è supportata nelle configurazioni a quattro nodi.  In ONTAP 9.17.1, la sincronizzazione attiva SnapMirror è supportata solo nelle configurazioni a due nodi.
+* A partire da ONTAP 9.18.1, la sincronizzazione attiva SnapMirror è supportata nelle configurazioni a quattro nodi.  In ONTAP 9.17.1, la sincronizzazione attiva SnapMirror è supportata solo nelle configurazioni a due nodi.
+* A partire da ONTAP 9.19.1 RC, la protezione autonoma contro i ransomware con intelligenza artificiale (ARP/AI) supporta le unità di storage primarie di lettura/scrittura nelle relazioni SAN di sincronizzazione attiva SnapMirror sui sistemi ASA r2. ARP/AI viene eseguito sulle unità di storage primarie attive, crea snapshot ARP solo primarie e fornisce il rilevamento dei ransomware basato sull'apprendimento automatico per tali unità di storage. Per i passaggi di abilitazione di ARP/AI, vedere link:../secure-data/enable-anti-ransomware-protection.html["Abilita la protezione autonoma contro i ransomware con l'intelligenza artificiale"].
 
-link:https://www.netapp.com/pdf.html?item=/media/138366-sb-3457-san-disaster-recovery-netapp-asa.pdf["Scopri di più sul disaster recovery con SnapMirror ActiveSync sul tuo sistema ASA r2"^]
 
-Sui sistemi ASA r2, SnapMirror ActiveSync supporta configurazioni simmetriche attive/attive. In una configurazione simmetrica attive/attive, entrambi i siti possono accedere allo storage locale per l'I/O attivo.
-
-Scopri di più su link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["configurazioni simmetriche attive/attive"^] .
+.Prima di iniziare
+Se stai eseguendo ONTAP 9.19.1 o versioni successive e abiliti SnapMirror active sync per un host AIX, dovresti link:prepare-aix-snapmirror-active-sync.html["preparare l'host AIX"].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Preparati a configurare la sincronizzazione attiva SnapMirror .
 [role="quick-margin-para"]
@@ -46,5 +47,4 @@ link:configure-snapmirror-active-sync.html["Configurare la sincronizzazione atti
 
 .Informazioni correlate
 * link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["Scopri di più sulla sincronizzazione attiva SnapMirror"^] .
-* link:../learn-more/hardware-comparison.html#personality-differences["Scopri di più sulle personalità ONTAP"].
 

@@ -45,6 +45,9 @@ Per ottimizzare il bilanciamento del carico di lavoro nell'intera zona di dispon
 
 CAUTION: Se si creano più unità di storage, ogni unità viene creata con la stessa capacità. Moltiplicare il numero di unità di storage che si stanno creando per la capacità desiderata per assicurarsi di avere spazio utilizzabile a sufficienza. Se non si dispone di spazio libero e si sceglie di effettuare un provisioning eccessivo, monitorare attentamente l'utilizzo per evitare di esaurire lo spazio e perdere dati.
 
++
+A partire da ONTAP 9.19.1, se si crea una LUN AIX che si intende abilitare per la protezione della sincronizzazione attiva SnapMirror, in *Informazioni host*, selezionare *locale* per la *Modalità di accesso*. Questo è necessario per abilitare il failover trasparente delle applicazioni.
+
 . Accettare la *mappatura host* selezionata automaticamente o selezionare un gruppo host diverso per l'unità di archiviazione a cui eseguire la mappatura.
 +
 *Mappatura host* si riferisce al gruppo host a cui verrà mappata la nuova unità di archiviazione.  Se esiste un gruppo host preesistente per il tipo di host selezionato per la nuova unità di archiviazione, il gruppo host preesistente viene selezionato automaticamente per la mappatura degli host.  È possibile accettare il gruppo host selezionato automaticamente oppure selezionarne uno diverso.

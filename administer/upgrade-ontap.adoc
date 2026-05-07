@@ -13,8 +13,18 @@ summary: Gli aggiornamenti software ONTAP per i sistemi ASA r2 seguono lo stesso
 [role="lead"]
 Quando aggiorni il software ONTAP sul tuo sistema ASA R2, potrai sfruttare le nuove e migliorate funzionalità di ONTAP che ti consentono di ridurre i costi, accelerare i carichi di lavoro critici, migliorare la sicurezza ed espandere l'ambito di protezione dei dati disponibile per la tua organizzazione.
 
-Gli aggiornamenti del software ONTAP per i sistemi ASA r2 seguono la stessa procedura degli aggiornamenti per altri sistemi ONTAP. Si consiglia di iniziare da link:https://docs.netapp.com/us-en/ontap/upgrade/create-upgrade-plan.html["Preparazione per l'upgrade con Upgrade Advisor in Active IQ Digital Advisor o Upgrade Health Checker"].
+Gli aggiornamenti del software ONTAP per i sistemi ASA r2 seguono la stessa procedura degli aggiornamenti per altri sistemi ONTAP. Si consiglia di iniziare da link:https://docs.netapp.com/us-en/ontap/upgrade/create-upgrade-plan.html["Preparazione per l'upgrade con Upgrade Advisor in Active IQ Digital Advisor o Upgrade Health Checker"^].
 
-Dopo aver preparato l'aggiornamento, si consiglia di eseguire gli aggiornamenti utilizzando link:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["Upgrade automatizzato senza interruzioni (ANDU) da System Manager"]. ANDU sfrutta la tecnologia di failover ad alta disponibilità (ha) di ONTAP per garantire che i cluster continuino a servire i dati senza interruzioni durante l'upgrade.
+Dopo esservi preparati per l'aggiornamento, si consiglia di eseguire l'aggiornamento utilizzando link:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["Upgrade automatizzato senza interruzioni (ANDU) da System Manager"^]. ANDU sfrutta la tecnologia di failover ad alta disponibilità (HA) di ONTAP per garantire che i cluster continuino a fornire dati senza interruzioni durante l'aggiornamento.
 
-Ulteriori informazioni su link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["Aggiornamenti software ONTAP"].
+Scopri di più su link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["Aggiornamenti software ONTAP"^].
+
+
+
+== Eseguire controlli automatici preliminari all'aggiornamento prima di un aggiornamento pianificato
+
+Non è necessario essere in fase di aggiornamento del software ONTAP per eseguire i controlli preliminari automatici di ONTAP. L'esecuzione dei controlli preliminari indipendentemente dal processo di aggiornamento automatico di ONTAP consente di visualizzare quali controlli vengono effettuati sul cluster e fornisce un elenco di eventuali errori o avvisi da correggere prima di avviare l'aggiornamento vero e proprio.
+
+A partire da ONTAP 9.19.1, gli errori e gli avvisi vengono visualizzati separatamente per consentire di identificare facilmente i problemi che devono essere risolti prima dell'aggiornamento.
+
+Scopri come link:https://docs.netapp.com/us-en/ontap/upgrade/automated-pre-checks.html["eseguire i controlli pre-aggiornamento automatizzati di ONTAP"^].

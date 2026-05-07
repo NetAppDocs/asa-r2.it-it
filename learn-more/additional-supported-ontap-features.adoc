@@ -80,6 +80,14 @@ link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authenticat
 
 
 
+=== Offload TLS hardware
+
+È possibile delegare la crittografia e la decrittografia Transport Layer Security (TLS) dell'intero cluster alle schede Ethernet supportate. Ciò riduce il carico sulla CPU e migliora le prestazioni dei sistemi che utilizzano TLS.
+
+link:https://docs.netapp.com/us-en/ontap/networking/configure_tls_hardware_offload.html["Impara a configurare l'offload hardware TLS"^].
+
+
+
 == Networking
 
 Scopri di più sulle funzionalità di rete comuni supportate sui sistemi ASA r2.
@@ -105,6 +113,35 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 
 
 
+== Prestazioni
+
+Scopri di più sulle funzionalità prestazionali più comuni supportate sui sistemi ASA r2.
+
+
+
+=== Modifica le impostazioni predefinite che controllano gli aumenti automatici del limite massimo di throughput QoS
+
+I gruppi di criteri QoS adattivi e non adattivi vengono abilitati automaticamente per aumentare temporaneamente il throughput massimo di un carico di lavoro del 50% per una durata di 1 secondo, al fine di rispondere alle richieste a breve termine di prestazioni superiori per impostazione predefinita. A partire da ONTAP 9.19.1, è possibile modificare queste impostazioni predefinite. In ONTAP 9.18.1 e versioni precedenti queste impostazioni non possono essere modificate.
+
+link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html["Scopri di più sui limiti di throughput QoS"^].
+
+
+
+== Configurazione SAN
+
+Una rete di archiviazione (SAN) è costituita da una soluzione storage connessa agli host tramite un protocollo di trasporto SAN come iSCSI o FC. È possibile configurare la SAN in modo che la soluzione storage si connetta agli host tramite uno o più switch. Se si utilizza iSCSI, è anche possibile configurare la SAN in modo che la soluzione storage si connetta direttamente all'host senza utilizzare uno switch.
+
+
+
+=== Attacco diretto SAN
+
+A partire da ONTAP 9.19.1, non è necessario uno switch FC per stabilire connessioni tra host FC e FC-NVMe e storage ONTAP. Gli host possono essere collegati direttamente alle porte dell'adattatore FC sui sistemi ASA r2. La possibilità di collegamento diretto può essere particolarmente utile in siti remoti e ambienti ibridi dove la semplicità è fondamentale.
+
+* link:https://docs.netapp.com/us-en/ontap/san-config/configure-fc-nvme-hosts-ha-pairs-reference.html#direct-attach-fc-and-fc-nvme-configurations["Scopri di più sull'attacco diretto SAN"^].
+
+
+
+
 == Protocolli SAN
 
 I sistemi ASA r2 supportano tutti i protocolli SAN (iSCSI, FC, NVMe/FC, NVMe/TCP).
@@ -124,6 +161,22 @@ A partire da ONTAP 9.16.1, la deallocazione dello spazio (detta anche "hole punc
 
 
 
+
+
+
+== Efficienza dello storage
+
+L'efficienza di archiviazione è la misura di quanto efficacemente un sistema storage utilizzi lo spazio disponibile, ottimizzando le risorse di storage, minimizzando lo spazio sprecato e riducendo l'ingombro fisico dei dati scritti.
+
+ONTAP offre diverse tecnologie per l'efficienza dello storage che possono aiutarti a ottimizzare l'utilizzo dello storage e a ridurre i costi.
+
+link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.html["Scopri di più sulle tecnologie di efficienza dello storage ONTAP"].
+
+
+
+=== Deduplicazione globale
+
+A partire da ONTAP 9.19.1, la  estende la link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["Risparmio di spazio derivante dalla deduplicazione ONTAP esistente"^] a livello di unità di storage all'intera Storage Availability Zone (SAZ). Eliminando i blocchi di dati duplicati in tutte le unità di storage della SAZ, è possibile migliorare significativamente l'efficienza dello storage e ridurre il costo totale di proprietà. La deduplicazione globale non richiede alcuna licenza funzionale, è abilitata per impostazione predefinita, si integra perfettamente con le tecnologie di efficienza dello storage esistenti e opera in modo trasparente con un impatto minimo sulle prestazioni e senza necessità di configurazione amministrativa.
 
 
 

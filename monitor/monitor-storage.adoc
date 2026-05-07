@@ -35,9 +35,11 @@ Se lo spazio del cluster sta per esaurirsi o se non ha la capacità necessaria p
 
 == Monitorare l'utilizzo delle zone di disponibilità dello storage
 
-Ogni coppia ha in un sistema ASA R2 utilizza un pool di storage comune chiamato _zona di disponibilità dello storage_. La zona di disponibilità dello storage ha accesso a tutti i dischi disponibili nel sistema storage ed è visibile a entrambi i nodi nella coppia ha.
+Ogni coppia HA in un sistema ASA r2 utilizza un pool di storage comune chiamato _zona di disponibilità dello storage_. La zona di disponibilità dello storage ha accesso a tutti i dischi disponibili nel sistema storage ed è visibile a entrambi i nodi della coppia HA. Il monitoraggio dello spazio disponibile nelle zone di disponibilità dello storage consente di ridurre l'utilizzo o aumentare la capacità in base alle necessità, in modo da evitare che i carichi di lavoro vengano interrotti a causa di spazio insufficiente.
 
 Se nel cluster sono presenti 4 o più nodi, è possibile visualizzare la quantità di spazio utilizzata dalla zona di disponibilità dello storage per ciascuna coppia ha. Questa metrica non è disponibile per i cluster a 2 nodi.
+
+A partire da ONTAP 9.19.1, viene visualizzato un avviso in System Manager *Insights* se una zona di disponibilità dello storage in una delle coppie HA del sistema ASA r2 si sta avvicinando alla capacità. Ulteriori informazioni su System Manager link:view-insights.html["Approfondimenti"].
 
 .Fasi
 . In System Manager, selezionare *Cluster*, quindi selezionare *Panoramica*.
@@ -49,12 +51,12 @@ Viene visualizzato un riepilogo dell'utilizzo delle zone di disponibilità dello
 In *Panoramica*, vengono visualizzate la capacità della zona di disponibilità dello storage, la quantità di spazio utilizzato e il rapporto di riduzione dei dati.
 
 +
-In *unità di archiviazione* viene visualizzato un elenco di tutte le unità di archiviazione nella zona di disponibilità di archiviazione.
+In *Unità di storage*, viene visualizzato un elenco di tutte le unità di storage presenti nella zona di disponibilità dello storage.
 
 
 
 .Quali sono le prossime novità?
-Se lo spazio nella zona di disponibilità dello storage si sta esaurendo, è necessario pianificare link:../manage-data/move-storage-units.html["spostare le unità di archiviazione"]un'altra zona di disponibilità dello storage per bilanciare l'utilizzo dello storage nel cluster.
+Se la tua zona di disponibilità dello storage sta per esaurire lo spazio, dovresti pianificare di link:../manage-data/move-storage-units.html["spostare le unità di archiviazione"] in un'altra zona di disponibilità dello storage per bilanciare l'utilizzo dello storage nel cluster, eliminare snapshot per liberare spazio o aggiungere dischi aggiuntivi ai nodi per aumentare la capacità.
 
 
 
