@@ -15,6 +15,7 @@ Utilizza policy di Snapshot per proteggere i dati nei gruppi di coerenza in base
 
 
 
+[[create-a-new-protection-policy-schedule]]
 == Creare una nuova pianificazione dei criteri di protezione
 
 Una pianificazione dei criteri di protezione definisce la frequenza con cui viene eseguita una policy di snapshot. È possibile creare pianificazioni da eseguire a intervalli regolari in base a un numero di giorni, ore o minuti. Ad esempio, è possibile creare un programma da eseguire ogni ora o solo una volta al giorno. È inoltre possibile creare pianificazioni da eseguire a orari specifici in giorni specifici della settimana o del mese. Ad esempio, è possibile creare una pianificazione da eseguire alle 12:15am:00 il 20th di ogni mese.
@@ -33,6 +34,7 @@ Una volta creata una nuova pianificazione dei criteri, è possibile utilizzare l
 
 
 
+[[create-a-snapshot-policy]]
 == Creare un criterio di snapshot
 
 Una policy di snapshot definisce la frequenza di esecuzione delle snapshot, il numero massimo di snapshot consentite e la durata di conservazione.
@@ -51,6 +53,7 @@ Una volta creato un criterio snapshot, è possibile applicarlo a un gruppo di co
 
 
 
+[[apply-a-snapshot-policy-to-a-consistency-group]]
 == Applicare un criterio snapshot a un gruppo di coerenza
 
 Applicare un criterio snapshot a un gruppo di coerenza per creare, conservare ed etichettare automaticamente gli snapshot del gruppo di coerenza.
@@ -67,6 +70,7 @@ Ora che i tuoi dati sono protetti con snapshot, dovresti link:snapshot-replicati
 
 
 
+[[edit-delete-or-disable-a-snapshot-policy]]
 == Modificare, eliminare o disattivare un criterio snapshot
 
 Modificare un criterio snapshot per modificare il nome del criterio, il numero massimo di snapshot o l'etichetta SnapMirror. Eliminare un criterio per rimuoverlo e i relativi dati di backup dal cluster. Disattivare un criterio per interrompere temporaneamente la creazione o il trasferimento degli snapshot specificati dal criterio.
@@ -82,6 +86,7 @@ Il criterio dello snapshot è stato modificato, eliminato o disabilitato.
 
 
 
+[[edit-a-replication-policy]]
 == Modificare un criterio di replica
 
 Modificare un criterio di replica per modificare la descrizione del criterio, la pianificazione del trasferimento e le regole. È inoltre possibile modificare il criterio per attivare o disattivare la compressione di rete.

@@ -15,6 +15,7 @@ Per una protezione avanzata contro gli attacchi ransomware, replica le snapshot 
 
 
 
+[[initialize-the-snaplock-compliance-clock]]
 == Inizializzare l'orologio SnapLock Compliance
 
 Prima di poter creare snapshot a prova di manomissione, è necessario inizializzare il clock SnapLock Compliance sui cluster locali e di destinazione.

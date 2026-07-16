@@ -53,6 +53,7 @@ Selezionare *registri di controllo*.
 
 
 
+[[send-email-notifications-for-cluster-events-and-audit-logs]]
 == Invia notifiche e-mail per eventi cluster e registri di controllo
 
 Configurare il sistema in modo che invii una notifica a indirizzi e-mail specifici in caso di evento cluster o voce del registro di controllo.

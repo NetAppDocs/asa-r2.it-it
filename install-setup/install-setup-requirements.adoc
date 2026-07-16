@@ -15,6 +15,7 @@ Esaminare l'attrezzatura necessaria e le precauzioni di sollevamento per il sist
 
 
 
+[[equipment-needed-for-install]]
 == Attrezzatura necessaria per l'installazione
 
 Per installare il sistema di storage ASA R2 sono necessari i seguenti strumenti e attrezzature.
@@ -29,12 +30,14 @@ Per installare il sistema di storage ASA R2 sono necessari i seguenti strumenti 
 
 
 
+[[lifting-precautions]]
 == Precauzioni per il sollevamento
 
 I sistemi storage e gli shelf di storage ASA R2 sono pesanti. Prestare attenzione durante il sollevamento e lo spostamento di questi elementi.
 
 
 
+[[storage-system-weights]]
 === Pesi del sistema di archiviazione
 
 Prendere le precauzioni necessarie quando si sposta o si solleva il sistema di archiviazione ASA R2.
@@ -72,6 +75,7 @@ image::../media/drw_g_lifting_weight_ieops-1831.svg[Icona di avvertenza del peso
 ====
 
 
+[[storage-shelf-weights]]
 === Pesi dei ripiani
 
 Prendere le precauzioni necessarie quando si sposta o si solleva il ripiano.
@@ -82,7 +86,7 @@ Prendere le precauzioni necessarie quando si sposta o si solleva il ripiano.
 --
 Un ripiano NS224 può pesare fino a 30,29 kg (66,78 lb). Per sollevare il ripiano, utilizzare due persone o un sollevatore idraulico. Tenere tutti i componenti nel ripiano (anteriore e posteriore) per evitare di sbilanciare il peso del ripiano.
 
-image::../media/drw_ns224_lifting_weight_ieops-1716.svg[NS224 NSM100 attenzione al sollevamento]
+image::../media/drw_ns224_lifting_weight_2_ieops-2960.svg[NS224 NSM100 attenzione al sollevamento]
 
 --
 .NS224 shelf con NSM100B moduli

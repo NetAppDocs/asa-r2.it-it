@@ -19,6 +19,7 @@ Il cloning dei dati crea copie delle unità di storage e dei gruppi di coerenza 
 
 
 
+[[clone-storage-units]]
 == Clonare le unità di storage
 
 Quando si clona un'unità di storage, si crea una nuova unità di storage sul sistema ASA R2 che è una copia point-in-time e scrivibile dell'unità di storage clonata.
@@ -74,6 +75,7 @@ Aggiungere un nuovo host
 
 
 
+[[clone-consistency-groups]]
 == Clonare i gruppi di coerenza
 
 Quando si clona un gruppo di coerenza, si crea un nuovo gruppo di coerenza identico per struttura, unità di storage e dati al gruppo di coerenza clonato. Utilizza un clone del gruppo di coerenza per eseguire il test delle applicazioni o migrare i dati. Ad esempio, supponiamo che sia necessario migrare un workload di produzione da un gruppo di coerenza. Puoi clonare il gruppo di coerenza per creare una copia del workload di produzione per mantenere come backup fino al completamento della migrazione.
@@ -153,6 +155,7 @@ Per proteggere i dati è necessario ricorrere link:../data-protection/create-sna
 
 
 
+[[split-consistency-group-clone]]
 == Clone del gruppo di coerenza split
 
 Quando si suddivide un clone del gruppo di coerenza, il clone viene dissociato dal gruppo di coerenza di origine e viene allocato lo spazio su disco per il clone. Il clone diventa un gruppo di coerenza standalone che può essere utilizzato indipendentemente dal gruppo di coerenza di origine.

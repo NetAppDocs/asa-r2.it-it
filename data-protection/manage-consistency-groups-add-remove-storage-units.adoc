@@ -15,6 +15,7 @@ Aumentare o diminuire le dimensioni di un gruppo di coerenza modificando il nume
 
 
 
+[[add-storage-units-to-a-consistency-group]]
 == Aggiungere unità di archiviazione a un gruppo di coerenza
 
 È possibile espandere la quantità di spazio di archiviazione gestito da un gruppo di coerenza aggiungendo unità di archiviazione nuove o esistenti al gruppo di coerenza.
@@ -75,6 +76,7 @@ Gli snapshot esistenti del gruppo di coerenza non includeranno le nuove unità d
 
 
 
+[[remove-a-storage-unit-from-a-consistency-group]]
 == Rimuovere un'unità di archiviazione da un gruppo di coerenza
 
 Rimuovere un'unità di archiviazione da un gruppo di coerenza per eliminarla, gestirla come parte di un gruppo di coerenza diverso o interrompere la protezione dei suoi dati.  La rimozione di un'unità di archiviazione da un gruppo di coerenza interrompe la relazione tra l'unità di archiviazione e il gruppo di coerenza, ma non elimina l'unità di archiviazione.

@@ -17,6 +17,7 @@ Se non è più necessario proteggere i dati da unità di archiviazione specifich
 
 
 
+[[add-snapshot-data-protection-to-a-consistency-group]]
 == Aggiungi la data Protection delle snapshot a un gruppo di coerenza
 
 Quando si aggiunge la protezione dei dati di snapshot a un gruppo di coerenza, le snapshot locali del gruppo di coerenza vengono acquisite a intervalli regolari in base a una pianificazione predefinita.
@@ -66,6 +67,7 @@ Ora che i tuoi dati sono protetti con snapshot, dovresti link:../secure-data/enc
 
 
 
+[[remove-snapshot-data-protection-from-a-consistency-group]]
 == Rimozione della data Protection delle snapshot da un gruppo di coerenza
 
 Quando si rimuove la protezione dei dati snapshot da un gruppo di coerenza, gli snapshot vengono disattivati per tutte le unità di archiviazione nel gruppo di coerenza.

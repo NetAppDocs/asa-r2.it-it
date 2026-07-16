@@ -15,6 +15,7 @@ Utilizzare System Manager per configurare l'accesso al controller di dominio Act
 
 
 
+[[configure-active-directory-domain-controller-access]]
 == Configurare l'accesso al controller di dominio Active Directory
 
 Configurare l'accesso al controller di dominio Active Directory (ad) al cluster o alla VM di storage in modo da abilitare l'accesso all'account ad.
@@ -29,6 +30,7 @@ Configurare l'accesso al controller di dominio Active Directory (ad) al cluster 
 
 
 
+[[configure-ldap]]
 == Configure LDAP (Configura SNMP)
 
 Configurare un server LDAP (Lightweight Directory Access Protocol) per gestire centralmente le informazioni degli utenti per l'autenticazione.
@@ -47,6 +49,7 @@ Configurare un server LDAP (Lightweight Directory Access Protocol) per gestire c
 
 
 
+[[configure-saml-authentication]]
 == Configurare l'autenticazione SAML
 
 L'autenticazione SAML (Security Assertion Markup Language) consente agli utenti di essere autenticati da un provider di identità sicuro (IdP) invece che da fornitori di servizi diretti quali Active Directory e LDAP.
@@ -80,6 +83,7 @@ Il sistema IdP visualizza una schermata di autenticazione.
 
 
 
+[[create-user-account-roles]]
 == Creare ruoli account utente
 
 I ruoli per gli amministratori del cluster e gli amministratori delle macchine virtuali storage vengono creati automaticamente al momento dell'inizializzazione del cluster. Creare ulteriori ruoli di account utente per definire funzioni specifiche che gli utenti assegnati ai ruoli possono eseguire nel cluster.
@@ -100,6 +104,7 @@ Viene creato un nuovo account utente che può essere utilizzato sul sistema ASA 
 
 
 
+[[create-an-administrator-account]]
 == Creare un account amministratore
 
 Creare un account utente amministratore per consentire all'utente dell'account di eseguire azioni specifiche sul cluster in base al ruolo assegnato all'account. Per migliorare la protezione dell'account, impostare l'autenticazione a più fattori (MFA) quando si crea l'account.

@@ -18,6 +18,7 @@ Ad esempio, si supponga che un'applicazione critica stia riscontrando un'elevata
 
 
 
+[[monitor-cluster-performance]]
 == Monitoraggio delle performance del cluster
 
 Utilizza le metriche delle performance del cluster per determinare se è necessario spostare i carichi di lavoro per ridurre al minimo la latenza e massimizzare IOPS e throughput per le tue applicazioni critiche.
@@ -33,6 +34,7 @@ Utilizza le metriche delle performance del cluster per analizzare se è necessar
 
 
 
+[[monitor-storage-unit-performance]]
 == Monitorare le prestazioni dell'unità di archiviazione
 
 Utilizza le metriche di performance delle unità di storage per determinare l'impatto di applicazioni specifiche su latenza, IOPS e throughput.

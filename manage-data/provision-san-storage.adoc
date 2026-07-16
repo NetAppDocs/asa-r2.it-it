@@ -16,6 +16,7 @@ Durante il provisioning dello storage, è possibile consentire agli host SAN di 
 
 
 
+[[create-storage-units]]
 == Creare unità di archiviazione
 
 In un sistema ASA r2, un'unità di archiviazione mette a disposizione degli host SAN spazio di archiviazione per le operazioni sui dati. Un'unità di archiviazione si riferisce a una LUN per gli host SCSI o a uno spazio dei nomi NVMe per gli host NVMe. Se il cluster è configurato per supportare host SCSI, verrà richiesto di creare un LUN. Se il cluster è configurato per supportare host NVMe, verrà richiesto di creare uno spazio dei nomi NVMe.
@@ -176,6 +177,7 @@ Ulteriori informazioni su link:../administer/manage-client-vm-access.html["Modal
 
 
 
+[[add-host-initiators]]
 == Aggiungere iniziatori host
 
 È possibile aggiungere nuovi iniziatori host al sistema ASA R2 in qualsiasi momento. Gli initiator rendono gli host idonei ad accedere alle unità di storage ed eseguire operazioni sui dati.
@@ -243,6 +245,7 @@ Gli host NVMe vengono aggiunti al sistema ASA R2 e sarai pronto per mappare gli 
 ====
 
 
+[[map-the-storage-unit-to-a-host]]
 == Mappare l'unità di archiviazione a un host
 
 Dopo aver creato le unità di archiviazione ASA r2 e aggiunto gli iniziatori host, mappare gli host alle unità di archiviazione per iniziare a fornire i dati.  Le unità di archiviazione vengono mappate sugli host come parte del processo di creazione delle unità di archiviazione.  È inoltre possibile mappare le unità di archiviazione esistenti su host nuovi o esistenti in qualsiasi momento.
@@ -259,6 +262,7 @@ L'unità di storage viene mappata agli host ed è possibile completare il proces
 
 
 
+[[complete-host-side-provisioning]]
 == Provisioning completo dal lato host
 
 Dopo aver creato le unità di storage, aggiunto gli initiator degli host e mappato le unità di storage, è necessario eseguire sugli host alcuni passaggi prima di poter leggere e scrivere i dati sul sistema ASA R2.

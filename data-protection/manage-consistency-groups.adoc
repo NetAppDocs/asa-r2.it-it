@@ -21,6 +21,7 @@ I gruppi di coerenza gerarchici consentono di applicare singole policy di snapsh
 
 
 
+[[consistency-groups-in-replication-relationships]]
 == Gruppi di coerenza nelle relazioni di replicazione
 
 A partire da ONTAP 9.17.1, è possibile apportare le seguenti modifiche geometriche ai gruppi di coerenza in una relazione di replica asincrona o in una relazione di sincronizzazione attiva SnapMirror senza interrompere o eliminare la relazione.  Quando si verifica una modifica geometrica nel gruppo di coerenza primario, la modifica viene replicata nel gruppo di coerenza secondario.

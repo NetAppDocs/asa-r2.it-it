@@ -11,7 +11,10 @@ summary: 'Se lo spazio di una zona di disponibilità dello storage si sta esaure
 
 
 [role="lead"]
-A partire da ONTAP 9.18.1, è possibile migrare senza interruzioni una macchina virtuale di archiviazione (VM) da qualsiasi cluster ASA a qualsiasi cluster ASA r2.  La migrazione da un cluster ASA a un cluster ASA r2 consente di adottare l'architettura semplificata e ottimizzata dei sistemi ASA r2 per ambienti solo SAN.
+A partire da ONTAP 9.18.1, puoi migrare senza interruzioni una macchina virtuale di storage (VM) da qualsiasi cluster ASA standard a qualsiasi cluster ASA r2. Migrare da un cluster ASA standard a un cluster ASA r2 ti permette di adottare l'architettura semplificata e ottimizzata dei sistemi ASA r2 per ambienti solo SAN.
+
+
+NOTE: Non puoi migrare una storage VM da un ASA MetroCluster a un cluster ASA r2. I sistemi ASA r2 non supportano configurazioni MetroCluster.
 
 La migrazione delle VM di archiviazione tra i sistemi di archiviazione ASA e ASA r2 è supportata come segue:
 
@@ -46,8 +49,7 @@ La migrazione delle VM di archiviazione tra i sistemi di archiviazione ASA e ASA
 
 
 |===
-
-NOTE: Per l'elenco più aggiornato dei sistemi ASA e ASA r2, vederelink:https://hwu.netapp.com/["NetApp Hardware Universe"^] .  I sistemi ASA r2 sono elencati in NetApp Hardware Universe come "ASA A-Series/C-Series (New)".
+Per l'elenco più aggiornato dei sistemi ASA e ASA r2, vederelink:https://hwu.netapp.com/["NetApp Hardware Universe"^] .  I sistemi ASA r2 sono elencati in NetApp Hardware Universe come "ASA A-Series/C-Series (New)".
 
 È possibile migrare una VM di archiviazione a un cluster ASA r2 solo da un cluster ASA .  La migrazione da qualsiasi altro tipo di sistema ONTAP non è supportata.
 
@@ -56,6 +58,7 @@ Tutti i nodi nel cluster ASA r2 e nel cluster ASA devono eseguire ONTAP 9.18.1 o
 
 
 
+[[step-1-verify-the-status-of-the-asa-storage-vm]]
 == Passaggio 1: verificare lo stato della VM di archiviazione ASA
 
 Prima di migrare una VM di archiviazione da un sistema ASA , non devono essere presenti namespace NVMe o vVols e ogni volume nella VM di archiviazione deve contenere una sola LUN.  La migrazione degli spazi dei nomi NVMe e vVols non è supportata.  L'architettura dei sistemi ASA r2 richiede che i volumi contengano un singolo LUN.
@@ -95,6 +98,7 @@ Ora sei pronto per creare una relazione peer tra i cluster ASA e ASA r2.
 
 
 
+[[step-2-create-a-cluster-peer-relationship-between-your-asa-and-asa-r2-clusters]]
 == Passaggio 2: creare una relazione peer tra cluster tra i cluster ASA e ASA r2
 
 Prima di poter migrare una VM di archiviazione da un cluster ASA a un cluster ASA r2, è necessario creare una relazione peer.  Una relazione peer definisce le connessioni di rete che consentono ai cluster ONTAP e alle VM di archiviazione di scambiare dati in modo sicuro.
@@ -165,6 +169,7 @@ Ora sei pronto a preparare la tua VM di archiviazione ASA per la migrazione.
 
 
 
+[[step-3-prepare-for-storage-vm-migration-from-an-asa-to-an-asa-r2-cluster]]
 == Passaggio 3: preparare la migrazione della VM di archiviazione da un cluster ASA a un cluster ASA r2
 
 Prima di migrare una macchina virtuale di archiviazione (VM) da un cluster ASA a un cluster ASA r2, è necessario eseguire un controllo preliminare della migrazione e risolvere eventuali problemi.  Non è possibile eseguire la migrazione finché il controllo preliminare non viene superato con successo.
@@ -186,6 +191,7 @@ Ora sei pronto per migrare la tua VM di archiviazione dal cluster ASA a un clust
 
 
 
+[[step-4-migrate-an-asa-storage-vm-to-an-asa-r2-cluster]]
 == Passaggio 4: migrare una VM di archiviazione ASA in un cluster ASA r2
 
 Dopo aver preparato il cluster ASA e creato la necessaria relazione peer con il cluster ASA r2, è possibile iniziare la migrazione della VM di archiviazione.

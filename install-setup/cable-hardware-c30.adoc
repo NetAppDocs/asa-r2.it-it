@@ -30,6 +30,7 @@ image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Direzione della ling
 
 
 
+[[step-1-cable-the-clusterha-connections]]
 == Fase 1: Collegare i collegamenti cluster/ha
 
 Collegare i controller per creare le connessioni del cluster ONTAP. Per i cluster senza switch, collegare i controller tra loro. Per i cluster con switch, collegare i controller agli switch di rete del cluster.
@@ -144,6 +145,7 @@ image::../media/drw_isi_a30-50_2p_100gbe_1card_switched_cabling_ieops-1926.svg[C
 ====
 
 
+[[step-2-cable-the-host-network-connections]]
 == Fase 2: Collegare i cavi delle connessioni di rete host
 
 Collegare le porte del modulo Ethernet o le porte del modulo Fibre Channel (FC) alla rete host.
@@ -193,6 +195,7 @@ image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[Cavo per 
 ====
 
 
+[[step-3-cable-the-management-network-connections]]
 == Fase 3: Collegare i collegamenti della rete di gestione
 
 Collegare i controller alla rete di gestione.
@@ -210,6 +213,7 @@ IMPORTANT: Non collegare ancora i cavi di alimentazione.
 
 
 
+[[step-4-cable-the-shelf-connections]]
 == Fase 4: Collegare i collegamenti dei ripiani
 
 La procedura di cablaggio a scaffale NS224 mostra moduli NSM100B anziché moduli NSM100. Il cablaggio è lo stesso indipendentemente dal tipo di modulo NSM utilizzato, solo i nomi delle porte sono diversi:

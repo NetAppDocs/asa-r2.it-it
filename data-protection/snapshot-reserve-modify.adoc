@@ -17,6 +17,7 @@ link:snapshot-reserve.html["Scopri di più sulla riserva di snapshot sui sistemi
 
 
 
+[[modify-snapshot-reserve-on-storage-units]]
 == Modifica la riserva di snapshot sulle unità di archiviazione
 
 Per impostare valori di riserva snapshot diversi, configurare ogni unità di archiviazione singolarmente.  Per utilizzare lo stesso valore per tutte le unità di archiviazione, modificare la riserva di snapshot sulla VM di archiviazione.
@@ -35,6 +36,7 @@ La riserva di snapshot è impostata sulla percentuale specificata.  Se la quanti
 
 
 
+[[modify-snapshot-reserve-on-a-storage-vm]]
 == Modificare la riserva di snapshot su una VM di archiviazione
 
 Per impostare la stessa riserva di snapshot per tutte le unità di archiviazione in una VM di archiviazione, applicare la percentuale desiderata alla VM di archiviazione. .  Quando la riserva snapshot viene applicata alla VM di archiviazione, viene applicata a tutte le unità di archiviazione appena create all'interno della VM di archiviazione.  Non viene applicato alle unità di archiviazione create prima della modifica dell'impostazione.

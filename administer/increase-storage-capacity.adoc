@@ -15,6 +15,7 @@ Aggiungi dischi a un nodo o a uno shelf per aumentare la capacità dello storage
 
 
 
+[[use-netapp-hardware-universe-to-prepare-for-installation-of-a-new-drive]]
 == Utilizzare NetApp Hardware Universe per preparare l'installazione di una nuova unità
 
 Prima di installare una nuova unità su un nodo o uno shelf, utilizzare NetApp Hardware Universe per confermare che l'unità che si desidera aggiungere sia supportata dal sistema ASA r2 e per identificare lo slot corretto per la nuova unità.  Gli slot corretti per l'aggiunta di unità variano a seconda del modello del sistema e della versione ONTAP .  In alcuni casi è necessario aggiungere unità a slot specifici in sequenza.
@@ -33,6 +34,7 @@ Prima di installare una nuova unità su un nodo o uno shelf, utilizzare NetApp H
 
 
 
+[[install-a-new-drive-on-the-asa-r2]]
 == Installare una nuova unità sul ASA R2
 
 Il numero minimo di dischi da aggiungere in una singola procedura è sei. L'aggiunta di un singolo disco potrebbe ridurre le prestazioni.

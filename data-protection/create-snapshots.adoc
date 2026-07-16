@@ -16,6 +16,7 @@ Crea uno snapshot per eseguire il backup dei dati sul tuo sistema ASA r2.  Utili
 
 
 
+[[step-1-optionally-create-a-consistency-group]]
 == Passaggio 1: Se si desidera, creare un gruppo di coerenza
 
 Un gruppo di coerenza è un insieme di unità di archiviazione gestite come una singola unità. Crea gruppi di coerenza per semplificare la gestione dello storage e la data Protection per i carichi di lavoro delle applicazioni su più unità di storage. Ad esempio, si supponga di disporre di un database composto da 10 unità di archiviazione in un gruppo di coerenza ed è necessario eseguire il backup dell'intero database. Invece di eseguire il backup di ciascuna unità di storage, è possibile eseguire il backup dell'intero database semplicemente aggiungendo la protezione dei dati snapshot al gruppo di coerenza.
@@ -101,6 +102,7 @@ Hai creato un gruppo di coerenza contenente le unità di archiviazione che desid
 ====
 
 
+[[step-2-create-a-snapshot]]
 == Passaggio 2: Creare un'istantanea
 
 Uno snapshot è una copia locale di sola lettura dei dati che è possibile utilizzare per ripristinare le unità di storage in un momento specifico.

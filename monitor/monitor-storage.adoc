@@ -16,6 +16,7 @@ USA Gestione sistema di ONTAP per monitorare il tuo utilizzo dello storage e ass
 
 
 
+[[monitor-cluster-utilization]]
 == Monitoraggio dell'utilizzo dei cluster
 
 Monitorare regolarmente la quantità di storage consumata dal cluster per garantire che, se necessario, sia pronta ad espandere la capacità del cluster prima di esaurire lo spazio.
@@ -33,6 +34,7 @@ Se lo spazio del cluster sta per esaurirsi o se non ha la capacità necessaria p
 
 
 
+[[monitor-storage-availability-zone-utilization]]
 == Monitorare l'utilizzo delle zone di disponibilità dello storage
 
 Ogni coppia HA in un sistema ASA r2 utilizza un pool di storage comune chiamato _zona di disponibilità dello storage_. La zona di disponibilità dello storage ha accesso a tutti i dischi disponibili nel sistema storage ed è visibile a entrambi i nodi della coppia HA. Il monitoraggio dello spazio disponibile nelle zone di disponibilità dello storage consente di ridurre l'utilizzo o aumentare la capacità in base alle necessità, in modo da evitare che i carichi di lavoro vengano interrotti a causa di spazio insufficiente.
@@ -60,6 +62,7 @@ Se la tua zona di disponibilità dello storage sta per esaurire lo spazio, dovre
 
 
 
+[[monitor-storage-unit-utilization]]
 == Monitorare l'utilizzo dell'unità di archiviazione
 
 Monitorare la quantità di storage consumata da un'unità di storage in modo da poter aumentare in maniera proattiva le dimensioni dell'unità di storage in base alle proprie esigenze di business.

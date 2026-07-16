@@ -25,6 +25,7 @@ link:manage-hierarchical-consistency-groups.html["Scopri di più sui gruppi di c
 
 
 
+[[step-1-create-a-cluster-peer-relationship]]
 == Passaggio 1: Creare una relazione peer cluster
 
 Prima di poter proteggere i dati replicandoli in un cluster remoto, è necessario creare una relazione di peer cluster tra il cluster locale e quello remoto.
@@ -46,6 +47,7 @@ Hai effettuato il peering per un cluster ASA R2 locale con un cluster remoto. È
 
 
 
+[[step-2-optionally-create-a-custom-replication-policy]]
 == Passaggio 2: Facoltativamente, creare una policy di replica personalizzata
 
 La politica di replicazione definisce quando gli aggiornamenti eseguiti sul cluster ASA r2 vengono replicati sul sito remoto.  ONTAP include varie policy di protezione dei dati predefinite che puoi utilizzare per le tue relazioni di replicazione.  Se i criteri predefiniti non soddisfano le tue esigenze, puoi creare un criterio di replica personalizzato.
@@ -79,6 +81,7 @@ Ulteriori informazioni su link:../administer/manage-client-vm-access.html["Macch
 
 
 
+[[step-3-create-a-replication-relationship]]
 == Fase 3: Creare una relazione di replica
 
 Una relazione di replica snapshot stabilisce una connessione tra il sistema ASA R2 e una posizione remota in modo da poter replicare i gruppi di coerenza in un cluster remoto. È possibile utilizzare gruppi di coerenza replicati per il disaster recovery o per la migrazione dei dati.
@@ -170,6 +173,7 @@ Una volta creati un criterio e una relazione di replica, il trasferimento inizia
 
 
 
+[[step-4-test-replication-failover]]
 == Passaggio 4: Verifica del failover della replica
 
 In alternativa, convalida la possibilità di fornire con successo dati da unità di storage replicate su un cluster remoto se il cluster di origine non è in linea.

@@ -15,6 +15,7 @@ Dopo la migrazione di una macchina virtuale di archiviazione (VM) da un cluster 
 
 
 
+[[manually-cut-over-clients-to-an-asa-r2-system-after-a-storage-vm-migration]]
 == Trasferire manualmente i client a un sistema ASA r2 dopo una migrazione della VM di storage
 
 Se si disabilita il cutover automatico del client durante la migrazione di una VM di archiviazione da un cluster ASA a un cluster ASA r2, una volta completata correttamente la migrazione, eseguire il cutover manualmente in modo che la VM di archiviazione ASA r2 possa fornire dati ai client.
@@ -42,6 +43,7 @@ Ora sei pronto per rimuovere la VM di archiviazione dal cluster ASA di origine.
 
 
 
+[[manually-remove-an-asa-storage-vm-after-migration-to-an-asa-r2-cluster]]
 == Rimuovere manualmente una VM di archiviazione ASA dopo la migrazione a un cluster ASA r2
 
 Se si disabilita la pulizia automatica dell'origine durante la migrazione di una VM di archiviazione da un cluster ASA a un cluster ASA r2, al termine della migrazione rimuovere la VM di archiviazione dal cluster ASA per liberare spazio di archiviazione.

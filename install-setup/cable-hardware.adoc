@@ -15,6 +15,7 @@ Collega il tuo sistema storage ASA per abilitare la comunicazione del cluster, l
 
 
 
+[[overview-of-hardware-cabling]]
 == Panoramica del cablaggio hardware
 
 Il cablaggio varia a seconda del modello della piattaforma, poiché ogni modello di ASA r2 presenta posizioni degli slot, assegnazioni delle porte e configurazioni dei moduli I/O specifiche. Selezionare la procedura per il proprio modello di ASA r2:
@@ -47,6 +48,7 @@ Collega i controller alle mensole di storage NS224 per fornire capacità di stor
 
 
 
+[[additional-resources]]
 == Risorse aggiuntive
 
 Le procedure di cablaggio mostrano le configurazioni più comuni. Il cablaggio specifico dipende dai componenti ordinati per il sistema storage. Per informazioni complete sulla configurazione e la priorità degli slot, vedere link:https://hwu.netapp.com["NetApp Hardware Universe"^].

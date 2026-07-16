@@ -13,7 +13,7 @@ summary: Guarda brevi video che dimostrano come utilizzare Gestione sistema di O
 [role="lead"]
 Per il video viene fornita la seguente trascrizione `Replicate data to a remote cluster from an ASA r2 storage system` .
 
-link:videos-common-tasks.html#video_transcript_return_replicate_data["Torna alla pagina"]
+link:videos-common-tasks.html["Torna alla pagina"]
 
 Puoi utilizzare ONTAP System Manager per proteggere i tuoi dati pianificando le snapshot di unità di storage o gruppi di coerenza e replicando in una posizione remota.
 

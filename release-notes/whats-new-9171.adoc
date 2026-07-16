@@ -18,6 +18,7 @@ Scopri le nuove funzionalità disponibili in ONTAP 9.17.1 per i sistemi ASA r2.
 
 
 
+[[san-data-migration]]
 == Migrazione dei dati SAN
 
 [cols="2,4"]
@@ -29,6 +30,7 @@ Scopri le nuove funzionalità disponibili in ONTAP 9.17.1 per i sistemi ASA r2.
 |===
 
 
+[[data-protection]]
 == Protezione dei dati
 
 [cols="2,4"]
@@ -49,6 +51,7 @@ Scopri le nuove funzionalità disponibili in ONTAP 9.17.1 per i sistemi ASA r2.
 |===
 
 
+[[storage-management]]
 == Gestione dello storage
 
 [cols="2,4"]

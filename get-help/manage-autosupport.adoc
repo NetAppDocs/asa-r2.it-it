@@ -20,6 +20,7 @@ Per gestire AutoSupport è necessario essere un amministratore del cluster.
 
 
 
+[[test-autosupport-connectivity]]
 == Verificare la connettività AutoSupport
 
 Dopo aver configurato il cluster, è necessario verificare la connettività AutoSupport per verificare che il supporto tecnico riceva i messaggi generati da AutoSupport.
@@ -35,6 +36,7 @@ Hai confermato che il supporto tecnico può ricevere messaggi AutoSupport dal tu
 
 
 
+[[add-autosupport-recipients]]
 == Aggiungi destinatari AutoSupport
 
 Aggiungere i membri dell'organizzazione di assistenza interna all'elenco degli indirizzi e-mail che ricevono i messaggi AutoSupport.
@@ -55,6 +57,7 @@ Gli indirizzi e-mail aggiunti riceveranno nuovi messaggi AutoSupport per la cate
 
 
 
+[[send-autosupport-data]]
 == Invia dati AutoSupport
 
 In caso di problemi del sistema ASA R2, i dati di AutoSupport possono ridurre significativamente il tempo necessario per identificare e risolvere i problemi.
@@ -70,6 +73,7 @@ I dati AutoSupport vengono inviati all'assistenza tecnica.
 
 
 
+[[suppress-support-case-generation]]
 == Elimina la generazione dei casi di supporto
 
 Se si sta eseguendo un aggiornamento o una manutenzione sul sistema ASA R2, potrebbe essere utile sospendere la generazione di casi di supporto AutoSupport fino al completamento dell'aggiornamento o della manutenzione.
@@ -86,6 +90,7 @@ I casi AutoSupport non verranno generati durante il tempo specificato. Se l'upgr
 
 
 
+[[resume-support-case-generation]]
 == Riprendere la generazione dei casi di supporto
 
 Se la generazione di casi di supporto è stata sospesa durante una finestra di aggiornamento o manutenzione, riprendere la generazione di casi di supporto subito dopo il completamento dell'aggiornamento o della manutenzione.

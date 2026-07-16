@@ -15,6 +15,7 @@ I dati di un gruppo di coerenza o di un'unità di archiviazione protetta da snap
 
 
 
+[[restore-a-consistency-group]]
 == Ripristinare un gruppo di coerenza
 
 Il ripristino di un gruppo di coerenza sostituisce i dati di tutte le unità di archiviazione del gruppo di coerenza con i dati di uno snapshot. Le modifiche apportate alle unità di archiviazione dopo la creazione dello snapshot non vengono ripristinate.
@@ -56,6 +57,7 @@ Il gruppo di coerenza viene ripristinato al punto temporale dello snapshot utili
 
 
 
+[[restore-a-storage-unit]]
 == Ripristinare un'unità di archiviazione
 
 Il ripristino di un'unità di archiviazione sostituisce tutti i dati presenti nell'unità di archiviazione con i dati di uno snapshot. Le modifiche apportate all'unità di archiviazione dopo la creazione dell'istantanea non vengono ripristinate.

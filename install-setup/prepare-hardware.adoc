@@ -15,6 +15,7 @@ Preparare l'installazione del sistema di storage ASA R2 preparando il sito, disi
 
 
 
+[[step-1-prepare-the-site]]
 == Fase 1: Preparare il sito
 
 Per installare il sistema di storage ASA R2, verificare che il sito e il cabinet o il rack che si intende utilizzare soddisfino le specifiche per la configurazione.
@@ -68,6 +69,7 @@ Per le istruzioni di installazione e per informazioni sulla compatibilità, cons
 
 
 
+[[step-2-unpack-the-boxes]]
 == Fase 2: Disimballare le scatole
 
 Dopo aver verificato che il sito e il cabinet o il rack che si intende utilizzare per il sistema di archiviazione ASA R2 soddisfino le specifiche richieste, disimballare tutte le confezioni e confrontare il contenuto con gli articoli presenti sul documento di trasporto.
@@ -108,6 +110,7 @@ I seguenti elementi sono alcuni dei contenuti che potrebbero essere visualizzati
 
 
 
+[[step-3-register-your-storage-system]]
 == Fase 3: Registrare il sistema di archiviazione
 
 Dopo aver verificato che il sito soddisfa i requisiti delle specifiche del sistema di storage ASA R2 e aver verificato di disporre di tutte le parti ordinate, è necessario registrare il sistema.

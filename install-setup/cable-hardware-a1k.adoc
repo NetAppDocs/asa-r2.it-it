@@ -34,6 +34,7 @@ image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Direzione della ling
 
 
 
+[[step-1-cable-the-clusterha-connections]]
 == Fase 1: Collegare i collegamenti cluster/ha
 
 Collegare i controller per creare le connessioni del cluster ONTAP. Per i cluster senza switch, collegare i controller tra loro. Per i cluster con switch, collegare i controller agli switch di rete del cluster.
@@ -91,6 +92,7 @@ image::../media/drw_a1k_switched_cluster_cabling_ieops-1652.svg[Connessioni clus
 ====
 
 
+[[step-2-cable-the-host-network-connections]]
 == Fase 2: Collegare i cavi delle connessioni di rete host
 
 Collegare le porte del modulo Ethernet alla rete host.
@@ -135,6 +137,7 @@ image::../media/drw_a1k_network_cabling2_ieops-1650.svg[Cavo per la rete Etherne
 ====
 
 
+[[step-3-cable-the-management-network-connections]]
 == Fase 3: Collegare i collegamenti della rete di gestione
 
 Collegare i controller alla rete di gestione.
@@ -160,6 +163,7 @@ IMPORTANT: Non collegare ancora i cavi di alimentazione.
 
 
 
+[[step-4-cable-the-shelf-connections]]
 == Fase 4: Collegare i collegamenti dei ripiani
 
 I sistemi storage ASA A1K supportano gli shelf NS224 con i moduli NSM100 o NSM100B. Le principali differenze tra i moduli sono:
@@ -212,9 +216,9 @@ Collegare ciascun controller ai moduli NSM su entrambi gli shelf NS224. La grafi
 . Sul controller A, collegare le seguenti porte:
 +
 .. Collegare la porta e11a alla porta e0a NSM A dello shelf 1.
-.. Collegare la porta e11b alla porta NSM B e0b dello shelf 2.
-.. Collegare la porta E10A alla porta e0a NSM A dello shelf 2.
 .. Collegare la porta e10b alla porta e0b dello shelf 1 NSM B.
+.. Collegare la porta E10A alla porta e0a NSM A dello shelf 2.
+.. Collegare la porta e11b alla porta NSM B e0b dello shelf 2.
 +
 image:../media/drw_a1k_2shelf_cabling_a_ieops-1705.svg["Connessioni da controller a shelf per il controller A"]
 
@@ -223,9 +227,9 @@ image:../media/drw_a1k_2shelf_cabling_a_ieops-1705.svg["Connessioni da controlle
 . Sul controller B, collegare le seguenti porte:
 +
 .. Collegare la porta e11a alla porta NSM B e0a dello shelf 1.
-.. Collegare la porta e11b alla porta e0b NSM A dello shelf 2.
-.. Collegare la porta E10A alla porta NSM B e0a dello shelf 2.
 .. Collegare la porta e10b alla porta e0b NSM A dello shelf 1.
+.. Collegare la porta E10A alla porta NSM B e0a dello shelf 2.
+.. Collegare la porta e11b alla porta e0b NSM A dello shelf 2.
 +
 image:../media/drw_a1k_2shelf_cabling_b_ieops-1706.svg["Connessioni da controller a shelf per il controller B"]
 

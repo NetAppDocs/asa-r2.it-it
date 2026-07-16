@@ -50,6 +50,7 @@ Livello VM di archiviazione: gestore chiavi esterno
 |===
 
 
+[[migrate-keys-between-key-managers-at-the-ontap-cluster-level]]
 == Migrare le chiavi tra manager delle chiavi a livello di cluster ONTAP
 
 A partire da ONTAP 9.16.1 è possibile utilizzare l'interfaccia a riga di comando (CLI) di ONTAP per migrare le chiavi tra gestori delle chiavi a livello di cluster.
@@ -131,6 +132,7 @@ set -privilege admin
 ====
 
 
+[[migrate-keys-between-key-managers-across-ontap-cluster-and-storage-vm-levels]]
 == Migrare le chiavi tra manager chiave a livelli di cluster ONTAP e Storage VM
 
 Puoi utilizzare l'interfaccia a riga di comando (CLI) di ONTAP per migrare le chiavi tra il gestore delle chiavi a livello di cluster e un gestore delle chiavi a livello di VM di storage.

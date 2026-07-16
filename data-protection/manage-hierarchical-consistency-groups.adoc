@@ -15,6 +15,7 @@ A partire da ONTAP 9.16.1, è possibile utilizzare System Manager per creare gru
 
 
 
+[[promote-an-existing-consistency-group-into-a-parent-consistency-group]]
 == Promuovi un gruppo di coerenza esistente in un gruppo di coerenza padre
 
 Se si promuove un gruppo di coerenza esistente a padre, viene creato un nuovo gruppo di coerenza figlio e le unità di archiviazione appartenenti al gruppo di coerenza promosso vengono spostate nel nuovo gruppo di coerenza figlio.  Le unità di archiviazione non possono essere associate direttamente a un gruppo di coerenza padre.
@@ -35,6 +36,7 @@ Se si esegue ONTAP 9.16.1 e il gruppo di coerenza che si desidera promuovere è 
 
 
 
+[[demote-a-parent-consistency-group-to-a-single-consistency-group]]
 == Demotizza un gruppo di coerenza di origine in un singolo gruppo di coerenza
 
 Quando si declassa un gruppo di coerenza padre a un singolo gruppo di coerenza, le unità di archiviazione dei gruppi di coerenza figlio associati vengono aggiunte al gruppo di coerenza padre.  I gruppi di coerenza figlio vengono eliminati e il padre viene quindi gestito come un singolo gruppo di coerenza.
@@ -54,6 +56,7 @@ link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["Agg
 
 
 
+[[create-a-child-consistency-group]]
 == Creare un gruppo di coerenza figlio
 
 La creazione di gruppi di coerenza figlio consente di applicare criteri di snapshot individuali a ciascun figlio.  A partire da ONTAP 9.17.1, è anche possibile applicare policy di replicazione individuali direttamente a ciascun elemento figlio.  In ONTAP 9.16.1, i criteri di replicazione possono essere applicati solo a livello padre.
@@ -104,6 +107,7 @@ Dopo aver creato un gruppo di coerenza figlio, puoilink:policies-schedules.html#
 
 
 
+[[detach-a-child-consistency-group-from-a-parent-consistency-group]]
 == Scollegare un gruppo di coerenza figlio da un gruppo di coerenza di origine
 
 Quando si scollega un gruppo di coerenza figlio da un gruppo di coerenza padre, il gruppo di coerenza figlio viene rimosso dal gruppo di coerenza padre e gestito come un singolo gruppo di coerenza.  La politica di replica applicata al padre non viene più applicata al gruppo di coerenza figlio staccato.

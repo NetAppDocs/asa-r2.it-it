@@ -25,6 +25,7 @@ Ulteriori informazioni su link:https://docs.netapp.com/us-en/ontap/san-config/co
 
 
 
+[[zoning-recommendation-for-fc-hosts]]
 == Raccomandazione di zoning per gli host FC
 
 È necessario configurare gli host FC per l'utilizzo della zoning. I sistemi ASA R2 seguono le stesse raccomandazioni e linee guida sullo zoning degli host FC di tutti gli altri sistemi ONTAP.

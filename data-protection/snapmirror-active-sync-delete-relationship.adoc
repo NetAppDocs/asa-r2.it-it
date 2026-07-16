@@ -15,6 +15,7 @@ Se non hai più bisogno di RPO e RTO prossimi allo zero per un'applicazione azie
 
 
 
+[[step-1-terminate-host-replication]]
 == Passaggio 1: terminare la replicazione dell'host
 
 Se il gruppo host del cluster di origine viene replicato nel cluster di destinazione e i gruppi di coerenza di destinazione vengono mappati sul gruppo host replicato, è necessario terminare la replica dell'host sul cluster di origine prima di poter eliminare la relazione di sincronizzazione attiva SnapMirror .
@@ -27,6 +28,7 @@ Se il gruppo host del cluster di origine viene replicato nel cluster di destinaz
 
 
 
+[[step-2-delete-the-snapmirror-active-sync-relationship]]
 == Passaggio 2: eliminare la relazione di sincronizzazione attiva SnapMirror
 
 Per rimuovere la protezione SnapMirror ActiveSync da un gruppo di coerenza, è necessario eliminare la relazione SnapMirror ActiveSync.
