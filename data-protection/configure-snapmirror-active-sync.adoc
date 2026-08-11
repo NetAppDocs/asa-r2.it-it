@@ -29,7 +29,7 @@ Scopri di più su  https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/#k
 .Fasi
 . In System Manager, selezionare *protezione > gruppi di coerenza*.
 . Passa il mouse sul nome del gruppo di coerenza che vuoi proteggere con SnapMirror ActiveSync.
-. Selezionare image:icon_kabob.gif["tre punti blu verticali"] e quindi seleziona *Proteggi*.
+. Seleziona image:icon_kabob.gif["tre punti blu verticali"], quindi seleziona *Proteggi*.
 . In *protezione remota*, selezionare *Replica in un cluster remoto*.
 . Seleziona un peer del cluster esistente oppure scegli di *Aggiungerne uno nuovo*.
 . Selezionare la VM di archiviazione.

@@ -27,7 +27,7 @@ Le unità di archiviazione create in ONTAP 9.17.1 devono essere link:enable-anti
 +
 ** Per disattivare durante il grace period di 12 ore:
 +
-... In *Anti-ransomware*, seleziona *Don't enable* e poi seleziona *Disable*.
+... Nella sezione *Anti-ransomware*, seleziona *Non abilitare* e poi seleziona *Disabilita*.
 
 
 ** Per disattivare dopo il grace period di 12 ore:

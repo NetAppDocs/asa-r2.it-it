@@ -53,7 +53,7 @@ Viene visualizzato Gestione sistema.
 +
 La password deve essere composta da almeno otto caratteri e deve contenere almeno una lettera e un numero.
 
-. Immettere nuovamente la password per confermare, quindi selezionare *continua*.
+. Reinserisci la password per confermare, quindi seleziona *Continua*.
 . In *indirizzi di rete*, immettere un nome del sistema di archiviazione o accettare il nome predefinito.
 +
 Se si modifica il nome del sistema di archiviazione predefinito, il nuovo nome deve iniziare con una lettera e deve contenere meno di 44 caratteri. È possibile utilizzare un punto (.), un trattino (-) o un trattino basso (_) nel nome.

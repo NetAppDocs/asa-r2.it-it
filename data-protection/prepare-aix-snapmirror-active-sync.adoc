@@ -21,7 +21,7 @@ Prima di poter abilitare la SnapMirror active sync per i tuoi host AIX che esegu
 .Fasi
 . In System Manager, selezionare *Storage*.
 . Passa il mouse sopra il nome dell'unità di storage AIX che desideri preparare per la protezione SnapMirror active sync.
-. Seleziona image:icon_kabob.gif["icona di selezione del menu"] e poi seleziona *Modifica*.
+. Seleziona image:icon_kabob.gif["icona di selezione del menu"], quindi seleziona *Modifica*.
 . Nella sezione *Informazioni host*, seleziona *locale* per la *Modalità di accesso* e poi seleziona *Modifica*.
 
 

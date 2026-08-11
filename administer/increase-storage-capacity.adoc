@@ -37,7 +37,7 @@ Prima di installare una nuova unità su un nodo o uno shelf, utilizzare NetApp H
 [[install-a-new-drive-on-the-asa-r2]]
 == Installare una nuova unità sul ASA R2
 
-Il numero minimo di dischi da aggiungere in una singola procedura è sei. L'aggiunta di un singolo disco potrebbe ridurre le prestazioni.
+Il numero minimo di dischi che dovresti aggiungere in un'unica procedura è tre. Aggiungere un disco singolo potrebbe ridurre le performance.
 
 .A proposito di questa attività
 Ripetere i passi di questa procedura per ciascuna unità.

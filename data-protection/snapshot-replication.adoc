@@ -86,53 +86,27 @@ Ulteriori informazioni su link:../administer/manage-client-vm-access.html["Macch
 
 Una relazione di replica snapshot stabilisce una connessione tra il sistema ASA R2 e una posizione remota in modo da poter replicare i gruppi di coerenza in un cluster remoto. È possibile utilizzare gruppi di coerenza replicati per il disaster recovery o per la migrazione dei dati.
 
-Per una protezione contro gli attacchi ransomware, quando configuri un rapporto di replica, puoi selezionare di bloccare gli snapshot di destinazione. Gli snapshot bloccati non possono essere eliminati accidentalmente o in modo pericoloso. Puoi utilizzare snapshot bloccate per ripristinare i dati se un'unità di storage viene compromessa da un attacco ransomware.
+Per una maggiore sicurezza contro gli attacchi ransomware, crea una relazione di replica SnapLock for SnapVault.
 
 .Prima di iniziare
 * link:pre-defined-protection-policies.html["Scopri di più sulle policy di replicazione"] .
 +
 Quando si crea una relazione di replica, è necessario selezionare il criterio di replica appropriato per la relazione di replica.  È possibile utilizzare una policy predefinita oppure crearne una personalizzata.
 
-* Se si desidera bloccare gli snapshot di destinazione, è necessario link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["Inizializzare il clock di conformità snapshot"] prima creare la relazione di replica.
 
 
-Creare una relazione di replica con o senza snapshot di destinazione bloccati.
-
-[role="tabbed-block"]
-====
-.Con istantanee bloccate
---
-.Fasi
-. In System Manager, selezionare *protezione > gruppi di coerenza*.
-. Selezionare un gruppo di coerenza.
-. Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Proteggi*.
-. In *protezione remota*, selezionare *Replica in un cluster remoto*.
-. Selezionare *criterio di replica*.
-+
-È necessario selezionare un criterio di replica _vault_.
-
-. Selezionare *Impostazioni destinazione*.
-. Selezionare *Blocca istantanee di destinazione per impedire l'eliminazione*
-. Immettere il periodo di conservazione dei dati massimo e minimo.
-. Per ritardare l'avvio del trasferimento dati, deselezionare *Avvia trasferimento immediatamente*.
-+
-Il trasferimento iniziale dei dati inizia immediatamente per impostazione predefinita.
-
-. In alternativa, per ignorare la pianificazione di trasferimento predefinita, selezionare *Impostazioni destinazione*, quindi selezionare *Sovrascrivi pianificazione trasferimento*.
-+
-Il programma di trasferimento deve essere di almeno 30 minuti per essere supportato.
-
-. Selezionare *Salva*.
 
 
---
-.Senza istantanee bloccate
---
+[[create-a-relationship-to-replicate-snapshots-to-a-remote-cluster]]
+=== Crea una relazione per replicare gli snapshot in un cluster remoto
+
+Proteggi i tuoi dati replicando gli snapshot su un cluster remoto. Gli snapshot replicati dei tuoi gruppi di coerenza possono essere utilizzati per il ripristino di emergenza o per la migrazione dei dati.
+
 .Fasi
 . In System Manager, selezionare *protezione > Replica*.
 . Selezionare per creare la relazione di replica con la destinazione locale o l'origine locale.
 +
-[cols="2,2"]
+[cols="1,2"]
 |===
 | Opzione | Fasi 
 
@@ -150,24 +124,59 @@ Il gruppo di coerenza _source_ fa riferimento al gruppo di coerenza del cluster 
 | Fonti locali  a| 
 .. Selezionare *origini locali*, quindi selezionare image:icon_replicate_blue_bg.png["rettangolo con sfondo blu e la parola replicata in lettere bianche"] .
 .. Cercare e selezionare il gruppo di coerenza di origine.
-.. In *destinazione di replica*, selezionare il cluster in cui eseguire la replica, quindi selezionare la VM di archiviazione.
+.. In *destinazione di replica*, seleziona il cluster su cui replicare e poi seleziona la storage VM.
 
 
 |===
 . Selezionare un criterio di replica.
-. Per ritardare l'avvio del trasferimento dati, selezionare *Impostazioni destinazione*, quindi deselezionare *Avvia immediatamente trasferimento*.
+. Per ritardare l'avvio del trasferimento dei dati, seleziona *Impostazioni destinazione* e poi deseleziona *Avvia trasferimento immediatamente*.
 +
 Il trasferimento iniziale dei dati inizia immediatamente per impostazione predefinita.
 
-. In alternativa, per ignorare la pianificazione di trasferimento predefinita, selezionare *Impostazioni destinazione*, quindi selezionare *Sovrascrivi pianificazione trasferimento*.
+. Facoltativamente, per ignorare la pianificazione di trasferimento predefinita, seleziona *Impostazioni destinazione* e poi *Ignora pianificazione di trasferimento*.
 +
 Il programma di trasferimento deve essere di almeno 30 minuti per essere supportato.
 
 . Selezionare *Salva*.
 
 
---
-====
+.Quali sono le prossime novità?
+Ora che hai creato una policy di replica e una relazione, il trasferimento iniziale dei dati inizia come definito nella policy di replica. Puoi anche testare il failover della replica per verificare che il failover avvenga correttamente se il tuo sistema ASA r2 va offline.
+
+
+
+[[create-a-relationship-to-replicate-snapshots-with-snaplock-for-snapvault]]
+=== Crea una relazione per replicare gli snapshot con SnapLock for SnapVault
+
+Per proteggerti dagli attacchi ransomware, quando configuri la relazione di replica, puoi abilitare SnapLock per SnapVault selezionando una policy di replica del vault e poi scegliendo di bloccare gli snapshot di destinazione. Gli snapshot protetti da SnapLock per SnapVault non possono essere eliminati accidentalmente o intenzionalmente.
+
+
+NOTE: I sistemi ASA r2 non supportano la modalità SnapLock Compliance né la modalità SnapLock Enterprise. La creazione di una relazione di replica SnapLock for SnapVault consente solo il blocco delle snapshot di destinazione. Non abilita la modalità SnapLock Compliance o Enterprise.
+
+.Prima di iniziare
+Devi link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock["inizializza l'SnapLock Compliance Clock"].
+
+.Fasi
+. In System Manager, seleziona *Protezione > Gruppi di coerenza* e poi seleziona un gruppo di coerenza.
+. Seleziona image:icon_kabob.gif["tre punti blu verticali"], quindi seleziona *Proteggi*.
+. In *protezione remota*, selezionare *Replica in un cluster remoto*.
+. Selezionare *criterio di replica*.
++
+È necessario selezionare un criterio di replica _vault_.
+
+. Seleziona *Impostazioni di destinazione*, quindi seleziona *Blocca le istantanee di destinazione per impedirne l'eliminazione*.
+. Immettere il periodo di conservazione dei dati massimo e minimo.
+. Per ritardare l'avvio del trasferimento dati, deselezionare *Avvia trasferimento immediatamente*.
++
+Il trasferimento iniziale dei dati inizia immediatamente per impostazione predefinita.
+
+. Facoltativamente, per ignorare la pianificazione di trasferimento predefinita, seleziona *Impostazioni destinazione* e poi *Ignora pianificazione di trasferimento*.
++
+Il programma di trasferimento deve essere di almeno 30 minuti per essere supportato.
+
+. Selezionare *Salva*.
+
+
 .Quali sono le prossime novità?
 Una volta creati un criterio e una relazione di replica, il trasferimento iniziale dei dati inizia come definito nel criterio di replica. Se si desidera, è possibile verificare il failover della replica per verificare se il sistema ASA R2 non è in linea.
 
