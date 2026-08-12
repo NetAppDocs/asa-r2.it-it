@@ -98,9 +98,9 @@ Quando si specifica l'intervallo di indirizzi IP per la subnet, non sovrapporre 
 Una LIF (interfaccia di rete) è un indirizzo IP associato a una porta fisica o logica. Crea le LIF sulle porte che vuoi usare per accedere ai dati. Le Storage VM forniscono dati ai client tramite una o più LIF. Su un sistema ASA r2, puoi creare LIF IP, FC e NVMe/FC. Per impostazione predefinita, una LIF dati IP può gestire sia il traffico iSCSI che quello NVMe/TCP. Devono essere create LIF dati separate per il traffico FC e NVMe/FC.
 
 .Failover LIF sui sistemi ASA r2
-In caso di guasto di un componente, un LIF può eseguire un failover o essere migrato a una porta fisica diversa, così la comunicazione di rete non viene interrotta. A partire da ONTAP 9.19.1, il failover automatico dei LIF è supportato per impostazione predefinita per i LIF iSCSI, NVMe/TCP e con IP condiviso. Quando il failover automatico dei LIF è abilitato, se si verifica un failover dello storage, il LIF viene automaticamente migrato dal suo nodo o porta di origine al nodo o porta partner HA e poi torna indietro una volta completato il failover. Oppure, se la porta diventa non integra, il LIF viene automaticamente migrato a una porta integra nel suo nodo di origine attuale e poi torna alla porta originale una volta che la porta è di nuovo integra.
+In caso di guasto di un componente, un LIF può eseguire un failover o essere migrato a una porta fisica diversa, così la comunicazione di rete non viene interrotta. A partire da ONTAP 9.19.1, il failover automatico dei LIF è supportato per impostazione predefinita per gli IP LIF. Quando il failover automatico dei LIF è abilitato, se si verifica un failover dello storage, il LIF viene automaticamente migrato dal suo nodo o porta home al nodo o porta del partner HA e poi di nuovo al nodo o porta home una volta completato il failover. Oppure, se la porta diventa non integra, il LIF viene automaticamente migrato a una porta integra nel suo nodo home attuale e poi di nuovo alla sua porta originale una volta che la porta è di nuovo integra.
 
-In ONTAP 9.18.1 e versioni precedenti, il failover automatico delle LIF non è supportato per le LIF NVMe/TCP o le LIF IP condivise. Quando crei LIF solo iSCSI, il failover automatico delle LIF è abilitato per impostazione predefinita, a meno che la VM di storage non abbia già LIF iSCSI per cui il failover automatico delle LIF non è abilitato. Se sulla VM di storage sono presenti LIF solo iSCSI per cui il failover automatico delle LIF non è abilitato, anche le nuove LIF che crei non saranno abilitate. In questi casi, devi prima eliminare le LIF solo iSCSI esistenti e poi ricrearle con il failover automatico delle LIF abilitato. Scopri come link:https://docs.netapp.com/us-en/ontap/san-admin/delete-lif-san-environment-task.html["eliminare un LIF in un ambiente SAN"^].
+In ONTAP 9.18.1 e versioni precedenti, il failover automatico delle LIF non è supportato per le LIF IP con traffico sia iSCSI che NVMe/TCP. Quando crei LIF solo iSCSI, il failover automatico delle LIF è abilitato per impostazione predefinita, a meno che la storage VM non abbia già LIF iSCSI per cui il failover automatico non è abilitato. Se sulla storage VM sono presenti LIF iSCSI per cui il failover automatico non è abilitato, anche le nuove LIF che crei non saranno abilitate per il failover automatico. In questi casi, devi prima eliminare le LIF iSCSI esistenti e poi ricrearle con il failover automatico abilitato. Scopri come link:https://docs.netapp.com/us-en/ontap/san-admin/delete-lif-san-environment-task.html["eliminare un LIF in un ambiente SAN"^].
 
 Le porte persistenti vengono utilizzate per il failover di LIF FC e NVMe/FC. Scopri di più su link:https://docs.netapp.com/us-en/ontap/san-config/asa-support-limitations.html#support-for-persistent-ports["porte persistenti"^] nella documentazione ONTAP.
 
@@ -130,6 +130,7 @@ Le porte persistenti vengono utilizzate per il failover di LIF FC e NVMe/FC. Sco
 
 Se vuoi abilitare il failover automatico di iSCSI LIF in ONTAP 9.18.1 o versioni precedenti, devi prima creare una policy di servizio LIF personalizzata solo per iSCSI.
 
+.A proposito di questa attività
 Per creare la policy di servizio personalizzata è necessario utilizzare l'interfaccia della riga di comando (CLI) ONTAP .
 
 .Fase
@@ -167,10 +168,13 @@ set -privilege admin
 [[create-iscsi-only-lifs-with-automatic-lif-failover]]
 === Crea LIF solo iSCSI con failover LIF automatico
 
-In ONTAP 9.18.1 e versioni precedenti, il failover automatico delle LIF è abilitato per impostazione predefinita quando crei LIF solo iSCSI, se anche tutte le altre LIF iSCSI sulla VM di storage sono abilitate per il failover automatico delle LIF. Se sulla VM di storage ci sono LIF solo iSCSI che non sono abilitate per il failover automatico delle LIF, anche le LIF appena create non saranno abilitate per il failover automatico delle LIF.
+In ONTAP 9.18.1 e versioni precedenti, il failover automatico delle LIF è abilitato per impostazione predefinita quando crei LIF solo iSCSI, se anche tutte le altre LIF iSCSI sulla VM di storage sono abilitate per il failover automatico. Se sulla VM di storage sono presenti LIF iSCSI non abilitate per il failover automatico, anche le LIF appena create non saranno abilitate per il failover automatico.
 
 .Prima di iniziare
 È necessario aver creato un criterio di servizio LIF personalizzato solo iSCSI.
+
+.A proposito di questa attività
+Devi usare l'interfaccia a riga di comando (CLI) di ONTAP per creare un LIF solo iSCSI.
 
 .Fasi
 . Crea LIF solo iSCSI con failover LIF automatico:
@@ -226,6 +230,6 @@ ONTAP utilizza il Network Time Protocol (NTP) per sincronizzare l'ora nel cluste
 La LIF è stata modificata.
 
 .Informazioni correlate
-* link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["Sposta una SAN LIF"].
-* link:https://docs.netapp.com/us-en/ontap/san-admin/remove-lif-from-portset-task.html["Rimuovi un SAN LIF da un portset"].
+* link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["Sposta una SAN LIF"^].
+* link:https://docs.netapp.com/us-en/ontap/san-admin/remove-lif-from-portset-task.html["Rimuovi un SAN LIF da un portset"^].
 

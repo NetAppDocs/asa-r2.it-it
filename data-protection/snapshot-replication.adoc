@@ -178,7 +178,7 @@ Il programma di trasferimento deve essere di almeno 30 minuti per essere support
 
 
 .Quali sono le prossime novità?
-Una volta creati un criterio e una relazione di replica, il trasferimento iniziale dei dati inizia come definito nel criterio di replica. Se si desidera, è possibile verificare il failover della replica per verificare se il sistema ASA R2 non è in linea.
+Ora che hai creato una relazione di replica, il trasferimento iniziale dei dati inizia come definito nella tua policy di replica. Puoi anche testare il failover della replica per verificare che il failover avvenga correttamente se il tuo sistema ASA r2 va offline.
 
 
 
