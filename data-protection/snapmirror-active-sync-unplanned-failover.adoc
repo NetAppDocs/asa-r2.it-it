@@ -4,7 +4,7 @@ permalink: data-protection/snapmirror-active-sync-unplanned-failover.html
 keywords: asa r2, reestablish, snapmirror active sync, unplanned failover, disaster recovery 
 summary: Scopri come ristabilire le relazioni di sincronizzazione attiva SnapMirror dopo un failover non pianificato dei cluster ASA r2. 
 ---
-= Ripristinare la relazione di sincronizzazione attiva SnapMirror dopo un failover non pianificato dei cluster ASA r2
+= Ristabilire la sincronizzazione attiva di SnapMirror dopo un failover imprevisto su ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ permalink: monitor/view-insights.html
 keywords: view, insights, optimize, cluster, performance, best practices, configuration, security 
 summary: Consulta gli approfondimenti in ONTAP System Manager per identificare le Best practice e le modifiche della configurazione che puoi implementare sul tuo sistema ASA R2 per ottimizzare la sicurezza e le performance del cluster. 
 ---
-= Ottimizza la sicurezza e le performance del cluster con informazioni dettagliate sul sistema storage ASA R2
+= Ottimizza la sicurezza e le prestazioni del cluster con ASA r2 System Insights
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
