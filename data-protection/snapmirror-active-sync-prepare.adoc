@@ -76,5 +76,5 @@ Un gruppo di coerenza può essere mappato con più sottosistemi, ma ogni sottosi
 * link:https://docs.netapp.com/us-en/ontap/san-admin/microsoft-offloaded-data-transfer-odx-concept.html["Trasferimento dati scaricato da Microsoft (ODX)"]
 
 
-.Cosa succederà?
+.Quali sono le prossime novità?
 Dopo aver completato la preparazione necessaria per abilitare la sincronizzazione attiva SnapMirror , dovresti link:snapmirror-active-sync-confirm-cluster-configuration.html["conferma la configurazione del tuo cluster"] .

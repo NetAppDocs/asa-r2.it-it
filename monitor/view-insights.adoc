@@ -13,7 +13,7 @@ summary: Consulta gli approfondimenti in ONTAP System Manager per identificare l
 [role="lead"]
 Visualizza _Insights_ in Gestione di sistema di ONTAP per identificare le Best practice e le modifiche alla configurazione che puoi implementare sul tuo sistema ASA R2 per ottimizzare la sicurezza e le performance del cluster.
 
-Ad esempio, si supponga che per il cluster siano configurati server NTP (Network Time Protocol). Tuttavia, non si sa che il numero di server NTP consigliati per la gestione ottimale del tempo del cluster è inferiore a quello consigliato. Per evitare problemi che possono verificarsi quando il tempo del cluster è impreciso, Insights ti informerà che sono stati configurati troppi pochi server NTP e ti darà la possibilità di scoprire di più su questo problema, risolverlo o eliminarlo.
+Ad esempio, supponi di avere server Network Time Protocol (NTP) configurati per il tuo cluster. Tuttavia, non sai di avere meno server NTP rispetto al numero raccomandato necessario per una gestione ottimale dell'ora del cluster. Per aiutarti a prevenire problemi che possono verificarsi quando l'ora del cluster non è accurata, Insights ti avvisa che hai troppo pochi server NTP configurati e ti offre opzioni per saperne di più sul problema, risolverlo o ignorarlo.
 
 image:insights.png["schermata della pagina delle informazioni di system manager"]
 

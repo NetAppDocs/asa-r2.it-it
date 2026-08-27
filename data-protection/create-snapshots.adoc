@@ -23,11 +23,11 @@ Un gruppo di coerenza è un insieme di unità di archiviazione gestite come una 
 
 Creare un gruppo di coerenza utilizzando nuove unità di archiviazione o un gruppo di coerenza utilizzando le unità di archiviazione esistenti.
 
-A partire da ONTAP 9.18.1, è possibile impostare la percentuale di riserva degli snapshot e abilitare l'eliminazione automatica degli snapshot quando si crea un gruppo di coerenza con nuove unità di archiviazione.  La riserva snapshot è la quantità di spazio nell'unità di archiviazione riservata specificamente agli snapshot.  Quando la riserva snapshot è impostata con l'eliminazione automatica degli snapshot, gli snapshot più vecchi vengono eliminati automaticamente quando lo spazio utilizzato dagli snapshot supera la riserva snapshot.  Se la riserva degli snapshot e l'eliminazione automatica degli snapshot sono abilitate su un gruppo di coerenza padre, vengono abilitate anche su tutti i gruppi di coerenza figlio esistenti.  Se vengono aggiunti nuovi gruppi di coerenza figlio, questi non ereditano le impostazioni di riserva e di eliminazione degli snapshot del gruppo padre.
+A partire da ONTAP 9.18.1, puoi impostare la percentuale di riserva snapshot e abilitare l'eliminazione automatica degli snapshot quando crei un gruppo di coerenza con nuove unità di storage. La riserva snapshot è la quantità di spazio nell'unità di storage riservata specificamente agli snapshot. Quando la riserva snapshot è impostata insieme all'eliminazione automatica degli snapshot, gli snapshot meno recenti vengono eliminati automaticamente quando lo spazio utilizzato dagli snapshot supera la riserva snapshot. Se la riserva snapshot e l'eliminazione automatica degli snapshot sono abilitate su un gruppo di coerenza padre, vengono abilitate su tutti i gruppi di coerenza figlio esistenti. Se vengono aggiunti nuovi gruppi di coerenza figlio, questi non ereditano le impostazioni di riserva snapshot e di eliminazione degli snapshot del gruppo padre.
 
 link:snapshot-reserve.html["Scopri di più sulla riserva di snapshot sui sistemi di archiviazione ASA r2"].
 
-A partire da ONTAP 9.16.1, quando si creano gruppi di coerenza utilizzando nuove unità di archiviazione, è possibile configurare fino a cinque gruppi di coerenza figlio. link:manage-hierarchical-consistency-groups.html["Scopri di più sui gruppi di coerenza figlio sui sistemi ASA r2"].
+A partire da ONTAP 9.16.1, quando crei gruppi di coerenza utilizzando nuove unità di storage, puoi configurare fino a cinque gruppi di coerenza secondari. link:manage-hierarchical-consistency-groups.html["Scopri di più sui gruppi di coerenza figlio sui sistemi ASA r2"].
 
 [role="tabbed-block"]
 ====
@@ -185,7 +185,8 @@ Il trasferimento iniziale dei dati per la replica viene avviato immediatamente p
 .Fasi
 . In System Manager, selezionare *Storage*.
 . Passare il mouse sul nome dell'unità di archiviazione che si desidera proteggere.
-. Selezionare image:icon_kabob.gif["tre punti blu verticali"] ; quindi selezionare *Proteggi*. Se si desidera creare un'istantanea immediata su richiesta, in *protezione locale*, selezionare *Aggiungi istantanea adesso*.
+. Selezionare image:icon_kabob.gif["tre punti blu verticali"] ; quindi selezionare *Proteggi*.
+. Se si desidera creare un'istantanea immediata su richiesta, in *protezione locale*, selezionare *Aggiungi istantanea adesso*.
 +
 La protezione locale crea lo snapshot sullo stesso cluster contenente l'unità di archiviazione.
 
@@ -232,4 +233,4 @@ Il trasferimento iniziale dei dati per la replica viene avviato immediatamente p
 --
 ====
 .Quali sono le prossime novità?
-Ora che i tuoi dati sono protetti con snapshot, dovresti link:../secure-data/encrypt-data-at-rest.html["configurare la replica snapshot"]copiare i tuoi gruppi di coerenza in una posizione geograficamente remota per il backup e il disaster recovery.
+Ora che i tuoi dati sono protetti con gli snapshot, dovresti link:snapshot-replication.html["configurare la replica snapshot"] copiare i tuoi gruppi di coerenza in una posizione geograficamente remota per il backup e il ripristino di emergenza.

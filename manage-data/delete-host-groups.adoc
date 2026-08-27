@@ -18,7 +18,7 @@ In un sistema ASA r2, un gruppo host è il meccanismo utilizzato per consentire 
 . In *Mappatura host* seleziona il gruppo host che desideri eliminare.
 . Selezionare *Archiviazione mappata*.
 . Selezionare *Altro*; quindi selezionare *Elimina*.
-. Seleziona per confermare che vuoi continuare; quindi seleziona *Elimina*.
+. Seleziona l'opzione di conferma per verificare che vuoi continuare; poi seleziona *Elimina*.
 
 
 .Quali sono le prossime novità?

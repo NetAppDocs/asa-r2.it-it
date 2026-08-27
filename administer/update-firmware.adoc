@@ -11,14 +11,14 @@ summary: ONTAP aggiorna automaticamente il firmware sui sistemi ASA R2. È possi
 
 
 [role="lead"]
-Per impostazione predefinita, ONTAP scarica e aggiorna automaticamente i file del firmware e di sistema sul sistema ASA R2. Se si desidera la flessibilità di visualizzare gli aggiornamenti consigliati prima di scaricarli e installarli, è possibile utilizzare Gestione di sistema di ONTAP per disattivare gli aggiornamenti automatici o modificare i parametri di aggiornamento per visualizzare le notifiche degli aggiornamenti disponibili prima di eseguire qualsiasi azione.
+ONTAP scarica e aggiorna automaticamente firmware e file di sistema sul tuo sistema ASA r2 per impostazione predefinita. Se vuoi avere la flessibilità di visualizzare gli aggiornamenti consigliati prima che vengano scaricati e installati, puoi usare System Manager per disabilitare gli aggiornamenti automatici o per modificare i parametri di aggiornamento così da essere avvisato degli aggiornamenti disponibili prima che venga eseguita qualsiasi azione.
 
 
 
 [[enable-automatic-updates]]
 == Abilitare gli aggiornamenti automatici
 
-Per impostazione predefinita, gli aggiornamenti consigliati per il firmware dello storage, il firmware SP/BMC e i file di sistema vengono scaricati e installati automaticamente nel sistema ASA R2. Se gli aggiornamenti automatici sono stati disattivati, è possibile attivarli per ripristinare il comportamento predefinito.
+Gli aggiornamenti consigliati per il firmware dello storage, il firmware Service Processor/Baseboard Management Controller (SP/BMC) e i file di sistema vengono scaricati e installati automaticamente sul tuo sistema ASA r2 per impostazione predefinita. Se gli aggiornamenti automatici sono stati disabilitati, puoi riattivarli per ripristinare il comportamento predefinito.
 
 .Fasi
 . In System Manager, selezionare *Cluster > Settings*.
@@ -45,7 +45,7 @@ Disattiva gli aggiornamenti automatici solo se desideri gestire gli aggiornament
 
 
 .Risultato
-Gli aggiornamenti automatici sono disattivati. Controllare regolarmente la presenza di aggiornamenti consigliati e decidere se si desidera eseguire un'installazione manuale.
+Gli aggiornamenti automatici sono disabilitati. Dovresti controllare regolarmente la presenza di aggiornamenti consigliati e decidere se vuoi eseguire un'installazione manuale.
 
 
 
@@ -64,7 +64,7 @@ Visualizza un elenco di aggiornamenti del firmware e dei file di sistema scarica
 [[edit-automatic-updates]]
 == Modificare gli aggiornamenti automatici
 
-È possibile scegliere di scaricare e installare automaticamente gli aggiornamenti consigliati per il firmware dello storage, il firmware SP/BMC e i file di sistema nel cluster, oppure scegliere di chiudere automaticamente gli aggiornamenti consigliati. Se si desidera controllare manualmente l'installazione o l'eliminazione degli aggiornamenti, selezionare per ricevere una notifica quando è disponibile un aggiornamento consigliato; quindi, è possibile selezionare manualmente l'installazione o l'eliminazione.
+Puoi scegliere di scaricare e installare automaticamente sul tuo cluster gli aggiornamenti consigliati per il firmware dello storage, il firmware SP/BMC e i file di sistema, oppure puoi scegliere di ignorare automaticamente gli aggiornamenti consigliati. Se vuoi controllare manualmente l'installazione o l'ignorare degli aggiornamenti, seleziona di essere avvisato quando è disponibile un aggiornamento consigliato; poi puoi scegliere manualmente se installarlo o ignorarlo.
 
 .Fasi
 . In System Manager, selezionare *Cluster > Settings*.

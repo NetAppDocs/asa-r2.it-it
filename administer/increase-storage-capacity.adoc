@@ -57,7 +57,7 @@ Chiudere lentamente la maniglia della camma in modo che sia allineata correttame
 
 . Verificare che il LED di attività del disco (verde) sia acceso.
 +
-** SE il LED è fisso, l'unità è alimentata.
+** Se il LED è acceso fisso, l'unità ha alimentazione.
 ** Se il LED lampeggia, l'unità è alimentata e l'i/o è in corso. Il LED lampeggia anche se il firmware dell'unità è in fase di aggiornamento.
 +
 Il firmware del disco viene aggiornato automaticamente (senza interruzioni) sui nuovi dischi che non dispongono delle versioni firmware correnti.

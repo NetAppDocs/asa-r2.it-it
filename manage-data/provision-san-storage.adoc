@@ -77,7 +77,7 @@ Questa opzione non è disponibile se in precedenza non è stato impostato il cri
  a| 
 Creare una nuova policy QoS
  a| 
-.. In *archiviazione e ottimizzazione*, accanto a *qualità del servizio (QoS)*, selezionare image:icon_dropdown_arrow.gif["icona della freccia blu rivolta verso il basso"] .
+.. In *archiviazione e ottimizzazione*, accanto a *qualità del servizio (QoS)*, selezionare image:icon_dropdown_arrow.gif["icona della freccia blu rivolta verso il basso"].
 .. Selezionare *Definisci nuovo criterio*.
 .. Immettere un nome per il nuovo criterio QoS.
 .. Imposta un limite QoS, una garanzia QoS o entrambi.
@@ -161,7 +161,7 @@ TLS crittografa tutti i dati inviati in rete tra gli host NVMe/TCP e il sistema 
 
 .. Selezionare *Aggiungi iniziatore* per aggiungere altri iniziatori.
 +
-Formattare l'NQN dell'host come <nqn.aaaa-mm> seguito da un nome di dominio completo.  L'anno deve essere uguale o successivo al 1970.  La lunghezza massima totale dovrebbe essere 223.  Un esempio di un iniziatore NVMe valido è nqn.2014-08.com.example:string
+Formatta l'NQN dell'host come <nqn.yyyy-mm> seguito da un fully qualified domain name. L'anno deve essere uguale o successivo al 1970. La lunghezza massima totale deve essere 223. Un esempio valido di initiator NVMe è nqn.2014-08.com.example:string.
 
 
 

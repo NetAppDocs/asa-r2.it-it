@@ -11,7 +11,7 @@ summary: 'Se lo spazio di una zona di disponibilità dello storage si sta esaure
 
 
 [role="lead"]
-A partire da ONTAP 9.18.1, puoi migrare senza interruzioni una macchina virtuale di storage (VM) da qualsiasi cluster ASA standard a qualsiasi cluster ASA r2. Migrare da un cluster ASA standard a un cluster ASA r2 ti permette di adottare l'architettura semplificata e ottimizzata dei sistemi ASA r2 per ambienti solo SAN.
+A partire da ONTAP 9.18.1, puoi migrare senza interruzioni una macchina virtuale di storage (VM) da qualsiasi cluster ASA standard a qualsiasi cluster ASA r2 per adottare l'architettura semplificata e ottimizzata dei sistemi ASA r2 per ambienti solo SAN.
 
 
 NOTE: Non puoi migrare una storage VM da un ASA MetroCluster a un cluster ASA r2. I sistemi ASA r2 non supportano configurazioni MetroCluster.
@@ -77,7 +77,7 @@ Se vengono visualizzate le voci, gli oggetti NVMe devono esserelink:https://docs
 +
 [source, cli]
 ----
-lun show -verser <storage_VM> -class protocol-endpoint,vvol
+lun show -vserver <storage_VM> -class protocol-endpoint,vvol
 ----
 +
 Se sono presenti vVols , è necessario copiarli su un'altra VM di archiviazione e quindi eliminarli dalla VM di archiviazione da migrare.  Vedi il `lun copy` E `lun delete` comandi nellink:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["Riferimento comando ONTAP"^] per maggiori informazioni.
@@ -86,7 +86,7 @@ Se sono presenti vVols , è necessario copiarli su un'altra VM di archiviazione 
 +
 [source, cli]
 ----
-lun show -verser <storage_VM>
+lun show -vserver <storage_VM>
 ----
 +
 Se un volume contiene più di un LUN, utilizzare `volume create` E `lun move` comandi per creare un rapporto volume-LUN di 1:1. Vedi illink:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["Riferimento comando ONTAP"^] per maggiori informazioni.
@@ -182,7 +182,7 @@ Prima di migrare una macchina virtuale di archiviazione (VM) da un cluster ASA a
 vserver migrate start -vserver <storage_VM> -source-cluster <asa_cluster> -check-only true
 ----
 +
-Se è necessario risolvere eventuali problemi per preparare il cluster ASA alla migrazione, vengono visualizzati il ​​problema e l'azione correttiva.  Risolvi il problema e ripeti il ​​controllo preliminare finché non viene completato correttamente.
+Se devi risolvere eventuali problemi per preparare il tuo cluster ASA alla migrazione, vengono visualizzati il problema e l'azione correttiva. Risolvilo e ripeti il pre-check finché non viene completato con successo.
 
 
 

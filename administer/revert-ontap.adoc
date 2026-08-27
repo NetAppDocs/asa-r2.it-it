@@ -13,9 +13,9 @@ summary: I ripristini del software ONTAP per i sistemi ASA r2 seguono lo stesso 
 [role="lead"]
 I ripristini del software ONTAP per i sistemi ASA r2 seguono lo stesso processo dei ripristini per gli altri sistemi ONTAP .
 
-Il ripristino di un cluster ONTAP è dispendioso. È necessario disattivare il cluster per tutta la durata del ripristino. Non ripristinare un cluster di produzione senza l'assistenza del supporto tecnico. È possibile ripristinare un cluster nuovo o di test senza assistenza. Se il ripristino di un sistema nuovo o di test fallisce o se viene completato correttamente, ma non si è soddisfatti delle prestazioni del cluster nel proprio ambiente di produzione, è necessario contattare il supporto tecnico per assistenza.
+Il ripristino di un cluster ONTAP è un'operazione che interrompe il funzionamento. Devi mettere il cluster offline per tutta la durata del ripristino. Non dovresti ripristinare un cluster di produzione senza l'assistenza del supporto tecnico. Puoi ripristinare un cluster nuovo o di test senza assistenza. Se il ripristino di un sistema nuovo o di test non riesce, oppure se si completa correttamente ma non sei soddisfatto delle prestazioni del cluster nel tuo ambiente di produzione, dovresti contattare il supporto tecnico per assistenza.
 
-link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["Ripristinare un cluster ONTAP"] .
+Consulta link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["Ripristinare un cluster ONTAP"] per la procedura completa di ripristino.
 
 
 

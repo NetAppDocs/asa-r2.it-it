@@ -30,7 +30,7 @@ Il rapporto di riduzione dei dati rappresenta la quantità di spazio risparmiato
 
 
 .Quali sono le prossime novità?
-Se lo spazio del cluster sta per esaurirsi o se non ha la capacità necessaria per soddisfare una domanda futura, è necessario pianificare l'link:../administer/increase-storage-capacity.html["aggiungere nuove unità"]utilizzo del sistema ASA R2 per aumentare la capacità di storage.
+Se il tuo cluster sta per esaurire lo spazio disponibile o non ha la capacità per soddisfare la domanda futura, link:../administer/increase-storage-capacity.html["aggiungere nuove unità"] al tuo sistema ASA r2 per aumentare la capacità di storage.
 
 
 
@@ -50,7 +50,7 @@ Viene visualizzato un riepilogo dell'utilizzo delle zone di disponibilità dello
 
 . Se si desiderano metriche più dettagliate, selezionare una disponibilità dello storage specifica.
 +
-In *Panoramica*, vengono visualizzate la capacità della zona di disponibilità dello storage, la quantità di spazio utilizzato e il rapporto di riduzione dei dati.
+In *Panoramica*, vengono visualizzati la capacità della zona di disponibilità dello storage, la quantità di spazio utilizzato e il rapporto di riduzione dei dati.
 
 +
 In *Unità di storage*, viene visualizzato un elenco di tutte le unità di storage presenti nella zona di disponibilità dello storage.
@@ -58,7 +58,7 @@ In *Unità di storage*, viene visualizzato un elenco di tutte le unità di stora
 
 
 .Quali sono le prossime novità?
-Se la tua zona di disponibilità dello storage sta per esaurire lo spazio, dovresti pianificare di link:../manage-data/move-storage-units.html["spostare le unità di archiviazione"] in un'altra zona di disponibilità dello storage per bilanciare l'utilizzo dello storage nel cluster, eliminare snapshot per liberare spazio o aggiungere dischi aggiuntivi ai nodi per aumentare la capacità.
+Se la disponibilità dello storage nella tua zona di disponibilità sta per esaurirsi, link:../manage-data/move-storage-units.html["spostare le unità di archiviazione"] in un'altra zona di disponibilità dello storage per bilanciare l'utilizzo dello storage nel cluster, elimina le snapshot per liberare spazio oppure aggiungi dischi aggiuntivi ai tuoi nodi per aumentare la capacità.
 
 
 
@@ -76,7 +76,7 @@ Monitorare la quantità di storage consumata da un'unità di storage in modo da 
 ** Quantità di spazio utilizzato
 ** Rapporto di riduzione dei dati
 +
-Il rapporto di riduzione dei dati rappresenta la quantità di spazio risparmiato grazie all'efficienza dello storage
+Il rapporto di riduzione dei dati rappresenta la quantità di spazio risparmiato grazie all'efficienza dello storage.
 
 ** Istantanea utilizzata
 +

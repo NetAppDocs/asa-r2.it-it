@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-hierarchical-consistency-groups.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: Utilizzare gruppi di coerenza per eseguire contemporaneamente diverse azioni su più unità di archiviazione anziché eseguire azioni singolarmente su ciascuna unità.  In una struttura gerarchica, uno o più gruppi di coerenza sono configurati come figli sotto un gruppo di coerenza padre. 
+summary: Utilizza i gruppi di coerenza per eseguire diverse azioni su più unità di archiviazione contemporaneamente invece di eseguire azioni individualmente su ciascuna unità. In una struttura gerarchica, uno o più gruppi di coerenza sono configurati come figli sotto un gruppo di coerenza padre. 
 ---
 = Gestisci gruppi di coerenza gerarchica sul tuo sistema ASA r2
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Utilizzare gruppi di coerenza per eseguire contemporaneamente diverse a
 
 
 [role="lead"]
-A partire da ONTAP 9.16.1, è possibile utilizzare System Manager per creare gruppi di coerenza gerarchica sul sistema ASA r2.  In una struttura gerarchica, uno o più gruppi di coerenza sono configurati come figli sotto un gruppo di coerenza padre.  È possibile applicare policy di snapshot individuali a ciascun gruppo di coerenza figlio e replicare gli snapshot di tutti i gruppi di coerenza figlio su un cluster remoto come un'unica unità replicando il gruppo padre.  Ciò semplifica la protezione e la gestione dei dati per strutture dati complesse.
+A partire da ONTAP 9.16.1, puoi usare System Manager per creare gruppi di coerenza gerarchici sul tuo sistema ASA r2. In una struttura gerarchica, uno o più gruppi di coerenza sono configurati come figli sotto un gruppo di coerenza padre. Puoi applicare criteri di snapshot individuali a ciascun gruppo di coerenza figlio e replicare gli snapshot di tutti i gruppi di coerenza figlio in un cluster remoto come un'unica unità replicando il gruppo padre. Questo semplifica la protezione e la gestione dei dati per strutture dati complesse.
 
 
 
@@ -25,14 +25,14 @@ Se si esegue ONTAP 9.16.1 e il gruppo di coerenza che si desidera promuovere è 
 
 .Fasi
 . In System Manager, selezionare *protezione > gruppi di coerenza*.
-. Passare il mouse sul gruppo di coerenza che si desidera convertire in un gruppo di coerenza di origine.
+. Passa il mouse sopra il gruppo di coerenza che vuoi convertire in un gruppo di coerenza padre.
 . Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Promuovi a gruppo di coerenza principale*.
 . Immettere un nome per il nuovo gruppo di coerenza figlio oppure accettare il nome predefinito; quindi selezionare il tipo di componente del gruppo di coerenza.
 . Selezionare *Promuovi*.
 
 
 .Quali sono le prossime novità?
-È possibile creare gruppi di coerenza figlio aggiuntivi sotto il gruppo di coerenza padre.  Puoi anchelink:../secure-data/encrypt-data-at-rest.html["configurare la replica snapshot"] per copiare i gruppi di coerenza padre e figlio in una posizione geograficamente remota per il backup e il ripristino di emergenza.
+Puoi creare ulteriori gruppi di coerenza figlio all'interno del gruppo di coerenza padre. Puoi anche link:snapshot-replication.html["configurare la replica snapshot"] copiare i gruppi di coerenza padre e figlio in una posizione geografica remota per il backup e il disaster recovery.
 
 
 
@@ -102,7 +102,7 @@ Se si sceglie di creare un nuovo gruppo di coerenza di origine, immettere un nom
 
 --
 ====
-.Cosa succederà
+.Quali sono le prossime novità?
 Dopo aver creato un gruppo di coerenza figlio, puoilink:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["applicazione di singole policy di protezione degli snapshot"] a ciascun gruppo di coerenza figlio.  Puoi anchelink:snapshot-replication.html["impostare politiche di replicazione"] sui gruppi di coerenza padre e figlio per replicare i gruppi di coerenza in una posizione remota.
 
 
@@ -118,7 +118,7 @@ Se si esegue ONTAP 9.16.1 e il gruppo di coerenza che si desidera scollegare si 
 .Fasi
 . In System Manager, selezionare *protezione > gruppi di coerenza*.
 . Selezionare il gruppo di coerenza di origine.
-. Selezionare il gruppo di coerenza figlio che si desidera scollegare.
+. Passa il mouse sopra il gruppo di coerenza figlio che vuoi scollegare.
 . Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Disconnetti da principale*.
 . Immettere un nuovo nome per il gruppo di coerenza che si sta scollegando o accettare il nome predefinito, quindi selezionare il tipo di applicazione del gruppo di coerenza.
 . Selezionare *Scollega*.

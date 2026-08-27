@@ -11,7 +11,7 @@ summary: Utilizzare Gestione di sistema di ONTAP per visualizzare un elenco di e
 
 
 [role="lead"]
-Utilizzare Gestione di sistema di ONTAP per visualizzare un elenco di errori o avvisi che si sono verificati nel sistema insieme alle azioni correttive consigliate. È inoltre possibile visualizzare i registri di controllo del sistema e un elenco dei processi attivi, completati o non riusciti.
+Utilizza ONTAP System Manager per visualizzare un elenco di errori o avvisi, azioni correttive consigliate, registri di controllo del sistema e processi attivi, completati o non riusciti.
 
 .Fasi
 . In System Manager, selezionare *Eventi e processi*.
@@ -67,4 +67,4 @@ Configurare il sistema in modo che invii una notifica a indirizzi e-mail specifi
 
 
 .Risultato
-L'indirizzo e-mail aggiunto riceverà le notifiche e-mail specificate per gli eventi del cluster e i registri di controllo.
+L'indirizzo email che hai aggiunto riceve le notifiche email specificate per gli eventi del cluster e i log di controllo.

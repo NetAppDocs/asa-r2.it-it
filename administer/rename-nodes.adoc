@@ -11,7 +11,7 @@ summary: 'Potrebbe essere necessario rinominare un nodo per allinearlo alle conv
 
 
 [role="lead"]
-Puoi utilizzare Gestione sistema di ONTAP per rinominare un nodo sul sistema ASA R2. Potrebbe essere necessario rinominare un nodo per allinearlo alle convenzioni di denominazione dell'organizzazione o per altri motivi amministrativi.
+Puoi usare System Manager per rinominare un nodo sul tuo sistema ASA r2 per allinearlo alle convenzioni di denominazione della tua organizzazione o per altri motivi amministrativi.
 
 .Fasi
 . In System Manager, selezionare *Cluster > Panoramica*.

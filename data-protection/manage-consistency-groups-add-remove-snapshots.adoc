@@ -62,8 +62,8 @@ quindi selezionare image:icon_dropdown_arrow.gif["freccia blu rivolta verso il b
 . Selezionare *Salva*.
 
 
-.Cosa succederà
-Ora che i tuoi dati sono protetti con snapshot, dovresti link:../secure-data/encrypt-data-at-rest.html["configurare la replica snapshot"]copiare i tuoi gruppi di coerenza in una posizione geograficamente remota per il backup e il disaster recovery.
+.Quali sono le prossime novità?
+Ora che i tuoi dati sono protetti con gli snapshot, dovresti link:snapshot-replication.html["configurare la replica snapshot"] copiare i tuoi gruppi di coerenza in una posizione geograficamente remota per il backup e il ripristino di emergenza.
 
 
 

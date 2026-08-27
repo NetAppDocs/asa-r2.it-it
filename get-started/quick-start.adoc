@@ -12,7 +12,7 @@ searchtitle: Installare e configurare i sistemi di archiviazione ASA A1K, A90, A
 
 
 [role="lead"]
-Per iniziare a utilizzare il sistema ASA R2, è necessario installare i componenti hardware, configurare il cluster, impostare l'accesso ai dati dagli host al sistema di storage e eseguire il provisioning dello storage.
+Per iniziare a utilizzare il tuo sistema ASA r2, installa i componenti hardware, configura il cluster, imposta l'accesso ai dati dai client SAN al sistema storage e fornisci lo storage.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Installazione e configurazione dell'hardware
 [role="quick-margin-para"]

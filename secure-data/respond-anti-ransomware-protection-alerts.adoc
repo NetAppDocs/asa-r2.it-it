@@ -11,9 +11,9 @@ summary: Visualizza gli avvisi sui potenziali attacchi ransomware e agisci in Ge
 
 
 [role="lead"]
-Se la protezione autonoma dai ransomware con intelligenza artificiale (ARP/AI) rileva attività anomale su una o più unità di archiviazione del sistema ASA r2, viene generato un avviso nella dashboard di System Manager. È necessario visualizzare l'avviso, verificare l'attività e, se necessario, intervenire per bloccare qualsiasi potenziale minaccia ai dati.
+Se Autonomous Ransomware Protection with Artificial Intelligence (ARP/AI) rileva attività anomale su una o più unità di storage nel tuo sistema ASA r2, System Manager visualizza un avviso sulla dashboard. Esamina l'avviso, verifica l'attività e intervieni se necessario per proteggere i tuoi dati.
 
-Se viene visualizzato un messaggio di avviso ARP/AI, prima di intervenire è consigliabile utilizzare l'apposito strumento di controllo dell'integrità dell'applicazione per verificare l'integrità dei dati sull'unità di archiviazione. La verifica dell'integrità dei dati dell'unità di archiviazione aiuta a determinare se l'attività è accettabile o se si tratta di un potenziale attacco ransomware.
+Se viene visualizzato un messaggio di avviso ARP/AI, usa l'apposito strumento di verifica dell'integrità dell'applicazione per controllare i dati sull'unità di storage prima di agire. Verificare l'integrità dei dati sull'unità di storage ti aiuta a capire se l'attività è accettabile o se si tratta di un potenziale attacco ransomware.
 
 [cols="2,2"]
 |===
@@ -26,12 +26,12 @@ Se viene visualizzato un messaggio di avviso ARP/AI, prima di intervenire è con
 | Un potenziale attacco ransomware | Contrassegna l'attività come potenziale attacco ransomware. 
 
 
-| Indeterminato | Non intervenire immediatamente. Monitorare l'unità di archiviazione fino a 7 giorni. Se l'unità di archiviazione continua a funzionare normalmente, contrassegnare l'attività come falso positivo. Se l'unità di archiviazione continua a presentare attività anomale, contrassegnare l'attività come potenziale attacco ransomware. 
+| Indeterminato | Non intraprendere azioni immediate. Monitora l'unità di archiviazione per un massimo di 7 giorni. Se l'unità di archiviazione continua a funzionare normalmente, contrassegna l'attività come falso positivo. Se l'unità di archiviazione continua a mostrare attività anomale, contrassegna l'attività come potenziale attacco ransomware. 
 |===
 .Fasi
 . In System Manager, selezionare *Dashboard*.
 +
-Se ARP ha rilevato un'attività anomala su una o più unità di archiviazione, viene visualizzato un messaggio in *Avvisi*.
+Se ARP/AI ha rilevato attività anomale su una o più unità di storage, viene visualizzato un messaggio sotto *Avvisi*.
 
 . Selezionare il messaggio di avviso.
 . In *Panoramica eventi*, seleziona il messaggio *Avvisi* che indica il numero di unità di archiviazione con attività anomala.

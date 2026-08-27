@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: data-protection/prepare-aix-snapmirror-active-sync.html 
-keywords: asa r2, data protection, protect data, configure, snapmirror active sync, ,disaster recovery, symmetric active active, prepare, aix 
+keywords: asa r2, data protection, protect data, configure, snapmirror active sync, disaster recovery, symmetric active active, prepare, aix 
 summary: 'Prima di poter abilitare la SnapMirror active sync per gli host AIX che eseguono ONTAP 9.19.1 o versioni successive, la modalità di accesso dell"host deve essere impostata su locale.' 
 ---
 = Prepara gli host AIX per la sincronizzazione attiva di SnapMirror sui sistemi ASA r2

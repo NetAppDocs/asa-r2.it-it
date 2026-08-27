@@ -11,14 +11,14 @@ summary: 'Utilizzare System Manager per configurare l"accesso al controller di d
 
 
 [role="lead"]
-Utilizzare System Manager per configurare l'accesso al controller di dominio Active Directory, l'autenticazione LDAP e SAML per gli account utente. Creare ruoli di account utente per definire funzioni specifiche che gli utenti assegnati ai ruoli possono eseguire nel cluster.
+Utilizza System Manager per configurare l'accesso al domain controller di Active Directory, l'autenticazione LDAP e SAML per i tuoi account utente. Crea ruoli per gli account utente per definire funzioni specifiche che gli utenti assegnati a tali ruoli possono eseguire sul tuo cluster.
 
 
 
 [[configure-active-directory-domain-controller-access]]
-== Configurare l'accesso al controller di dominio Active Directory
+== Configura l'accesso al domain controller di Active Directory
 
-Configurare l'accesso al controller di dominio Active Directory (ad) al cluster o alla VM di storage in modo da abilitare l'accesso all'account ad.
+Configura l'accesso del domain controller Active Directory (AD) al tuo cluster o alla tua storage VM così puoi abilitare l'accesso dell'account AD.
 
 .Fasi
 . In System Manager, selezionare *Cluster > Settings*.
@@ -64,7 +64,7 @@ Vedere la documentazione IdP per la configurazione.
 
 .Fasi
 . In System Manager, selezionare *Cluster > Settings*.
-. In *sicurezza*, accanto a *autenticazione SAML*, selezionare image:icon_gear_white_bg.png["contorno blu di un ingranaggio meccanico"] .
+. In *Sicurezza*, accanto a *autenticazione SAML*, seleziona image:icon_gear_white_bg.png["contorno blu di un ingranaggio meccanico"].
 . Selezionare *attiva autenticazione SAML*.
 . Immettere l'URL IdP e l'indirizzo IP del sistema host, quindi selezionare *Salva*.
 +
@@ -115,7 +115,7 @@ Creare un account utente amministratore per consentire all'utente dell'account d
 . In *utenti*, selezionare image:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"].
 . Immettere un nome utente, quindi selezionare un ruolo da assegnare all'utente.
 . Selezionare il metodo di accesso utente e il metodo di autenticazione.
-. Per attivare MFA, selezionare image:icon_add.gif["segno più seguito dalla parola aggiungere in lettere blu"]; quindi un metodo di accesso secondario e un metodo di autenticazione
+. Per abilitare l'autenticazione a più fattori (MFA), seleziona image:icon_add.gif["segno più seguito dalla parola aggiungere in lettere blu"]; quindi seleziona un metodo di accesso secondario e un metodo di autenticazione.
 . Immettere una password per l'utente.
 . Selezionare *Salva*.
 

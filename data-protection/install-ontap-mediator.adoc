@@ -17,5 +17,5 @@ L'installazione ONTAP Mediator include la preparazione all'installazione, l'abil
 
 Per installare ONTAP Mediator, seguire link:https://docs.netapp.com/us-en/ontap/mediator/workflow-summary.html["questo flusso di lavoro"^]
 
-.Cosa succederà
+.Quali sono le prossime novità?
 Dopo aver installato ONTAP Mediator dovresti link:configure-ontap-mediator.html["configurare ONTAP Mediator utilizzando certificati autofirmati"] .

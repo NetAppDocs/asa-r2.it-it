@@ -25,5 +25,5 @@ La sincronizzazione attiva SnapMirror offre disponibilità continua per le appli
 . Selezionare image:icon_kabob.gif["tre punti blu verticali"] ; quindi selezionare *Failover*.
 
 
-.Cosa succederà
+.Quali sono le prossime novità?
 Utilizzare il  `snapmirror failover show` comando nell'interfaccia della riga di comando (CLI) ONTAP per monitorare lo stato del failover.

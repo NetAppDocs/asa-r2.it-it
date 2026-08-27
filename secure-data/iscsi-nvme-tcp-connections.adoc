@@ -11,7 +11,7 @@ summary: Se si utilizza il protocollo IP sul sistema ASA r2, è possibile config
 
 
 [role="lead"]
-Se si utilizza il protocollo IP nel sistema ASA R2, è possibile configurare la protezione IP (IPsec) per migliorare la protezione dei dati. IPSec è uno standard Internet che fornisce crittografia dei dati in-flight, autenticazione del traffico tra gli endpoint di rete a livello IP e protezione contro attacchi "man-in-the-middle" e rieseguiti" sui dati.
+Se usi il protocollo IP sul tuo sistema ASA r2, puoi configurare la sicurezza IP (IPsec) per aumentare la sicurezza dei dati. IPsec è uno standard Internet che offre crittografia dei dati in transito, autenticazione degli endpoint a livello IP e protezione contro attacchi di replay e man-in-the-middle.
 
 Per i sistemi ASA R2, IPSec è disponibile per gli host iSCSI e NVMe/TCP.
 

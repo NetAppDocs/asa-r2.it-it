@@ -4,14 +4,14 @@ permalink: secure-data/disable-default-anti-ransomware-protection.html
 keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, ai, disable 
 summary: Se disponi di una licenza Autonomous Ransomware Protection installata sul tuo cluster ASA r2, ARP viene abilitato per impostazione predefinita su tutte le unità di storage esistenti e di nuova creazione 12 ore dopo l’aggiornamento a ONTAP 9.18.1 o l’inizializzazione di un nuovo cluster ASA r2 ONTAP 9.18.1. 
 ---
-= Disabilita la protezione ransomware autonoma predefinita sui tuoi sistemi di storage ASA r2
+= Disabilita la protezione ransomware autonoma predefinita sui sistemi storage ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Quando si inizializza un nuovo cluster ONTAP 9.18.1 ASA r2 o si aggiorna il cluster a ONTAP 9.18.1, ARP/AI viene automaticamente abilitato per impostazione predefinita su tutte le nuove unità di storage dopo un grace period di 12 ore. Se non si disabilita ARP/AI durante il grace period, viene abilitato a livello di cluster per le nuove unità di storage al termine del grace period.
+Quando inizializzi un nuovo cluster ASA ONTAP 9.18.1 r2 o aggiorni un cluster a ONTAP 9.18.1, ARP/AI viene abilitato per impostazione predefinita su tutte le nuove unità di storage dopo un grace period di 12 ore. Se non disabiliti ARP/AI durante quel periodo, ONTAP lo abilita a livello di cluster per le nuove unità di storage quando il grace period termina.
 
 Le unità di archiviazione create in ONTAP 9.17.1 devono essere link:enable-anti-ransomware-protection.html["abilitato manualmente"] per ARP/AI.
 
@@ -49,7 +49,7 @@ Le unità di archiviazione create in ONTAP 9.17.1 devono essere link:enable-anti
 ----
 security anti-ransomware auto-enable show
 ----
-. Disabilitare l'abilitazione predefinita per i volumi esistenti e nuovi:
+. Disabilita l'attivazione predefinita per le unità di storage esistenti e nuove:
 +
 [source, cli]
 ----

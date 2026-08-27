@@ -25,7 +25,7 @@ Raccogliere le seguenti informazioni:
 
 .Fasi
 . In System Manager, selezionare *Cluster > Panoramica*.
-. Selezionare image:icon_kabob.gif["tre punti blu verticali"] accanto al nodo che si desidera unire al cluster, quindi selezionare *Aggiungi nodo*
+. Seleziona image:icon_kabob.gif["tre punti blu verticali"] accanto al nodo che vuoi unire al cluster; poi seleziona *Aggiungi nodo*.
 . Immettere l'indirizzo IP di ciascun nodo.
 . Inserire l'indirizzo IP dell'interfaccia di rete intercluster, la subnet mask e il gateway.
 . Se si desidera configurare il gestore delle chiavi incorporato (OKM), immettere la passphrase OKM.

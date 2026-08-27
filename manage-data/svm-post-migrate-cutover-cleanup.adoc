@@ -38,7 +38,7 @@ vserver migrate show
 .Risultato
 I dati vengono forniti ai tuoi client dalla VM di archiviazione sul tuo cluster ASA r2.
 
-.Cosa succederà?
+.Quali sono le prossime novità?
 Ora sei pronto per rimuovere la VM di archiviazione dal cluster ASA di origine.
 
 

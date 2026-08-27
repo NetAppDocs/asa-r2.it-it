@@ -19,7 +19,7 @@ Le unità storage di un sistema ASA R2 sono contenute in Storage Virtual Machine
 [[create-a-storage-vm]]
 == Creare una VM di storage
 
-Durante la configurazione del cluster viene creata la macchina virtuale (VM) per lo storage dei dati predefinita. Tutte le nuove unità di storage vengono create all'interno della macchina virtuale predefinita per lo storage dei dati, a meno che non si crei e selezioni una macchina virtuale di storage diversa. Potresti voler creare una macchina virtuale storage aggiuntiva per separare le unità di storage per diverse applicazioni, reparti o client. Ad esempio, potrebbe essere necessario creare una macchina virtuale per lo storage per il proprio ambiente di sviluppo e un'altra macchina virtuale per lo storage per il proprio ambiente di produzione, oppure creare una macchina virtuale per lo storage per il reparto finanziario e un'altra macchina virtuale per il marketing.
+Durante la configurazione del cluster, viene creata la tua macchina virtuale (VM) di archiviazione dati predefinita. Tutte le nuove unità di archiviazione vengono create all'interno della tua VM di archiviazione dati predefinita, a meno che tu non crei e selezioni una VM di archiviazione diversa. Potresti voler creare una VM di archiviazione aggiuntiva per separare le unità di archiviazione destinate a diverse applicazioni, reparti o clienti. Ad esempio, potresti voler creare una VM di archiviazione per il tuo ambiente di sviluppo e un'altra VM di archiviazione per l'ambiente di produzione, oppure una VM di archiviazione per il reparto finanziario e un'altra VM di archiviazione per il reparto marketing.
 
 .Fasi
 . Selezionare *Cluster > Storage VM*.

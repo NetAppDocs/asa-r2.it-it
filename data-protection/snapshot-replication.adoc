@@ -36,21 +36,21 @@ I prerequisiti per il peering dei cluster sono gli stessi per i sistemi ASA r2 e
 .Fasi
 . Nel cluster locale, in System Manager, selezionare *Cluster > Impostazioni*.
 . In *Impostazioni cluster* accanto a *image:icon_kabob.gif["tre punti blu verticali"]peer cluster* selezionare , quindi selezionare *Aggiungi un peer cluster*.
-. Selezionare *Lauch remote cluster*; in questo modo viene generata una passphrase da utilizzare per l'autenticazione con il cluster remoto.
+. Seleziona *Avvia cluster remoto*; in questo modo viene generata una passphrase che userai per autenticarti con il cluster remoto.
 . Dopo aver generato la passphrase per il cluster remoto, incollarla sotto *Passphrase* nel cluster locale.
 . Selezionare image:icon_add.gif["segno più blu seguito dalla parola aggiungi in lettere blu"]; quindi immettere l'indirizzo IP dell'interfaccia di rete intercluster.
 . Selezionare *Initiate cluster peering*.
 
 
 .Quali sono le prossime novità?
-Hai effettuato il peering per un cluster ASA R2 locale con un cluster remoto. È ora possibile creare una relazione di replica.
+Hai stabilito una connessione peer tra il tuo cluster ASA r2 locale e un cluster remoto. Ora puoi creare una relazione di replica.
 
 
 
 [[step-2-optionally-create-a-custom-replication-policy]]
 == Passaggio 2: Facoltativamente, creare una policy di replica personalizzata
 
-La politica di replicazione definisce quando gli aggiornamenti eseguiti sul cluster ASA r2 vengono replicati sul sito remoto.  ONTAP include varie policy di protezione dei dati predefinite che puoi utilizzare per le tue relazioni di replicazione.  Se i criteri predefiniti non soddisfano le tue esigenze, puoi creare un criterio di replica personalizzato.
+La policy di replica definisce quando gli aggiornamenti eseguiti sul cluster ASA r2 vengono replicati nel sito remoto. ONTAP include diverse policy di protezione dei dati predefinite che puoi usare per le tue relazioni di replica. Se le policy predefinite non soddisfano le tue esigenze, puoi creare una policy di replica personalizzata.
 
 Scopri di piùlink:pre-defined-protection-policies.html["politiche di protezione dei dati ONTAP predefinite"] .
 

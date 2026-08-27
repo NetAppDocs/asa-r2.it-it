@@ -12,7 +12,7 @@ searchtitle: Scopri di più sui sistemi ASA A1K, A90, A70, A50, A30, A20 e C30
 
 
 [role="lead"]
-I sistemi NetApp ASA r2 offrono una soluzione hardware e software unificata che crea un'esperienza semplificata specifica per le esigenze dei clienti che utilizzano solo SAN. Su un sistema ASA r2, il software ONTAP e System Manager sono ottimizzati per fornire supporto per le funzionalità SAN essenziali, rimuovendo le funzionalità e le funzioni non supportate negli ambienti SAN.
+I sistemi NetApp ASA r2 offrono una soluzione hardware e software unificata che semplifica l'esperienza per i clienti che utilizzano solo SAN. Su un sistema ASA r2, il software ONTAP e System Manager sono ottimizzati per supportare la funzionalità SAN essenziale, rimuovendo le funzionalità non necessarie negli ambienti SAN.
 
 I seguenti sono classificati come sistemi ASA r2:
 
@@ -32,10 +32,10 @@ I sistemi ASA R2 introducono l'utilizzo di unità di storage con gruppi di coere
 * _Un gruppo di coerenza_ è un insieme di unità di archiviazione gestite come una singola unità.
 
 
-I sistemi ASA r2 utilizzano unità di archiviazione con gruppi di coerenza per semplificare la gestione dell'archiviazione e la protezione dei dati.  Ad esempio, supponiamo di avere un database composto da 10 unità di archiviazione in un gruppo di coerenza e di dover eseguire il backup dell'intero database.  Invece di eseguire il backup di ogni singola unità di archiviazione, è possibile proteggere l'intero database eseguendo il backup del gruppo di coerenza.
+I sistemi ASA r2 utilizzano unità di storage con gruppi di coerenza per semplificare la gestione dello storage e la protezione dei dati. Ad esempio, supponi di avere un database composto da 10 unità di storage in un gruppo di coerenza e di dover eseguire il backup dell'intero database. Invece di eseguire il backup di ogni singola unità di storage, puoi proteggere l'intero database eseguendo il backup del gruppo di coerenza.
 
 .Protezione e sicurezza dei dati
-Per aiutarti a proteggere i tuoi dati da attacchi dannosi come furto o ransomware, i sistemi ASA r2 supportano un gestore di chiavi integrato, la crittografia a doppio strato, l'autenticazione a più fattori e la verifica multi-amministratore. Puoi anche replicare gli snapshot in una posizione secondaria e usare SnapLock per SnapVault per proteggere gli snapshot di destinazione dalla cancellazione accidentale o dolosa.
+Per aiutarti a proteggere i tuoi dati da attacchi dannosi come furto o ransomware, i sistemi ASA r2 supportano un gestore di chiavi integrato, la crittografia a doppio strato, l'autenticazione multifattore e la verifica multi-amministratore. Puoi anche replicare le snapshot in una posizione secondaria e usare SnapLock for SnapVault per proteggere le snapshot di destinazione dalla cancellazione accidentale o dolosa.
 
 .Protocolli supportati, multipathing e configurazioni
 I sistemi ASA r2 supportano tutti i protocolli SAN (iSCSI, FC, NVMe/FC, NVMe/TCP). Tutti i protocolli supportano un'architettura simmetrica active-active per il multipathing, così che tutti i percorsi tra gli host e lo storage siano attivi/ottimizzati. I protocolli iSCSI e NVMe/TCP supportano configurazioni di rete e di collegamento diretto per tutte le versioni ONTAP supportate. I protocolli FC e NVMe/FC supportano configurazioni di rete per tutte le versioni ONTAP supportate e, a partire da ONTAP 9.19.1, supportano anche la configurazione di collegamento diretto. I sistemi ASA r2 non supportano il cluster mixing con sistemi ASA, AFF o FAS.

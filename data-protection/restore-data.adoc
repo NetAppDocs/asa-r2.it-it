@@ -18,7 +18,7 @@ I dati di un gruppo di coerenza o di un'unità di archiviazione protetta da snap
 [[restore-a-consistency-group]]
 == Ripristinare un gruppo di coerenza
 
-Il ripristino di un gruppo di coerenza sostituisce i dati di tutte le unità di archiviazione del gruppo di coerenza con i dati di uno snapshot. Le modifiche apportate alle unità di archiviazione dopo la creazione dello snapshot non vengono ripristinate.
+Il ripristino di un gruppo di coerenza sostituisce i dati in tutte le unità di storage del gruppo con i dati di uno snapshot. Le modifiche apportate alle unità di storage dopo la creazione dello snapshot non vengono ripristinate.
 
 È possibile ripristinare un gruppo di coerenza da uno snapshot locale o remoto.
 

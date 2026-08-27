@@ -20,7 +20,7 @@ Lo stato della connettività host viene indicato accanto al nome del gruppo di h
 
 +
 ** *OK*: Indica che tutti gli iniziatori sono collegati a entrambi i nodi.
-** *Partially Connected*: Indica che alcuni iniziatori non sono connessi a entrambi i nodi.
+** *Parzialmente connesso*: indica che alcuni degli initiator non sono connessi a entrambi i nodi.
 ** *Nessuno collegato*: Indica che non sono collegati iniziatori.
 
 

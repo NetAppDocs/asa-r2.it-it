@@ -4,14 +4,14 @@ permalink: secure-data/migrate-encryption-keys-between-key-managers.html
 keywords: onboard key manager, external key manager, configure, migrate keys, store keys, authentication keys, encryption keys, asa r2 
 summary: 'Puoi utilizzare il gestore delle chiavi integrato di ONTAP sul tuo sistema ASA R2 o un gestore delle chiavi esterno o entrambi (in un caso) per gestire le chiavi di crittografia dei dati.' 
 ---
-= Eseguire la migrazione delle chiavi di crittografia dei dati ONTAP tra responsabili delle chiavi sul sistema ASA R2
+= Migra le chiavi di crittografia dei dati ONTAP tra gestori di chiavi su sistemi ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Puoi gestire le chiavi di crittografia dei dati utilizzando il gestore delle chiavi integrato di ONTAP nel sistema ASA R2 oppure un gestore delle chiavi esterno (o entrambi). I responsabili esterni delle chiavi possono essere abilitati solo a livello di VM di storage. A livello di cluster ONTAP, puoi abilitare un gestore delle chiavi integrato o un gestore delle chiavi esterno.
+Puoi gestire le chiavi di crittografia dei dati con l'onboard key manager di ONTAP sul tuo sistema ASA r2, con un external key manager oppure con entrambi, nelle configurazioni supportate. Gli external key manager sono supportati solo a livello di storage VM. A livello di cluster ONTAP, puoi usare l'onboard key manager oppure un external key manager.
 
 [cols="2,2"]
 |===
@@ -53,11 +53,11 @@ Livello VM di archiviazione: gestore chiavi esterno
 [[migrate-keys-between-key-managers-at-the-ontap-cluster-level]]
 == Migrare le chiavi tra manager delle chiavi a livello di cluster ONTAP
 
-A partire da ONTAP 9.16.1 è possibile utilizzare l'interfaccia a riga di comando (CLI) di ONTAP per migrare le chiavi tra gestori delle chiavi a livello di cluster.
+A partire da ONTAP 9.16.1, puoi usare l'interfaccia a riga di comando (CLI) di ONTAP per migrare le chiavi tra i key manager a livello di cluster.
 
 [role="tabbed-block"]
 ====
-.Da onboard a external
+.Dal key manager integrato al key manager esterno
 --
 .Fasi
 . Impostare il livello di privilegio su Advanced (avanzato):
@@ -93,7 +93,7 @@ set -privilege admin
 
 
 --
-.Dall'esterno all'onboard
+.Da gestore di chiavi esterno a gestore di chiavi integrato
 --
 .Fasi
 . Impostare il livello di privilegio su Advanced (avanzato):
@@ -114,7 +114,7 @@ security key-manager onboard create-config
 ----
 security key-manager keystore enable -vserver <storage_vm_name> -type OKM
 ----
-. Eliminare la configurazione del gestore delle chiavi esterno
+. Elimina la configurazione del gestore chiavi esterno
 +
 [source, cli]
 ----
@@ -135,7 +135,7 @@ set -privilege admin
 [[migrate-keys-between-key-managers-across-ontap-cluster-and-storage-vm-levels]]
 == Migrare le chiavi tra manager chiave a livelli di cluster ONTAP e Storage VM
 
-Puoi utilizzare l'interfaccia a riga di comando (CLI) di ONTAP per migrare le chiavi tra il gestore delle chiavi a livello di cluster e un gestore delle chiavi a livello di VM di storage.
+Puoi usare l'interfaccia a riga di comando (CLI) di ONTAP per migrare le chiavi tra i key manager a livello di cluster e di storage VM.
 
 .Fasi
 . Impostare il livello di privilegio su Advanced (avanzato):

@@ -15,7 +15,7 @@ searchtitle: Cloning dei dati con ONTAP System Manager | ASA R2
 
 
 [role="lead"]
-Il cloning dei dati crea copie delle unità di storage e dei gruppi di coerenza nel sistema ASA R2 usando ONTAP System Manager, che può essere utilizzato per lo sviluppo applicativo, il test, i backup, la migrazione dei dati o altre funzioni amministrative.
+La clonazione dei dati crea copie delle unità di storage e dei gruppi di coerenza sul tuo sistema ASA r2. Puoi usare le copie per lo sviluppo di applicazioni, test, backup, migrazione dei dati e altre funzioni amministrative.
 
 
 
@@ -43,7 +43,7 @@ Per impostazione predefinita, viene creato un nuovo snapshot per il clone.
  a| 
 Utilizzare un'istantanea esistente
  a| 
-.. In *istantanea da clonare*, selezionare *Usa un snap-hot esistente*.
+.. In *istantanea da clonare*, selezionare *Usa uno snapshot esistente*.
 .. Selezionare lo snapshot che si desidera utilizzare per il clone.
 
 
@@ -62,7 +62,7 @@ Creare un nuovo gruppo host
 Aggiungere un nuovo host
  a| 
 .. In *mappatura host*, selezionare *nuovi host*.
-.. Immettere il nome a per il nuovo host, quindi selezionare *FC* o *iSCSI*.
+.. Inserisci un nome per il nuovo host; quindi seleziona *FC* o *iSCSI*.
 .. Selezionare gli iniziatori host dall'elenco degli iniziatori esistenti o selezionare *Aggiungi* per aggiungere nuovi iniziatori per l'host.
 
 
@@ -126,7 +126,7 @@ Creare un nuovo gruppo host
 Aggiungere un nuovo host
  a| 
 .. In *mappatura host*, selezionare *nuovi host*.
-.. Immettere il nome del nuovo nome host, quindi selezionare *FC* o *iSCSI*.
+.. Inserisci un nome per il nuovo host; quindi seleziona *FC* o *iSCSI*.
 .. Selezionare gli iniziatori host dall'elenco degli iniziatori esistenti o selezionare *Aggiungi iniziatore* per aggiungere nuovi iniziatori per l'host.
 
 
@@ -162,7 +162,7 @@ Quando si suddivide un clone del gruppo di coerenza, il clone viene dissociato d
 
 .Fasi
 . In System Manager, selezionare *protezione > gruppi di coerenza*.
-. Posizionare il puntatore del mouse sul clone del gruppo di coerenza che si desidera suddividere.
+. Passa il mouse sopra il clone del consistency group che vuoi dividere.
 . Selezionare *Dividi clone*.
 . Selezionare *Dividi*.
 

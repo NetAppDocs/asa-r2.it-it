@@ -11,14 +11,14 @@ summary: Se stai pianificando un evento di carico di lavoro insolito, puoi sospe
 
 
 [role="lead"]
-A partire da ONTAP 9.17.1, è possibile utilizzare la protezione autonoma dai ransomware con intelligenza artificiale (ARP/AI) per proteggere i dati sul sistema ASA r2. Se si prevede un evento insolito relativo al carico di lavoro, è possibile sospendere temporaneamente l'analisi ARP/AI per prevenire rilevamenti di falsi positivi relativi ad attacchi ransomware. Al termine dell'evento, è possibile riprendere l'analisi ARP/AI.
+A partire da ONTAP 9.17.1, puoi usare Autonomous Ransomware Protection with Artificial Intelligence (ARP/AI) per proteggere i dati sul tuo sistema ASA r2. Se stai pianificando un evento con un carico di lavoro insolito, puoi sospendere temporaneamente l'analisi ARP/AI per evitare falsi positivi. Dopo che l'evento è terminato, puoi riprendere l'analisi ARP/AI.
 
 
 
 [[pause-arpai]]
 == Pausa ARP/AI
 
-Prima di iniziare un evento insolito del carico di lavoro, potrebbe essere necessario sospendere temporaneamente l'analisi ARP/AI per evitare rilevamenti falsi positivi di attacchi ransomware.
+Prima di avviare un evento di carico di lavoro insolito, potresti dover sospendere temporaneamente l'analisi ARP/AI per evitare falsi positivi.
 
 .Fasi
 . In System Manager, selezionare *Storage*.
@@ -34,7 +34,7 @@ L'analisi ARP/AI viene sospesa per le unità di archiviazione selezionate e non 
 [[resume-arpai]]
 == Riprendi ARP/AI
 
-Se si mette in pausa ARP/AI durante un carico di lavoro insolito, è necessario riprenderlo una volta completato il carico di lavoro per proteggere i dati dagli attacchi ransomware.
+Se metti in pausa ARP/AI durante un carico di lavoro insolito, riattivalo quando il carico di lavoro è terminato per proteggere i tuoi dati dagli attacchi ransomware.
 
 .Fasi
 . In System Manager, selezionare *Storage*.

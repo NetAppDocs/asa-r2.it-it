@@ -37,7 +37,7 @@ A partire da ONTAP 9.18.1, è possibile impostare la riserva degli snapshot e l'
 link:snapshot-reserve.html["Scopri di più sulla riserva di snapshot sui sistemi di archiviazione ASA r2"].
 
 .Prima di iniziare
-Se si esegue ONTAP 9.16.1 e il gruppo di coerenza che si desidera espandere si trova in una relazione di sincronizzazione attiva SnapMirror , è necessariolink:snapmirror-active-sync-delete-relationship.html["elimina la relazione di sincronizzazione attiva SnapMirror"] prima di poter aggiungere unità di archiviazione.  Se si esegue ONTAP 9.16.1 e il gruppo di coerenza si trova in una relazione di replica asincrona, è necessariolink:snapmirror-active-sync-break-relationship.html["rompere la relazione"] prima di poter espandere il gruppo di coerenza.  In ONTAP 9.17.1 e versioni successive non è necessario eliminare la relazione di sincronizzazione attiva SnapMirror o interrompere la relazione asincrona prima di espandere un gruppo di coerenza.
+Se usi ONTAP 9.16.1 e il gruppo di coerenza che vuoi espandere è in una relazione di sincronizzazione attiva SnapMirror, devi link:snapmirror-active-sync-delete-relationship.html["elimina la relazione di sincronizzazione attiva SnapMirror"] prima di poter aggiungere unità di storage. Se usi ONTAP 9.16.1 e il gruppo di coerenza è in una relazione di replica asincrona, devi link:snapmirror-active-sync-break-relationship.html["rompere la relazione"] prima di poter espandere il gruppo di coerenza. Eliminare la relazione di sincronizzazione attiva SnapMirror o interrompere la relazione asincrona prima di espandere un gruppo di coerenza non è richiesto in ONTAP 9.17.1 e versioni successive.
 
 [role="tabbed-block"]
 ====
@@ -66,8 +66,8 @@ Se si creano più unità, ciascuna unità verrà creata con la stessa capacità 
 . Selezionare *Espandi*.
 
 
-.Cosa succederà
-Dopo aver creato una nuova unità di archiviazione, è necessario link:../manage-data/provision-san-storage.html#add-host-initiators["aggiungere iniziatori host"] e link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["mappare l'unità di archiviazione appena creata a un host"]. L'aggiunta di host initiator rende gli host idonei ad accedere alle unità di storage ed eseguire operazioni sui dati. La mappatura di un'unità di archiviazione a un host consente all'unità di archiviazione di iniziare a fornire i dati all'host a cui viene mappato.
+.Quali sono le prossime novità?
+Dopo che crei una nuova unità di archiviazione, dovresti link:../manage-data/provision-san-storage.html#add-host-initiators["aggiungere iniziatori host"] e link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["mappare l'unità di archiviazione appena creata a un host"]. Aggiungere gli initiator host rende gli host idonei ad accedere alle unità di archiviazione ed eseguire operazioni sui dati. Mappare un'unità di archiviazione su un host permette all'unità di iniziare a fornire dati all'host a cui è mappata.
 
 --
 ====
@@ -90,5 +90,5 @@ Rimuovere un'unità di archiviazione da un gruppo di coerenza per eliminarla, ge
 .Risultato
 L'unità di archiviazione non è più un membro del gruppo di coerenza.
 
-.Cosa succederà
+.Quali sono le prossime novità?
 Se è necessario continuare la protezione dei dati per l'unità di archiviazione, aggiungere l'unità di archiviazione a un altro gruppo di coerenza.

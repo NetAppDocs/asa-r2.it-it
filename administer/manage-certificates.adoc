@@ -31,7 +31,7 @@ Generare una richiesta di firma del certificato (CSR) per creare una chiave priv
 
 
 .Risultato
-È stata generata una CSR che può essere utilizzata per generare un certificato pubblico.
+Hai generato una CSR che può essere utilizzata per generare un certificato pubblico.
 
 
 

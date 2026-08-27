@@ -11,13 +11,13 @@ summary: 'Alcuni comandi ONTAP non sono supportati sui sistemi ASA r2 (ASA A1K, 
 
 
 [role="lead"]
-Invece di aggregati, il livello di storage nei sistemi ASA r2 utilizza zone di disponibilità dello storage. Una zona di disponibilità dello storage è un pool comune di storage disponibile per una singola coppia HA. Entrambi i nodi della coppia HA hanno accesso a tutti i dischi disponibili nella loro zona di disponibilità dello storage condivisa. Quando viene creata un'unità di storage (LUN o namespace NVMe), ONTAP crea automaticamente un volume nella zona di disponibilità dello storage appropriata per ospitare l'unità di storage.
+I sistemi ASA r2 utilizzano le zone di disponibilità dello storage invece degli aggregati, quindi alcuni comandi e parametri della CLI di ONTAP non sono supportati. Puoi anche usare la CLI per configurare un cluster se la preferisci a System Manager.
 
 Grazie a questo approccio semplificato alla gestione dello storage,  `storage aggregate` i comandi non sono supportati sui sistemi ASA r2. Il supporto per alcuni  `lun` ,  `storage` E  `volume` anche i comandi e i parametri sono limitati.
 
 Salvo diversa indicazione, tutti gli altri comandi nel link:https://docs.netapp.com/us-en/ontap-cli/["Riferimento comando ONTAP"] sono supportati per i sistemi ASA r2.
 
-I seguenti comandi e set di comandi non sono supportati in ASA su R2:
+I seguenti comandi e set di comandi non sono supportati su ASA r2:
 
 .Comandi <code> DENGINE </code> non supportati
 [%collapsible]
@@ -145,9 +145,9 @@ IL  `volume modify` il comando non è disponibile se utilizzato insieme ai segue
 [[set-up-an-ontap-asa-r2-cluster-using-the-cli]]
 == Configurare un cluster ONTAP ASA R2 utilizzando la CLI
 
-Si consiglia di link:../install-setup/initialize-ontap-cluster.html["Utilizza System Manager per configurare il cluster ONTAP ASA R2"]. System Manager offre un workflow guidato rapido e semplice per rendere operativo il cluster. Tuttavia, se sei abituato a lavorare con i comandi di ONTAP, l'interfaccia a riga di comando (CLI) di ONTAP può essere utilizzata facoltativamente per il setup del cluster. Il cluster configurato con l'utilizzo della CLI non offre opzioni o vantaggi aggiuntivi rispetto al cluster configurato con System Manager.
+Si consiglia che tu link:../install-setup/initialize-ontap-cluster.html["Utilizza System Manager per configurare il cluster ONTAP ASA R2"]. System Manager offre un flusso di lavoro guidato rapido e semplice per avviare il tuo cluster. Tuttavia, se sei abituato a lavorare con i comandi ONTAP, puoi usare facoltativamente l'interfaccia a riga di comando (CLI) di ONTAP per la configurazione del cluster. La configurazione del cluster tramite CLI non offre opzioni o vantaggi aggiuntivi rispetto a System Manager.
 
-Durante il setup del cluster viene creata la tua macchina virtuale per lo storage dei dati predefinita, viene creata un'unità storage iniziale e vengono rilevate automaticamente le LIF dati. In alternativa, è possibile abilitare il DNS (Domain Name System) per risolvere i nomi host, impostare il cluster in modo che utilizzi il NTS (Network Time Protocol) per la sincronizzazione dell'ora e abilitare la crittografia dei dati a riposo.
+Durante la configurazione del cluster, ONTAP crea la tua VM di storage dati predefinita, crea un'unità di storage iniziale e rileva automaticamente le tue LIF di dati. Facoltativamente, puoi abilitare il Domain Name System (DNS) per risolvere i nomi host, impostare il cluster per usare il Network Time Protocol (NTP) per la sincronizzazione dell'ora e abilitare la crittografia dei dati a riposo.
 
 .Prima di iniziare
 Raccogliere le seguenti informazioni:

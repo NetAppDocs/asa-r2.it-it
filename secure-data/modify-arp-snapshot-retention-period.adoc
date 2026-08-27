@@ -11,7 +11,7 @@ summary: Scopri come modificare i periodi di conservazione degli snapshot ARP in
 
 
 [role="lead"]
-Se la protezione autonoma dal ransomware con intelligenza artificiale (ARP/AI) rileva un'attività anomala su una o più unità di archiviazione del sistema ASA r2, crea automaticamente uno snapshot ARP per proteggere i dati dell'unità. A seconda della capacità di archiviazione e dei requisiti aziendali per i dati, potrebbe essere necessario aumentare o ridurre il periodo di conservazione predefinito degli snapshot ARP. Ad esempio, potrebbe essere necessario aumentare il periodo di conservazione per le applicazioni aziendali critiche in modo da avere, se necessario, periodi di conservazione più lunghi per il ripristino dei dati, oppure potrebbe essere necessario ridurre il periodo di conservazione per le applicazioni non critiche per risparmiare spazio di archiviazione.
+Se Autonomous Ransomware Protection with Artificial Intelligence (ARP/AI) rileva attività anomale su una o più unità di storage nel tuo sistema ASA r2, crea automaticamente uno snapshot ARP per proteggere i dati. A seconda della tua capacità di storage e delle esigenze aziendali, potresti voler aumentare o diminuire il periodo di conservazione predefinito degli snapshot ARP. Ad esempio, potresti aumentare il periodo di conservazione per le applicazioni business-critical per supportare finestre di recovery di dati più lunghe o diminuirlo per le applicazioni non critiche per risparmiare spazio di storage.
 
 Il periodo di conservazione predefinito per lo snapshot ARP varia a seconda dell'azione intrapresa in risposta all'attività anomala.
 
@@ -28,4 +28,4 @@ Il periodo di conservazione predefinito per lo snapshot ARP varia a seconda dell
 
 | Non intraprendere azioni immediate | 10 giorni 
 |===
-I periodi di conservazione predefiniti possono essere modificati utilizzando l'interfaccia della riga di comando (CLI) ONTAP . Vedere  https://docs.netapp.com/us-en/ontap/anti-ransomware/modify-automatic-snapshot-options-task.html["Modifica le opzioni per gli snapshot automatici ONTAP"] per conoscere i passaggi da seguire per modificare il periodo di conservazione predefinito.
+Puoi modificare i periodi di conservazione predefiniti utilizzando l'interfaccia a riga di comando (CLI) di ONTAP. Vedi  https://docs.netapp.com/us-en/ontap/anti-ransomware/modify-automatic-snapshot-options-task.html["Modifica le opzioni per gli snapshot automatici ONTAP"] per i passaggi su come modificare il periodo di conservazione predefinito.

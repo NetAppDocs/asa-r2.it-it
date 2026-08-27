@@ -11,7 +11,7 @@ summary: Potrebbe essere necessario riavviare un nodo per la manutenzione, la ri
 
 
 [role="lead"]
-Potrebbe essere necessario riavviare un nodo per la manutenzione, la risoluzione dei problemi, gli aggiornamenti software o altri motivi amministrativi. Al riavvio di un nodo, il partner ha esegue automaticamente un takeover. Il nodo partner esegue quindi un giveback automatico dopo che il nodo riavviato torna online.
+Potresti dover riavviare un nodo per manutenzione, troubleshooting, aggiornamenti software o altri motivi amministrativi. Quando un nodo viene riavviato, il suo partner HA esegue automaticamente un takeover. Il nodo partner esegue quindi un giveback automatico dopo che il nodo riavviato torna online.
 
 .Fasi
 . In System Manager, selezionare *Cluster > Panoramica*.
@@ -23,4 +23,4 @@ Il motivo del riavvio viene registrato nel registro di controllo del sistema.
 
 
 .Quali sono le prossime novità?
-Durante il riavvio del nodo, il partner ha esegue un takeover in modo da evitare interruzioni del servizio dati. Una volta completato il reboot, il partner ha esegue un giveback.
+Durante il riavvio del nodo, il suo partner HA esegue un takeover in modo che non ci siano interruzioni nel servizio dati. Al termine del riavvio, il partner HA esegue un giveback.
