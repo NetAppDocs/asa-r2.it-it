@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: administer/add-nodes.html 
-keywords: rename, node, renaming, asa r2 
-summary: 'Potrebbe essere necessario rinominare un nodo per allinearlo alle convenzioni di denominazione dell"organizzazione o per altri motivi amministrativi.' 
+keywords: add, node, adding, asa r2, expand cluster 
+summary: I sistemi di storage ASA r2 supportano fino a 12 nodi per cluster. Dopo aver collegato e acceso i nuovi nodi di una coppia HA, devi aggiungerli al cluster. 
 ---
 = Aggiungere nodi ASA R2 a un cluster ONTAP
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 'Potrebbe essere necessario rinominare un nodo per allinearlo alle conv
 
 
 [role="lead"]
-A partire da ONTAP 9.16.1, i sistemi di storage ASA r2 supportano fino a 12 nodi per cluster.  Dopo aver cablato e acceso i nuovi nodi di una coppia HA, è necessario unirli al cluster.
+I sistemi di storage ASA r2 supportano fino a 12 nodi per cluster. Dopo aver collegato e acceso i nuovi nodi di una coppia HA, devi aggiungerli al cluster.
 
 .Prima di iniziare
 Raccogliere le seguenti informazioni:

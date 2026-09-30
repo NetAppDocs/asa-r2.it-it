@@ -32,6 +32,8 @@ entries:
   entries:
   - title: Aggiungere nodi
     url: "/administer/add-nodes.html"
+  - title: Rimuovi nodi
+    url: "/administer/remove-nodes.html"
   - title: Riavviare, takeover e restituire i nodi
     url: "/administer/reboot-take-over-give-back-nodes.html"
   - title: Rinomina nodi

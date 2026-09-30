@@ -1,0 +1,197 @@
+---
+sidebar: sidebar 
+permalink: administer/remove-nodes.html 
+keywords: remove, node, removing, asa r2 
+summary: 'Potrebbe essere necessario rinominare un nodo per allinearlo alle convenzioni di denominazione dell"organizzazione o per altri motivi amministrativi.' 
+---
+= Rimuovi i nodi ASA r2 da un cluster ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Potresti dover rimuovere un nodo dal cluster per manutenzione, sostituzione o dismissione. Devi rimuovere i nodi uno alla volta. Se rimuovi un nodo, devi rimuovere anche il suo partner HA.
+
+
+
+[[step-1-prepare-to-remove-nodes-from-an-asa-r2-cluster]]
+== Passaggio 1: Preparati a rimuovere i nodi da un cluster ASA r2
+
+Prima di rimuovere un nodo da un cluster ASA r2, dovresti verificare che il cluster sia integro. Quindi, dovresti migrare o eliminare le unità di storage, le VLAN e le LIF dal nodo e disabilitare il failover dello storage.
+
+.Fasi
+. Verifica che il cluster sia integro:
++
+[source, cli]
+----
+cluster show
+----
+. link:../manage-data/move-storage-units.html["Sposta"] o link:../manage-data/delete-storage-units.html["eliminare"] tutte le unità di archiviazione dal nodo.
+. Se hai unità di archiviazione SCSI (LUN) sul nodo da rimuovere, link:https://docs.netapp.com/us-en/ontap/san-admin/modify-slm-reporting-nodes-task.html["elimina il nodo e il suo partner HA dall'elenco dei nodi di reporting della mappa LUN selettiva (SLM)"^].
++
+Se non rimuovi il nodo e il relativo partner HA dall'elenco dei nodi di reporting SLM, puoi perdere l'accesso alle LUN che prima si trovavano sul nodo, anche se le LUN sono state spostate su un altro nodo.
+
+. link:https://docs.netapp.com/us-en/ontap/networking/delete_a_lif.html["Elimina"^] o link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["migrare"^] tutte le interfacce di rete (LIF) del nodo.
++
+** I LIF di dati devono essere spostati su un altro nodo o eliminati.
++
+La migrazione delle LIF iSCSI è limitata solo alle porte sul nodo home o sul partner HA, quindi devi eliminarle.
+
+** Le LIF intercluster devono essere eliminate.
++
+Quando elimini i LIF intercluster, viene visualizzato un avviso che puoi ignorare.
+
+** L'interfaccia LIF di gestione del cluster deve essere spostata su un altro nodo.
+
+
+. link:../administer/manage-cluster-networking.html#delete-a-vlan["Elimina tutte le VLAN"] sul nodo.
+. Disabilita il failover dello storage per il nodo:
++
+[source, cli]
+----
+storage failover modify -enabled false -node <nodename>
+----
+
+
+.Quali sono le prossime novità?
+Rimuovi il primo nodo della coppia HA dal cluster e quindi rimuovi il suo partner HA.
+
+
+
+[[step-2-remove-a-node-from-an-asa-r2-cluster]]
+== Passaggio 2: Rimuovi un nodo da un cluster ASA r2
+
+Rimuovi un nodo da un cluster ASA r2 solo dopo aver completato i passaggi necessari per preparare il nodo alla rimozione. Dopo aver rimosso un nodo dal cluster, devi rimuovere anche il relativo partner HA.
+
+.Prima di iniziare
+Si raccomanda link:../get-help/manage-autosupport.html#send-autosupport-data["emettere un messaggio AutoSupport"] di informare il supporto tecnico NetApp che stai rimuovendo un nodo dal tuo cluster.
+
+
+NOTE: Non rimuovere un nodo dal cluster né rinominare un nodo durante un aggiornamento automatico di ONTAP.
+
+.A proposito di questa attività
+* Se si rimuovono due nodi da un cluster a quattro nodi, la coppia HA del cluster viene automaticamente abilitata sui due nodi rimanenti.
+* Tutti i dati di sistema e utente, da tutti i dischi collegati al nodo, devono essere resi inaccessibili agli utenti prima di rimuovere un nodo dal cluster.
+* Se un nodo è stato rimosso erroneamente da un cluster, contattare il supporto NetApp per assistenza sulle opzioni di ripristino.
+
+
+.Fasi
+. Cambia il livello di privilegio su avanzato:
++
+[source, cli]
+----
+set -privilege advanced
+----
+. Identifica il nodo nel cluster che contiene epsilon:
++
+[source, cli]
+----
+cluster show
+----
++
+Nell'esempio seguente, "node0" attualmente detiene epsilon:
+
++
+[listing]
+----
+cluster::*> cluster show
+Node                 Health  Eligibility  Epsilon
+-------------------- ------- ------------ ------------
+node0                true    true         true
+node1                true    true         false
+node2                true    true         false
+node3                true    true         false
+----
+. Se il nodo che stai rimuovendo detiene epsilon, sposta epsilon su un nodo superstite.
++
+.. Rimuovi epsilon dal nodo:
++
+[source, cli]
+----
+cluster modify -node <name_of_node_to_be_removed> -epsilon false
+----
+.. Sposta epsilon su un altro nodo:
++
+[source, cli]
+----
+cluster modify -node <node_name> -epsilon true
+----
+
+
+. Identifica il nodo primario corrente:
++
+[source, cli]
+----
+cluster ring show
+----
++
+Il nodo primario è il nodo che contiene processi come mgmt, vldb, vifmgr, bcomd e crs.
+
+. Se il nodo che stai rimuovendo è il nodo primario corrente, abilita un altro nodo del cluster affinché venga eletto come nodo primario.
++
+.. Rendi il nodo primario corrente non idoneo a partecipare al cluster:
++
+[source, cli]
+----
+cluster modify -node <node_name> -eligibility false
+----
++
+Quando il nodo primario diventa non idoneo, il quorum del cluster elegge uno dei nodi rimanenti come nuovo primario. Se esegui questo passaggio sul primo nodo di una coppia HA, contrassegna come non idoneo solo quel nodo. Non modificare lo stato del suo partner HA finché non ripeti questi passaggi anche sul partner.
+
++
+Se il nodo partner viene eletto come nuovo primario e detiene epsilon, devi spostare epsilon su un altro nodo prima di contrassegnare il partner come non idoneo.
+
+.. Rendi nuovamente idoneo a partecipare al cluster il nodo primario precedente:
++
+[source, cli]
+----
+cluster modify -node <node_name> -eligibility true
+----
+
+
+. Accedere al LIF di gestione del nodo remoto o al LIF di gestione del cluster su un nodo che non si sta rimuovendo dal cluster.
+. Usa il nome del nodo o l'indirizzo IP del nodo per rimuovere il nodo dal cluster:
++
+Se hai un cluster con versioni miste e stai rimuovendo l'ultimo nodo con versione inferiore, usa il parametro -skip-last-low-version-node-check con questi comandi.
+
++
+** Usa il nome del nodo per rimuovere il nodo:
++
+[source, cli]
+----
+cluster remove-node -node <node_name>
+----
+** Usa l'indirizzo IP del nodo per rimuoverlo:
++
+[source, cli]
+----
+cluster remove-node -cluster_ip <node_ip>
+----
++
+Viene generato un messaggio di errore se sono presenti condizioni che devi risolvere prima di rimuovere il nodo. In tal caso, risolvi le condizioni e riesegui il comando  `cluster remove-node`.
+
++
+Il nodo si riavvia automaticamente dopo essere stato rimosso correttamente dal cluster.
+
+
+
+
+
+.Quali sono le prossime novità?
+Ripeti questi passaggi per rimuovere il partner di failover dal cluster.
+
+.Informazioni correlate
+Scopri di più sul comando link:https://docs.netapp.com/us-en/ontap-cli/cluster-remove-node.html["cluster remove-node"].
+
+
+
+[[step-3-optionally-erase-the-node-configuration-and-initialize-all-disks]]
+== Passaggio 3: facoltativamente, cancella la configurazione del nodo e inizializza tutti i dischi
+
+Se stai riutilizzando un nodo che hai rimosso dal tuo cluster ASA r2, devi cancellare la configurazione del nodo e inizializzare tutti i dischi prima che possa rientrare in un cluster.
+
+.Fasi
+. Durante il processo di avvio, quando richiesto, premi *Ctrl-C* per visualizzare il menu di boot.
+. Seleziona l'opzione del menu di boot *(4) Clean configuration and initialize all disks* oppure l'opzione *(9) Configure Advanced Drive Partitioning* per cancellare la configurazione del nodo e inizializzare tutti i dischi.
+
