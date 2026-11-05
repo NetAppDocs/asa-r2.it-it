@@ -1,19 +1,69 @@
 ---
 sidebar: sidebar 
 permalink: secure-data/modify-arp-snapshot-retention-period.html 
-keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, ai, alerts, respond, warnings, security 
-summary: Scopri come modificare i periodi di conservazione degli snapshot ARP in base alle tue esigenze aziendali e di archiviazione. 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, ai, alerts, respond, warnings, security, snapshot response policy, protection level, alert-only 
+summary: Scopri come configurare il criterio di risposta agli snapshot ARP/AI e modificare i periodi di conservazione degli snapshot ARP in base alle tue esigenze di storage e di business. 
 ---
-= Modificare i periodi di conservazione degli snapshot ARP/AI sui sistemi di archiviazione ASA r2
+= Configura le policy di risposta agli snapshot ARP/AI e i periodi di conservazione sui sistemi di storage ASA r2
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Se Autonomous Ransomware Protection with Artificial Intelligence (ARP/AI) rileva attività anomale su una o più unità di storage nel tuo sistema ASA r2, crea automaticamente uno snapshot ARP per proteggere i dati. A seconda della tua capacità di storage e delle esigenze aziendali, potresti voler aumentare o diminuire il periodo di conservazione predefinito degli snapshot ARP. Ad esempio, potresti aumentare il periodo di conservazione per le applicazioni business-critical per supportare finestre di recovery di dati più lunghe o diminuirlo per le applicazioni non critiche per risparmiare spazio di storage.
+Se Autonomous Ransomware Protection with Artificial Intelligence (ARP/AI) rileva attività anomale su una o più unità di storage del tuo sistema ASA r2, può creare automaticamente uno snapshot ARP per proteggere i dati. A partire da ONTAP 9.20.1, puoi configurare se ARP/AI crea questi snapshot impostando una policy di risposta agli snapshot, indipendente dal rilevamento e dagli avvisi ransomware di ARP/AI, che rimane sempre attivo. A seconda della tua capacità di storage e dei requisiti aziendali, potresti anche voler aumentare o ridurre il periodo di conservazione predefinito degli snapshot ARP.
 
-Il periodo di conservazione predefinito per lo snapshot ARP varia a seconda dell'azione intrapresa in risposta all'attività anomala.
+
+
+[[configure-a-snapshot-response-policy]]
+== Configura una policy di risposta snapshot
+
+La policy di risposta agli snapshot controlla se ARP/AI crea snapshot periodici, snapshot attivati da attacchi o nessuno snapshot. Il rilevamento e gli avvisi di ARP/AI rimangono attivi con qualsiasi policy; cambia solo la creazione degli snapshot. Puoi impostare una policy predefinita per una VM di storage, che le nuove unità di storage su quella VM ereditano, e sovrascrivere l'impostazione predefinita per una singola unità di storage.
+
+[cols="1,3"]
+|===
+| Politica | Comportamento 
+
+
+| Snapshot periodici e proattivi (impostazione predefinita) | ARP/AI genera avvisi e registri eventi, crea snapshot a intervalli regolari e crea uno snapshot aggiuntivo quando rileva un attacco. 
+
+
+| Solo istantanee proattive | ARP/AI genera avvisi e registri eventi e crea un'istantanea solo quando rileva un attacco. Non crea istantanee periodiche. 
+
+
+| Solo avviso | ARP/AI genera solo avvisi e log degli eventi. ARP/AI non crea snapshot. 
+|===
+
+CAUTION: Se selezioni la policy "Solo avvisi", ARP/AI non crea snapshot. Se viene confermato un attacco ransomware, non è disponibile alcuno snapshot ARP/AI per il recovery di dati. Prima di selezionare questa policy, assicurati di disporre di un'adeguata protezione esterna dei dati, ad esempio snapshot pianificati o un'altra soluzione di backup.
+
+
+NOTE: Quando cambi la policy di risposta degli snapshot, gli snapshot ARP/AI esistenti non vengono eliminati immediatamente. Si eliminano quando raggiungono l'orario di scadenza pianificato.
+
+.Fasi
+Configura il criterio di risposta snapshot predefinito per una VM di storage:
+
+. In System Manager, seleziona *Cluster > VM di archiviazione*.
+. Selezionare la VM di archiviazione.
+. Nella sezione *Security*, accanto a *Anti-ransomware*, seleziona image:icon_kabob.gif["tre punti blu verticali"], quindi seleziona *Edit anti-ransomware settings*.
+. Seleziona il criterio di risposta snapshot predefinito da applicare alle nuove unità di storage create sulla VM di storage.
+. Selezionare *Salva*.
+
+
+Configura il criterio di risposta agli snapshot per un'unità di storage, sovrascrivendo l'impostazione predefinita della Storage VM:
+
+. In System Manager, seleziona *Storage* e seleziona l'unità di storage.
+. Selezionare *Sicurezza*.
+. In *Anti-ransomware*, seleziona image:icon_kabob.gif["tre punti blu verticali"] e poi seleziona *Modifica impostazioni anti-ransomware*.
+. Seleziona il criterio di risposta agli snapshot da applicare all'unità di storage.
+. Selezionare *Salva*.
+
+
+
+
+[[modify-arpai-snapshot-retention-periods]]
+== Modificare i periodi di conservazione degli snapshot ARP/AI
+
+Se la policy di risposta agli snapshot per un'unità di storage crea snapshot ARP periodici o attivati da attacchi, il periodo di conservazione predefinito per tali snapshot varia a seconda dell'azione che intraprendi in risposta all'attività anomala.
 
 [cols="2,2"]
 |===

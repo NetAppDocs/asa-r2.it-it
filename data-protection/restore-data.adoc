@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/restore-data.html 
 keywords: restore data, asa r2, data restoration 
-summary: 'Se i dati di un gruppo di coerenza vengono danneggiati o persi, è possibile ripristinare l"intero gruppo di coerenza da uno snapshot remoto.' 
+summary: 'Ripristina un gruppo di coerenza o un"unità di storage da una snapshot locale o remota quando i dati vengono persi o danneggiati sul tuo sistema ASA r2.' 
 ---
 = Ripristina i dati sui sistemi storage ASA R2
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 'Se i dati di un gruppo di coerenza vengono danneggiati o persi, è pos
 
 
 [role="lead"]
-I dati di un gruppo di coerenza o di un'unità di archiviazione protetta da snapshot possono essere ripristinati in caso di perdita o danneggiamento.
+Se i dati in un gruppo di coerenza o in un'unità di archiviazione protetta da snapshot vanno persi o si danneggiano, ripristinali da uno snapshot per riportarli al momento in cui lo snapshot è stato creato.
 
 
 
@@ -43,7 +43,7 @@ Viene visualizzata la pagina dei dettagli del gruppo di coerenza.
 .Fasi
 . In System Manager, selezionare *protezione > Replica*.
 . Selezionare *Destinazioni locali*.
-. Selezionare la *origine* che si desidera ripristinare, quindi selezionare image:icon_kabob.gif["tre punti blu verticali"].
+. Seleziona l'*origine* che vuoi ripristinare; quindi seleziona image:icon_kabob.gif["tre punti blu verticali"].
 . Selezionare *Restore* (Ripristina).
 . Seleziona il cluster, la VM di storage e il gruppo di coerenza in cui desideri ripristinare i dati.
 . Selezionare lo snapshot da cui si desidera eseguire il ripristino.

@@ -1,0 +1,325 @@
+---
+sidebar: sidebar 
+permalink: manage-data/migrate-svm-from-asa-r2.html 
+keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
+summary: 'A partire da ONTAP 9.20.1, puoi migrare senza interruzioni una macchina virtuale di storage (VM) da un cluster ASA r2 a 2 nodi a un cluster ASA a 2 nodi o a un cluster AFF a 2 nodi.' 
+---
+= Migra una VM di storage da un cluster ASA r2 a un cluster ASA o AFF
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A partire da ONTAP 9.20.1, puoi migrare senza interruzioni una macchina virtuale di storage (VM) da un cluster ASA r2 a 2 nodi a un cluster ASA a 2 nodi o a un cluster AFF a 2 nodi. Potresti dover migrare una VM di storage per consolidare i carichi di lavoro SAN e NAS, adottare funzionalità di ONTAP non disponibili per i sistemi ASA r2 o come parte di un aggiornamento hardware del tuo ambiente. Le mappature host esistenti e le configurazioni delle unità di storage per LUN e namespace vengono mantenute durante la migrazione, riducendo l'impegno operativo e il rischio.
+
+.Prima di iniziare
+* Devi essere un amministratore del cluster.
+* Tutti i nodi di entrambi i cluster devono eseguire ONTAP 9.20.1 o versioni successive.
+
+
+.A proposito di questa attività
+* Puoi migrare una VM di storage ASA r2 da un cluster ASA r2 a 2 nodi solo a un cluster AFF a 2 nodi.
++
+** Non è possibile migrare una VM di storage ASA r2 a un cluster FAS o a un cluster ASA o AFF con più di 2 nodi.
+** Non puoi migrare una macchina virtuale di storage ASA r2 da un cluster ASA r2 con più di 2 nodi.
+
+
+* La migrazione dei dati da un cluster ASA r2 a un cluster AFF non è reversibile.
++
+Puoi annullare una migrazione prima del cutover, ma dopo l'avvio del cutover non puoi interrompere o ripristinare la migrazione. Al termine della migrazione, non puoi migrare dati da un cluster AFF a un cluster ASA r2.
+
++
+Puoi link:migrate-svm.html["migrare un SVM da un ASA a un cluster ASA r2"].
+
+* Puoi migrare una sola macchina virtuale di archiviazione alla volta.
+* La VM di storage può contenere un massimo di 400 unità di storage.
+* La macchina virtuale di storage non può contenere unità di storage di destinazione di SnapMirror.
+
+
+
+
+[[step-1-create-a-cluster-peer-relationship]]
+== Passaggio 1: Creare una relazione peer cluster
+
+Prima di poter migrare una macchina virtuale di storage da un cluster ASA r2, devi creare una relazione peer. Una relazione peer definisce le connessioni di rete che consentono ai cluster ONTAP e alle macchine virtuali di storage di scambiarsi dati in modo sicuro.
+
+.A proposito di questa attività
+Nella procedura seguente, il cluster ASA o AFF è il cluster di _destinazione_ e il cluster ASA r2 è il cluster di _origine_.
+
+.Prima di iniziare
+È necessario aver creato LIF intercluster su ogni nodo nei cluster sottoposti a peering utilizzando uno dei seguenti metodi.
+
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-share-data-ports-task.html["Configurare i LIF intercluster sulle porte dati condivise"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-dedicated-ports-task.html["Configurare i LIF intercluster su porte dati dedicate"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-ports-own-networks-task.html["Configurare LIF intercluster in spazi IP personalizzati"^]
+
+
+.Fasi
+. Sul cluster di destinazione, crea una relazione peer con il cluster di origine e genera una passphrase:
++
+[source, cli]
+----
+cluster peer create -peer-addrs <source_cluster_LIF_IPs> -generate-passphrase
+----
++
+L'esempio seguente crea una relazione peer tra cluster 1 e cluster 2 e crea una passphrase generata dal sistema:
+
++
+[listing]
+----
+cluster1::> cluster peer create -peer-addrs 10.98.191.193 -generate-passphrase
+Passphrase: UCa+6lRVICXeL/gq1WrK7ShR
+            Peer Cluster Name: cluster2
+            Initial Allowed Vserver Peers: -
+            Expiration Time: 6/7/2017 09:16:10 +5:30
+            Intercluster LIF IP: 10.140.106.185
+Warning: make a note of the passphrase - it cannot be displayed again.
+
+----
+. Copia la passphrase generata.
+. Sul cluster di origine, crea una relazione peer con il cluster di destinazione:
++
+[source, cli]
+----
+cluster peer create -peer-addrs <destination_cluster_LIF_IPs>
+----
+. Inserisci la passphrase generata sul cluster di destinazione.
+. Verificare che la relazione peer del cluster sia stata creata:
++
+[source, cli]
+----
+cluster peer show
+----
++
+L'esempio seguente mostra l'output previsto per i cluster peered correttamente.
+
++
+[listing]
+----
+cluster1::> cluster peer show
+
+Peer Cluster Name   Cluster Serial Number   Availability   Authentication
+-----------------   ---------------------   -------------- --------------
+cluster2             1-80-123456             Available      ok
+----
+
+
+.Risultato
+I cluster sono in peering. I dati delle Storage VM possono essere trasferiti in modo sicuro.
+
+.Cosa succederà?
+Sei pronto a preparare la tua VM di storage ASA r2 per la migrazione.
+
+
+
+[[step-2-prepare-the-asa-r2-storage-vm-for-migration]]
+== Passaggio 2: Preparare la VM di storage ASA r2 per la migrazione
+
+Prima di migrare una macchina virtuale di storage (VM) da un cluster ASA r2, devi rimuovere le relazioni di replica e di sincronizzazione attiva di SnapMirror ed eseguire diversi controlli.
+
+.Fasi
+. link:../data-protection/snapmirror-active-sync-break-relationship.html["Rimuovi eventuali relazioni di replica esistenti"].
+. link:../data-protection/snapmirror-active-sync-delete-relationship.html["Rimuovi eventuali relazioni SnapMirrror active snyc esistenti"].
+. Verifica se IPsec è abilitato:
++
+[source, cli]
+----
+security ipsec config show
+----
++
+.. Se IPsec è abilitato, disabilitalo:
++
+[source, cli]
+----
+security ipsec config modify -is-enabled -false
+----
++
+Scopri di più sul comando link:https://docs.netapp.com/us-en/ontap-cli/security-ipsec-config-show.html["security ipsec config show"^].
+
+.. Verifica la presenza di LIF IPv6 e di IP virtuali (VIP):
++
+[source, cli]
+----
+network interface show -vserver <storage_vm_name> -fields address-family, is-vip
+----
++
+Per i LIF iPv6, il `-address-family` è `ipv6`. Per i LIF VIP, il `-is-vip` parametro è `true`.
+
+.. Se sono presenti LIF iPv6 o VIP, rimuovili:
++
+[source, cli]
+----
+network interface delete -vserver <storage_vm_name> - lif <lif_name>
+----
+.. Verifica che non siano presenti LIF IPv6 o VIP sulla VM di storage:
++
+[source, cli]
+----
+network interface show -vserver <storage_VM_name>
+----
++
+Scopri di più sui comandi link:https://docs.netapp.com/us-en/ontap-cli/network-interface-show.html["network interface show"^] e link:https://docs.netapp.com/us-en/ontap-cli/network-interface-delete.html["network interface delete"^].
+
+
+
+. Verifica se sono configurati gruppi di interfacce:
++
+[source, cli]
+----
+network port ifgrp show
+----
++
+.. Se sono configurati gruppi di interfacce, verifica se eventuali LIF sulla VM di storage sono associate a un gruppo di interfacce:
++
+[source, cli]
+----
+network interface show -vserver <storage_VM_name> -fields home,node, home-port, curr-node, curr-port
+----
+.. Se un LIF sulla VM di storage è associato a un gruppo di interfacce, migra il LIF a una porta fisica diversa:
++
+[source, cli]
+----
+network interface migrate -vserver <storage_VM_name> -lif <LIF> -des-node <destination_node> -dest-port <destination_port>
+----
++
+Scopri di più sul comando link:https://docs.netapp.com/us-en/ontap-cli/network-port-ifgrp-show.html["network port ifgrp show"^].
+
+
+
+
+
+.Cosa succederà?
+Ora sei pronto per eseguire il controllo preliminare della migrazione.
+
+
+
+[[step-3-execute-the-migration-pre-check]]
+== Passaggio 3: Esegui il controllo preliminare della migrazione
+
+Prima di migrare una VM di storage da un cluster ASA r2, devi eseguire un controllo preliminare della migrazione e risolvere eventuali problemi necessari. Non puoi eseguire la migrazione finché il controllo preliminare non viene superato correttamente.
+
+.Fase
+. Dal cluster di destinazione, esegui il controllo preliminare della migrazione:
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM> -source-cluster <sourcecluster> -check-only true
+----
++
+Se devi risolvere eventuali problemi per prepararti alla migrazione, vengono visualizzati il problema e l'azione correttiva. Risolvi il problema e ripeti il controllo preliminare finché non viene completato con successo.
+
+
+
+.Cosa succederà?
+Sei pronto per migrare la tua macchina virtuale di archiviazione dal cluster ASA r2.
+
+
+
+[[step-4-migrate-a-storage-vm-from-an-asa-r2-cluster]]
+== Passaggio 4: Migrare una VM di archiviazione da un cluster ASA r2
+
+Dopo aver creato la necessaria cluster peer relationship tra i cluster ASA r2 e ASA o AFF e aver completato i passaggi per preparare entrambi i cluster, puoi iniziare la migrazione delle VM di storage.
+
+Quando esegui una migrazione di VM di storage, è best practice lasciare un margine del 30% di CPU sia sul cluster ASA r2 che sul cluster AFF per consentire l'esecuzione del carico di lavoro della CPU della migrazione.
+
+.A proposito di questa attività
+* Dopo la migrazione della VM di storage, l'I/O del client passa senza interruzioni al cluster di destinazione e la VM di storage sul cluster ASA r2 viene rimossa automaticamente. Il cutover automatico e la rimozione automatica della VM di storage sono abilitati per impostazione predefinita. Puoi disabilitare facoltativamente una o entrambe le opzioni ed eseguirle manualmente.
+* Il cluster ASA è il cluster di _origine_ da cui verrà migrata la VM di storage, mentre il cluster ASA r2 è il cluster di _destinazione_ verso cui verrà migrata la VM di storage.
+
+
+.Fasi
+. Dal cluster di destinazione, avvia la migrazione della VM di storage:
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM_name> -source-cluster <source_cluster>
+----
++
+Per disabilitare il cutover automatico, utilizzare il `-auto-cutover false` parametro. Per disabilitare la rimozione automatica della VM di storage di origine, utilizzare il `-auto-source-cleanup false` parametro.
+
+. Monitorare lo stato della migrazione
++
+[source, cli]
+----
+vserver migrate show -vserver <storage_VM_name>
+----
++
+Se è necessario mettere in pausa o annullare la migrazione prima che inizi il passaggio automatico, utilizzare `vserver migrate pause` e il `vserver migrate abort` comandi.  È necessario sospendere la migrazione prima di annullarla.  Non è possibile annullare la migrazione dopo l'avvio del cutover.
+
++
+Se il cutover automatico è abilitato, al termine della migrazione lo *status* viene visualizzato come *migration-complete*. Se il cutover automatico è disabilitato, lo *status* viene visualizzato come *Ready for source cleanup*.
+
+
+
+.Risultato
+La VM di storage viene migrata dal cluster ASA r2 al cluster di destinazione.
+
+.Cosa succederà?
+Se hai disabilitato il cutover automatico e la rimozione automatica della VM di storage, esegui il cutover e la pulizia post-migrazione per passare manualmente i tuoi client ASA r2 al cluster di destinazione e rimuovere la VM di storage dal cluster ASA r2.
+
+
+
+[[step-5-post-migration-cutover-and-cleanup]]
+== Passaggio 5: cutover e pulizia post-migrazione
+
+Durante una migrazione di una VM di storage tra cluster, le operazioni di I/O del client passano al cluster di destinazione e la VM di storage sul cluster di origine viene rimossa automaticamente. Se scegli di disabilitare il cutover automatico e la rimozione automatica della VM di storage di origine durante la migrazione, devi eseguire questi passaggi manualmente dopo che lo stato della migrazione ha raggiunto *Ready for source cleanup*.
+
+
+
+[[manually-cut-over-clients-after-a-storage-vm-migration]]
+=== Esegui il cutover manuale dei client dopo la migrazione di una VM di storage
+
+Se disabiliti il cutover automatico del client durante la migrazione intercluster di una VM di storage, dopo che la relazione di migrazione è pronta per il cutover, esegui manualmente il cutover in modo che la VM di storage di destinazione possa servire i dati ai client.
+
+.A proposito di questa attività
+Esegui questa operazione dal cluster di destinazione.
+
+.Fasi
+. Esegui manualmente il cutover client:
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. Verificare che l'operazione di cutover sia completa:
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.Risultato
+I tuoi client ricevono i dati dalla VM di storage sul cluster di destinazione.
+
+.Quali sono le prossime novità?
+Ora sei pronto a rimuovere la VM di storage dal cluster di origine.
+
+
+
+[[manually-remove-a-storage-vm-after-migration]]
+=== Rimuovi manualmente una VM di storage dopo la migrazione
+
+Se disabiliti la pulizia automatica dell'origine durante una migrazione di una VM di storage tra cluster, al termine della migrazione devi rimuovere la VM di storage dal cluster di origine per liberare lo spazio di storage.
+
+.Prima di iniziare
+I tuoi client dovrebbero servire i dati dal cluster di destinazione.
+
+.Fasi
+. Dal cluster di origine, verifica che lo stato della VM di storage di origine sia *Ready for source cleanup*:
++
+[source, cli]
+----
+vserver migrate show
+----
+. Rimuovi la VM di storage di origine:
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.Risultato
+La VM di storage nel cluster di origine viene rimossa.

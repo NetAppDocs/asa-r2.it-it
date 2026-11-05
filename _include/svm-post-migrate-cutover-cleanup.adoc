@@ -1,0 +1,64 @@
+= Esegui il cutover manuale dei client dopo la migrazione di una VM di storage
+:allow-uri-read: 
+
+
+Durante una migrazione di una VM di storage tra cluster, le operazioni di I/O del client passano al cluster di destinazione e la VM di storage sul cluster di origine viene rimossa automaticamente. Se scegli di disabilitare il cutover automatico e la rimozione automatica della VM di storage di origine durante la migrazione, devi eseguire questi passaggi manualmente dopo che lo stato della migrazione ha raggiunto *Ready for source cleanup*.
+
+
+
+[[manually-cut-over-clients-after-a-storage-vm-migration]]
+=== Esegui il cutover manuale dei client dopo la migrazione di una VM di storage
+
+Se disabiliti il cutover automatico del client durante la migrazione intercluster di una VM di storage, dopo che la relazione di migrazione è pronta per il cutover, esegui manualmente il cutover in modo che la VM di storage di destinazione possa servire i dati ai client.
+
+.A proposito di questa attività
+Esegui questa operazione dal cluster di destinazione.
+
+.Fasi
+. Esegui manualmente il cutover client:
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. Verificare che l'operazione di cutover sia completa:
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.Risultato
+I tuoi client ricevono i dati dalla VM di storage sul cluster di destinazione.
+
+.Quali sono le prossime novità?
+Ora sei pronto a rimuovere la VM di storage dal cluster di origine.
+
+
+
+[[manually-remove-a-storage-vm-after-migration]]
+=== Rimuovi manualmente una VM di storage dopo la migrazione
+
+Se disabiliti la pulizia automatica dell'origine durante una migrazione di una VM di storage tra cluster, al termine della migrazione devi rimuovere la VM di storage dal cluster di origine per liberare lo spazio di storage.
+
+.Prima di iniziare
+I tuoi client dovrebbero servire i dati dal cluster di destinazione.
+
+.Fasi
+. Dal cluster di origine, verifica che lo stato della VM di storage di origine sia *Ready for source cleanup*:
++
+[source, cli]
+----
+vserver migrate show
+----
+. Rimuovi la VM di storage di origine:
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.Risultato
+La VM di storage nel cluster di origine viene rimossa.

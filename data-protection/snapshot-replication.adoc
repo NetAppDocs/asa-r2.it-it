@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapshot-replication.html 
 keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication 
-summary: Utilizza ONTAP System Manager per copiare i dati in una posizione remota per eseguire backup e disaster recovery. La configurazione richiede la creazione di una relazione e di un criterio di replica. 
+summary: Utilizza ONTAP System Manager per copiare i dati in una posizione remota per il backup e il ripristino di emergenza. Crea una policy di replica e una relazione per configurare la replica delle snapshot. 
 searchtitle: Replica le snapshot su un cluster remoto utilizzando ONTAP System Manager| ASA R2 
 ---
 = Replica le snapshot su un cluster remoto dai sistemi storage ASA R2
@@ -17,7 +17,7 @@ La replica Snapshot è un processo in cui i gruppi di coerenza nel sistema ASA R
 
 NOTE: La replica degli snapshot per un sistema di archiviazione ASA r2 è supportata solo da e verso un altro sistema di archiviazione ASA r2.  Non è possibile replicare snapshot da un sistema ASA r2 a un sistema ASA, AFF o FAS o da un sistema ASA, AFF o FAS a un sistema ASA r2.
 
-Per impostare la replica Snapshot, è necessario stabilire una relazione di replica tra il sistema ASA R2 e la posizione remota. La relazione di replica è governata da un criterio di replica. Durante la configurazione del cluster viene creato un criterio predefinito per la replica di tutti gli snapshot. È possibile utilizzare il criterio predefinito o, facoltativamente, crearne uno nuovo.
+Per configurare la replica degli snapshot, devi stabilire una relazione di replica tra il sistema ASA r2 e la posizione remota. La relazione di replica è regolata da una policy di replica. Durante la configurazione del cluster, viene creata una policy predefinita per replicare tutti gli snapshot. Puoi utilizzare la policy predefinita o crearne una nuova.
 
 A partire da ONTAP 9.17.1, è possibile applicare criteri di replica asincrona ai gruppi di coerenza in una relazione gerarchica.  La replica asincrona non è supportata per i gruppi di coerenza nelle relazioni gerarchiche in ONTAP 9.16.1.
 
@@ -88,12 +88,12 @@ Una relazione di replica snapshot stabilisce una connessione tra il sistema ASA 
 
 Per una maggiore sicurezza contro gli attacchi ransomware, crea una relazione di replica SnapLock for SnapVault.
 
+.A proposito di questa attività
+* Quando si crea una relazione di replica, è necessario selezionare il criterio di replica appropriato per la relazione di replica.  È possibile utilizzare una policy predefinita oppure crearne una personalizzata.
+
+
 .Prima di iniziare
-* link:pre-defined-protection-policies.html["Scopri di più sulle policy di replicazione"] .
-+
-Quando si crea una relazione di replica, è necessario selezionare il criterio di replica appropriato per la relazione di replica.  È possibile utilizzare una policy predefinita oppure crearne una personalizzata.
-
-
+A partire da ONTAP 9.20.1, puoi configurare la replica asincrona backend di SnapMirror su fabric FC esistenti. A tale scopo, il backend del tuo sistema ONTAP deve essere configurato per la replica FC e sia il fabric FC sia la rete IP intercluster devono essere operativi. I dati di replica possono essere trasportati tramite il fabric FC, ma la rete IP intercluster è necessaria per le comunicazioni del cluster e le funzioni di gestione della replica. link:https://docs.netapp.com/us-en/ontap/data-protection/configure-backend-fc-replication.html["Impara a configurare il backend del tuo sistema ONTAP per la replica FC"^].
 
 
 
@@ -101,6 +101,13 @@ Quando si crea una relazione di replica, è necessario selezionare il criterio d
 === Crea una relazione per replicare gli snapshot in un cluster remoto
 
 Proteggi i tuoi dati replicando gli snapshot su un cluster remoto. Gli snapshot replicati dei tuoi gruppi di coerenza possono essere utilizzati per il ripristino di emergenza o per la migrazione dei dati.
+
+.A proposito di questa attività
+In ONTAP 9.20.1 e versioni successive:
+
+* Per creare una relazione di SnapMirror utilizzando la replica FC di backend, devi usare una policy di protezione dei dati asincrona predefinita e supportata e selezionare il protocollo di trasporto FC. La replica di backend utilizza il protocollo IP per impostazione predefinita. link:pre-defined-protection-policies.html["Scopri quali criteri di replica predefiniti supportano la replica FC del backend"].
+* Per modificare il protocollo di trasporto selezionato dopo aver creato una relazione di replica, devi link:snapmirror-active-sync-break-relationship.html["interruzione"] la relazione e quindi ricrearla con il protocollo di trasporto desiderato.
+
 
 .Fasi
 . In System Manager, selezionare *protezione > Replica*.
@@ -129,6 +136,7 @@ Il gruppo di coerenza _source_ fa riferimento al gruppo di coerenza del cluster 
 
 |===
 . Selezionare un criterio di replica.
+. In ONTAP 9.20.1 e versioni successive, seleziona il protocollo di trasporto per la relazione di replica.
 . Per ritardare l'avvio del trasferimento dei dati, seleziona *Impostazioni destinazione* e poi deseleziona *Avvia trasferimento immediatamente*.
 +
 Il trasferimento iniziale dei dati inizia immediatamente per impostazione predefinita.
@@ -154,7 +162,8 @@ Per proteggerti dagli attacchi ransomware, quando configuri la relazione di repl
 NOTE: I sistemi ASA r2 non supportano la modalità SnapLock Compliance né la modalità SnapLock Enterprise. La creazione di una relazione di replica SnapLock for SnapVault consente solo il blocco delle snapshot di destinazione. Non abilita la modalità SnapLock Compliance o Enterprise.
 
 .Prima di iniziare
-Devi link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock["inizializza l'SnapLock Compliance Clock"].
+* Devi link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock["inizializza l'SnapLock Compliance Clock"].
+
 
 .Fasi
 . In System Manager, seleziona *Protezione > Gruppi di coerenza* e poi seleziona un gruppo di coerenza.
@@ -162,7 +171,11 @@ Devi link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock[
 . In *protezione remota*, selezionare *Replica in un cluster remoto*.
 . Selezionare *criterio di replica*.
 +
-È necessario selezionare un criterio di replica _vault_.
+Devi selezionare una policy di replica _vault_. In ONTAP 9.20.1 e versioni successive, devi selezionare la policy _MirrorAndVault_ per configurare la replica FC di backend.
+
+. In ONTAP 9.20.1 e versioni successive, seleziona un protocollo di trasporto.
++
+Per modificare il protocollo di trasporto selezionato dopo aver creato una relazione di replica, devi link:snapmirror-active-sync-break-relationship.html["interruzione"] la relazione e quindi ricrearla con il protocollo di trasporto desiderato.
 
 . Seleziona *Impostazioni di destinazione*, quindi seleziona *Blocca le istantanee di destinazione per impedirne l'eliminazione*.
 . Immettere il periodo di conservazione dei dati massimo e minimo.
@@ -179,6 +192,9 @@ Il programma di trasferimento deve essere di almeno 30 minuti per essere support
 
 .Quali sono le prossime novità?
 Ora che hai creato una relazione di replica, il trasferimento iniziale dei dati inizia come definito nella tua policy di replica. Puoi anche testare il failover della replica per verificare che il failover avvenga correttamente se il tuo sistema ASA r2 va offline.
+
+.Informazioni correlate
+link:pre-defined-protection-policies.html["Scopri di più sulle policy di protezione predefinite"].
 
 
 

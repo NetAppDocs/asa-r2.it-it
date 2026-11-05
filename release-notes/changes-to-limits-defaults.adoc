@@ -26,6 +26,9 @@ Informazioni sulle modifiche ai limiti e alle impostazioni predefinite che inter
 | Funzione | Modifica del limite | Modificato nella versione... 
 
 
+| Scalabilità della registrazione delle prenotazioni persistenti SCSI | Il numero massimo di registrazioni di prenotazioni persistenti SCSI-3 supportate per LUN aumenta da 182 a 256. | ONTAP 9.20.1 
+
+
 | VM di archiviazione per cluster | Il numero massimo di macchine virtuali di archiviazione (VM) supportate per coppia HA è aumentato da 32 a 256. | ONTAP 9.18.1 
 
 

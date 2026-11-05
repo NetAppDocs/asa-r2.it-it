@@ -11,7 +11,7 @@ summary: In determinate situazioni potrebbe essere necessario interrompere una r
 
 
 [role="lead"]
-In determinate situazioni potrebbe essere necessario interrompere una relazione di replica asincrona.  Ad esempio, se si esegue ONTAP 9.16.1 e si desidera aumentare le dimensioni di un gruppo di coerenza che si trova in una relazione di replica asincrona, è necessario interrompere la relazione prima di poter modificare le dimensioni del gruppo di coerenza.
+Interrompi una relazione di replica asincrona quando devi apportare modifiche che lo richiedono. Ad esempio, se utilizzi ONTAP 9.16.1 e vuoi aumentare le dimensioni di un gruppo di coerenza in una relazione di replica asincrona, interrompi la relazione prima di modificare le dimensioni del gruppo di coerenza.
 
 .Fasi
 . In System Manager, selezionare *protezione > Replica*.

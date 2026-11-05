@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapshot-reserve-modify.html 
 keywords: asa r2, snapshot reserve, percentage 
-summary: 'La riserva snapshot è la quantità di spazio nell"unità di archiviazione riservata specificamente agli snapshot.  Quando la riserva snapshot è impostata con l"eliminazione automatica degli snapshot, gli snapshot più vecchi vengono eliminati automaticamente quando lo spazio utilizzato dagli snapshot supera la riserva snapshot.' 
+summary: 'Modifica la riserva di Snapshot su un"unità di storage o una VM di storage e abilita l"eliminazione automatica delle snapshot per evitare che le snapshot occupino lo spazio destinato ai dati utente.' 
 ---
 = Modificare la riserva di snapshot su un sistema di archiviazione ASA r2
 :allow-uri-read: 
@@ -39,11 +39,11 @@ La riserva di snapshot è impostata sulla percentuale specificata.  Se la quanti
 [[modify-snapshot-reserve-on-a-storage-vm]]
 == Modificare la riserva di snapshot su una VM di archiviazione
 
-Per impostare la stessa riserva di snapshot per tutte le unità di archiviazione in una VM di archiviazione, applicare la percentuale desiderata alla VM di archiviazione. .  Quando la riserva snapshot viene applicata alla VM di archiviazione, viene applicata a tutte le unità di archiviazione appena create all'interno della VM di archiviazione.  Non viene applicato alle unità di archiviazione create prima della modifica dell'impostazione.
+Per impostare la stessa riserva di Snapshot per tutte le unità di storage in una storage VM, applica la percentuale desiderata alla storage VM. Quando la riserva di Snapshot viene applicata alla storage VM, si applica a tutte le unità di storage create di recente all'interno della storage VM. Non si applica alle unità di storage create prima che tu modificassi l'impostazione.
 
 .Fasi
 . In System Manager, seleziona *Cluster > VM di archiviazione*; quindi seleziona *Impostazioni*.
-. In *Criteri*, accanto a *Snapshot*, selezionaimage:icon_kabob.gif["tre punti verticali"] ; quindi seleziona *Imposta/modifica l'impostazione predefinita della riserva snapshot*.
+. In *Criteri*, accanto a *Snapshot*, seleziona image:icon_kabob.gif["tre punti verticali"]; quindi seleziona *Imposta/modifica il valore predefinito della riserva di Snapshot*.
 . In *Snapshot reserve %*, immettere il valore numerico per la percentuale di spazio dell'unità di archiviazione che si desidera allocare agli snapshot.
 . Verificare che sia selezionata l'opzione *Elimina automaticamente gli snapshot più vecchi*.
 . Selezionare *Salva*.

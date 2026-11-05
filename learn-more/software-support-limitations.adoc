@@ -22,7 +22,7 @@ I sistemi ASA r2 supportano un'ampia gamma di funzionalità SAN, ma alcune funzi
 * API ONTAP S3 SnapMirror e S3
 * SnapLock
 +
-SnapLock Compliance e la modalità Enterprise non sono supportate sui cluster primari negli ambienti SAN. SnapLock for SnapVault è supportato sui cluster secondari.
+SnapLock Compliance e Enterprise non sono supportate sui cluster primari negli ambienti SAN. SnapLock for SnapVault è supportato sui cluster secondari.
 
 * La replica SnapMirror è supportata sui sistemi ASA r2 con le seguenti limitazioni:
 +

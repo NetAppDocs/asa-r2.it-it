@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-unplanned-failover.html 
 keywords: asa r2, reestablish, snapmirror active sync, unplanned failover, disaster recovery 
-summary: Scopri come ristabilire le relazioni di sincronizzazione attiva SnapMirror dopo un failover non pianificato dei cluster ASA r2. 
+summary: Ristabilisci le relazioni di sincronizzazione attive di SnapMirror dopo un failover imprevisto dei cluster ASA r2. 
 ---
 = Ristabilire la sincronizzazione attiva di SnapMirror dopo un failover imprevisto su ASA r2
 :allow-uri-read: 
@@ -11,13 +11,13 @@ summary: Scopri come ristabilire le relazioni di sincronizzazione attiva SnapMir
 
 
 [role="lead"]
-Sui sistemi ASA r2, SnapMirror active sync supporta configurazioni simmetriche active/active. In una configurazione simmetrica active/active, entrambi i siti possono accedere allo storage locale per l'I/O attivo. Se il cluster di origine si guasta o viene isolato, il mediatore attiva un failover automatico non pianificato (AUFO) e gestisce tutto l'I/O dal cluster di destinazione fino al recupero del cluster di origine.
+Ristabilisci la relazione di sincronizzazione attiva di SnapMirror per riprendere le operazioni sul cluster di origine originale dopo un failover non pianificato. Sui sistemi ASA r2, la sincronizzazione attiva di SnapMirror supporta configurazioni simmetriche active/active. In una configurazione simmetrica active/active, entrambi i siti possono accedere allo storage locale per l'I/O attivo. Se il cluster di origine si guasta o viene isolato, ONTAP Mediator attiva un failover automatico non pianificato (AUFO) e gestisce tutto l'I/O dal cluster di destinazione finché il cluster di origine non si riprende.
 
 Se si verifica un AUFO della relazione di sincronizzazione attiva SnapMirror, è necessario ristabilire la relazione e riprendere le operazioni sul cluster di origine dopo che è tornato online.
 
 .Prima di iniziare
 * La relazione di sincronizzazione attiva SnapMirror deve essere sincronizzata.
-* Non è possibile avviare un failover pianificato quando è in corso un'operazione non distruttiva, ad esempio lo spostamento di un'unità di archiviazione.
+* Non puoi avviare un failover pianificato quando è in corso un'operazione senza interruzioni, come lo spostamento di un'unità di storage.
 * Il mediatore ONTAP deve essere configurato, connesso e in quorum.
 * Per recuperare i percorsi I/O persi o aggiornare gli stati dei percorsi I/O sugli host, è necessario eseguire una nuova scansione dell'archiviazione/adattatore sugli host dopo che il cluster di archiviazione primario riprende a funzionare.
 

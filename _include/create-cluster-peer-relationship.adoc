@@ -1,0 +1,61 @@
+= 
+:allow-uri-read: 
+
+
+.Prima di iniziare
+È necessario aver creato LIF intercluster su ogni nodo nei cluster sottoposti a peering utilizzando uno dei seguenti metodi.
+
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-share-data-ports-task.html["Configurare i LIF intercluster sulle porte dati condivise"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-dedicated-ports-task.html["Configurare i LIF intercluster su porte dati dedicate"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-ports-own-networks-task.html["Configurare LIF intercluster in spazi IP personalizzati"^]
+
+
+.Fasi
+. Sul cluster di destinazione, crea una relazione peer con il cluster di origine e genera una passphrase:
++
+[source, cli]
+----
+cluster peer create -peer-addrs <source_cluster_LIF_IPs> -generate-passphrase
+----
++
+L'esempio seguente crea una relazione peer tra cluster 1 e cluster 2 e crea una passphrase generata dal sistema:
+
++
+[listing]
+----
+cluster1::> cluster peer create -peer-addrs 10.98.191.193 -generate-passphrase
+Passphrase: UCa+6lRVICXeL/gq1WrK7ShR
+            Peer Cluster Name: cluster2
+            Initial Allowed Vserver Peers: -
+            Expiration Time: 6/7/2017 09:16:10 +5:30
+            Intercluster LIF IP: 10.140.106.185
+Warning: make a note of the passphrase - it cannot be displayed again.
+
+----
+. Copia la passphrase generata.
+. Sul cluster di origine, crea una relazione peer con il cluster di destinazione:
++
+[source, cli]
+----
+cluster peer create -peer-addrs <destination_cluster_LIF_IPs>
+----
+. Inserisci la passphrase generata sul cluster di destinazione.
+. Verificare che la relazione peer del cluster sia stata creata:
++
+[source, cli]
+----
+cluster peer show
+----
++
+L'esempio seguente mostra l'output previsto per i cluster peered correttamente.
+
++
+[listing]
+----
+cluster1::> cluster peer show
+
+Peer Cluster Name   Cluster Serial Number   Availability   Authentication
+-----------------   ---------------------   -------------- --------------
+cluster2             1-80-123456             Available      ok
+----
+

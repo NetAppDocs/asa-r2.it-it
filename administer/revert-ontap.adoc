@@ -13,7 +13,7 @@ summary: I ripristini del software ONTAP per i sistemi ASA r2 seguono lo stesso 
 [role="lead"]
 I ripristini del software ONTAP per i sistemi ASA r2 seguono lo stesso processo dei ripristini per gli altri sistemi ONTAP .
 
-Il ripristino di un cluster ONTAP è un'operazione che interrompe il funzionamento. Devi mettere il cluster offline per tutta la durata del ripristino. Non dovresti ripristinare un cluster di produzione senza l'assistenza del supporto tecnico. Puoi ripristinare un cluster nuovo o di test senza assistenza. Se il ripristino di un sistema nuovo o di test non riesce, oppure se si completa correttamente ma non sei soddisfatto delle prestazioni del cluster nel tuo ambiente di produzione, dovresti contattare il supporto tecnico per assistenza.
+Il ripristino di un cluster ONTAP interrompe il servizio. Devi mettere il cluster offline per tutta la durata del ripristino. Non dovresti ripristinare un cluster di produzione senza l'assistenza del supporto tecnico. Puoi ripristinare un cluster nuovo o di test senza assistenza. Se il ripristino di un sistema nuovo o di test non riesce, oppure se viene completato correttamente ma non sei soddisfatto delle prestazioni del cluster nel tuo ambiente di produzione, contatta il supporto tecnico per ricevere assistenza.
 
 Consulta link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["Ripristinare un cluster ONTAP"] per la procedura completa di ripristino.
 
@@ -32,7 +32,7 @@ Alcune configurazioni del cluster ASA r2 richiedono di eseguire azioni specifich
 Se si esegue il ripristino da ONTAP 9.17.1 su un sistema ASA r2, è necessario eseguire le seguenti azioni prima di iniziare il ripristino:
 
 
-NOTE: link:space-balancing.html["bilanciamento dinamico dello spazio"]è abilitato per impostazione predefinita 14 giorni dopo l'aggiornamento a ONTAP 9.17.1 o l'inizializzazione di un nuovo cluster ONTAP 9.17.1 ASA r2.  Non è possibile tornare alla versione ONTAP 9.17.1 sul sistema ASA r2 dopo aver abilitato il bilanciamento dinamico dello spazio.
+NOTE: link:space-balancing.html["Bilanciamento dinamico dello spazio"] è abilitato per impostazione predefinita 14 giorni dopo l'aggiornamento a ONTAP 9.17.1 o l'inizializzazione di un nuovo cluster ASA r2 ONTAP 9.17.1. Non puoi tornare a una versione precedente da ONTAP 9.17.1 sul tuo sistema ASA r2 dopo che il bilanciamento dinamico dello spazio è stato abilitato.
 
 [cols="2"]
 |===

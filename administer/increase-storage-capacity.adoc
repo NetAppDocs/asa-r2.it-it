@@ -21,12 +21,12 @@ Aggiungi dischi a un nodo o a uno shelf per aumentare la capacità dello storage
 Prima di installare una nuova unità su un nodo o uno shelf, utilizzare NetApp Hardware Universe per confermare che l'unità che si desidera aggiungere sia supportata dal sistema ASA r2 e per identificare lo slot corretto per la nuova unità.  Gli slot corretti per l'aggiunta di unità variano a seconda del modello del sistema e della versione ONTAP .  In alcuni casi è necessario aggiungere unità a slot specifici in sequenza.
 
 .Fasi
-. Consultare la link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
+. Vai al link:https://hwu.netapp.com/["NetApp Hardware Universe"^].
 . In *prodotti*, selezionare le configurazioni hardware.
 . Seleziona il tuo sistema ASA r2.
 . Selezionare la versione di ONTAP, quindi selezionare *Mostra risultati*.
 . Sotto l'immagine, selezionare *fare clic qui per visualizzare le viste alternative*, quindi scegliere la vista corrispondente alla configurazione.
-. Utilizzare la vista della configurazione per verificare che la nuova unità sia supportata e lo slot corretto per l'installazione.
+. Utilizza la visualizzazione della configurazione per verificare che la nuova unità sia supportata e individua lo slot corretto per l'installazione.
 
 
 .Risultato
@@ -40,7 +40,7 @@ Prima di installare una nuova unità su un nodo o uno shelf, utilizzare NetApp H
 Il numero minimo di dischi che dovresti aggiungere in un'unica procedura è tre. Aggiungere un disco singolo potrebbe ridurre le performance.
 
 .A proposito di questa attività
-Ripetere i passi di questa procedura per ciascuna unità.
+Ripeti i passaggi di questa procedura per ogni unità.
 
 .Fasi
 . Mettere a terra l'utente.
@@ -64,7 +64,7 @@ Il firmware del disco viene aggiornato automaticamente (senza interruzioni) sui 
 
 
 
-. Se il nodo è configurato per l'assegnazione automatica delle unità, è possibile attendere che ONTAP assegni automaticamente le nuove unità a un nodo. Se il nodo non è configurato per l'assegnazione automatica delle unità o se lo si preferisce, è possibile assegnare le unità manualmente.
+. Se il nodo è configurato per l'assegnazione automatica delle unità, attendi che ONTAP assegni le nuove unità a un nodo. Se il nodo non è configurato per l'assegnazione automatica delle unità, o se preferisci, assegna le unità manualmente.
 +
 I nuovi dischi non vengono riconosciuti fino a quando non vengono assegnati a un nodo.
 

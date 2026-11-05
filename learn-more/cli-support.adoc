@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: learn-more/cli-support.html 
 keywords: asa r2, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, cli, comand line interface 
-summary: 'Alcuni comandi ONTAP non sono supportati sui sistemi ASA r2 (ASA A1K, ASA 90, ASA 70, ASA A50, ASA A30, ASA A20, ASA C30).' 
+summary: Esamina i comandi e i parametri della CLI di ONTAP che i sistemi ASA r2 non supportano e configura un cluster ASA r2 utilizzando la CLI. 
 ---
 = Supporto dell'interfaccia CLI ONTAP per i sistemi storage ASA R2
 :allow-uri-read: 
@@ -75,7 +75,7 @@ NOTE: IL  `lun move-in-volume` il comando viene sostituito con il  `lun rename` 
 * `volume expand`
 * `volume modify`
 +
-IL  `volume modify` il comando non è disponibile se utilizzato insieme ai seguenti parametri:
+Il `volume modify` comando non è disponibile se utilizzato con i seguenti parametri:
 
 +
 ** `-anti-ransomware-state`
@@ -145,7 +145,7 @@ IL  `volume modify` il comando non è disponibile se utilizzato insieme ai segue
 [[set-up-an-ontap-asa-r2-cluster-using-the-cli]]
 == Configurare un cluster ONTAP ASA R2 utilizzando la CLI
 
-Si consiglia che tu link:../install-setup/initialize-ontap-cluster.html["Utilizza System Manager per configurare il cluster ONTAP ASA R2"]. System Manager offre un flusso di lavoro guidato rapido e semplice per avviare il tuo cluster. Tuttavia, se sei abituato a lavorare con i comandi ONTAP, puoi usare facoltativamente l'interfaccia a riga di comando (CLI) di ONTAP per la configurazione del cluster. La configurazione del cluster tramite CLI non offre opzioni o vantaggi aggiuntivi rispetto a System Manager.
+Usa link:../install-setup/initialize-ontap-cluster.html["System Manager per configurare il tuo cluster ONTAP ASA r2"]. System Manager offre un flusso di lavoro guidato rapido e semplice per mettere in funzione il cluster. Tuttavia, se sei abituato a lavorare con i comandi ONTAP, puoi anche usare l'interfaccia a riga di comando (CLI) di ONTAP per configurare il cluster. La configurazione del cluster con la CLI non offre opzioni o vantaggi aggiuntivi rispetto a System Manager.
 
 Durante la configurazione del cluster, ONTAP crea la tua VM di storage dati predefinita, crea un'unità di storage iniziale e rileva automaticamente le tue LIF di dati. Facoltativamente, puoi abilitare il Domain Name System (DNS) per risolvere i nomi host, impostare il cluster per usare il Network Time Protocol (NTP) per la sincronizzazione dell'ora e abilitare la crittografia dei dati a riposo.
 
@@ -186,7 +186,7 @@ cluster setup
 . Inserire i valori per la porta dell'interfaccia di gestione dei nodi, l'indirizzo IP, la maschera di rete e il gateway predefinito.
 . Premere *Invio* per continuare l'installazione utilizzando l'interfaccia della riga di comando, quindi immettere *create* per creare un nuovo cluster.
 . Accettare le impostazioni predefinite del sistema o inserire i propri valori.
-. Una volta completata la configurazione sul primo nodo, accedere al cluster.
+. Una volta completata la configurazione sul primo nodo, accedi al cluster.
 . Verificare che il cluster sia attivo e che il primo nodo sia integro:
 +
 [source, cli]

@@ -53,7 +53,7 @@ MTU è il pacchetto di dati più grande che può essere accettato nel dominio di
 [[reassign-ports-to-a-different-broadcast-domain]]
 == Riassegnare le porte a un dominio di broadcast diverso
 
-Le porte possono appartenere a un solo dominio di trasmissione. Se si desidera modificare il dominio di broadcast a cui appartiene una porta, è necessario riassegnare la porta dal dominio di broadcast esistente a un nuovo dominio di broadcast.
+Le porte possono appartenere a un solo dominio di broadcast. Per modificare il dominio di broadcast di una porta, riassegnala dal dominio di broadcast corrente a uno nuovo.
 
 .Fasi
 . In System Manager, selezionare *rete > Panoramica*.

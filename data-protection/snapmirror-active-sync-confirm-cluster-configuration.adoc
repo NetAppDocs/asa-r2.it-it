@@ -17,7 +17,7 @@ SnapMirror Active Sync si basa su cluster peer per proteggere i dati in caso di 
 . Verificare che esista una relazione di peering tra i cluster.
 +
 
-NOTE: Lo spazio IP predefinito è richiesto da SnapMirror ActiveSync per le relazioni tra peer del cluster. Uno spazio IP personalizzato non è supportato.
+NOTE: SnapMirror active sync richiede l'IPspace predefinito per le relazioni peer del cluster. Un IPspace personalizzato non è supportato.
 
 +
 link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["Creare una relazione tra cluster"] .

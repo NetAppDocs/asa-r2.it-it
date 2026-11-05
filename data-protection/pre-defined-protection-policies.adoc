@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/pre-defined-protection-policies.html 
 keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication, policy, pre-defined, default, custom, policies 
-summary: La politica di replicazione definisce quando gli aggiornamenti eseguiti sul cluster ASA r2 vengono replicati sul sito remoto.  ONTAP include varie policy di protezione dei dati predefinite che puoi utilizzare per le tue relazioni di replicazione. 
+summary: Scegli una policy di protezione predefinita per replicare i dati del cluster ASA r2 in un sito remoto, incluse le policy asincrone e le policy SnapMirror active sync. 
 ---
 = Scopri le policy di protezione dei dati predefinite per i sistemi ASA r2.
 :allow-uri-read: 
@@ -15,10 +15,18 @@ La politica di replicazione definisce quando gli aggiornamenti eseguiti sul clus
 
 Se le policy predefinite non soddisfano le tue esigenze, puoilink:snapshot-replication.html#step-2-optionally-create-a-custom-replication-policy["creare una politica di replicazione personalizzata"] .
 
+A partire da ONTAP 9.20.1, puoi configurare la replica asincrona del backend SnapMirror su fabric FC esistenti utilizzando una policy di protezione dei dati asincrona supportata. Le seguenti policy di protezione predefinite supportano la replica FC del backend:
 
-NOTE: I sistemi ASA r2 non supportano la replica sincrona.
+* Asincrono
+* MirrorAllSnapshots
+* MirrorAndVault
+* XDPDefault
+
 
 I sistemi ASA r2 supportano le seguenti policy di protezione predefinite.
+
+
+NOTE: I sistemi ASA r2 non supportano la replica sincrona.
 
 [cols="3,4,1"]
 |===

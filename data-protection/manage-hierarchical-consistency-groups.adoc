@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-hierarchical-consistency-groups.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: Utilizza i gruppi di coerenza per eseguire diverse azioni su più unità di archiviazione contemporaneamente invece di eseguire azioni individualmente su ciascuna unità. In una struttura gerarchica, uno o più gruppi di coerenza sono configurati come figli sotto un gruppo di coerenza padre. 
+summary: Promuovi, retrocedi, crea e scollega gruppi di coerenza gerarchici per gestire snapshot e replica per più unità di storage sul tuo sistema ASA r2. 
 ---
 = Gestisci gruppi di coerenza gerarchica sul tuo sistema ASA r2
 :allow-uri-read: 
@@ -42,13 +42,13 @@ Puoi creare ulteriori gruppi di coerenza figlio all'interno del gruppo di coeren
 Quando si declassa un gruppo di coerenza padre a un singolo gruppo di coerenza, le unità di archiviazione dei gruppi di coerenza figlio associati vengono aggiunte al gruppo di coerenza padre.  I gruppi di coerenza figlio vengono eliminati e il padre viene quindi gestito come un singolo gruppo di coerenza.
 
 .Prima di iniziare
-Se si esegue ONTAP 9.16.1 e il gruppo di coerenza che si desidera declassare si trova in una relazione di sincronizzazione attiva SnapMirror , è necessariolink:snapmirror-active-sync-delete-relationship.html["elimina la relazione di sincronizzazione attiva SnapMirror"] prima che il gruppo di coerenza possa essere declassato.  Se si esegue ONTAP 9.16.1 e il gruppo di coerenza si trova in una relazione di replica asincrona, è necessariolink:snapmirror-active-sync-break-relationship.html["rompere la relazione"] prima di poter declassare il gruppo di coerenza.  In ONTAP 9.17.1 e versioni successive non è necessario eliminare la relazione di sincronizzazione attiva SnapMirror o interrompere la relazione asincrona prima di espandere un gruppo di coerenza.
+Se utilizzi ONTAP 9.16.1 e il gruppo di coerenza che vuoi declassare si trova in una relazione di sincronizzazione attiva di SnapMirror, devi link:snapmirror-active-sync-delete-relationship.html["elimina la relazione di sincronizzazione attiva SnapMirror"] prima di poter declassare il gruppo di coerenza. Se utilizzi ONTAP 9.16.1 e il gruppo di coerenza si trova in una relazione di replica asincrona, devi link:snapmirror-active-sync-break-relationship.html["rompere la relazione"] prima di poter declassare il gruppo di coerenza. L'eliminazione della relazione di sincronizzazione attiva di SnapMirror o l'interruzione della relazione asincrona prima di declassare un gruppo di coerenza non è necessaria in ONTAP 9.17.1 e nelle versioni successive.
 
 .Fasi
 . In System Manager, selezionare *protezione > gruppi di coerenza*.
 . Passare il mouse sul gruppo di coerenza di origine che si desidera ridurre.
 . Selezionare image:icon_kabob.gif["tre punti blu verticali"]; quindi selezionare *Demote in un singolo gruppo di coerenza*.
-. Selezionare *Demote*
+. Seleziona *Demote*.
 
 
 .Quali sono le prossime novità?
@@ -113,7 +113,7 @@ Dopo aver creato un gruppo di coerenza figlio, puoilink:policies-schedules.html#
 Quando si scollega un gruppo di coerenza figlio da un gruppo di coerenza padre, il gruppo di coerenza figlio viene rimosso dal gruppo di coerenza padre e gestito come un singolo gruppo di coerenza.  La politica di replica applicata al padre non viene più applicata al gruppo di coerenza figlio staccato.
 
 .Prima di iniziare
-Se si esegue ONTAP 9.16.1 e il gruppo di coerenza che si desidera scollegare si trova in una relazione di sincronizzazione attiva SnapMirror , è necessariolink:snapmirror-active-sync-delete-relationship.html["elimina la relazione di sincronizzazione attiva SnapMirror"] prima che il gruppo di coerenza possa essere staccato.  Se si esegue ONTAP 9.16.1 e il gruppo di coerenza si trova in una relazione di replica asincrona, è necessariolink:snapmirror-active-sync-break-relationship.html["rompere la relazione"] prima di poter staccare il gruppo di coerenza.  In ONTAP 9.17.1 e versioni successive non è necessario eliminare la relazione di sincronizzazione attiva SnapMirror o interrompere la relazione asincrona prima di espandere un gruppo di coerenza.
+Se utilizzi ONTAP 9.16.1 e il gruppo di coerenza che vuoi scollegare è in una relazione di sincronizzazione attiva di SnapMirror, devi link:snapmirror-active-sync-delete-relationship.html["elimina la relazione di sincronizzazione attiva SnapMirror"] prima di poter scollegare il gruppo di coerenza. Se utilizzi ONTAP 9.16.1 e il gruppo di coerenza è in una relazione di replica asincrona, devi link:snapmirror-active-sync-break-relationship.html["rompere la relazione"] prima di poter scollegare il gruppo di coerenza. L'eliminazione della relazione di sincronizzazione attiva di SnapMirror o l'interruzione della relazione asincrona prima di scollegare un gruppo di coerenza non è richiesta in ONTAP 9.17.1 e versioni successive.
 
 .Fasi
 . In System Manager, selezionare *protezione > gruppi di coerenza*.

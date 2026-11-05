@@ -46,3 +46,6 @@ Se si verifica un'attività anomala sull'unità di archiviazione, viene visualiz
 
 .Quali sono le prossime novità?
 Se sei a conoscenza di picchi di attività nella tua unità di storage, che si tratti di picchi occasionali o di un picco tipico di una nuova normalità, dovresti segnalarli come sicuri. Segnalare manualmente questi picchi come sicuri aiuta a migliorare l'accuratezza delle valutazioni delle minacce di ARP. Scopri come link:https://docs.netapp.com/us-en/ontap/anti-ransomware/manage-parameters-task.html#report-known-surges["segnala picchi noti di ARP/AI"^].
+
+
+NOTE: Se un'unità di archiviazione link:modify-arp-snapshot-retention-period.html["criterio di risposta snapshot"] è configurata per visualizzare solo avvisi o per creare snapshot solo in caso di attacco, non vengono visualizzati snapshot ARP periodici per tale unità di archiviazione, anche quando ARP/AI è abilitato.

@@ -20,11 +20,11 @@ Se si utilizza ONTAP Cloud Mediator, verificare che il sistema ASA r2 soddisfi i
 . In Gestione sistema, selezionare *Protezione > Panoramica*.
 . Nel riquadro di destra, sotto *Mediatori*, seleziona *Aggiungi un mediatore*.
 . Selezionare il *Tipo di mediatore*.
-. Per un mediatore *Cloud*, inserisci l'ID organizzazione, l'ID client e il segreto client. Per un mediatore *On-premises*, inserisci l'indirizzo IP, la porta, il nome utente e la password del mediatore.
+. Per un mediatore *Cloud*, inserisci l'ID dell'organizzazione, l'ID client e il segreto client. Per un mediatore *On-premises*, inserisci l'indirizzo IP, la porta, il nome utente del mediatore e la password del mediatore.
 . Selezionare il peer del cluster dall'elenco dei peer del cluster idonei oppure selezionare *Aggiungi un peer del cluster* per aggiungerne uno nuovo.
 . Aggiungere le informazioni del certificato
 +
-** Se si utilizza un certificato autofirmato, copiare il contenuto del `intermediate.crt` file e incollarlo nel campo *Certificato*, oppure selezionare *Importa* per passare al `intermediate.crt` file e importare le informazioni del certificato.
+** Se utilizzi un certificato autofirmato, copia il contenuto del file `intermediate.crt` e incollalo nel campo *Certificate*, oppure seleziona *Import* per individuare il file `intermediate.crt` e importare le informazioni del certificato.
 ** Se si utilizza un certificato di terze parti, immettere le informazioni del certificato nel campo *Certificato*.
 
 
@@ -32,4 +32,4 @@ Se si utilizza ONTAP Cloud Mediator, verificare che il sistema ASA r2 soddisfi i
 
 
 .Quali sono le prossime novità?
-Dopo aver inizializzato il mediatore, puoi link:configure-snapmirror-active-sync.html["configurare la sincronizzazione attiva SnapMirror"] per creare una copia dei tuoi dati in un sito secondario e consentire alle tue applicazioni host di effettuare il failover in modo automatico e trasparente in caso di disastro.
+Dopo aver inizializzato il mediatore, puoi link:configure-snapmirror-active-sync.html["configurare la sincronizzazione attiva SnapMirror"] creare una copia dei tuoi dati in un sito secondario e consentire alle applicazioni host di eseguire automaticamente e in modo trasparente il failover in caso di disastro.

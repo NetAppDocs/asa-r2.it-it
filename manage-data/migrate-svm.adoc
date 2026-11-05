@@ -16,6 +16,8 @@ A partire da ONTAP 9.18.1, puoi migrare senza interruzioni una macchina virtuale
 
 NOTE: Non puoi migrare una storage VM da un ASA MetroCluster a un cluster ASA r2. I sistemi ASA r2 non supportano configurazioni MetroCluster.
 
+I sistemi ASA r2 supportano la tecnologia QuickAssist (QAT). I sistemi ASA non supportano QAT. A partire da ONTAP 9.20.1, ONTAP riduce l'elevata latenza di lettura e l'utilizzo della CPU che possono verificarsi dopo la migrazione di una macchina virtuale di storage (VM) da un sistema ASA (non QAT) a un sistema ASA r2 (QAT).
+
 La migrazione delle VM di archiviazione tra i sistemi di archiviazione ASA e ASA r2 è supportata come segue:
 
 [cols="2"]
@@ -51,7 +53,7 @@ La migrazione delle VM di archiviazione tra i sistemi di archiviazione ASA e ASA
 |===
 Per l'elenco più aggiornato dei sistemi ASA e ASA r2, vederelink:https://hwu.netapp.com/["NetApp Hardware Universe"^] .  I sistemi ASA r2 sono elencati in NetApp Hardware Universe come "ASA A-Series/C-Series (New)".
 
-È possibile migrare una VM di archiviazione a un cluster ASA r2 solo da un cluster ASA .  La migrazione da qualsiasi altro tipo di sistema ONTAP non è supportata.
+Puoi migrare una VM di storage a un cluster ASA r2 solo da un cluster ASA. La migrazione da qualsiasi altro tipo di sistema ONTAP a un sistema ASA r2 non è supportata.
 
 .Prima di iniziare
 Tutti i nodi nel cluster ASA r2 e nel cluster ASA devono eseguire ONTAP 9.18.1 o versione successiva.  Le versioni della patch ONTAP 9.18.1 sui nodi del cluster possono variare.
@@ -103,6 +105,9 @@ Ora sei pronto per creare una relazione peer tra i cluster ASA e ASA r2.
 
 Prima di poter migrare una VM di archiviazione da un cluster ASA a un cluster ASA r2, è necessario creare una relazione peer.  Una relazione peer definisce le connessioni di rete che consentono ai cluster ONTAP e alle VM di archiviazione di scambiare dati in modo sicuro.
 
+.A proposito di questa attività
+Il cluster ASA è il cluster di _origine_ da cui verrà migrata la VM di storage, mentre il cluster ASA r2 è il cluster di _destinazione_ verso cui verrà migrata la VM di storage.
+
 .Prima di iniziare
 È necessario aver creato LIF intercluster su ogni nodo nei cluster sottoposti a peering utilizzando uno dei seguenti metodi.
 
@@ -112,11 +117,11 @@ Prima di poter migrare una VM di archiviazione da un cluster ASA a un cluster AS
 
 
 .Fasi
-. Sul cluster ASA r2, creare una relazione peer con il cluster ASA e generare una passphrase:
+. Sul cluster di destinazione, crea una relazione peer con il cluster di origine e genera una passphrase:
 +
 [source, cli]
 ----
-cluster peer create -peer-addrs <ASA_cluster_LIF_IPs> -generate-passphrase
+cluster peer create -peer-addrs <source_cluster_LIF_IPs> -generate-passphrase
 ----
 +
 L'esempio seguente crea una relazione peer tra cluster 1 e cluster 2 e crea una passphrase generata dal sistema:
@@ -134,13 +139,13 @@ Warning: make a note of the passphrase - it cannot be displayed again.
 
 ----
 . Copia la passphrase generata.
-. Sul cluster ASA , creare una relazione peer con il cluster ASA r2:
+. Sul cluster di origine, crea una relazione peer con il cluster di destinazione:
 +
 [source, cli]
 ----
-cluster peer create -peer-addrs <ASA_r2_LIF_IPs>
+cluster peer create -peer-addrs <destination_cluster_LIF_IPs>
 ----
-. Immettere la passphrase generata sul cluster ASA r2.
+. Inserisci la passphrase generata sul cluster di destinazione.
 . Verificare che la relazione peer del cluster sia stata creata:
 +
 [source, cli]
@@ -165,24 +170,27 @@ cluster2             1-80-123456             Available      ok
 I cluster ASA e ASA r2 sono peered e i dati delle VM di archiviazione possono essere trasferiti in modo sicuro.
 
 .Cosa succederà?
-Ora sei pronto a preparare la tua VM di archiviazione ASA per la migrazione.
+Sei pronto per eseguire il controllo preliminare della migrazione.
 
 
 
-[[step-3-prepare-for-storage-vm-migration-from-an-asa-to-an-asa-r2-cluster]]
-== Passaggio 3: preparare la migrazione della VM di archiviazione da un cluster ASA a un cluster ASA r2
+[[step-3-execute-the-migration-pre-check]]
+== Passaggio 3: Esegui il controllo preliminare della migrazione
 
-Prima di migrare una macchina virtuale di archiviazione (VM) da un cluster ASA a un cluster ASA r2, è necessario eseguire un controllo preliminare della migrazione e risolvere eventuali problemi.  Non è possibile eseguire la migrazione finché il controllo preliminare non viene superato con successo.
+Prima di migrare una VM di storage da un cluster ASA a un cluster ASA r2, devi eseguire un controllo preliminare della migrazione e risolvere eventuali problemi richiesti. Non puoi eseguire la migrazione finché il controllo preliminare non viene superato con successo.
+
+.A proposito di questa attività
+Il cluster ASA è il cluster di _origine_ da cui verrà migrata la VM di storage, mentre il cluster ASA r2 è il cluster di _destinazione_ verso cui verrà migrata la VM di storage.
 
 .Fase
-. Dal cluster ASA r2, esegui il controllo preliminare della migrazione:
+. Dal cluster di destinazione, esegui il controllo preliminare della migrazione:
 +
 [source, cli]
 ----
-vserver migrate start -vserver <storage_VM> -source-cluster <asa_cluster> -check-only true
+vserver migrate start -vserver <storage_VM> -source-cluster <sourcecluster> -check-only true
 ----
 +
-Se devi risolvere eventuali problemi per preparare il tuo cluster ASA alla migrazione, vengono visualizzati il problema e l'azione correttiva. Risolvilo e ripeti il pre-check finché non viene completato con successo.
+Se devi risolvere eventuali problemi per prepararti alla migrazione, vengono visualizzati il problema e l'azione correttiva. Risolvi il problema e ripeti il controllo preliminare finché non viene completato con successo.
 
 
 
@@ -199,7 +207,9 @@ Dopo aver preparato il cluster ASA e creato la necessaria relazione peer con il 
 Quando si esegue una migrazione di VM di storage, è consigliabile lasciare il 30% di spazio CPU sia sul cluster ASA che sul cluster ASA r2 per consentire l'esecuzione del carico di lavoro CPU.
 
 .A proposito di questa attività
-Dopo la migrazione della VM di storage, i client vengono automaticamente trasferiti al cluster ASA r2 e la VM di storage sul cluster ASA viene automaticamente rimossa.  Il cutover automatico e la rimozione automatica della VM di archiviazione sono abilitati per impostazione predefinita.  Facoltativamente, è possibile disabilitarli entrambi ed eseguire manualmente il cutover e la rimozione della VM di archiviazione.
+* Dopo la migrazione della VM di storage, l'I/O del client passa senza interruzioni al cluster di destinazione e la VM di storage sul cluster ASA r2 viene rimossa automaticamente. Il cutover automatico e la rimozione automatica della VM di storage sono abilitati per impostazione predefinita. Puoi disabilitare facoltativamente una o entrambe le opzioni ed eseguirle manualmente.
+* Il cluster ASA è il cluster di _origine_ da cui verrà migrata la VM di storage, mentre il cluster ASA r2 è il cluster di _destinazione_ verso cui verrà migrata la VM di storage.
+
 
 .Prima di iniziare
 * Il cluster ASA r2 deve disporre di spazio libero sufficiente per contenere la VM di archiviazione migrata.
@@ -215,14 +225,14 @@ Dopo la migrazione della VM di storage, i client vengono automaticamente trasfer
 
 
 .Fasi
-. Dal cluster ASA r2, avviare la migrazione della VM di archiviazione:
+. Dal cluster di destinazione, avvia la migrazione della VM di storage:
 +
 [source, cli]
 ----
-vserver migrate start -vserver <storage_VM_name> -source-cluster <ASA_cluster>
+vserver migrate start -vserver <storage_VM_name> -source-cluster <source_cluster>
 ----
 +
-Per disattivare il passaggio automatico, utilizzare `-auto-cutover false` parametro.  Per disabilitare la rimozione automatica della VM di archiviazione ASA , utilizzare `-auto-source-cleanup false` parametro.
+Per disabilitare il cutover automatico, utilizzare il `-auto-cutover false` parametro. Per disabilitare la rimozione automatica della VM di storage di origine, utilizzare il `-auto-source-cleanup false` parametro.
 
 . Monitorare lo stato della migrazione
 +
@@ -231,15 +241,81 @@ Per disattivare il passaggio automatico, utilizzare `-auto-cutover false` parame
 vserver migrate show -vserver <storage_VM_name>
 ----
 +
-Una volta completata la migrazione, lo *stato* viene visualizzato come *migrazione-completata*.
+Se è necessario mettere in pausa o annullare la migrazione prima che inizi il passaggio automatico, utilizzare `vserver migrate pause` e il `vserver migrate abort` comandi.  È necessario sospendere la migrazione prima di annullarla.  Non è possibile annullare la migrazione dopo l'avvio del cutover.
+
++
+Se il cutover automatico è abilitato, al termine della migrazione lo *status* viene visualizzato come *migration-complete*. Se il cutover automatico è disabilitato, lo *status* viene visualizzato come *Ready for source cleanup*.
 
 
-
-
-NOTE: Se è necessario mettere in pausa o annullare la migrazione prima che inizi il passaggio automatico, utilizzare `vserver migrate pause` e il `vserver migrate abort` comandi.  È necessario sospendere la migrazione prima di annullarla.  Non è possibile annullare la migrazione dopo l'avvio del cutover.
 
 .Risultato
 La VM di archiviazione viene migrata dal cluster ASA al cluster ASA r2.  Il nome e l'UUID della VM di archiviazione, il nome LIF dei dati, l'indirizzo IP e i nomi degli oggetti, come il nome del volume, rimangono invariati.  L'UUID degli oggetti migrati nella VM di archiviazione viene aggiornato.
 
 .Cosa succederà?
-Se hai disabilitato il cutover automatico e la rimozione automatica della VM di archiviazione,link:svm-post-migrate-cutover-cleanup.html["trasferire manualmente i client ASA sul cluster ASA r2 e rimuovere la VM di archiviazione dal cluster ASA"] .
+Se hai disabilitato il cutover automatico e la rimozione automatica della storage VM, esegui il cutover e la pulizia post-migrazione per passare manualmente i tuoi client ASA al cluster di destinazione e rimuovere la storage VM dal cluster ASA.
+
+
+
+[[step-5-post-migration-cutover-and-cleanup]]
+== Passaggio 5: cutover e pulizia post-migrazione
+
+Durante una migrazione di una VM di storage tra cluster, le operazioni di I/O del client passano al cluster di destinazione e la VM di storage sul cluster di origine viene rimossa automaticamente. Se scegli di disabilitare il cutover automatico e la rimozione automatica della VM di storage di origine durante la migrazione, devi eseguire questi passaggi manualmente dopo che lo stato della migrazione ha raggiunto *Ready for source cleanup*.
+
+
+
+[[manually-cut-over-clients-after-a-storage-vm-migration]]
+=== Esegui il cutover manuale dei client dopo la migrazione di una VM di storage
+
+Se disabiliti il cutover automatico del client durante la migrazione intercluster di una VM di storage, dopo che la relazione di migrazione è pronta per il cutover, esegui manualmente il cutover in modo che la VM di storage di destinazione possa servire i dati ai client.
+
+.A proposito di questa attività
+Esegui questa operazione dal cluster di destinazione.
+
+.Fasi
+. Esegui manualmente il cutover client:
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. Verificare che l'operazione di cutover sia completa:
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.Risultato
+I tuoi client ricevono i dati dalla VM di storage sul cluster di destinazione.
+
+.Quali sono le prossime novità?
+Ora sei pronto a rimuovere la VM di storage dal cluster di origine.
+
+
+
+[[manually-remove-a-storage-vm-after-migration]]
+=== Rimuovi manualmente una VM di storage dopo la migrazione
+
+Se disabiliti la pulizia automatica dell'origine durante una migrazione di una VM di storage tra cluster, al termine della migrazione devi rimuovere la VM di storage dal cluster di origine per liberare lo spazio di storage.
+
+.Prima di iniziare
+I tuoi client dovrebbero servire i dati dal cluster di destinazione.
+
+.Fasi
+. Dal cluster di origine, verifica che lo stato della VM di storage di origine sia *Ready for source cleanup*:
++
+[source, cli]
+----
+vserver migrate show
+----
+. Rimuovi la VM di storage di origine:
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.Risultato
+La VM di storage nel cluster di origine viene rimossa.

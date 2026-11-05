@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/policies-schedules.html 
 keywords: data protection, polices, schedules, protect data, snapshot policies, snapshot schedules, replication policies 
-summary: Utilizza policy e pianificazioni di data Protection per proteggere i dati in base a una pianificazione automatizzata. 
+summary: Crea e gestisci policy di snapshot, pianificazioni delle policy e policy di replica per proteggere automaticamente i gruppi di coerenza sui sistemi ASA r2. 
 ---
 = Gestisci le policy e le pianificazioni di protezione dei dati sui sistemi ASA r2
 :allow-uri-read: 
@@ -18,9 +18,9 @@ Utilizza policy di Snapshot per proteggere i dati nei gruppi di coerenza in base
 [[create-a-new-protection-policy-schedule]]
 == Creare una nuova pianificazione dei criteri di protezione
 
-Una pianificazione dei criteri di protezione definisce la frequenza con cui viene eseguita una policy di snapshot. È possibile creare pianificazioni da eseguire a intervalli regolari in base a un numero di giorni, ore o minuti. Ad esempio, è possibile creare un programma da eseguire ogni ora o solo una volta al giorno. È inoltre possibile creare pianificazioni da eseguire a orari specifici in giorni specifici della settimana o del mese. Ad esempio, è possibile creare una pianificazione da eseguire alle 12:15am:00 il 20th di ogni mese.
+La pianificazione di una policy di protezione definisce la frequenza di esecuzione di una policy di snapshot. Puoi creare pianificazioni da eseguire a intervalli regolari in base a un numero di giorni, ore o minuti. Ad esempio, puoi creare una pianificazione da eseguire ogni ora o solo una volta al giorno. Puoi anche creare pianificazioni da eseguire in orari specifici in determinati giorni della settimana o del mese. Ad esempio, puoi creare una pianificazione da eseguire alle 00:15 il giorno 20 di ogni mese.
 
-La definizione di varie pianificazioni dei criteri di protezione consente di aumentare o diminuire la frequenza di snapshot per diverse applicazioni. Ciò consente di fornire un livello maggiore di protezione e un rischio minore di perdita di dati per i workload critici rispetto a quanto potrebbe essere necessario per i workload meno critici.
+Definire diverse pianificazioni delle policy di protezione ti offre la flessibilità di aumentare o diminuire la frequenza degli snapshot per diverse applicazioni. Questo ti consente di garantire maggiore protezione e un rischio inferiore di perdita dei dati per i tuoi carichi di lavoro critici rispetto a quelli meno critici.
 
 .Fasi
 . Selezionare *protezione > Criteri*, quindi selezionare *Pianificazione*.
@@ -30,7 +30,7 @@ La definizione di varie pianificazioni dei criteri di protezione consente di aum
 
 
 .Quali sono le prossime novità?
-Una volta creata una nuova pianificazione dei criteri, è possibile utilizzare la pianificazione appena creata all'interno delle policy per definire quando vengono creati gli snapshot.
+Ora che hai creato una pianificazione delle policy, puoi utilizzarla nelle tue policy per definire quando creare gli snapshot.
 
 
 
@@ -49,7 +49,7 @@ Una policy di snapshot definisce la frequenza di esecuzione delle snapshot, il n
 
 
 .Quali sono le prossime novità?
-Una volta creato un criterio snapshot, è possibile applicarlo a un gruppo di coerenza. Gli snapshot verranno acquisiti dal gruppo di coerenza in base ai parametri impostati nella policy di snapshot.
+Ora che hai creato una policy di snapshot, puoi applicarla a un gruppo di coerenza. ONTAP crea snapshot del gruppo di coerenza in base ai parametri impostati nella policy di snapshot.
 
 
 
@@ -73,7 +73,7 @@ Ora che i tuoi dati sono protetti con snapshot, dovresti link:snapshot-replicati
 [[edit-delete-or-disable-a-snapshot-policy]]
 == Modificare, eliminare o disattivare un criterio snapshot
 
-Modificare un criterio snapshot per modificare il nome del criterio, il numero massimo di snapshot o l'etichetta SnapMirror. Eliminare un criterio per rimuoverlo e i relativi dati di backup dal cluster. Disattivare un criterio per interrompere temporaneamente la creazione o il trasferimento degli snapshot specificati dal criterio.
+Modifica una policy di snapshot per modificarne il nome, il numero massimo di snapshot o l'etichetta SnapMirror. Elimina una policy per rimuoverla e i dati di backup associati dal cluster. Disabilita una policy per interrompere temporaneamente la creazione o il trasferimento degli snapshot specificati dalla policy.
 
 .Fasi
 . In Gestione sistema, selezionare *protezione > Criteri*, quindi selezionare *Criteri istantanea*.

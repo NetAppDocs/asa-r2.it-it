@@ -30,7 +30,7 @@ cluster show
 . link:../manage-data/move-storage-units.html["Sposta"] o link:../manage-data/delete-storage-units.html["eliminare"] tutte le unità di archiviazione dal nodo.
 . Se hai unità di archiviazione SCSI (LUN) sul nodo da rimuovere, link:https://docs.netapp.com/us-en/ontap/san-admin/modify-slm-reporting-nodes-task.html["elimina il nodo e il suo partner HA dall'elenco dei nodi di reporting della mappa LUN selettiva (SLM)"^].
 +
-Se non rimuovi il nodo e il relativo partner HA dall'elenco dei nodi di reporting SLM, puoi perdere l'accesso alle LUN che prima si trovavano sul nodo, anche se le LUN sono state spostate su un altro nodo.
+Se non rimuovi il nodo e il relativo partner HA dall'elenco reporting-nodes di SLM, puoi perdere l'accesso alle LUN che in precedenza si trovavano sul nodo, anche se le LUN sono state spostate su un altro nodo.
 
 . link:https://docs.netapp.com/us-en/ontap/networking/delete_a_lif.html["Elimina"^] o link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["migrare"^] tutte le interfacce di rete (LIF) del nodo.
 +
@@ -40,7 +40,7 @@ La migrazione delle LIF iSCSI è limitata solo alle porte sul nodo home o sul pa
 
 ** Le LIF intercluster devono essere eliminate.
 +
-Quando elimini i LIF intercluster, viene visualizzato un avviso che puoi ignorare.
+Quando elimini i LIF intercluster, puoi ignorare l'avviso visualizzato.
 
 ** L'interfaccia LIF di gestione del cluster deve essere spostata su un altro nodo.
 
@@ -150,7 +150,7 @@ cluster modify -node <node_name> -eligibility true
 ----
 
 
-. Accedere al LIF di gestione del nodo remoto o al LIF di gestione del cluster su un nodo che non si sta rimuovendo dal cluster.
+. Accedi alla LIF di gestione del nodo remoto o alla LIF di gestione del cluster su un nodo che non stai rimuovendo dal cluster.
 . Usa il nome del nodo o l'indirizzo IP del nodo per rimuovere il nodo dal cluster:
 +
 Se hai un cluster con versioni miste e stai rimuovendo l'ultimo nodo con versione inferiore, usa il parametro -skip-last-low-version-node-check con questi comandi.
@@ -169,7 +169,7 @@ cluster remove-node -node <node_name>
 cluster remove-node -cluster_ip <node_ip>
 ----
 +
-Viene generato un messaggio di errore se sono presenti condizioni che devi risolvere prima di rimuovere il nodo. In tal caso, risolvi le condizioni e riesegui il comando  `cluster remove-node`.
+ONTAP genera un messaggio di errore se esistono condizioni che devi risolvere prima di rimuovere il nodo. Se succede, risolvi queste condizioni e riesegui il `cluster remove-node` comando.
 
 +
 Il nodo si riavvia automaticamente dopo essere stato rimosso correttamente dal cluster.

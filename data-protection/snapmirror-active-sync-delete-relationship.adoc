@@ -22,7 +22,7 @@ Se il gruppo host del cluster di origine viene replicato nel cluster di destinaz
 
 .Fasi
 . In System Manager, selezionare *host*.
-. Accanto a un host contenente il gruppo host di cui si desidera interrompere la replica, selezionareimage:icon_kabob.gif["tre punti blu verticali"] e quindi seleziona *Modifica*.
+. Accanto a un host che contiene il gruppo host per cui vuoi interrompere la replica, seleziona image:icon_kabob.gif["tre punti blu verticali"], quindi seleziona *Modifica*.
 . Deseleziona *Replica configurazione host*, quindi seleziona *Aggiorna*.
 
 

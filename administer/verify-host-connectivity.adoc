@@ -16,10 +16,10 @@ In caso di problemi con le operazioni dei dati host, è possibile utilizzare Ges
 .Fasi
 . In System Manager, selezionare *host*.
 +
-Lo stato della connettività host viene indicato accanto al nome del gruppo di host come segue:
+System Manager visualizza lo stato della connettività host accanto al nome del gruppo host:
 
 +
-** *OK*: Indica che tutti gli iniziatori sono collegati a entrambi i nodi.
+** *OK*: Indica che tutti gli iniziatori sono connessi a entrambi i nodi.
 ** *Parzialmente connesso*: indica che alcuni degli initiator non sono connessi a entrambi i nodi.
 ** *Nessuno collegato*: Indica che non sono collegati iniziatori.
 
@@ -27,4 +27,4 @@ Lo stato della connettività host viene indicato accanto al nome del gruppo di h
 
 
 .Quali sono le prossime novità?
-Aggiorna l'host per correggere i problemi di connettività. Il ONTAP verificherà nuovamente lo stato della connessione ogni quindici minuti.
+Aggiorna il tuo host per correggere i problemi di connettività. ONTAP ricontrollerà lo stato della connessione ogni 15 minuti.

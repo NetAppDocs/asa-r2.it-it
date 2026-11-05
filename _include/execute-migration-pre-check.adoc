@@ -1,0 +1,15 @@
+= 
+:allow-uri-read: 
+
+
+.Fase
+. Dal cluster di destinazione, esegui il controllo preliminare della migrazione:
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM> -source-cluster <sourcecluster> -check-only true
+----
++
+Se devi risolvere eventuali problemi per prepararti alla migrazione, vengono visualizzati il problema e l'azione correttiva. Risolvi il problema e ripeti il controllo preliminare finché non viene completato con successo.
+
+

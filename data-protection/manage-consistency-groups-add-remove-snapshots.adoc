@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-consistency-groups-add-remove-snapshots.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: Creare snapshot dei gruppi di coerenza per proteggere i dati nelle unità di archiviazione che fanno parte del gruppo di coerenza.  Se non è più necessario proteggere i dati in nessuna delle unità di archiviazione del gruppo di coerenza, è possibile rimuovere la protezione snapshot. 
+summary: Aggiungi la protezione snapshot a un gruppo di coerenza per proteggere i dati nelle sue unità di storage oppure rimuovi la protezione snapshot quando non ti serve più. 
 ---
 = Proteggi i gruppi di coerenza sul tuo sistema ASA r2 con gli snapshot
 :allow-uri-read: 
@@ -20,7 +20,7 @@ Se non è più necessario proteggere i dati da unità di archiviazione specifich
 [[add-snapshot-data-protection-to-a-consistency-group]]
 == Aggiungi la data Protection delle snapshot a un gruppo di coerenza
 
-Quando si aggiunge la protezione dei dati di snapshot a un gruppo di coerenza, le snapshot locali del gruppo di coerenza vengono acquisite a intervalli regolari in base a una pianificazione predefinita.
+Quando aggiungi la protezione dei dati tramite snapshot a un gruppo di coerenza, ONTAP crea snapshot locali del gruppo di coerenza a intervalli regolari, in base a una pianificazione predefinita.
 
 È possibile utilizzare snapshot link:restore-data.html["ripristinare i dati"]persi o danneggiati.
 
@@ -54,7 +54,7 @@ quindi selezionare image:icon_dropdown_arrow.gif["freccia blu rivolta verso il b
 
 .. Selezionare la pianificazione dei criteri.
 .. In *numero massimo di snapshot*, immettere il numero massimo di snapshot che si desidera conservare del gruppo di coerenza.
-.. Facoltativamente, in *SnapMirror label* (etichetta *) immettere un'etichetta SnapMirror.
+.. Facoltativamente, in *SnapMirror label*, inserisci un'etichetta SnapMirror.
 .. Selezionare *Salva*.
 
 

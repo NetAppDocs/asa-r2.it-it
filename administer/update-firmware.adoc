@@ -30,7 +30,7 @@ Gli aggiornamenti consigliati per il firmware dello storage, il firmware Service
 
 
 .Risultato
-Gli aggiornamenti consigliati vengono scaricati e installati automaticamente nel sistema ASA R2 in base alle selezioni degli aggiornamenti.
+Gli aggiornamenti consigliati vengono scaricati e installati automaticamente sul tuo sistema ASA r2 in base alle opzioni di aggiornamento selezionate.
 
 
 
@@ -64,7 +64,7 @@ Visualizza un elenco di aggiornamenti del firmware e dei file di sistema scarica
 [[edit-automatic-updates]]
 == Modificare gli aggiornamenti automatici
 
-Puoi scegliere di scaricare e installare automaticamente sul tuo cluster gli aggiornamenti consigliati per il firmware dello storage, il firmware SP/BMC e i file di sistema, oppure puoi scegliere di ignorare automaticamente gli aggiornamenti consigliati. Se vuoi controllare manualmente l'installazione o l'ignorare degli aggiornamenti, seleziona di essere avvisato quando è disponibile un aggiornamento consigliato; poi puoi scegliere manualmente se installarlo o ignorarlo.
+Puoi fare in modo che gli aggiornamenti consigliati per il firmware dello storage, il firmware SP/BMC e i file di sistema vengano scaricati e installati automaticamente sul cluster oppure ignorati automaticamente. Per controllare manualmente l'installazione o l'annullamento, scegli di ricevere una notifica quando è disponibile un aggiornamento consigliato, quindi installalo o ignoralo tu stesso.
 
 .Fasi
 . In System Manager, selezionare *Cluster > Settings*.
@@ -81,7 +81,7 @@ Gli aggiornamenti automatici vengono modificati in base alle selezioni effettuat
 [[update-firmware-manually]]
 == Aggiornare il firmware manualmente
 
-Se si desidera la flessibilità di visualizzare gli aggiornamenti consigliati prima che vengano scaricati e installati, è possibile disattivare gli aggiornamenti automatici e aggiornare il firmware manualmente.
+Per visualizzare gli aggiornamenti consigliati prima che vengano scaricati e installati, disabilita gli aggiornamenti automatici e aggiorna il firmware manualmente.
 
 .Fasi
 . Scaricare il file di aggiornamento del firmware su un server o un client locale.
