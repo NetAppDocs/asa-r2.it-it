@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/migrate-svm.html 
 keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
-summary: 'Se lo spazio di una zona di disponibilità dello storage si sta esaurendo, è possibile spostare le unità di storage in un"altra zona di disponibilità dello storage per bilanciare l"utilizzo dello storage nel cluster.' 
+summary: 'Eseguire la migrazione di una macchina virtuale di storage da un cluster ASA a un cluster ASA r2 senza interruzioni, inclusa la verifica della macchina virtuale di storage, il peering dei cluster, l"esecuzione del controllo preliminare e la migrazione vera e propria.' 
 ---
 = Migrare una VM di archiviazione da un cluster ASA a un cluster ASA r2
 :allow-uri-read: 
@@ -16,7 +16,7 @@ A partire da ONTAP 9.18.1, puoi migrare senza interruzioni una macchina virtuale
 
 NOTE: Non puoi migrare una storage VM da un ASA MetroCluster a un cluster ASA r2. I sistemi ASA r2 non supportano configurazioni MetroCluster.
 
-I sistemi ASA r2 supportano la tecnologia QuickAssist (QAT). I sistemi ASA non supportano QAT. A partire da ONTAP 9.20.1, ONTAP riduce l'elevata latenza di lettura e l'utilizzo della CPU che possono verificarsi dopo la migrazione di una macchina virtuale di storage (VM) da un sistema ASA (non QAT) a un sistema ASA r2 (QAT).
+I sistemi ASA r2 supportano la tecnologia QuickAssist (QAT). I sistemi ASA non supportano QAT. A partire da ONTAP 9.20.1, ONTAP riduce l'elevata latenza di lettura e l'utilizzo della CPU che possono verificarsi dopo la migrazione di una VM di storage da un sistema ASA (non QAT) a un sistema ASA r2 (QAT).
 
 La migrazione delle VM di archiviazione tra i sistemi di archiviazione ASA e ASA r2 è supportata come segue:
 
@@ -249,7 +249,7 @@ Se il cutover automatico è abilitato, al termine della migrazione lo *status* v
 
 
 .Risultato
-La VM di archiviazione viene migrata dal cluster ASA al cluster ASA r2.  Il nome e l'UUID della VM di archiviazione, il nome LIF dei dati, l'indirizzo IP e i nomi degli oggetti, come il nome del volume, rimangono invariati.  L'UUID degli oggetti migrati nella VM di archiviazione viene aggiornato.
+La macchina virtuale di storage viene migrata dal cluster ASA al cluster ASA r2. Il nome e l'UUID della macchina virtuale di storage, il nome del LIF dati, l'indirizzo IP e i nomi degli oggetti, come il nome del volume, rimangono invariati. L'UUID degli oggetti migrati nella macchina virtuale di storage viene aggiornato.
 
 .Cosa succederà?
 Se hai disabilitato il cutover automatico e la rimozione automatica della storage VM, esegui il cutover e la pulizia post-migrazione per passare manualmente i tuoi client ASA al cluster di destinazione e rimuovere la storage VM dal cluster ASA.

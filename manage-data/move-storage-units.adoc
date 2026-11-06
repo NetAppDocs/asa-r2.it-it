@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/move-storage-units.html 
 keywords: move lun, lun move, move namespace, move storage unit, asa r2 
-summary: 'Se lo spazio di una zona di disponibilità dello storage si sta esaurendo, è possibile spostare le unità di storage in un"altra zona di disponibilità dello storage per bilanciare l"utilizzo dello storage nel cluster.' 
+summary: 'Sposta le unità di archiviazione in un"altra zona di disponibilità dello storage per bilanciare l"utilizzo dello storage nel cluster quando una zona sta esaurendo lo spazio disponibile.' 
 ---
 = Sposta le unità di storage sui sistemi storage ASA R2
 :allow-uri-read: 
@@ -13,7 +13,7 @@ summary: 'Se lo spazio di una zona di disponibilità dello storage si sta esaure
 [role="lead"]
 Se lo spazio di una zona di disponibilità dello storage si sta esaurendo, è possibile spostare le unità di storage in un'altra zona di disponibilità dello storage per bilanciare l'utilizzo dello storage nel cluster.
 
-È possibile spostare un'unità di archiviazione mentre l'unità di archiviazione è online e fornisce i dati. L'operazione di spostamento non comporta interruzioni.
+Puoi spostare un'unità di archiviazione mentre è online e serve dati. L'operazione di spostamento non provoca interruzioni.
 
 .Prima di iniziare
 * È necessario eseguire ONTAP 9.16.1 o versione successiva.

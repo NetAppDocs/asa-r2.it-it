@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/storage-limits.html 
 keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30 
-summary: Per prestazioni, configurazione e supporto ottimali, è necessario conoscere i limiti di archiviazione ASA r2. 
+summary: Consulta i limiti di storage di ASA r2 per il tuo sistema e la versione di ONTAP in NetApp Hardware Universe per garantire prestazioni, configurazione e supporto ottimali. 
 ---
 = Determina i limiti di archiviazione del tuo sistema ASA r2
 :allow-uri-read: 
@@ -11,9 +11,9 @@ summary: Per prestazioni, configurazione e supporto ottimali, è necessario cono
 
 
 [role="lead"]
-Per prestazioni, configurazione e supporto ottimali, dovresti essere a conoscenza dei limiti di storage di ASA r2.
+Conoscere i limiti dello storage del tuo sistema ASA r2 ti aiuta a configurarlo per ottenere prestazioni e supporto ottimali. Puoi consultare i limiti del tuo sistema e della versione di ONTAP in NetApp Hardware Universe.
 
-I limiti possono variare in base al tuo sistema ASA r2 e alla tua versione di ONTAP. Consulta link:https://hwu.netapp.com/["NetApp Hardware Universe"^] per un elenco completo dei limiti più aggiornati per il tuo sistema specifico.
+I limiti possono variare in base al tuo sistema ASA r2 e alla versione di ONTAP. Consulta link:https://hwu.netapp.com/["NetApp Hardware Universe"^] per un elenco completo dei limiti più aggiornati per il tuo sistema specifico.
 
 
 NOTE: I limiti delle macchine virtuali (VM) non sono elencati in Hardware Universe. Il numero massimo consigliato di VM per coppia HA è 800 e per cluster è 1.200, in base ai limiti dei volumi di sistema di ASA r2. Questo limite non si applica alle VM residenti nei datastore VMFS. Non esiste un numero massimo di VM per i datastore VMFS.

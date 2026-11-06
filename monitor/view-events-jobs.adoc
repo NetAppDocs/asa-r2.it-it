@@ -60,7 +60,7 @@ Configurare il sistema in modo che invii una notifica a indirizzi e-mail specifi
 
 .Fasi
 . In System Manager, selezionare *Cluster > Settings*.
-. Accanto a *Gestione notifiche* selezionare image:icon_kabob.gif["tre punti blu verticali"].
+. Accanto a *Gestione notifiche*, seleziona image:icon_kabob.gif["tre punti blu verticali"].
 . Per configurare una destinazione eventi, selezionare *Visualizza destinazioni eventi*, quindi selezionare *Destinazioni eventi*. Per configurare una destinazione del registro di controllo, selezionare *Visualizza destinazioni di controllo*, quindi selezionare *Destinazioni del registro di controllo*.
 . Selezionare image:icon_add_blue_bg.png["rettangolo blu con segno più seguito dalla parola aggiungi in lettere bianche"].
 . Immettere le informazioni sulla destinazione, quindi selezionare *Aggiungi*.

@@ -14,7 +14,7 @@ searchtitle: Monitorare le performance del cluster con Gestione di sistema ONTAP
 [role="lead"]
 Utilizza ONTAP System Manager per monitorare le prestazioni complessive del tuo cluster e delle singole unità di storage, inclusi latenza, IOPS e throughput, per periodi di tempo che vanno da un'ora a un anno.
 
-Ad esempio, si supponga che un'applicazione critica stia riscontrando un'elevata latenza e un basso throughput. Osservando le performance del cluster degli ultimi cinque giorni di lavoro, noterai una diminuzione delle performance ogni giorno alla stessa ora. Queste informazioni vengono utilizzate per determinare se l'applicazione critica è in competizione per le risorse cluster quando inizia l'esecuzione in background di un processo non critico. Potrai quindi modificare la policy di QoS per limitare l'impatto del carico di lavoro non critico sulle risorse di sistema e garantire che il carico di lavoro critico soddisfi gli obiettivi minimi di throughput.
+Ad esempio, supponi che un'applicazione critica stia riscontrando latenza elevata e throughput basso. Quando visualizzi le prestazioni del cluster per gli ultimi cinque giorni lavorativi, noti una diminuzione delle prestazioni alla stessa ora ogni giorno. Usi queste informazioni per determinare che l'applicazione critica è in competizione per le risorse del cluster quando un processo non critico inizia a essere eseguito in background. Puoi quindi modificare i criteri QoS per limitare l'impatto del carico di lavoro non critico sulle risorse di sistema e garantire che il tuo carico di lavoro critico soddisfi gli obiettivi minimi di throughput.
 
 
 

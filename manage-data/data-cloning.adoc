@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/data-cloning.html 
 keywords: data cloning, clone data, cloning data, luns, namespaces, clone storage units, clone, cloning, clone consistency groups 
-summary: 'Clona unità di storage e gruppi di coerenza su ASA R2 per creare copie dei dati da utilizzare all"esterno dell"ambiente di produzione per svariati scopi.' 
+summary: Clona le unità di archiviazione e i gruppi di coerenza sui sistemi ASA r2 per creare copie dei dati da utilizzare al di fuori del tuo ambiente di produzione. 
 searchtitle: Cloning dei dati con ONTAP System Manager | ASA R2 
 ---
 = Clonazione dei dati sui sistemi di storage ASA R2
@@ -82,7 +82,7 @@ Quando si clona un gruppo di coerenza, si crea un nuovo gruppo di coerenza ident
 
 Il clone viene creato a partire da una snapshot del gruppo di coerenza che viene clonato. La snapshot utilizzata per il clone viene acquisita nel momento in cui il processo di cloning viene avviato per impostazione predefinita. È possibile modificare il comportamento predefinito per utilizzare uno snapshot preesistente.
 
-Le mappature delle unità di archiviazione vengono copiate come parte del processo di clonazione. Le policy di Snapshot non vengono copiate come parte del processo di cloning.
+Le mappature delle unità di storage vengono copiate come parte del processo di cloning. Le policy Snapshot non vengono copiate come parte del processo di cloning.
 
 Puoi creare cloni da gruppi di coerenza archiviati in locale sul sistema ASA R2 o da gruppi di coerenza replicati in posizioni remote.
 
